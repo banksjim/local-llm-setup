@@ -21,18 +21,20 @@ The README will contain:
 3. A concise summary of the two independent target systems:
    - Windows 11 desktop with Ryzen 7 9800X3D, RTX 4090, 64 GB RAM, and planned persistent storage under `H:\ai`.
    - MacBook Pro with M4 Pro, 48 GB unified memory, and a 175 GB storage budget.
-4. The planned open-source-first stack: Open WebUI, native Ollama, Rancher Desktop, SearXNG, Docling Serve, PostgreSQL with PGVector, Faster-Whisper, and optional whisper.cpp.
-5. A **Currently available** section listing and linking to the approved design specification.
-6. A **Not yet available** section explicitly identifying the unimplemented installers, maintenance scripts, deployment configuration, platform guides, model guides, verification tests, diagrams, and Codex prompt library.
-7. A compact planned repository-structure summary.
-8. A roadmap checklist that distinguishes the completed design phase from future implementation and validation work without assigning dates.
-9. A direct link to the complete design specification for authoritative detail.
+4. A **Reference hardware** section explaining that the design is tailored to the repository owner's two machines. The documented models, context sizes, storage layouts, and performance settings are reference configurations rather than universal requirements. Other users will be directed to adjust model sizes, context limits, concurrency, storage paths, and service resource allocations for their hardware.
+5. The planned open-source-first stack: Open WebUI, native Ollama, Rancher Desktop, SearXNG, Docling Serve, PostgreSQL with PGVector, Faster-Whisper, and optional whisper.cpp.
+6. A **Currently available** section listing and linking to the approved design specification.
+7. A **Not yet available** section explicitly identifying the unimplemented installers, maintenance scripts, deployment configuration, platform guides, model guides, verification tests, diagrams, and Codex prompt library.
+8. A compact planned repository-structure summary.
+9. A roadmap checklist that distinguishes the completed design phase from future implementation and validation work without assigning dates.
+10. A direct link to the complete design specification for authoritative detail.
 
 ## Accuracy Rules
 
 - Do not provide installation commands while no installer exists.
 - Do not claim that any service, model, script, configuration, or workflow has been implemented or tested.
 - Describe all unbuilt technical choices as planned or proposed.
+- Do not imply compatibility or performance on hardware beyond the two reference machines. State that broader hardware profiles have not yet been tested.
 - Do not use release, build, test, or coverage badges that imply working software.
 - Do not promise delivery dates.
 - Do not add license, contributing, or changelog sections; those belong in dedicated files when created.
@@ -51,6 +53,7 @@ The README is complete when a new visitor can answer all of these questions with
 
 - What is this project intended to become?
 - Which Windows and macOS machines does it target?
+- Which settings are specific to the owner's reference hardware, and what may other users need to adjust?
 - What stack is planned?
 - What content exists in the repository today?
 - What has not been implemented yet?
