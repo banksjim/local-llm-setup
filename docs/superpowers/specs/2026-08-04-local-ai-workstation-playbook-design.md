@@ -29,6 +29,7 @@ The project is complete when it provides:
 - Local speech-to-text using Open WebUI's Faster-Whisper backend, plus an optional native whisper.cpp CLI guide.
 - Curated model profiles optimized for each machine.
 - Client integration guides for Claude Code, Codex CLI, Codex desktop, and VS Code.
+- A separate optional guide and reusable LLM prompt for fully local VS Code inline autocomplete.
 - Explicit compatibility boundaries for regular ChatGPT and Claude Cowork.
 - Step-by-step automated verification with a generated pass/warn/skip/fail report.
 - Dated model and tool research with primary-source links and a repeatable refresh procedure.
@@ -155,7 +156,19 @@ The 16K primary context is intentionally lower than the model's advertised maxim
 
 Only one large model is pulled by the default macOS install. Optional pulls are checked against the 175 GB budget.
 
-### 6.3 Usage Guides
+### 6.3 Optional VS Code Local Autocomplete
+
+Local inline autocomplete is an optional, separately selected profile. It is not installed and its model is not pulled by either platform's default installation.
+
+| Role | Model | Size | Purpose |
+|---|---|---:|---|
+| Autocomplete | `qwen2.5-coder:1.5b-base` | About 1 GB | Low-latency, fully local inline code suggestions in VS Code through Continue |
+
+VS Code's native AI inline suggestions are provided by GitHub Copilot and may be sufficient when its connectivity, account, quota, and privacy characteristics are acceptable. VS Code can use Ollama models for local chat, but it does not currently use bring-your-own or local models for native inline suggestions. The optional local workflow therefore uses the Continue extension with Ollama and is documented as an alternative rather than a default replacement.
+
+The optional setup must preserve existing VS Code and Continue settings, keep Ollama on loopback, and remain independently removable. Verification reports this feature as skipped unless the user explicitly selects it.
+
+### 6.4 Usage Guides
 
 The repository includes:
 
@@ -236,7 +249,11 @@ macOS defaults:
 - **Claude Code:** `ollama launch claude`, manual `ANTHROPIC_BASE_URL` configuration, model selection, validation, and restore.
 - **Codex CLI:** `codex --oss`, `ollama launch codex`, dedicated TOML profiles, model catalogs, validation, and restore.
 - **Codex desktop app:** `ollama launch codex-app`, profile persistence, backups, and restore.
-- **VS Code:** Official Ollama extension discovery at `http://127.0.0.1:11434`, plus optional Claude Code and Codex IDE workflows.
+- **VS Code:** Native GitHub Copilot inline suggestions when acceptable; Ollama-backed local chat at `http://127.0.0.1:11434`; optional Claude Code and Codex IDE workflows; and a separate `docs/integrations/VS-CODE-LOCAL-AUTOCOMPLETE.md` guide for Continue with `qwen2.5-coder:1.5b-base`.
+
+The local-autocomplete guide includes a decision summary comparing native Copilot suggestions with the optional offline/local path. It covers prerequisites, model pull, Continue configuration, platform-specific paths, validation with a small test file, troubleshooting, disablement, and complete rollback.
+
+`prompts/vscode/setup-local-autocomplete.md` provides a reusable instruction for Codex or Claude Code to perform this optional setup. The prompt requires the LLM to detect the installed Continue configuration schema, back up existing configuration, preserve unrelated settings, request approval before installing the extension or model, avoid changing Ollama's loopback binding, verify ghost-text completion and relevant logs, report every change, and provide rollback steps. Conflicting settings cause the LLM to stop and ask for direction rather than overwrite them.
 
 Regular ChatGPT cannot use Ollama as its model backend. ChatGPT MCP apps require a remote server or Secure MCP Tunnel and therefore are not enabled in this localhost-only design. Claude Cowork also cannot use Ollama as its model backend, and its custom connectors originate from Anthropic's cloud; local MCP servers are unavailable in Cowork. These boundaries are documented with supported local alternatives.
 
@@ -273,7 +290,8 @@ local-llm-setup/
     ├── maintenance/
     ├── model-research/
     ├── performance/
-    └── troubleshooting/
+    ├── troubleshooting/
+    └── vscode/
 ```
 
 ## 11. Error Handling and Observability
@@ -313,6 +331,7 @@ Tests that require the target hardware are delivered for the user to run on each
 - Troubleshooting decision trees and common recovery commands.
 - Update, rollback, backup, restore, and migration guides.
 - Client integration guide.
+- Optional local VS Code autocomplete guide and reusable setup prompt.
 - Security and privacy guide.
 - Storage planning and cleanup guide.
 - Verification guide and example report.
