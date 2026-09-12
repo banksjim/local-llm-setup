@@ -218,13 +218,9 @@ The repository includes:
 
 Each supported model documents chat, vision, OCR, RAG, coding, agent, fast-task, and difficult-reasoning use; context length; thinking mode; temperature; concurrency; keep-alive; resource pressure; and when not to use it.
 
-### 6.5 Personal Agent Profiles and AIOS Memory
+### 6.5 Personal Agent Profiles
 
-The playbook includes optional Open WebUI profiles for a Thought Partner, Life Coach, Fitness Coach, Financial Coach, and fast daily check-in assistant. These are configuration wrappers over the supported base models, not additional model downloads. The guide distinguishes reflective or educational assistance from licensed medical, mental-health, legal, or financial advice.
-
-Durable personal memory is owned by the separate AIOS project. This playbook owns model inference, Open WebUI profiles, and connection instructions; it does not install or maintain a competing memory database. The integration contract uses a reviewed inbox: agents may append candidate memories, but only the user can approve or edit them for promotion into canonical AIOS Markdown memory. Candidate memories never count as trusted facts before promotion.
-
-The complete ownership boundary, memory lifecycle, isolation requirements, failure behavior, and acceptance criteria are defined in `docs/superpowers/specs/2026-08-11-personal-agents-memory-integration-design.md`.
+The playbook includes optional Open WebUI profiles for a Thought Partner, Life Coach, Fitness Coach, Financial Coach, and fast daily check-in assistant. These are configuration wrappers over the supported base models, not additional model downloads. The guide distinguishes reflective or educational assistance from licensed medical, mental-health, legal, or financial advice. Persistent personal memory is not part of this playbook.
 
 ## 7. Installation and Idempotency
 
@@ -389,8 +385,7 @@ Tests that require the target hardware are delivered for the user to run on each
 - Multi-agent harness architecture and capacity guide for the RTX 4090.
 - Optional local VS Code autocomplete guide and reusable setup prompt.
 - Personal Agents Guide with platform-specific model recommendations, Open WebUI profiles, operating routines, evaluation scenarios, and professional-safety boundaries.
-- AIOS Memory Integration Guide covering the reviewed inbox, provenance, domain isolation, lifecycle controls, backup/export expectations, and project ownership boundary.
-- Reusable personal-agent and memory-review prompts.
+- Reusable personal-agent prompts.
 - Security and privacy guide.
 - Storage planning and cleanup guide.
 - Verification guide and example report.

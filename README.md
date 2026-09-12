@@ -14,7 +14,7 @@ The completed playbook is intended to provide:
 - Open WebUI as the primary interface.
 - Ollama for native model management and inference.
 - Local vision, document ingestion, retrieval-augmented generation, speech-to-text, and live web search.
-- Optional personal-agent profiles with a reviewed-inbox contract for future AIOS memory integration.
+- Optional personal-agent profiles for reflective, coaching, planning, and daily check-in use.
 - Rancher Desktop for containerized supporting services without requiring Docker Desktop.
 - Independent Windows and macOS installations with localhost-only defaults.
 - Idempotent installers, maintenance scripts, verification reports, troubleshooting guidance, and Codex prompt templates.
@@ -51,7 +51,6 @@ Each machine is planned as a separate, localhost-only installation. Models, docu
 
 - [Local AI Workstation Playbook design specification](docs/superpowers/specs/2026-08-04-local-ai-workstation-playbook-design.md) — approved architecture, constraints, model profiles, data flows, repository structure, operations, and acceptance criteria.
 - [Root README design specification](docs/superpowers/specs/2026-08-05-readme-design.md) — approved scope and accuracy requirements for this README.
-- [Personal agents and AIOS memory integration design](docs/superpowers/specs/2026-08-11-personal-agents-memory-integration-design.md) — approved agent profiles, project ownership boundary, and reviewed-inbox memory workflow.
 
 The design specification is the authoritative source for planned behavior. Technical recommendations will be researched again before implementation because local AI models and tools change quickly.
 
@@ -65,7 +64,7 @@ The following planned deliverables do not exist yet:
 - Windows and macOS installation guides.
 - Architecture, model usage, performance tuning, storage, security, troubleshooting, update, backup, restore, and uninstall guides.
 - Client integration guidance for Claude Code, Codex, ChatGPT, Claude Cowork, and VS Code.
-- Personal-agent recommendations and AIOS memory-integration guidance.
+- Personal-agent recommendations and safety guidance.
 - Automated static, preflight, service, functional, persistence, idempotency, and backup/restore verification.
 - Test fixtures, diagrams, example reports, and Codex CLI prompts.
 
@@ -113,7 +112,7 @@ Most of these directories will be created during implementation and are shown he
 - [ ] Implement the Windows installer, scripts, tests, and documentation.
 - [ ] Implement the macOS installer, scripts, tests, and documentation.
 - [ ] Add client integration guides and usage recommendations.
-- [ ] Add personal-agent profiles and AIOS memory-integration guides.
+- [ ] Add personal-agent profiles and usage guides.
 - [ ] Validate the complete playbook on both reference machines.
 
 See the [full design specification](docs/superpowers/specs/2026-08-04-local-ai-workstation-playbook-design.md) for the detailed scope and acceptance criteria.
