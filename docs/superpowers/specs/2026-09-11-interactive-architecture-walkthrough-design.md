@@ -1,7 +1,7 @@
 # Interactive Architecture Walkthrough — Design Specification
 
 **Date:** 2026-09-11
-**Status:** Awaiting written-spec review
+**Status:** Approved and implemented
 **Repository:** `local-llm-setup`
 
 ## Objective
@@ -59,4 +59,3 @@ The walkthrough is complete when:
 4. A checkpoint click appears in the session event log.
 5. The page states that it is local, ignored by Git, non-installing, and disposable.
 6. The repository remains unchanged except for this tracked specification; generated `.superpowers` content remains ignored.
-
