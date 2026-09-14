@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P06-S012 |
 | Unlocks | P06-S014 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
+| Preferred route | Interface: goagentic using Codex or Claude Code inside AI-Workbench; Provider: OpenAI or Anthropic for evaluation design with qualified Ollama candidates; Model class: strong evaluation/coding model; Effort: high; Fallback: current Sol- or Sonnet-class route with independent rubric review. |
 | Research freshness | Current MLflow evaluation guidance checked within 7 days. |
 
 ## 1. User story
@@ -37,44 +37,44 @@ P06-S012. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create `tests/p06/agent-evaluation/` with versioned datasets for task success, tool selection/arguments, grounded fixture citation, authority denial, injection resistance, latency, and resource/cost proxy; deterministic scorers, separately labeled model-judge scorers, repetitions, confidence summaries, threshold manifest, and MLflow comparison operation.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not build a coding harness/factory, use private conversations, tune on the acceptance set, silently change thresholds, let one model judge itself without disclosure, make safety depend on an LLM score, or trigger unbounded cloud cost.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+No new approval is required within the P06 evaluation budget and fixtures. A new paid provider, higher budget, private dataset, or changed safety threshold requires a revised preview.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+Evaluation can route cloud/local calls, consume quota, and falsely certify safety if datasets, thresholds, repetitions, or judges are biased or mutable.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Versioned datasets run locally and compare cloud and local models without changing thresholds silently.
+Freeze datasets and thresholds before candidate runs; implement deterministic scorers first; add optional model judgment with recorded judge/prompt; estimate and cap calls; run deterministic fake, qualified local, and approved cloud comparisons with fixed repetitions; inject scorer/judge/timeout failures; store MLflow links and immutable result manifest; rerun and review.
 
 ## 11. Automated acceptance tests
 
-Versioned datasets run locally and compare cloud and local models without changing thresholds silently. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert nonzero examples per metric and negative safety category. Verify dataset/threshold hashes precede runs, deterministic scorer unit tests, fixed repetitions, judge identity, confidence/variance, cost cap, and comparable model settings; reject self-modified thresholds, dataset leakage, missing failures, judge-only safety, partial-run pass, and zero fixtures.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — evaluation uses synthetic/versioned fixtures and independently reviewable scoring; no owner preference is accepted here.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Rerun creates a new immutable result keyed by dataset/config hashes and never overwrites thresholds. Rollback removes only tagged runs/results and restores harness files; prior traces and agents remain.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit harness/datasets/config plus `evidence/P06-S013/` activation, hashes, scorer tests, run matrix, model/judge identities, cost/latency/resource results, failure injection, MLflow links, rollback, checkpoint, and review.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+Frozen evaluations reproducibly compare accepted local/cloud routes, deterministic safety thresholds pass independently of judges, costs are bounded, failures cannot produce a pass, review resolves, and P06-S014 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Pause before model calls, after each complete candidate/repetition set, or after result commit. Never pause with mutable thresholds; record hashes, spend, completed matrix cells, and next run in `evidence/P06-S013/checkpoint.json`.

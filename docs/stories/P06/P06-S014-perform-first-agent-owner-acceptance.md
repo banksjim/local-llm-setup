@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P06-S013 |
 | Unlocks | P07-S001 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
+| Preferred route | Interface: goagentic guided acceptance using VS Code/WSL, the agent CLI, and localhost MLflow UI; Provider: owner's accepted cloud assistant for guidance while the tested agent uses its qualified route; Model class: economical tutor plus recorded agent model; Effort: medium; Fallback: current Sol- or Sonnet-class guide, never unattended substitution. |
 | Research freshness | Not applicable — validation uses the implemented agent. |
 
 ## 1. User story
@@ -37,44 +37,44 @@ P06-S013. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create a blank owner packet from P06-S013 results covering code navigation, provider/model identification, safe fixture task, tool trace, process-stop/resume, approval denial, MCP call, skill invocation, MLflow failure inspection, and rollback observation. Use only tagged synthetic state and store genuine results under `evidence/P06-S014/`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not repair defects inside acceptance, use private data, enter credentials into evidence, broaden tools, coach the required answers, infer approval, or mark completion from automated evidence alone.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
+The existing P06 authorization covers the pretested synthetic acceptance operations. The owner must personally perform and sign every task; any repair or scope change becomes a separately previewed story.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+Acceptance exercises the integrated agent, persistent state, MCP, skills, and observability; it may reveal defects but uses synthetic data and cannot silently repair them.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Owner demonstrates the workflow and records learning completion.
+Validate prerequisite hashes; generate a packet with blank owner fields; preflight tagged fixtures; guide one task at a time without supplying answers; stop and file a defect on discrepancy; let the owner record observations; clean tagged state; verify only packet completeness/authorship; and reconcile controller state.
 
 ## 11. Automated acceptance tests
 
-Owner demonstrates the workflow and records learning completion. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert nonzero checklist items, accepted prerequisite references, blank pre-handoff fields, isolated fixture/thread IDs, and cleanup plan. After handoff, verify genuine owner entries and signature exist. Fail on omitted task, prefilled answer, failed required item, unresolved defect, untagged state, incomplete cleanup, or zero checklist rows.
 
 ## 12. Human validation
 
-Owner completes the story checklist and records it through the controller.
+The owner inspects the code, identifies provider/model/tool authority, completes the fixture task, stops and resumes it, denies an unsafe proposal, calls MCP and the skill, locates the failure trace, observes cleanup, and signs `evidence/P06-S014/human-acceptance.md`. The LLM cannot author observations or signature.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Each attempt uses new tagged fixtures/threads and preserves earlier signed records. Cleanup removes only those tags; rollback restores the pre-acceptance configuration and never deletes accepted agent code or unrelated traces.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit blank and signed packets plus `evidence/P06-S014/` activation, prerequisite hashes, task/trace/thread IDs, defect list, cleanup and rollback proof, checkpoint, and review; exclude credentials and raw private content.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+Every owner task passes, evidence is genuine, no material defect remains, tagged state is cleaned, review resolves, and P07-S001 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Pause between owner tasks only after saving tagged state, never during recording or config replacement. Record next task, thread/trace IDs, model/provider, and cleanup state in `evidence/P06-S014/checkpoint.json`.

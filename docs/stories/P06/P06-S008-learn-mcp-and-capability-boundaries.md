@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P06-S007 |
 | Unlocks | P06-S009 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
+| Preferred route | Interface: goagentic lesson in the P06 VS Code/WSL workspace; Provider: OpenAI or Anthropic with qualified Ollama practice; Model class: economical protocol/security tutor; Effort: medium; Fallback: current Sol- or Sonnet-class tutor. |
 | Research freshness | Current official MCP specification and security guidance checked within 7 days. |
 
 ## 1. User story
@@ -37,45 +37,44 @@ P06-S007. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create `docs/learning/p06/P06-S008-mcp-capability-boundaries.md`, a current-protocol message map, host/client/server/transport trust diagram, tool/resource/prompt comparison, manifest-authority exercise, injection scenarios, and blank rubric under `evidence/P06-S008/`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not install an MCP server, use obsolete SDK APIs, grant filesystem/network credentials, expose remote transport, confuse advertised schema with authorization, or let a model decide its own authority.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
+No new authorization is required. The owner inspects and minimizes a fictional server manifest personally; the LLM cannot fill the authority decisions.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
+The lesson is read-only, but mistaking discovery or schema validation for authorization would create a serious capability boundary failure later.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Owner inspects a tool manifest and identifies minimum authority.
+Use P06-S001's accepted protocol/SDK; teach host, client, server, transport, discovery, schemas, credentials, roots, and injection; have the owner reduce a broad manifest, classify four hostile inputs, and explain enforcement outside the model; checkpoint each module.
 
 ## 11. Automated acceptance tests
 
-Owner inspects a tool manifest and identifies minimum authority. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert current protocol identity, nonzero manifest capabilities, four hostile fixtures, and blank rubric. Verify least-authority selections and enforcement explanations. Fail on deprecated APIs, remote access, credential use, prefilled answers, zero fixtures, or model-only authorization.
 
 ## 12. Human validation
 
-Owner completes the story checklist and records it through the controller.
+The owner marks each manifest capability allow/deny, identifies minimum authority, explains transport versus authorization and one injection defense, and writes `evidence/P06-S008/human-validation.md`. The LLM cannot author it.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+Repeats create dated attempts without changing runtime or overwriting accepted evidence. Rollback removes only an unaccepted lesson revision/attempt.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit lesson, diagram, manifest and attack fixtures, blank rubric, genuine owner response, and `evidence/P06-S008/` activation, tests, rollback, checkpoint, and review.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+The owner meets every MCP authority rubric item without substitution, current sources and tests pass, and P06-S009 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-
+Pause between modules or before handoff; save completed scenarios and next prompt in `evidence/P06-S008/checkpoint.json`.

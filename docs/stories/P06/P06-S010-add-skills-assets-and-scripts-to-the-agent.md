@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P06-S009 |
 | Unlocks | P06-S011 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
+| Preferred route | Interface: goagentic using Codex or Claude Code inside AI-Workbench; Provider: qualified Ollama model for bounded authoring with OpenAI or Anthropic review; Model class: strong coding/instruction model; Effort: high; Fallback: current Terra- or Sonnet-class route with cross-provider review. |
 | Research freshness | Current selected skill formats and supply-chain guidance checked within 7 days. |
 
 ## 1. User story
@@ -37,44 +37,44 @@ P06-S009. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Add one `fixture-summary` skill under `workloads/agents/foundation/skills/` with a scoped instruction file, versioned rubric asset, deterministic parser script, declared input/output schema, checksums, capability manifest, and dispatcher registration. Add verification under `tests/p06/P06-S010-agent-resources/`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not install user-global Codex/Claude skills, embed hidden instructions, execute arbitrary scripts, allow path/network escape, store secrets or private assets, duplicate MCP authority, or let instruction text override system/controller policy.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+No new approval is required under the unchanged P06 authorization. New runtime capabilities, global installation, external assets, or credentials invalidate the preview.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+Skills combine model-readable instructions with executable scripts and assets; hidden authority or path confusion could bypass the otherwise bounded agent.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Tests prove discovery, correct invocation, path isolation, and absence of hidden authority.
+Define the resource contract; add checksummed assets and deterministic script; register only the named dispatcher entry; parse instructions for prohibited overrides; run direct and agent-mediated invocation; inject missing/corrupt asset, traversal, oversized input, shell token, and prompt-injection cases; repeat discovery; remove/reapply; review.
 
 ## 11. Automated acceptance tests
 
-Tests prove discovery, correct invocation, path isolation, and absence of hidden authority. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert exactly one new skill and nonzero fixtures. Verify discovery, declared schemas, deterministic output, checksum enforcement, read-only fixture paths, bounded time/size, and identical direct/agent results; reject hidden directives, asset tampering, traversal, shell/network requests, and unknown resources. Zero matches or implicit authority fail.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — all content uses synthetic fixtures and deterministic checks; independent review covers instruction safety without an owner decision.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Registration is key-based and repeat-safe. Rollback removes only the exact skill entry/files after checksum verification and restores the prior dispatcher; shared agents, MCP configuration, and unrelated skills remain.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit skill/assets/scripts/tests plus `evidence/P06-S010/` activation, manifest, checksums, authority scan, positive/negative results, idempotency, rollback, checkpoint, and cross-provider review.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+The agent discovers and invokes only the declared resource contract, all tamper/escape/authority cases fail, rollback is isolated, review resolves, and P06-S011 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Pause after contract, asset, script, registration, test suite, or rollback; finish atomic manifest replacement and record hashes/next command in `evidence/P06-S010/checkpoint.json`.

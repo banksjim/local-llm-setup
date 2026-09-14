@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P05-S012 |
 | Unlocks | P06-S002 |
-| Preferred route | Controller-selected economical research route with web access. |
+| Preferred route | Interface: goagentic through a web-enabled cloud IDE or CLI; Provider: OpenAI or Anthropic with primary-source web access; Model class: current economical research model; Effort: medium; Fallback: current Sol- or Sonnet-class synthesis route when compatibility evidence conflicts. |
 | Research freshness | Official framework and protocol docs and releases checked within 7 days. |
 
 ## 1. User story
@@ -37,44 +37,44 @@ P05-S012. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create `docs/research/p06/P06-S001-agent-framework-compatibility-matrix.md` with current LangChain, LangGraph, `langchain-ollama`, MCP Python SDK/protocol, PostgreSQL checkpointer, and MLflow versions; Python requirements; licenses; supported APIs; breaking changes; security notes; and a mutually compatible pinned set. Include official short/deep learning candidates and sanitized evidence under `evidence/P06-S001/`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not install packages, run migrations, enable LangSmith or another SaaS, select a memory framework, grant tool authority, copy tutorial code into implementation, or treat popularity as compatibility evidence.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+No privileged authorization is required because this story performs read-only research and writes versioned documentation. Any discovered runtime mutation is routed to a later previewed story.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
+The story changes recommendations but no runtime state; stale or mutually incompatible package claims would misdirect every later P06 story.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. A dated architecture record identifies stable APIs, breaking changes, and minimum versions.
+Verify exact upstream repositories and documentation, record release and retrieval dates, distinguish stable from prerelease APIs, build the compatibility matrix, resolve or block conflicting constraints, validate each learning-resource claim, and checkpoint after every technology family.
 
 ## 11. Automated acceptance tests
 
-A dated architecture record identifies stable APIs, breaking changes, and minimum versions. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert all six technology families are present. Verify every selected package has a current official source, compatible Python range, immutable version constraint, license, breaking-change disposition, and supported integration path. Fail on a prerelease silently selected as stable, unresolved conflict, stale source, missing license, zero rows, or training-memory-only recommendation.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — compatibility and source provenance are deterministically reviewable; no owner preference, credential, or experiential judgment is needed.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+Rerunning refreshes dated matrix rows without duplicates and preserves Git history. Rollback restores only the prior matrix and evidence index; it changes no packages or services.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit the matrix plus `evidence/P06-S001/activation.json`, `source-inventory.json`, `test-results.json`, `rollback.json`, `review.md`, `checkpoint.json`, and an explicit not-applicable human record; include URLs, versions, dates, conflicts, and inferences.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+Every required framework and integration has a current, compatible, licensed disposition; learning resources are current and scoped; no material conflict remains; evidence and review are accepted; and P06-S002 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Pause after each source family or conflict decision. Record completed rows, unresolved claims, exact next source, route, model, and provider in `evidence/P06-S001/checkpoint.json`; no runtime mutation can be left partial.

@@ -11,7 +11,7 @@
 
 The former plan was not safe to execute as written. It combined two operating systems and several independent systems in one document, contained bootstrap and runtime-boundary contradictions, used an overloaded state model, and did not express all approved work as testable stories. Later passes corrected many structural defects but incorrectly treated structural completeness as semantic completeness. A deeper audit found widespread template-only scope, evidence, rollback, completion, routing, and risk language. The architecture remains a useful Windows-only, ten-phase decomposition, but the specification set is not yet safe to execute without remediation.
 
-No workstation implementation has started. P01-P02 and P03-P05 are remediated; P06-P10 remain blocking. The written plan remains under bounded remediation, and no story may become Ready merely because its document exists.
+No workstation implementation has started. P01-P02 and P03-P05 passed their bounded batches. P06 completed its first Batch 3 correction cycle, but P07-P10 and the Batch 3/full-program reviews remain blocking. No story may become Ready merely because its document exists.
 
 ## Withdrawn decision and active remediation
 
@@ -81,6 +81,7 @@ These findings are material. The final review decision stays open until all thre
 | R47 | High | Three acceptance stories named prohibited outcomes but did not explicitly make their detection fail the automated gate. | Added zero-fixture, external-traffic, isolation, restore, workflow, and boundary failure clauses to P04-S012, P04-S014, and P05-S012. |
 | R48 | High | Six story-specific human-validation gates still allowed ambiguity about whether an LLM could author the owner's observations. | Added explicit anti-fabrication language to each gate and validated all 15 P03-P05 human gates independently. |
 | R49 | Medium | P05 cited Ollama's Claude Code integration but omitted Claude Code's own current configuration authority. | Added the current official Claude Code configuration reference and included its domain in the source-baseline check. |
+| R50 | Critical | P06 treated Ollama, LangChain, LangGraph, MCP, skills, and MLflow as a generic implementation objective without fixed authority, persistence, privacy, or evaluation boundaries. | Fixed the layer responsibilities; constrained the first agent and MCP server to synthetic read-only capabilities; required dedicated checkpoint storage, replay-safe effects, pre-emission trace redaction, deterministic safety checks, and 14 story-specific contracts. |
 
 ## Redundancy removed
 
@@ -124,7 +125,7 @@ These are controlled gates, not missing requirements:
 
 ## Automated review results
 
-The earlier Batch 1 table is retained as structural-history evidence, not a current full-program pass. At that time 129 story files were asserted and all 27 P01-P02 stories passed. The current inventory is 132 after P04 decomposition. Batch 2 completed two consecutive clean passes covering all 37 P03-P05 stories and the full 132-node graph. P06-P10 still contain 63 measured generic core story blocks and 68 incomplete routes; those residuals keep the program review open.
+The earlier Batch 1 table is retained as structural-history evidence, not a current full-program pass. At that time 129 story files were asserted and all 27 P01-P02 stories passed. The current inventory is 132 after P04 decomposition. Batch 2 completed two consecutive clean passes covering all 37 P03-P05 stories and the full 132-node graph. P06 correction cycle 1 replaced all 14 generic contracts and routes in that phase; P07-P10 still contain 49 measured generic core story blocks and 54 incomplete routes. Batch 3 has not reached its two clean passes, so these residuals keep the program review open.
 
 | Check | Result |
 |---|---|
@@ -142,6 +143,7 @@ The earlier Batch 1 table is retained as structural-history evidence, not a curr
 | P03-P05 concrete output and evidence contracts | Pass; 37 of 37 |
 | P03-P05 Critical-risk controls | Pass; four of four include authorization, negative tests, and recovery |
 | P03-P05 human-validation authenticity | Pass; 15 of 15 include an owner action and anti-fabrication boundary |
+| P06 contract and route remediation | Correction cycle 1 passes phase-local structural and semantic checks; 14 of 14, but no Batch 3 pass is claimed |
 | Git whitespace validation | Pass |
 | Workstation implementation evidence | Not applicable — implementation has not started |
 
@@ -155,4 +157,4 @@ The earlier Batch 1 table is retained as structural-history evidence, not a curr
 
 ## Review decision
 
-Batch 2 passes its bounded review; this is not a full-program pass. P06-P10 and their RAG/memory system specifications remain blocking until Batch 3 correction and two consecutive full-program passes complete. When the full program eventually passes and the owner explicitly starts P01, P01-S015 will be the only story eligible for activation; its separate mutation preview and approval will gate creation of the personal GitHub Project.
+Batch 2 passes its bounded review; P06 has a checked correction cycle, but this is not a Batch 3 or full-program pass. P07-P10 and the RAG/memory specifications remain blocking until Batch 3 correction and two consecutive full-program passes complete. When the full program eventually passes and the owner explicitly starts P01, P01-S015 will be the only story eligible for activation; its separate mutation preview and approval will gate creation of the personal GitHub Project.

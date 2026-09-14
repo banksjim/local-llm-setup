@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P06-S003 |
 | Unlocks | P06-S005 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
+| Preferred route | Interface: goagentic lesson in the P06 VS Code/WSL workspace; Provider: qualified Ollama model with OpenAI or Anthropic teaching fallback; Model class: economical tool-capable model; Effort: medium; Fallback: current Sol- or Sonnet-class tutor. |
 | Research freshness | Current official LangChain tutorials selected at activation. |
 
 ## 1. User story
@@ -37,45 +37,44 @@ P06-S003. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create `docs/learning/p06/P06-S004-langchain-foundations.md` and `workloads/agents/foundation/learning/langchain/` covering current model calls, messages, structured output, tool schemas and call IDs, agent loops, provider swapping, timeouts, and errors with one deterministic read-only fixture tool.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not teach obsolete chain APIs, enable LangSmith, call shell/arbitrary network tools, use private data, mutate the main agent, hide provider identity, or treat the tutorial as production.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
+No new authorization is required. The owner runs the tutorial and explain-back personally; the LLM cannot prefill the exercise or owner record.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
+Only disposable fixtures are used, but misunderstanding tool schemas or provider behavior would compromise the first real agent.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Owner completes a small local-model tool exercise and explain-back.
+Build from accepted APIs; run a direct call, structured response, and tool call; switch local and mocked/cloud adapters without changing business logic; demonstrate invalid schema and timeout handling; collect owner explain-back; and checkpoint.
 
 ## 11. Automated acceptance tests
 
-Owner completes a small local-model tool exercise and explain-back. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert nonzero tutorial tests and blank questions. Verify current imports, deterministic result, schema validation, matching call ID, invalid-argument rejection, timeout, provider identity, and fixture-only authority. Fail on obsolete APIs, answer substitution, zero tests, or hidden fallback.
 
 ## 12. Human validation
 
-Owner completes the story checklist and records it through the controller.
+The owner runs the tutorial, predicts the sequence, repairs one invalid argument, explains model versus agent and the provider boundary, and writes `evidence/P06-S004/human-validation.md`. The LLM cannot author the answers.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+The tutorial resets its fixture and repeats deterministically. Rollback removes only tutorial outputs/files and preserves the foundation workspace.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit lesson/tutorial plus `evidence/P06-S004/` activation, sources, tests, provider trace, blank rubric, genuine human record, rollback, checkpoint, and review.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+All behaviors and denial cases pass on accepted APIs, the owner meets the rubric without substitution, evidence resolves, and P06-S005 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-
+Pause between modules, after fixture reset, or before handoff; record exercise state and next action in `evidence/P06-S004/checkpoint.json`.

@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P06-S004 |
 | Unlocks | P06-S006 |
-| Preferred route | Controller-selected value route; qualified local model allowed after P03; cloud fallback per SYS-CTL. |
+| Preferred route | Interface: goagentic using Codex or Claude Code inside AI-Workbench; Provider: qualified Ollama model with OpenAI or Anthropic fallback; Model class: economical coding/tool-use model; Effort: medium; Fallback: current Terra- or Sonnet-class implementation route plus independent review. |
 | Research freshness | Current LangChain and Ollama integration docs checked within 7 days. |
 
 ## 1. User story
@@ -37,44 +37,44 @@ P06-S004. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Implement `workloads/agents/foundation/src/local_agents/read_only_agent/` with typed I/O, current LangChain API, P03 model adapter, provider identity, and one `lookup_fixture` tool restricted to `tests/fixtures/read-only/`; add `operations/ubuntu/p06/P06-S005-build-first-agent`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not add shell, arbitrary paths/URLs, write/delete tools, private data, memory, RAG, MCP, hidden fallback, background loops, or IDE-inherited authority.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+No new approval is required under the unchanged P06 authorization. A new tool, root, destination, credential, or mutation stops for a revised preview.
 
 ## 9. Risk rationale
 
-Work changes bounded repository or user-level configuration and is directly reversible. New facts may raise risk; an LLM cannot lower it.
+The agent chooses whether to invoke code, but the sole tool is read-only, schema-bound, fixture-rooted, and repository changes are reversible.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Unit tests prove tool schema, denial paths, timeouts, and deterministic fixture behavior.
+Validate model qualification; implement schemas, adapter, allowlisted resolution, size/time limits, errors, provider disclosure, and CLI; inject traversal, symlink, malformed, oversized, timeout, missing-model, mutation, and hidden-fallback failures; repeat and review.
 
 ## 11. Automated acceptance tests
 
-Unit tests prove tool schema, denial paths, timeouts, and deterministic fixture behavior. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert positive and negative fixtures. Verify correct tool result/citation; reject traversal, absolute paths, symlink escape, invalid schema, oversized output, and mutation; bound retry/timeout; expose identity; fail instead of silently switching. Run deterministic and qualified-local tests; zero fixtures fail.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — deterministic fixtures, live model qualification, and independent review cover this nonpersonal read-only agent.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Runs are read-only and repeatable; setup is no-op on second apply. Rollback removes only the package/operation or restores Git and preserves the shared workspace and other fixtures.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit agent/operation plus `evidence/P06-S005/` activation, qualification reference, schemas, authority inventory, tests, identity, idempotency, rollback, checkpoint, and review.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+The bounded task succeeds with only the declared tool, every escape/mutation/fallback case fails closed, quality meets threshold, review resolves, and P06-S006 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Pause after schema, adapter, tool, deterministic tests, live tests, or rollback. Finish atomic lock/package changes and record the next command in `evidence/P06-S005/checkpoint.json`.

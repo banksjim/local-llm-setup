@@ -64,7 +64,7 @@ This playbook repository is public and contains only specifications and, later, 
 
 - Requirements and major architecture decisions: complete for review.
 - Master, system, phase, and story specifications: drafted.
-- Formal adversarial review: [remediation in progress](docs/reviews/2026-09-13-formal-specification-review.md); P01-P05 have passed their bounded batch reviews, while P06-P10 and the final full-program review remain blocking.
+- Formal adversarial review: [remediation in progress](docs/reviews/2026-09-13-formal-specification-review.md); P01-P05 have passed their bounded batch reviews and P06 has completed its first Batch 3 correction cycle, while P07-P10 and the final Batch 3/full-program review remain blocking.
 - GitHub Project creation and controller implementation: not started.
 - Workstation installation and testing: not started.
 - macOS program: deferred.
