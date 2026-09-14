@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P02-S009 |
 | Unlocks | P02-S011 |
-| Preferred route | Controller-selected value route; qualified local model allowed after P03; cloud fallback per SYS-CTL. |
+| Preferred route | Interface: Codex CLI plus VS Code command line; Provider: OpenAI; Model class: standard implementation; Effort: low; Fallback: Claude Code with an Anthropic coding model at low effort; local execution is prohibited before P03 qualification. |
 | Research freshness | Marketplace and maintainer documentation checked within 7 days. |
 
 ## 1. User story
@@ -37,19 +37,19 @@ P02-S009. Applicable specifications, clean Git state, valid controller state, cu
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Create a versioned extension manifest that records extension ID, publisher, purpose, trust/telemetry notes, Windows-versus-WSL install location, and requirement source; implement preview/apply/verify/rollback operations under `operations/windows/p02/` for the minimum WSL, Git, Python, Go, JavaScript/TypeScript, container, YAML, Markdown, PowerShell, and later-AI baseline; and test it in `AI-Workbench`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Installing overlapping formatters or language servers without a documented choice; optional cosmetic extensions; local autocomplete configuration; extensions with unresolved publisher or license concerns; enabling telemetry without recording the owner's choice; and removing pre-existing extensions.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+No new approval for unchanged scope — the reviewed extension manifest and install locations are included in the P02 phase authorization. Publisher, permission, telemetry, or manifest drift creates an owner decision before apply.
 
 ## 9. Risk rationale
 
-Work changes bounded repository or user-level configuration and is directly reversible from versioned backup. New facts may raise risk; an LLM cannot lower it.
+The story is Medium risk because extensions execute code and can access workspaces, but the change is confined to a reviewed manifest and user/remote VS Code profiles. Publisher verification, minimality, location checks, idempotency, and fresh-session review are required.
 
 ## 10. Execution contract
 
@@ -61,20 +61,20 @@ An extension manifest is versioned; each extension has a purpose; conflicts and 
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — manifest, publisher, location, feature, overlap, rerun, and rollback checks are deterministic. The owner validates the combined VS Code experience in P02-S012.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+The second apply installs nothing and reports the same versions/locations. Capture the pre-existing Windows and WSL extension inventories first. Rollback removes only extensions installed by this story that were absent from that inventory; it never downgrades or removes a pre-existing extension.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Manifest revision; marketplace or official source/access date for every extension; publisher/license/trust review; pre-existing inventories; preview; installed ID/version/location table; language-feature smoke results; overlap and secret scan; second apply; rollback test in a disposable profile or exact safe removal proof; and reviewer verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Every manifest entry is current, justified, and installed in the correct Windows or WSL location; each language/tool category passes its declared smoke check; no unresolved overlap exists; pre-existing extensions are preserved; rerun is a no-op; and P02-S011 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause after the pre-existing inventory, after each small extension category, and after location and feature verification. Never stop during an extension install or update transaction or remove an extension absent from the story manifest.

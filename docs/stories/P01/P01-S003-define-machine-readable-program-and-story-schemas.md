@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P01-S002 |
 | Unlocks | P01-S004 |
-| Preferred route | Controller-selected value route; qualified local model allowed after P03; cloud fallback per SYS-CTL. |
+| Preferred route | Interface: Codex CLI in the repository; Provider: OpenAI; Model class: standard implementation; Effort: medium; Fallback: Claude Code with an Anthropic coding model at medium effort; local execution is prohibited before P03 qualification. |
 | Research freshness | Current schema-library documentation checked within 30 days. |
 
 ## 1. User story
@@ -37,23 +37,23 @@ P01-S002. Applicable specifications, clean Git state, current research, required
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Create versioned JSON Schemas under `goagentic/schemas/` for program, phase, story, activation packet, model route, risk derivation, approval, runtime state, event, lease, and evidence records; add valid and invalid fixtures under `goagentic/fixtures/schema/`; and add dependency-free PowerShell validation tests under `goagentic/tests/schema/`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Command behavior, state persistence, GitHub synchronization, workstation configuration, permissive unknown-field handling that hides typos, silently coercing invalid values, and schema changes that broaden an approved story objective.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+Not applicable — repository-only schema and fixture changes are covered by the P01 phase authorization and require no elevation, login, external mutation, or owner judgment.
 
 ## 9. Risk rationale
 
-Work changes bounded repository or user-level configuration and is directly reversible from versioned backup. New facts may raise risk; an LLM cannot lower it.
+The story is Medium risk because these schemas become the validation boundary for every later story; an overly permissive or incompatible schema could allow invalid work to advance. Changes are repository-only and reversible, but require unit tests, backward-compatibility fixtures, and fresh-session review.
 
 ## 10. Execution contract
 
-Preview changes and tests; verify preconditions; acquire the lease; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the lease; and route to review or human validation. Positive fixtures validate; blank, placeholder, unexplained not-applicable, invalid-risk, cyclic, and missing-section fixtures fail.
+Preview changes and tests; verify preconditions; acquire the currently accepted P01 mutation guard—the bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the guard; and route to review or human validation. Positive fixtures validate; blank, placeholder, unexplained not-applicable, invalid-risk, cyclic, and missing-section fixtures fail.
 
 ## 11. Automated acceptance tests
 
@@ -61,20 +61,20 @@ Positive fixtures validate; blank, placeholder, unexplained not-applicable, inva
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — schema behavior is deterministically verified with positive and negative fixtures and a fresh-session review. Owner validation is reserved for later controller behavior and cannot improve a failing schema result.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Schema generation is deterministic from committed definitions; a second run yields no diff. Rollback reverts `goagentic/schemas/`, `goagentic/fixtures/schema/`, and `goagentic/tests/schema/` together so schema and fixtures cannot drift.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Schema-library source and version; schema file inventory and hashes; contract-to-schema field mapping; positive and negative fixture list; test output proving each invalid class is rejected; compatibility result; second-run diff; secret scan; rollback rehearsal; and fresh-session reviewer verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Every contract property and section has a machine-checkable representation; all valid fixtures pass; each declared invalid class fails for the expected reason; no schema relies on an unimplemented service; rerun is clean; and P01-S004 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause after each schema is syntactically valid, after the fixture set is complete, after positive tests, after negative tests, and after compatibility review. Never publish a schema without its matching fixtures and tests.

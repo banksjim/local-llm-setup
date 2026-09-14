@@ -64,7 +64,7 @@ This playbook repository is public and contains only specifications and, later, 
 
 - Requirements and major architecture decisions: complete for review.
 - Master, system, phase, and story specifications: drafted.
-- Formal adversarial review: [complete with two corrective passes applied](docs/reviews/2026-09-13-formal-specification-review.md).
+- Formal adversarial review: [remediation in progress](docs/reviews/2026-09-13-formal-specification-review.md); the prior pass claim was withdrawn after a deeper semantic audit found material boilerplate and executability defects.
 - GitHub Project creation and controller implementation: not started.
 - Workstation installation and testing: not started.
 - macOS program: deferred.
@@ -73,4 +73,4 @@ Technical recommendations are refreshed from current documentation when each sto
 
 ## About the removed `superpowers` folder
 
-The active repository no longer uses `.superpowers` or `docs/superpowers`. Those were temporary planning and browser-walkthrough artifacts, not a runtime capability or requirement. Their useful decisions were incorporated into the ordinary Markdown specifications, tables, and Mermaid diagrams under `docs/`; their prior versions remain available only through Git history. If GitHub still shows the folder, the remote branch has not yet received the cleanup commit.
+The active repository no longer uses `.superpowers` or `docs/superpowers`. Those were temporary planning and browser-walkthrough artifacts, not a runtime capability or requirement. Their useful decisions were incorporated into the ordinary Markdown specifications, tables, and Mermaid diagrams under `docs/`; their prior versions remain available only through Git history.

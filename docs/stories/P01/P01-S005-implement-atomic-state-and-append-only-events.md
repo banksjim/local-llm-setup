@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P01-S004 |
 | Unlocks | P01-S006 |
-| Preferred route | Controller-selected quality route; cross-provider review required; qualified local execution only under current policy. |
+| Preferred route | Interface: Codex CLI in the repository; Provider: OpenAI; Model class: architecture-capable implementation; Effort: medium; Fallback: Claude Code with an Anthropic architecture-capable model at medium effort; independent cross-provider review is required and local execution is prohibited before P03 qualification. |
 | Research freshness | Current filesystem atomic-write guidance checked within 30 days. |
 
 ## 1. User story
@@ -37,23 +37,23 @@ P01-S004. Applicable specifications, clean Git state, current research, required
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Implement state serialization and atomic replacement in `goagentic/src/State.psm1`, hash-linked append-only events in `goagentic/src/EventLog.psm1`, corruption and interrupted-write fixtures, and unit/integration tests. Runtime files live under ignored `.goagentic/`; sanitized accepted evidence lives under `evidence/P01-S005/`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Mutation leasing, pause/resume policy, GitHub synchronization, storing secrets in events, treating wall-clock order as authority, automatic repair of ambiguous corruption, and writing runtime state outside `.goagentic/`.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+Not applicable — implementation and disposable-fixture writes are covered by the P01 phase authorization; tests may not touch external, privileged, or user-data state.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The story is High risk because corrupt or partially written controller state could misidentify the authorized story and cause later out-of-scope mutations. Although confined to controller files, it requires integration tests, failure injection, recoverable backups, and cross-provider review.
 
 ## 10. Execution contract
 
-Preview changes and tests; verify preconditions; acquire the lease; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the lease; and route to review or human validation. Interrupted writes preserve the last valid checkpoint; corrupt state is detected; events remain auditable.
+Preview changes and tests; verify preconditions; acquire the currently accepted P01 mutation guard—the bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the guard; and route to review or human validation. Interrupted writes preserve the last valid checkpoint; corrupt state is detected; events remain auditable.
 
 ## 11. Automated acceptance tests
 
@@ -61,20 +61,20 @@ Interrupted writes preserve the last valid checkpoint; corrupt state is detected
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — deterministic interruption and tamper fixtures plus cross-provider review validate persistence. The owner does not manually judge binary state integrity.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Writing an unchanged logical state creates no conflicting transition; duplicate event IDs are rejected. Each atomic replacement preserves the last valid checkpoint until verification succeeds. Rollback restores the prior module revision and copied fixture state; it never rewrites accepted evidence or silently truncates events.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Story revision; state/event schema versions; module and fixture hashes; clean-write, interrupted-write, duplicate-event, reordered-event, tamper, and corruption results; recovered checkpoint identity; secret scan; repeat result; rollback rehearsal; and cross-provider review verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+The last complete checkpoint survives every injected interruption; altered, missing, duplicate, or reordered events are detected; ambiguous corruption stops with one non-destructive recovery action; unchanged writes are idempotent; and P01-S006 is unblocked after cross-provider review.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause before a state transition, after an atomic replacement verifies, and after an event append verifies. Never pause between temporary-file durability and atomic rename or between event hash calculation and append; on interruption, retain both artifacts for reconciliation.

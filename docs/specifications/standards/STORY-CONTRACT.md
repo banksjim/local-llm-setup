@@ -20,7 +20,7 @@ Every implementation, learning, research, testing, review, and human-interventio
 | Actor | Human, LLM, or Human + LLM |
 | Dependencies | Exact story IDs or an explained not-applicable value |
 | Unlocks | Exact story IDs or an explained not-applicable value |
-| Preferred route | Interface, provider, model class, effort, and fallback |
+| Preferred route | Five labeled fields: `Interface`, `Provider`, `Model class`, `Effort`, and `Fallback`; `Automatic` or `controller-selected` alone is invalid |
 | Research freshness | Maximum age and sources that must be checked at activation |
 
 Story ID is an immutable key, not an ordering mechanism. `Sequence` controls execution order, so a later-added story may have a higher ID but an earlier sequence. Phase indexes must sort by Sequence and explain any intentional difference.
@@ -70,6 +70,8 @@ The story author proposes risk. Validation derives the minimum from the table. T
 | High | Medium controls plus integration tests, failure injection, cross-provider review |
 | Critical | High controls plus explicit phase approval, isolated rehearsal, owner acceptance |
 
+`Privilege and human approval` must distinguish authorization from participation. Each privileged phase receives one revision-bound owner authorization covering its previewed operations. A later story may require the owner to answer a lesson, authenticate, satisfy an elevation prompt, inspect a GUI, or perform acceptance; those are human actions, not additional approvals of unchanged scope. Any material scope, target, risk, or operation change invalidates the phase authorization and requires a new preview and approval.
+
 ## Lifecycle vocabulary
 
 Status answers where the story is. Step answers what kind of work happens next. Hold reason answers why it cannot advance.
@@ -98,6 +100,7 @@ The former display labels `Locked`, `Learning`, `Awaiting You`, `Testing`, `Revi
 - Changes outside declared scope block acceptance.
 - Repeating the same failed action without new evidence is prohibited.
 - A story may depend only on controls that are already accepted. Bootstrap stories must name the temporary governance mechanism used in place of unfinished controller features.
+- A validator must assert the expected inventory or another nonzero lower bound before reporting success; running zero applicable tests is a failure unless an explained not-applicable result is part of the accepted contract.
 
 ## Ready-state activation packet
 
@@ -112,6 +115,27 @@ A `Planned` story is a schedulable specification, not permission to execute. Bef
 - explicit unresolved assumptions, each of which blocks `Ready` if it could change scope, architecture, safety, or acceptance.
 
 The packet may resolve variables that were intentionally deferred for freshness, but it may not broaden the bounded objective or silently redesign the story. A material change creates a design-change story. With this packet and its cited authority chain, a fresh qualified LLM must be able to execute and test the story without chat history.
+
+## Executability and specificity rules
+
+A story is independently executable only when its own document and declared authority chain identify:
+
+- concrete deliverables or state transitions;
+- exact ownership boundaries and prohibited mutations;
+- the reusable command, module, configuration unit, checklist, research record, or evidence artifact it creates or updates;
+- observable acceptance results rather than phrases such as “tests pass”;
+- story-specific evidence and rollback or repeat behavior; and
+- all decisions that may safely wait for the activation packet.
+
+The activation packet may resolve changing facts such as supported versions, immutable digests, a current model name, a selected package release, an OS-generated identifier, or an available private port. It may not invent deliverables, choose an unspecified architecture, define missing safety boundaries, or turn generic boilerplate into scope.
+
+The following exact or equivalent language fails semantic validation unless followed by a concrete story-specific inventory: “only the objective,” “declared files and services,” “minimum safe supporting changes,” “the objective and tests pass,” or a generic evidence/rollback list that does not name the story's outputs. Repeated prose is acceptable only for genuinely shared invariants; it cannot substitute for story-specific content.
+
+Implementation stories must expose reusable idempotent operations where the work can reasonably be automated. Later installers and maintenance commands compose those accepted operations instead of independently reimplementing them. A justified exception must name the manual-only boundary.
+
+## Specification review stop rule
+
+Review proceeds in bounded batches. Each batch receives structural validation, semantic review, correction, cross-document tracing, current-source review, and a fresh parent-to-leaf pass. Two consecutive full passes with no material defect are required for completion. Five correction cycles is the maximum per batch; reaching the limit leaves the batch incomplete and requires an owner-visible residual-defect report. Internal self-review must be labeled internal and cannot be described as independent or cross-provider review.
 
 ## Portable learning credit for future platform programs
 

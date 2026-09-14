@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P01-S009 |
 | Unlocks | P01-S011 |
-| Preferred route | Controller-selected quality route; cross-provider review required; qualified local execution only under current policy. |
+| Preferred route | Interface: Codex CLI in the repository; Provider: OpenAI; Model class: architecture-capable implementation; Effort: medium; Fallback: Claude Code with an Anthropic architecture-capable model at medium effort; each provider adapter requires review using the other provider. |
 | Research freshness | Current official Codex skills and Claude Code skills/commands documentation checked within 7 days. |
 
 ## 1. User story
@@ -37,23 +37,23 @@ P01-S009. Applicable specifications, clean Git state, current research, required
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Create thin packages under `goagentic/adapters/codex/` and `goagentic/adapters/claude/` that translate each interface's command or skill convention into the same controller command schema; include installation instructions, generated-command fixtures, conformance tests, and an adapter-version manifest.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Duplicating controller policy inside adapters, storing credentials, live authenticated Codex or Claude execution before P05, provider-specific changes to story semantics, unsupported model switching, and publishing private user configuration.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+Not applicable — P01 performs repository and isolated-target work under its phase authorization; live client login and configuration are deferred to P05.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The story is High risk because divergent adapters could bypass approval, route, or evidence controls even though they share a core. Provider-to-provider conformance tests and reciprocal review are required; live client validation remains explicitly deferred to P05.
 
 ## 10. Execution contract
 
-Preview changes and tests; verify preconditions; acquire the lease; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the lease; and route to review or human validation. Fixture contract tests prove equivalent structured requests and results; they do not claim live client acceptance.
+Preview changes and tests; verify preconditions; acquire the currently accepted P01 mutation guard—the bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the guard; and route to review or human validation. Fixture contract tests prove equivalent structured requests and results; they do not claim live client acceptance.
 
 ## 11. Automated acceptance tests
 
@@ -61,20 +61,20 @@ Fixture contract tests prove equivalent requests, state, and next-action results
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — P01 validates isolated adapter conformance only. The owner performs live Codex and Claude client validation in P05-S007 and P05-S008.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Generating or installing the same adapter version into an isolated fixture target produces no duplicate command and no content drift. Rollback removes only files listed in that adapter's manifest and leaves controller core, user-created commands, and credentials untouched.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Story revision; current interface documentation; adapter manifests and hashes; command-by-command normalized request and response comparisons; bypass-denial results; isolated install, rerun, and uninstall evidence; deferred live-test declaration; secret scan; and reciprocal provider-review verdicts.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Both adapters produce the same normalized controller behavior for every command and denial fixture, contain no independent policy or secrets, install and remove cleanly in fixtures, document the P05 live-validation hold, and unblock P01-S011.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause after each adapter package is generated, after isolated install, after conformance fixtures, and after isolated uninstall. Never pause with an adapter half-installed into a target; finish its manifest transaction or roll it back.

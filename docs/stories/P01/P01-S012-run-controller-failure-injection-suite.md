@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P01-S011 |
 | Unlocks | P01-S013 |
-| Preferred route | Controller-selected quality route; cross-provider review required; qualified local execution only under current policy. |
+| Preferred route | Interface: Codex CLI in an isolated fixture workspace; Provider: OpenAI; Model class: test and diagnosis; Effort: medium; Fallback: Claude Code with an Anthropic diagnostic model at medium effort; the reviewer must use the other provider. |
 | Research freshness | Not applicable — this story tests the implemented contract rather than selecting a tool. |
 
 ## 1. User story
@@ -37,23 +37,23 @@ P01-S011. Applicable specifications, clean Git state, current research, required
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Create `goagentic/tests/failure-injection/` scenarios and an isolated disposable-workspace harness for process interruption, partial state write, altered event, stale/live lease, duplicate writer, dirty Git, GitHub outage, stopped WSL, wrong route, missing approval, scope drift, and failed rollback.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Injecting failures into the real repository state, real Project records, actual WSL distributions, or user data; hiding flaky runs; weakening a gate to make a scenario pass; and treating an expected stop as successful recovery without checking its next action.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+Not applicable — all faults run in disposable fixtures under the P01 phase authorization. Any need to touch real GitHub, WSL, repository runtime, or user data is a scope failure, not an implied approval request.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The story is High risk because it tests safety mechanisms by simulating destructive conditions and can produce false confidence if fixtures touch real state or assertions are weak. Isolation proof, repeatability, complete failure coverage, and cross-provider review are mandatory.
 
 ## 10. Execution contract
 
-Preview changes and tests; verify preconditions; acquire the lease; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the lease; and route to review or human validation. All declared failures stop safely, retain evidence, and identify one recovery action.
+Preview changes and tests; verify preconditions; acquire the currently accepted P01 mutation guard—the bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the guard; and route to review or human validation. All declared failures stop safely, retain evidence, and identify one recovery action.
 
 ## 11. Automated acceptance tests
 
@@ -61,20 +61,20 @@ All declared failures stop safely, retain evidence, and identify one recovery ac
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — execution is confined to disposable fixtures and independently reviewed. Any evidence of contact with real Project, repository runtime, WSL, or user data fails the story automatically.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Each scenario starts from a new disposable fixture and leaves the real repository, Project, and workstation unchanged. Repeated seeded runs produce the same classification. Cleanup removes only the recorded disposable root; failed cleanup preserves the path and reports it rather than widening deletion.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Story revision; harness and scenario hashes; isolation-root proof; one result per declared failure; expected stop classification and next action; before/after real-state comparison; seeded rerun comparison; cleanup inventory; residual artifact report; and cross-provider verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Every declared failure is injected, detected, and mapped to a fail-closed state with exactly one recovery action; no scenario mutates real project or workstation state; two complete seeded runs agree; and P01-S013 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause only between fully cleaned scenarios and after results are durably recorded. Never pause while a fault is active or cleanup ownership is ambiguous; preserve the disposable root and report it for inspection.

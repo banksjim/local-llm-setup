@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P01-S014 |
 | Unlocks | P02-S002 |
-| Preferred route | Controller-selected economical research route with web access; architecture model only for unresolved synthesis. |
+| Preferred route | Interface: Codex desktop or CLI with web access; Provider: OpenAI; Model class: economical research; Effort: low; Fallback: Claude Code with an Anthropic general-purpose model at low effort, escalating only unresolved architecture conflicts. |
 | Research freshness | Microsoft, Rancher Desktop, GitHub, and VS Code sources checked within 7 days. |
 
 ## 1. User story
@@ -37,19 +37,19 @@ P01-S014. Applicable specifications, clean Git state, valid controller state, cu
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Create `evidence/P02-S001/foundation-research.md` plus a decision matrix covering supported Windows 11 and WSL prerequisites, the current Ubuntu release choice, WSL distribution storage/relocation methods, Rancher Desktop compatibility, GPU/network behavior, automount/interoperability controls, VS Code Remote WSL requirements, and known conflicts with the fixed P02 boundaries.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Installing or changing Windows, WSL, Ubuntu, Rancher Desktop, drivers, VS Code, Git, networking, or security settings; relying on community guidance where current primary documentation exists; and silently changing `AI-Workbench`, `H:\ai`, credential separation, or the no-automount boundary.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+Not applicable — research and read-only inventory require no privileged action. Any live check requesting elevation, configuration, or authentication stops and is assigned to its later story.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected; output is documentation, research, or learning evidence. New facts may raise risk; an LLM cannot lower it.
+The story is Low risk because it performs current-documentation research and read-only capability checks and writes only Git evidence. Any live check requiring elevation, installation, authentication renewal, or configuration stops and becomes an owner-visible requirement for a later story.
 
 ## 10. Execution contract
 
@@ -61,20 +61,20 @@ All recommendations cite current first-party sources and identify changes from t
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — the story is read-only research. Independent review verifies source currency and compatibility; any design conflict requiring owner choice blocks P02-S002 and creates a decision action.
 
 ## 13. Idempotency and rollback
 
-A repeat produces an updated or identical evidence record without changing accepted implementation. Rollback is reversion of the story commit or evidence record.
+Rerunning refreshes the dated matrix without changing the machine. Rollback reverts only `evidence/P02-S001/`; changed recommendations remain inspectable in Git history.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Story revision; interface/provider/model class/effort; OS and installed-tool read-only inventory; official source URLs, versions, and access dates; claim-to-source matrix; conflicts and inferences; recommended supported Ubuntu and WSL storage method; compatibility verdict for every fixed boundary; rerun comparison; and independent review.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Every named prerequisite and boundary has a current primary source or is explicitly marked unknown; the chosen Ubuntu and relocation method are supported together; VS Code and hardening requirements contain no unresolved contradiction; no machine state changed; and P02-S002 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause between vendor or source families, after each compatibility decision, and before committing the matrix. Preserve unresolved conflicts as blockers; do not synthesize a platform choice while source evidence is incomplete.

@@ -23,6 +23,26 @@ The controller cannot initially depend on the Ubuntu environment it will help cr
 5. A Windows `goagentic` wrapper forwards requests into Ubuntu and fails safely if Ubuntu is unavailable.
 6. Early adapter packages are validated with contract fixtures; live PowerShell and WSL validation occurs in P02, and live Codex CLI and Claude Code validation occurs after those clients are configured in P05.
 
+### Planned repository and runtime layout
+
+P01 uses Windows PowerShell 5.1-compatible scripts so it has no dependency on software installed by later phases. P02-S007 installs PowerShell 7 inside Ubuntu, and P02-S011 proves the same controller modules under that runtime before switching authority. The activation packet may update this language decision only through an explicit architecture-change story.
+
+```text
+goagentic/
+├── goagentic.ps1                 # stable Windows entry point
+├── src/                          # side-effect-separated controller modules
+├── schemas/                      # machine-readable program, story, state, and evidence schemas
+├── adapters/                     # Codex, Claude Code, and later interface packages
+├── fixtures/                     # synthetic valid and invalid states
+└── tests/                        # dependency-free PowerShell unit, integration, and failure tests
+evidence/<story-id>/              # sanitized accepted story evidence tracked by Git
+.goagentic/                       # local runtime state; ignored except documented templates
+```
+
+Modules must separate planning from mutation. Every mutating operation exposes preview, apply, verify, and story-owned rollback behavior. The final installer and maintenance suite call these accepted operations rather than duplicating their logic.
+
+P01 tests must run on a stock supported Windows PowerShell environment and may not assume Pester or another package is installed. P01-S001 may permit a pinned external test framework only if live inventory proves it is already available and the activation packet records its exact version and fallback; otherwise repository-owned assertion and test-runner scripts remain the required baseline.
+
 ### P01 bootstrap protocol
 
 The program cannot require unfinished controller features to build those same features. Until each control is accepted, P01 uses a deliberately small manual protocol stored in Git:

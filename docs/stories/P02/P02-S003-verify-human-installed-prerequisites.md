@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P02-S002 |
 | Unlocks | P02-S004 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected current assistant model; no unattended substitution. |
+| Preferred route | Interface: interactive Codex CLI plus Windows PowerShell; Provider: OpenAI; Model class: general-purpose diagnostic; Effort: low; Fallback: Claude Code with an Anthropic general-purpose model while running the same read-only checks; owner confirms GUI-only facts. |
 | Research freshness | Current prerequisite requirements from P02 research. |
 
 ## 1. User story
@@ -37,19 +37,19 @@ P02-S002. Applicable specifications, clean Git state, valid controller state, cu
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Run and document read-only checks for Windows build and update state, WSL version/features, virtualization, NVIDIA driver and RTX 4090 visibility, Rancher Desktop installation and stopped/running state, Git and GitHub CLI, VS Code, `H:` filesystem and free space, and whether an `AI-Workbench` distribution or target directory already exists.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Installing, upgrading, starting, stopping, logging in, relocating, deleting, or reconfiguring prerequisites; displaying tokens or private repository data; accepting a failed requirement; and treating the absence of `AI-Workbench` as an error rather than expected pre-provision state.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the declared work; an LLM may guide but cannot create completion evidence.
+Required human validation — the owner confirms GUI-only and physical-device facts. Checks remain read-only and precede the P02 mutation preview; this is not permission to repair a failed prerequisite.
 
 ## 9. Risk rationale
 
-Work changes bounded repository or user-level configuration and is directly reversible from versioned backup. New facts may raise risk; an LLM cannot lower it.
+The story is Medium risk because most checks are read-only but they inspect system, storage, GPU, and authenticated-tool state, and incorrect interpretation could authorize unsafe installation. No machine mutation is allowed; owner-confirmed GUI state and a fresh review are required.
 
 ## 10. Execution contract
 
@@ -61,20 +61,20 @@ A sanitized preflight report records versions, health, free space, and exact rem
 
 ## 12. Human validation
 
-The owner completes the story-specific checklist and records the result through the controller.
+The owner confirms physical hardware, GUI-only health, update/restart readiness, and whether any observed existing distribution or H-drive content is expected. A failed prerequisite remains blocked rather than being repaired in this story.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Repeated checks do not change service state or authentication and should differ only in timestamp and legitimate system drift. Rollback reverts only `evidence/P02-S003/`; there is no workstation rollback because workstation mutation is prohibited.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Story revision; check commands; sanitized outputs and GUI confirmations; required-versus-observed table; `H:` filesystem/free-space result; existing distro/path collision scan; authentication status without secrets; failures and owner actions; before/after service-state comparison; and reviewer verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Every prerequisite is Pass or an explicit blocking owner action; `H:` has the approved filesystem and sufficient measured capacity for the next phase; no name/path collision is unresolved; no service or account state changed; and P02-S004 is unblocked only when all required checks pass.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause between read-only checks, before any prompt that could alter state, and after the owner confirms GUI-only facts. Record legitimate drift and rerun the affected check; never repair during this story.

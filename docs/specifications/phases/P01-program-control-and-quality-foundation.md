@@ -7,7 +7,7 @@
 
 ## Gate
 
-The phase activates only after its dependencies are accepted and the owner authorizes its first story through the current controller policy. Research and design may occur earlier, but implementation cannot cross this gate.
+Because P01 bootstraps the controller, the owner activates it through the documented bootstrap protocol. Before P01-S015 creates anything, the owner receives one preview covering the GitHub Project and all planned P01 repository/controller mutations and gives one revision-bound phase authorization. Learning answers, a synthetic authorization exercise, GitHub authentication if required, review disposition, and final acceptance still require genuine owner actions; they are not repeated approvals of unchanged scope. A material change to Project identity, visibility, controller architecture, risk, targets, or operations invalidates the authorization.
 
 ## Story sequence
 

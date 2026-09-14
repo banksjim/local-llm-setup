@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P01-S010 |
 | Unlocks | P01-S012 |
-| Preferred route | Controller-selected quality route; cross-provider review required; qualified local execution only under current policy. |
+| Preferred route | Interface: Codex CLI plus authenticated GitHub CLI; Provider: OpenAI; Model class: architecture-capable integration; Effort: medium; Fallback: Claude Code plus GitHub CLI with an Anthropic architecture-capable model at medium effort; live mutation must remain inside the P01 phase authorization and receive cross-provider review. |
 | Research freshness | Current GitHub Projects GraphQL and gh documentation checked within 7 days. |
 
 ## 1. User story
@@ -37,23 +37,23 @@ P01-S010. Applicable specifications, clean Git state, current research, required
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Implement a GitHub Project reconciliation module in `goagentic/src/GitHubProject.psm1`, a versioned local field mapping, mock fixtures, preview/apply/verify/rollback commands, activation-time draft-to-issue behavior, and approved live tests against the Project created by P01-S015.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Making GitHub the authority over Git, deleting unknown fields, items, or views, force-overwriting manual edits, creating issues for non-Ready stories, exposing secrets, changing Project visibility, or mutating any Project other than the recorded P01-S015 target.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+No new approval for the unchanged target — the exact Project and reconciliation operations are covered by the P01 phase authorization. Authentication renewal or a changed Project, visibility, field set, or deletion requires a new preview and owner action.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The story is High risk because it performs authenticated bulk external mutations and a duplicate or destructive reconciliation could clutter or damage the owner's Project. Stable keys, dry-run previews, bounded retries, preserved unknown state, integration tests, and owner-approved live mutation are required.
 
 ## 10. Execution contract
 
-Preview changes and tests; verify preconditions; acquire the lease; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the lease; and route to review or human validation. Mock and approved live tests cover create, update, outage, retry, and conflicting remote edits.
+Preview changes and tests; verify preconditions; acquire the currently accepted P01 mutation guard—the bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the guard; and route to review or human validation. Mock and approved live tests cover create, update, outage, retry, and conflicting remote edits.
 
 ## 11. Automated acceptance tests
 
@@ -61,20 +61,20 @@ Mock and approved live tests cover create, update, outage, retry, and conflictin
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+The owner inspects the approved live Project after reconciliation and confirms that manual content, visibility, and non-target items are unchanged; this is verification within the existing P01 authorization, not a new approval.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Reconciliation keys on Project ID and Story ID; an unchanged rerun proposes zero mutation. Before apply, export the targeted field and item values. Rollback restores only values changed by the recorded operation or removes items it created; it never deletes the Project or unknown content without a separate owner decision.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Story revision; current GitHub documentation and API or CLI versions; target Project identity; field mapping; sanitized mutation preview; mock and live create, update, conflict, and outage results; expected-versus-actual counts; duplicate scan; unchanged rerun; rollback inventory and rehearsal; and cross-provider verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Mock and owner-approved live reconciliation agree; each story has one mapped item; only Ready stories become issues; manual conflicts are surfaced rather than overwritten; outage retry creates no duplicates; unchanged rerun is empty; and P01-S012 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause before any live API mutation, after the remote inventory, after each resumable keyed batch, after conflict reconciliation, and after verification. Never retry an unkeyed request after interruption.

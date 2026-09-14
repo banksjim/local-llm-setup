@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P02-S008 |
 | Unlocks | P02-S010 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected current assistant model; no unattended substitution. |
+| Preferred route | Interface: interactive Codex CLI plus Windows VS Code; Provider: OpenAI; Model class: systems integration; Effort: medium; Fallback: Claude Code with an Anthropic coding model while the owner performs GUI actions; live owner validation is mandatory. |
 | Research freshness | Current VS Code WSL documentation and extension requirements checked within 7 days. |
 
 ## 1. User story
@@ -37,19 +37,19 @@ P02-S008. Applicable specifications, clean Git state, valid controller state, cu
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Create versioned preview/apply/verify/rollback operations under `operations/windows/p02/` for the automatable VS Code WSL extension and managed-setting changes; configure the current Microsoft-supported integration from Windows to `AI-Workbench`; create a disposable repository beneath the Linux user's home; prove terminal, Git, debugging, tasks, source control, and file operations execute in Ubuntu; and document the exact owner workflow and trust-boundary indicators. Initial trust prompts and experiential confirmation remain manual.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Placing repositories on Windows-mounted filesystems; enabling Windows executable interoperability solely for `code .`; installing the full extension baseline from P02-S010; configuring local AI clients; opening private repositories for the test; and weakening workspace-trust or telemetry choices without owner direction.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the declared work; an LLM may guide but cannot create completion evidence.
+Required human participation — the owner performs GUI-only VS Code actions and confirms the remote indicators and developer experience. The P02 phase authorization covers the declared configuration; material boundary or extension changes require reauthorization.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The story is High risk because VS Code bridges the Windows UI into the protected Ubuntu environment and incorrect placement or extension execution can defeat the boundary. Owner-driven GUI validation, Linux-path/process proof, integration tests, and cross-provider review are required.
 
 ## 10. Execution contract
 
@@ -61,20 +61,20 @@ A test workspace proves terminal, Git, debugger, and extension host run in Ubunt
 
 ## 12. Human validation
 
-The owner completes the story-specific checklist and records the result through the controller.
+The owner opens the Linux workspace in Windows VS Code, identifies the remote indicators, runs the guided terminal/task/debug/source-control checks, and confirms the workflow is usable.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Reopening the same Linux workspace reuses the remote server and settings without duplicate entries or changed files. Rollback removes only story-created workspace settings, disposable repository, and story-owned remote-server artifacts if safely identifiable; it does not reset global VS Code or delete user repositories.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Current VS Code/WSL source versions; installed extension identity/version; `AI-Workbench` target proof; Linux path, kernel, process, runtime, Git, task, debug, and file-operation outputs; owner screenshots or confirmations of remote indicators; reopen result; cleanup/rollback evidence; and cross-provider verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Windows VS Code opens a Linux-home repository in `AI-Workbench`; integrated terminal, Git, task, test, and debugger processes all run in Ubuntu; no Windows drive or executable is needed; reopening is stable; the owner can repeat the workflow; and P02-S010 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause after WSL extension verification, after remote-server connection, after disposable workspace creation, and after each terminal, Git, task, debug, and file test. Never delete an ambiguous workspace during cleanup.

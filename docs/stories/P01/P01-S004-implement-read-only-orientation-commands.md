@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P01-S003 |
 | Unlocks | P01-S005 |
-| Preferred route | Controller-selected value route; qualified local model allowed after P03; cloud fallback per SYS-CTL. |
+| Preferred route | Interface: Codex CLI in the repository; Provider: OpenAI; Model class: standard implementation; Effort: medium; Fallback: Claude Code with an Anthropic coding model at medium effort; local execution is prohibited before P03 qualification. |
 | Research freshness | Current PowerShell and CLI conventions checked within 30 days. |
 
 ## 1. User story
@@ -37,23 +37,23 @@ P01-S003. Applicable specifications, clean Git state, current research, required
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Create root `START-HERE.md`, `goagentic/goagentic.ps1`, read-only command dispatch and rendering modules under `goagentic/src/`, fixtures for each lifecycle and hold state, and dependency-free PowerShell tests for bare `goagentic`, `status`, `next`, and `model`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Mutation commands, state writes other than isolated test output, GitHub API calls, workstation installation, dynamic status copied into `START-HERE.md`, multiple competing next actions, and assumptions that Codex or Claude chat history is available.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+Not applicable — repository code changes are covered by the P01 phase authorization; the implemented commands are read-only and require no external or privileged action.
 
 ## 9. Risk rationale
 
-Work changes bounded repository or user-level configuration and is directly reversible from versioned backup. New facts may raise risk; an LLM cannot lower it.
+The story is Medium risk because incorrect orientation can direct the owner to unsafe or out-of-order work. It changes repository code only, but requires deterministic unit tests and a fresh zero-context review.
 
 ## 10. Execution contract
 
-Preview changes and tests; verify preconditions; acquire the lease; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the lease; and route to review or human validation. Each command returns schema-valid output and exactly one safe next action without mutating project work; `START-HERE.md` stays accurate after state changes.
+Preview changes and tests; verify preconditions; acquire the currently accepted P01 mutation guard—the bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the guard; and route to review or human validation. Each command returns schema-valid output and exactly one safe next action without mutating project work; `START-HERE.md` stays accurate after state changes.
 
 ## 11. Automated acceptance tests
 
@@ -61,20 +61,20 @@ Each command returns schema-valid output and exactly one safe next action withou
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — zero-context fixture tests and fresh-session review verify output semantics. The owner exercises the same commands later in P01-S014 before controller trust is granted.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Repeated read-only commands may update neither repository nor runtime state and must return equivalent output for an unchanged fixture. Rollback removes the entry point, orientation modules, fixtures, tests, and `START-HERE.md` as one revision.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Story revision; interface/provider/model class/effort; file inventory; command output for every fixture; before/after filesystem and Git state proving no mutation; exactly-one-action assertions; static-document drift result; repeated-command comparison; rollback result; and fresh-session review verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+From a fresh shell with no chat context, `START-HERE.md` leads to the entry point; all four commands parse every valid fixture, fail clearly on invalid state, show the complete route, and produce exactly one—or zero when explicitly blocked—next actions without changing state. P01-S005 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause after `START-HERE.md`, after command parsing, after each renderer, and after each fixture group. Do not pause between reading one state snapshot and producing its next-action result; discard and reread if interrupted.

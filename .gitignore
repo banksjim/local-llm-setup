@@ -1,6 +1,7 @@
 # Local configuration and generated state
 .env
 *.local
+.goagentic/
 logs/
 reports/
 backups/

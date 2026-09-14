@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P02-S001 |
 | Unlocks | P02-S003 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected current assistant model; no unattended substitution. |
+| Preferred route | Interface: interactive Codex or Claude Code session; Provider: OpenAI or Anthropic; Model class: general-purpose guide; Effort: low; Fallback: switch provider if the primary interface is unavailable; no model may substitute for human evidence. |
 | Research freshness | Current phase research record. |
 
 ## 1. User story
@@ -25,11 +25,11 @@ Teach only the filesystem, network, credential, process, and rollback concepts n
 
 ## 3. Learning objective
 
-Complete the targeted concepts in the objective and demonstrate them through the acceptance exercise.
+The owner can draw the Windows, Rancher Desktop, `AI-Workbench`, Git credential, and H-drive boundaries; place each planned process and data class correctly; classify safe versus prohibited mount, credential, executable, network, elevation, backup, and rollback scenarios; and explain that WSL reduces accidental host exposure but is not a hostile-code sandbox.
 
 ## 4. Current research requirements
 
-Current phase research record. Record access date, version, direct links, material claims, conflicts, and inferences. Do not rely on model training memory for changeable facts.
+Use the accepted P02-S001 research record and its still-current primary sources. Record the P02-S001 evidence revision and recheck any source whose declared freshness window expires before the lesson; a material change returns the story to research rather than teaching stale behavior.
 
 ## 5. Preconditions and unlock conditions
 
@@ -37,19 +37,19 @@ P02-S001. Applicable specifications, clean Git state, valid controller state, cu
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+A targeted lesson and scenario exercise on Windows versus Ubuntu filesystems, Linux-home repository placement, host/guest networking, credentials, Windows-drive mounts, executable interoperability, elevation, snapshots/exports, and rollback; record the owner's answers in `evidence/P02-S002/owner-learning.md`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+General container, Linux-administration, networking, or VS Code training; installing software; creating the WSL distribution; changing security policy; and allowing an LLM-generated paraphrase to stand in for the owner's explain-back.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the declared work; an LLM may guide but cannot create completion evidence.
+Required human learning — the owner completes the scenarios and explain-back. This records learning under the P02 phase authorization; it is not a second approval, and the LLM cannot create the answers.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected; output is documentation, research, or learning evidence. New facts may raise risk; an LLM cannot lower it.
+The lesson is Low risk because it uses diagrams and synthetic scenarios and writes only learning evidence. It performs no privileged action and grants no phase authorization.
 
 ## 10. Execution contract
 
@@ -61,21 +61,20 @@ The owner completes a diagram exercise and identifies which operations stay in W
 
 ## 12. Human validation
 
-The owner completes the story-specific checklist and records the result through the controller.
+The owner draws or annotates the boundary diagram, classifies the supplied scenarios, and explains the limits of WSL in their own words. The LLM records but cannot author the explain-back.
 
 ## 13. Idempotency and rollback
 
-A repeat produces an updated or identical evidence record without changing accepted implementation. Rollback is reversion of the story commit or evidence record.
+The lesson may be repeated without machine changes. New attempts append a dated score and preserve earlier owner answers; rollback reverts only the learning-evidence commit.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Lesson revision and P02-S001 source set; interface/provider/model/effort; the owner's ungenerated answers; scored decisions for safe and unsafe file, credential, network, interop, elevation, and rollback scenarios; questions needing clarification; completion timestamp; and owner acknowledgement.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+The owner correctly explains where code and AI data live, why Windows tokens are not shared into Ubuntu, what WSL does and does not isolate, how VS Code crosses the boundary, and when export or rollback is required. The evidence is genuine and P02-S003 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
-
+Pause between lesson modules or scenarios and before owner acknowledgement. Save the owner's original answer before feedback; incomplete modules remain Waiting rather than inferred complete.

@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P01-S007 |
 | Unlocks | P01-S009 |
-| Preferred route | Controller-selected quality route; cross-provider review required; qualified local execution only under current policy. |
+| Preferred route | Interface: interactive Codex CLI with the owner; Provider: OpenAI; Model class: architecture and security implementation; Effort: high; Fallback: Claude Code with an Anthropic architecture/security model at high effort; cross-provider review and genuine owner validation are mandatory. |
 | Research freshness | Current secure approval and CLI input practices checked within 30 days. |
 
 ## 1. User story
@@ -37,23 +37,23 @@ P01-S007. Applicable specifications, clean Git state, current research, required
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Implement authorization records and interval validation in `goagentic/src/Authorization.psm1`; implement `go` and `human-complete` handlers; bind approval to story, revision, actor, risk, operation set, expiry condition, and safe checkpoints; and add bypass, replay, scope-change, wrong-story, expired, and forged-human-evidence tests.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Interpreting conversational “go” as authorization, reusable blanket approval across phases, generating owner attestations, lowering risk, continuing after objective or scope drift, storing secrets in approval records, and permitting an adapter to bypass controller validation.
 
 ## 8. Privilege and human approval
 
-Required before mutation and again for acceptance where declared.
+Required human participation — the P01 phase authorization covers implementation. The owner issues a clearly labeled synthetic test authorization and later validates that genuine human evidence cannot be forged; neither action expands the approved P01 scope.
 
 ## 9. Risk rationale
 
-Work crosses a security, privilege, destructive-data, authentication, or program-acceptance boundary and requires explicit owner control. New facts may raise risk; an LLM cannot lower it.
+The story is Critical because authorization is the boundary between planning and real mutations, including later privileged and private-data work. A defect could enable the entire workstation blast radius; explicit phase approval, isolated rehearsal, owner validation, failure injection, and cross-provider review are mandatory.
 
 ## 10. Execution contract
 
-Preview changes and tests; verify preconditions; acquire the lease; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the lease; and route to review or human validation. Conversational go, missing approval, wrong story, and fabricated human evidence are rejected.
+Preview changes and tests; verify preconditions; acquire the currently accepted P01 mutation guard—the bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the guard; and route to review or human validation. Conversational go, missing approval, wrong story, and fabricated human evidence are rejected.
 
 ## 11. Automated acceptance tests
 
@@ -61,20 +61,20 @@ Conversational go, missing approval, wrong story, and fabricated human evidence 
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+The owner issues one synthetic test authorization and one genuine test attestation, confirms denied replay and conversational-go cases, and verifies that the evidence distinguishes owner input from fixture input.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Replaying or reusing a consumed, expired, wrong-revision, or wrong-story authorization is rejected. Rollback disables the new mutating handlers and restores the prior module set without deleting approval or event history; no rollback may fabricate a missing owner decision.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Story revision; authorization schema and module hashes; exact approved-interval examples; owner-issued test approval; denial outputs for every bypass, replay, and drift case; genuine versus simulated evidence markers; repeat result; rollback rehearsal; owner acceptance; and cross-provider verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Only exact `goagentic go` with a valid story-bound authorization can enter the approved operation set; every bypass and replay fixture is denied; human evidence remains owner-generated and attributable; scope drift invalidates approval; rollback succeeds; and P01-S009 is unblocked by genuine owner acceptance.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause before asking for synthetic authorization, after it is recorded, before consumption, after every denial fixture, and before owner validation. Never pause after authorizing an operation but before recording its bound scope.

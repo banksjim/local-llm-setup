@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P01-S005 |
 | Unlocks | P01-S007 |
-| Preferred route | Controller-selected quality route; cross-provider review required; qualified local execution only under current policy. |
+| Preferred route | Interface: Codex CLI in the repository; Provider: OpenAI; Model class: architecture-capable implementation; Effort: medium; Fallback: Claude Code with an Anthropic architecture-capable model at medium effort; independent cross-provider review is required and local execution is prohibited before P03 qualification. |
 | Research freshness | Current process-locking guidance checked within 30 days. |
 
 ## 1. User story
@@ -37,23 +37,23 @@ P01-S005. Applicable specifications, clean Git state, current research, required
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Implement lease acquisition, heartbeat, inspection, release, and explicit recovery in `goagentic/src/Lease.psm1`; add process, host, story, operation, checkpoint, and observed-time metadata to the runtime schema; and add concurrency, expiry, crash, and clock-skew fixtures and tests.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Distributed multi-host locking, force-breaking a lease solely because its timestamp expired, allowing two mutation roles, modifying Git or external services while testing, and embedding credentials or full sensitive command payloads in lease records.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+Not applicable — controller-module and isolated concurrency-fixture changes are covered by the P01 phase authorization and require no human prompt.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The story is High risk because lease failure could permit concurrent agents to corrupt shared controller, Git, or later workstation state. Recovery ambiguity is intentionally fail-closed and requires integration testing, failure injection, and cross-provider review.
 
 ## 10. Execution contract
 
-Preview changes and tests; verify preconditions; acquire the lease; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the lease; and route to review or human validation. Concurrent writers are rejected and an expired timestamp alone never removes a lease.
+Preview changes and tests; verify preconditions; acquire the currently accepted P01 mutation guard—the bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the guard; and route to review or human validation. Concurrent writers are rejected and an expired timestamp alone never removes a lease.
 
 ## 11. Automated acceptance tests
 
@@ -61,20 +61,20 @@ Concurrent writers are rejected and an expired timestamp alone never removes a l
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — controlled multi-process fixtures and cross-provider review prove exclusive ownership. The owner later experiences rejection and recovery behavior in P01-S014.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Repeated acquisition by the same proven owner renews rather than duplicates the lease; a different writer is rejected. Normal rollback releases only a lease owned by the current operation. Suspected stale leases are preserved for inspection and may be cleared only through the documented recovery decision.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Story revision; lease schema and module hashes; two-writer race output; same-owner renewal; reader coexistence; expired-but-live, crashed, clock-skew, and ambiguous-owner results; state/event correlation; repeat result; rollback rehearsal; and cross-provider verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Exactly one writer succeeds in every race; read-only commands remain available; timestamp expiry alone never clears ownership; crash recovery reports one safe action; lease events correlate with state; and P01-S007 is unblocked after cross-provider review.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause before acquisition, after ownership is durably recorded, after each race fixture, and after verified release. Never pause while transferring or clearing ownership; an interruption leaves the lease intact for inspection.

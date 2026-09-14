@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P02-S010 |
 | Unlocks | P02-S012 |
-| Preferred route | Controller-selected quality route; cross-provider review required; qualified local execution only under current policy. |
+| Preferred route | Interface: Codex CLI across Windows and the dedicated Ubuntu distribution; Provider: OpenAI; Model class: architecture-capable migration; Effort: high; Fallback: Claude Code with an Anthropic architecture-capable model at high effort; cross-provider review and rollback rehearsal are required. |
 | Research freshness | Current WSL invocation behavior checked within 30 days. |
 
 ## 1. User story
@@ -37,19 +37,19 @@ P02-S010. Applicable specifications, clean Git state, valid controller state, cu
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Implement a Windows forwarding wrapper plus Ubuntu installation, state-path, and verification operations that run the accepted controller modules under PowerShell 7 in `AI-Workbench`; migrate runtime state through a schema-validated export/import; retain accepted Git evidence; and test command parity, interruption, fallback, and rollback.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Rewriting controller policy, changing story/evidence schemas without a design-change story, copying Windows credentials into Ubuntu, mounting the repository through a Windows drive, deleting the Windows Controller Core before acceptance, or marking Cross-Interface Trusted before P05 live adapter tests.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+No new approval for unchanged scope — the state migration and wrapper authority switch are included in the P02 phase authorization. Schema drift, lost evidence, changed target, or an unproven rollback blocks the operation.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The story is High risk because it moves canonical control state across an OS boundary; state loss or behavioral drift could misroute future privileged work. Schema validation, export backup, command-by-command parity, crash injection, reversible authority switch, and cross-provider review are mandatory.
 
 ## 10. Execution contract
 
@@ -61,20 +61,20 @@ Cross-interface tests return identical state and fail safely when Ubuntu is stop
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — schema identity, command parity, interruption, wrapper failure, rerun, and rollback are automated and cross-provider reviewed. The owner validates post-reboot use in P02-S012.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+An unchanged rerun finds the same installed controller version, state identity, and wrapper target and performs no migration. Before switching authority, preserve validated Windows and exported controller state. Rollback repoints the wrapper to the accepted Windows core and restores the pre-switch state; it does not delete Ubuntu evidence or event history.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Controller and schema revisions; Windows/Ubuntu PowerShell versions; operation and wrapper hashes; pre-migration state/event/lease inventory; export hash and import validation; command/fixture parity table; interruption and unavailable-WSL results; first and second apply; authority proof; rollback rehearsal; and cross-provider verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Windows and Ubuntu runs produce equivalent normalized results for every P01 fixture; accepted state and event identity survive migration; the wrapper fails safely when WSL is unavailable; rerun is a no-op; rollback restores Windows authority; and P02-S012 is unblocked without claiming Cross-Interface Trusted.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause after source-state export, after Ubuntu import validation, after parity tests, before wrapper authority changes, and after authority verification. Never leave both runtimes believing they are authoritative.
