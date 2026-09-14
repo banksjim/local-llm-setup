@@ -2,10 +2,10 @@
 
 **Started:** 2026-09-13
 
-**Working branch:** `work-2026-09-13-b`
+**Working branch:** `work-2026-09-14-batch3`
 
 **Worktree policy for this planning phase:** Use the ordinary repository checkout; do not create a worktree.
-**Status:** Batches 1 and 2 complete; Batch 3 not started; no workstation implementation has started.
+**Status:** Batches 1 and 2 complete; Batch 3 in progress; P06 correction cycle 1 applied; no workstation implementation has started.
 
 This file is the durable restart point for the specification-quality remediation. It records work state, not proof that a batch passed.
 
@@ -21,7 +21,7 @@ No Git-workflow document will be added to the public repository. Repository-leve
 |---|---|---|
 | 1 | README, master program, story contract, controller specification, formal review, phase specifications P01-P02, and all P01-P02 stories | Complete; two consecutive clean passes |
 | 2 | Phase specifications and stories P03-P05 plus the directly dependent desktop-dictation system specification | Complete; two consecutive clean passes |
-| 3 | System specifications for RAG and memory; phase specifications and stories P06-P10; final cross-program review | Not started |
+| 3 | System specifications for RAG and memory; phase specifications and stories P06-P10; final cross-program review | In progress; P06 correction cycle 1 applied |
 
 The LM Studio evaluation endpoint changes from assigned user port `1239` to private/dynamic port `51239`. The port remains localhost-only and must pass an availability check at activation.
 
@@ -107,6 +107,10 @@ After the invalidated attempt, Batch 2 completed two new consecutive clean passe
 
 The remaining P06-P10 inventory is 68 stories. A measured scan currently finds 63 stories with the old generic core scope/out-of-scope/execution/evidence/completion block and all 68 with incomplete five-field routes. Those are Batch 3 work; no full-program pass is claimed.
 
+## Batch 3 correction history
+
+P06 correction cycle 1 replaced the 14 incomplete routes and generic contracts with exact learning artifacts, WSL workspace paths, agent packages, operations, fixtures, tests, evidence, rollback, and checkpoint boundaries. The P06 parent now fixes the separation among Ollama, LangChain, LangGraph, MCP, skills/assets/scripts, and self-hosted MLflow; requires a dedicated PostgreSQL checkpointer database/role; constrains the first agent and MCP server to synthetic read-only capabilities; excludes secrets/private content before tracing; and keeps deterministic safety checks independent of model judges. Current primary sources were checked on 2026-09-14, including the current LangChain/LangGraph documentation, current ChatOllama integration, the official MCP Python SDK and protocol line, and current MLflow tracing/evaluation documentation. P07-P10 and SYS-RAG/SYS-MEM remain uncorrected, so no Batch 3 clean pass is claimed.
+
 ## Exact resume action
 
 1. Read this file, the root `README.md`, the master program specification, `STORY-CONTRACT.md`, the relevant phase/system specifications, and the formal review.
@@ -118,4 +122,4 @@ The remaining P06-P10 inventory is 68 stories. A measured scan currently finds 6
 
 ## Delivery state
 
-Batch 1 was delivered through pull request 1 and merged as `4601476fc844fc3082374e94d116bb28815f7896`. Batch 2 is validated and ready for the owner's full Ship It sequence on the ordinary branch named above. Git commits, pull requests, merge state, and branch cleanup are authoritative in Git/GitHub history.
+Batch 1 was delivered through pull request 1 and merged as `4601476fc844fc3082374e94d116bb28815f7896`. Batch 2 was delivered through pull request 2 and merged as `5f7a8dd309b34c7bc32537d2eff8064c16e9bc79`. Batch 3 is uncommitted on the ordinary branch named above. Git commits, pull requests, merge state, and branch cleanup are authoritative in Git/GitHub history.

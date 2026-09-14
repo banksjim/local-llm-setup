@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P06-S001 |
 | Unlocks | P06-S003 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
+| Preferred route | Interface: goagentic guided lesson in the owner's cloud IDE or CLI; Provider: OpenAI or Anthropic; Model class: economical teaching model with strong tool-safety reasoning; Effort: medium; Fallback: current Sol- or Sonnet-class tutor, never an unqualified local model. |
 | Research freshness | Current P06 research record. |
 
 ## 1. User story
@@ -37,45 +37,44 @@ P06-S001. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create `docs/learning/p06/P06-S002-agent-fundamentals-and-tool-safety.md`, a bounded-agent diagram, authority worksheet, prompt-injection and failure scenarios, vetted short/deep learning resources, and a blank owner rubric under `evidence/P06-S002/`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not teach framework APIs, build an agent, request credentials, grant live tools, access private data, or use an LLM answer as owner evidence.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
+No privileged authorization is required. The owner completes the lesson and explain-back personally; this is participation, not permission for later implementation.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
+The lesson changes no system state, but misunderstanding authority, state, or oversight would make later agent work unsafe and blocks progression.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. The owner diagrams a bounded agent and identifies unsafe authority expansion.
+Generate the lesson from P06-S001 sources; teach in short modules; require the owner to diagram model, loop, tool, state, permission, and human gate; run two authority scenarios; collect an owner-authored explain-back; score only against the published rubric; and checkpoint each module.
 
 ## 11. Automated acceptance tests
 
-The owner diagrams a bounded agent and identifies unsafe authority expansion. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert the lesson, diagram, two scenarios, and blank rubric exist. Verify freshness and rubric coverage, blank answers before handoff, and genuine owner text afterward. Fail on zero exercises, answer leakage, live-tool execution, or an LLM-authored response.
 
 ## 12. Human validation
 
-Owner completes the story checklist and records it through the controller.
+The owner completes the diagram and scenarios, explains why tool access is authority, identifies the unsafe expansion, and writes `evidence/P06-S002/human-validation.md`. The LLM cannot author or replace the response.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+Repeating creates a dated attempt without overwriting accepted owner evidence. Rollback removes only an unaccepted lesson revision or attempt.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit the lesson, sources, diagram, scenarios, blank rubric, test results, genuine `evidence/P06-S002/human-validation.md`, activation, rollback, checkpoint, and review records.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+The owner meets every rubric item without answer substitution, the sources and evidence pass review, and P06-S003 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-
+Pause between modules or before handoff. Record completed modules, packet state, next prompt, model, and provider in `evidence/P06-S002/checkpoint.json`.

@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P06-S011 |
 | Unlocks | P06-S013 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
+| Preferred route | Interface: goagentic using Codex or Claude Code inside AI-Workbench; Provider: OpenAI or Anthropic with qualified Ollama for test iteration; Model class: strong coding/observability model; Effort: high; Fallback: current Sol- or Sonnet-class route with cross-provider privacy review. |
 | Research freshness | Current MLflow LangChain, LangGraph, and OpenTelemetry docs checked within 7 days. |
 
 ## 1. User story
@@ -37,44 +37,44 @@ P06-S011. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Instrument the durable agent with current MLflow tracing at `workloads/agents/foundation/src/local_agents/observability/`: spans for run, model, tool, graph node, interrupt, error, and evaluator link; explicit provider/model/version/thread metadata; allowlist/redaction policy; sampling switch; bounded async queue; and `operations/ubuntu/p06/P06-S012-mlflow-instrumentation`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not capture credentials, raw private documents, restricted memory, microphone data, hidden reasoning, or unapproved prompts; enable cloud export; make tracing required for safe execution; or alter agent authority.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+No new approval is required under P06 authorization. Any new trace data class, remote exporter, public bind, or retention expansion invalidates the preview.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+Instrumentation crosses agent, graph, MCP, and MLflow boundaries; incorrect capture can disclose sensitive data or an outage can alter agent behavior.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Expected spans appear; secrets and restricted payloads do not; tracing outage does not break safe behavior.
+Export current settings; define span and redaction contracts; instrument one layer at a time; emit synthetic success/failure/interrupt traces; inject canary secrets in every field class; stop MLflow and saturate the queue; verify safe agent behavior and bounded loss reporting; restart, repeat, disable, restore, and review.
 
 ## 11. Automated acceptance tests
 
-Expected spans appear; secrets and restricted payloads do not; tracing outage does not break safe behavior. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert each required span and canary fixture. Verify trace hierarchy, IDs, model/provider/tool decisions, latency/error status, evaluator link, and redaction before emission; search storage/logs for every canary; prove outage, timeout, and full queue neither expands authority nor changes answer status. Fail on any secret, missing required span, remote export, zero fixtures, or safety dependence on tracing.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — synthetic canaries and deterministic trace inspection prove privacy and outage behavior without owner content.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Instrumentation registration is repeat-safe. Rollback disables the hook, restores prior settings, and removes only tagged synthetic traces after inventory; agent code, unrelated MLflow records, and databases remain.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit instrumentation/operation plus `evidence/P06-S012/` activation, span schema, redaction policy, canary inventory, trace IDs, outage/queue results, storage scan, idempotency, rollback, checkpoint, and cross-provider review.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+All required spans and decisions are inspectable, all sensitive canaries are absent, outages fail safely, rollback is isolated, review resolves, and P06-S013 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Pause after a complete instrumentation layer, trace fixture, outage test, or restore. Drain or discard only tagged queued fixtures and record trace/settings state in `evidence/P06-S012/checkpoint.json`.

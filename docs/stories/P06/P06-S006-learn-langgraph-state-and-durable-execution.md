@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P06-S005 |
 | Unlocks | P06-S007 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
+| Preferred route | Interface: goagentic lesson in the P06 VS Code/WSL workspace; Provider: qualified Ollama model with OpenAI or Anthropic fallback; Model class: economical reasoning tutor; Effort: medium; Fallback: current Sol- or Sonnet-class tutor. |
 | Research freshness | Current official LangGraph tutorials selected at activation. |
 
 ## 1. User story
@@ -37,45 +37,44 @@ P06-S005. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create `docs/learning/p06/P06-S006-langgraph-durable-execution.md` and `workloads/agents/foundation/learning/langgraph/` covering typed state, nodes, edges, thread IDs, durable checkpoints, interrupts, resume, retries, replay, idempotent effects, and schema migration.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not deploy production, accept in-memory persistence as restart proof, perform a real side effect, enable cloud tracing, expose private state, or let replay repeat a mutation.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
+No new authorization is required. The owner runs, interrupts, terminates, resumes, and explains the tutorial personally; the LLM cannot create those observations.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
+Disposable state is used, but misunderstanding replay and effects could cause duplicate real actions later.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Owner completes a state-transition exercise and resumes a tutorial graph.
+Use accepted LangGraph APIs; run with a durable disposable checkpointer and thread ID; interrupt, terminate, resume, inject transient/permanent failures, replay with a fake effect ledger, migrate one fixture state, and collect explain-back.
 
 ## 11. Automated acceptance tests
 
-Owner completes a state-transition exercise and resumes a tutorial graph. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert transition/failure fixtures. Verify process-death resume, thread isolation, JSON-safe interrupt, denial, bounded retry, permanent stop, no duplicate effect, and state migration. Fail on in-memory-only proof, secret-bearing interrupt, repeated effect, prefilled answers, or zero fixtures.
 
 ## 12. Human validation
 
-Owner completes the story checklist and records it through the controller.
+The owner predicts transitions, resumes after process termination, denies one action, explains checkpoint versus durable memory and replay risk, and writes `evidence/P06-S006/human-validation.md`. The LLM cannot author it.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+Each run uses a disposable thread namespace and reset. Rollback drops only that namespace/tutorial and preserves P04 data and the first agent.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit lesson/tutorial plus `evidence/P06-S006/` activation, transitions, resume/replay results, rubric, genuine human record, cleanup, rollback, checkpoint, and review.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+Durable state, interrupt, retry, replay, and migration cases pass; owner meets the rubric; evidence resolves; and P06-S007 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-
+Pause only at graph checkpoints, after cleanup, or before handoff; record thread/checkpoint ID, next node, model, provider, and command in `evidence/P06-S006/checkpoint.json`.

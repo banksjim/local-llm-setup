@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P06-S002 |
 | Unlocks | P06-S004 |
-| Preferred route | Controller-selected value route; qualified local model allowed after P03; cloud fallback per SYS-CTL. |
+| Preferred route | Interface: goagentic using Codex or Claude Code inside AI-Workbench; Provider: qualified Ollama model for mechanical scaffolding with OpenAI or Anthropic fallback; Model class: economical coding model; Effort: medium; Fallback: current Terra- or Sonnet-class implementation route with independent review. |
 | Research freshness | Current Python packaging and selected framework docs checked within 7 days. |
 
 ## 1. User story
@@ -37,44 +37,44 @@ P06-S002. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create `operations/ubuntu/p06/P06-S003-create-agent-workspace` and `workloads/agents/foundation/` with locked dependencies, `src/`, typed settings, tests, formatting/lint/type checks, `.env.example`, ignore rules, and clean-clone bootstrap/verify/rollback operations; deploy beneath the AI-Workbench Linux home.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not use `/mnt/c` or `/mnt/h`, install global packages, store credentials, add LangSmith, expose a service, create agent powers, alter P02 toolchains, or overwrite a collision target.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+Before mutation, present the revision-bound P06 preview and obtain its single authorization. Changed roots, elevation, or dependency major versions require a new preview.
 
 ## 9. Risk rationale
 
-Work changes bounded repository or user-level configuration and is directly reversible. New facts may raise risk; an LLM cannot lower it.
+Executable dependencies and a user workspace are added, but the change is confined to a new collision-checked Linux-home directory and removable environment.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Clean setup and repeat setup pass; a smoke test runs in Ubuntu.
+Resolve the Linux path and accepted lock; reject collisions; verify provenance; create the skeleton; install locked project dependencies; run every development check from a clean clone; repeat apply; rehearse removal in a disposable clone; and checkpoint each unit.
 
 ## 11. Automated acceptance tests
 
-Clean setup and repeat setup pass; a smoke test runs in Ubuntu. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert nonzero tests and required files. Reproduce the lock from a clean clone; pass import, format, lint, type, and smoke tests; prove Linux filesystem placement and absence of real secrets and `/mnt/*` roots. Fail on unlocked/global installs, collision, zero tests, or runtime network calls.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — filesystem, dependency, and clean-clone assertions require no credential or subjective owner judgment.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Second apply produces no diff. Rollback removes only the verified story-created disposable target or restores the workspace Git revision; it refuses unknown/nonempty paths and preserves P02 toolchains.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit the skeleton and operation plus `evidence/P06-S003/` activation, dependency manifest, path/collision proof, clean-clone results, idempotency, rollback rehearsal, secret scan, checkpoint, and review.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+The Linux-home workspace reproduces from lock, all checks pass, secrets and Windows mounts are excluded, rollback is proven, review resolves, and P06-S004 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Pause after preflight, skeleton commit, lock, install, test group, or disposable rollback. Never pause during lock replacement; record the next command in `evidence/P06-S003/checkpoint.json`.

@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P06-S010 |
 | Unlocks | P06-S012 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
+| Preferred route | Interface: goagentic lesson using the localhost MLflow UI and P06 workspace; Provider: OpenAI or Anthropic with qualified Ollama exercises; Model class: economical observability tutor; Effort: medium; Fallback: current Sol- or Sonnet-class tutor. |
 | Research freshness | Current official MLflow GenAI resources selected at activation. |
 
 ## 1. User story
@@ -37,45 +37,44 @@ P06-S010. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create `docs/learning/p06/P06-S011-mlflow-tracing-evaluation.md`, a sanitized fixture trace, span/trace/run glossary, decision and failure hunt, redaction exercise, deterministic-versus-model scorer exercise, cost caveat, and blank owner rubric.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not enable LangSmith/cloud MLflow, ingest private prompts, teach general MLOps, create production monitoring, use a model judge as safety authority, or expose MLflow beyond loopback.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
+No new authorization is required. The owner navigates the local UI and records findings personally; the LLM cannot fabricate clicks, observations, or answers.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
+Only synthetic traces are used, but misunderstanding redaction or evaluator limits could expose private agent data or create false quality confidence.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Owner locates a tool decision and failure in MLflow and explains trace versus run.
+Generate a sanitized trace from accepted current MLflow APIs; teach traces/spans versus experiment runs, metadata, decisions, failures, redaction, datasets, deterministic/custom/model scorers, repetitions, and cost; guide a UI hunt and scorer comparison; collect owner explain-back.
 
 ## 11. Automated acceptance tests
 
-Owner locates a tool decision and failure in MLflow and explains trace versus run. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert the fixture trace, expected spans, redaction cases, scorer examples, and blank rubric. Verify the owner task references visible IDs and exact expected locations. Fail on private input, cloud endpoint, missing failure span, unlabeled model judgment, prefilled answers, or zero exercises.
 
 ## 12. Human validation
 
-Owner completes the story checklist and records it through the controller.
+The owner locates the model and tool spans, explains one decision and failure, distinguishes trace from run, identifies a redacted field, compares deterministic and model scoring, and writes `evidence/P06-S011/human-validation.md`. The LLM cannot author it.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+Repeat uses a new synthetic trace tagged to the attempt and leaves prior owner evidence intact. Rollback deletes only unaccepted fixture traces and lesson files.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+Commit lesson/fixtures plus `evidence/P06-S011/` activation, source/version record, trace IDs, redaction and scorer results, blank rubric, genuine human evidence, cleanup, checkpoint, and review.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+The owner meets every targeted observability rubric item, the fixture contains required spans without sensitive content, evidence resolves, and P06-S012 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-
+Pause between modules, after fixture emission/cleanup, or before owner handoff; record trace IDs and next UI task in `evidence/P06-S011/checkpoint.json`.
