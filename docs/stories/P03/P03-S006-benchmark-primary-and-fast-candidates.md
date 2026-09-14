@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P03-S005 |
 | Unlocks | P03-S007 |
-| Preferred route | Controller-selected quality route; cross-provider review required; qualified local execution only under current policy. |
+| Preferred route | Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic, different from the implementer for acceptance review; Model class: current quality or review model; Effort: high; Fallback: stop and switch to the current Sol or Sonnet-class route; qualified local models remain advisory during probation. |
 | Research freshness | Benchmark methodology and current model cards checked within 7 days. |
 
 ## 1. User story
@@ -37,44 +37,44 @@ P03-S005. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create and verify frozen text, code, tool, vision, and concurrency prompt corpus; Ollama benchmark runner; NVIDIA and system telemetry capture; and normalized result report under H:\ai\benchmarks. Store versioned implementation or guidance at the story-owned output path already named by this contract and sanitized run evidence under evidence/P03-S006/.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not install containers or desktop clients, expose Ollama to the LAN, delete existing models, change BIOS or GPU drivers, accept floating model tags, or route unqualified controller work to a local model.
 
 ## 8. Privilege and human approval
 
-Not applicable — active phase authorization is sufficient.
+No new approval is required while the revision-bound P03 phase authorization still matches the work. The LLM may execute only the previewed story-owned operations; any changed target, network boundary, data class, risk, or destructive action stops for a new preview.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+Sustained GPU and RAM load can destabilize desktop workloads, and a flawed corpus could select the wrong default.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and route to review. Results are reproducible and identify safe 8K, 16K, 32K, and 64K profiles where supported.
+Create an activation packet; verify dependencies, freshness, and targets; preview the exact change; confirm revision-bound phase authorization where mutation is privileged; acquire the controller lease; produce tests/p03/P03-S006-benchmark-primary-and-fast-candidates; run the named positive and negative checks; record sanitized evidence; release the lease. Acceptance criterion: the fixed prompt corpus records cold and warm latency, tokens per second, peak VRAM and RAM, spill, quality, tool and vision result, and concurrency at 16K plus approved larger contexts.
 
 ## 11. Automated acceptance tests
 
-Results are reproducible and identify safe 8K, 16K, 32K, and 64K profiles where supported. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; justified exclusions are recorded.
+Assert the expected story inventory is nonzero, then verify that the fixed prompt corpus records cold and warm latency, tokens per second, peak VRAM and RAM, spill, quality, tool and vision result, and concurrency at 16K plus approved larger contexts. Fail on missing evidence, unexpected targets, secrets, stale sources, an untested negative boundary, or a validator that matched zero fixtures.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient.
+Not applicable — P03-S006 is accepted through deterministic checks plus an independent review; no experiential or credential-bearing action is delegated to the LLM.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores only story-owned changes and preserves user data.
+Tests use synthetic or owner-approved fixtures and leave accepted services and configuration unchanged. Rollback removes story-created fixtures and restores the pre-test snapshot recorded in evidence/P03-S006/rollback.json.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; change inventory; sanitized output; test, approval, idempotency, rollback, review, and human records.
+Commit tests/p03/P03-S006-benchmark-primary-and-fast-candidates or its versioned result plus evidence/P03-S006/activation.json, evidence/P03-S006/change-inventory.json, evidence/P03-S006/test-results.json, evidence/P03-S006/rollback.json, and evidence/P03-S006/review.md; include exact versions or digests, sanitized commands or observations, timestamps, and an explicit not-applicable human record.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; human evidence is genuine; no prohibited change occurred; state agrees; next story unlocks.
+P03-S006 is Done only when the fixed prompt corpus records cold and warm latency, tokens per second, peak VRAM and RAM, spill, quality, tool and vision result, and concurrency at 16K plus approved larger contexts; the story-owned output and evidence inventory exist, independent review has no unresolved material finding, rollback and idempotency evidence is accepted, and controller state unlocks the declared next story.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back any atomic replacement before pausing.
+Pause after the activation packet, after each download, install, configuration backup, or other atomic unit, after tests, and after evidence is committed. Before pausing, finish or roll back the active unit and record the exact next command plus current model and provider in evidence/P03-S006/checkpoint.json.

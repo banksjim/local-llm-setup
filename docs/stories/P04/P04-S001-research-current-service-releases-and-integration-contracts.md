@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P03-S011 |
 | Unlocks | P04-S002 |
-| Preferred route | Controller-selected economical research route with web access; architecture model only for unresolved synthesis. |
+| Preferred route | Interface: goagentic through a web-enabled cloud IDE or CLI; Provider: OpenAI or Anthropic with primary-source web access; Model class: current economical research model; Effort: medium; Fallback: current Sol or Sonnet-class synthesis route when sources conflict. |
 | Research freshness | Official documentation, releases, and security advisories checked within 7 days. |
 
 ## 1. User story
@@ -37,44 +37,44 @@ P03-S011. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create and verify the service release matrix for Rancher Desktop, Compose, Open WebUI, PostgreSQL, PGVector, SearXNG, Docling Serve, and MLflow plus image digest and migration register; no image is pulled. Store versioned implementation or guidance at the story-owned output path already named by this contract and sanitized run evidence under evidence/P04-S001/.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not enable Kubernetes or Wasm, publish database ports, bind host services beyond loopback, store secrets in Git or evidence, ingest a real knowledge base, enable cloud APIs, or alter Ollama model selection.
 
 ## 8. Privilege and human approval
 
-Not applicable — active phase authorization is sufficient.
+No privileged authorization is required because P04-S001 performs source research and versioned documentation only; discovery of a required mutation creates or reroutes to a separately previewed story.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected; output is documentation, research, or learning evidence. New facts may raise risk; an LLM cannot lower it.
+Research changes only planning evidence, while stale compatibility data blocks implementation.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and route to review. A compatibility matrix pins supported versions and digests and documents migrations and conflicts.
+Create an activation packet; verify dependencies, freshness, and targets; preview the exact change; confirm revision-bound phase authorization where mutation is privileged; acquire the controller lease; produce docs/research/p04/P04-S001-research-current-service-releases-and-integration-contracts-matrix.md; run the named positive and negative checks; record sanitized evidence; release the lease. Acceptance criterion: the matrix records current stable version, image digest, license, breaking changes, ports, health contract, backup and migration guidance, and direct primary source for each service.
 
 ## 11. Automated acceptance tests
 
-A compatibility matrix pins supported versions and digests and documents migrations and conflicts. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; justified exclusions are recorded.
+Assert the expected story inventory is nonzero, then verify that the matrix records current stable version, image digest, license, breaking changes, ports, health contract, backup and migration guidance, and direct primary source for each service. Fail on missing evidence, unexpected targets, secrets, stale sources, an untested negative boundary, or a validator that matched zero fixtures.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient.
+Not applicable — P04-S001 is accepted through deterministic checks plus an independent review; no experiential or credential-bearing action is delegated to the LLM.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+A repeat run refreshes docs/research/p04/P04-S001-research-current-service-releases-and-integration-contracts-matrix.md without duplicate records. Rollback restores its pre-story Git version and removes only unaccepted evidence/P04-S001/ evidence.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; change inventory; sanitized output; test, approval, idempotency, rollback, review, and human records.
+Commit docs/research/p04/P04-S001-research-current-service-releases-and-integration-contracts-matrix.md or its versioned result plus evidence/P04-S001/activation.json, evidence/P04-S001/change-inventory.json, evidence/P04-S001/test-results.json, evidence/P04-S001/rollback.json, and evidence/P04-S001/review.md; include exact versions or digests, sanitized commands or observations, timestamps, and an explicit not-applicable human record.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; human evidence is genuine; no prohibited change occurred; state agrees; next story unlocks.
+P04-S001 is Done only when the matrix records current stable version, image digest, license, breaking changes, ports, health contract, backup and migration guidance, and direct primary source for each service; the story-owned output and evidence inventory exist, independent review has no unresolved material finding, rollback and idempotency evidence is accepted, and controller state unlocks the declared next story.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back any atomic replacement before pausing.
+Pause after the activation packet, after each download, install, configuration backup, or other atomic unit, after tests, and after evidence is committed. Before pausing, finish or roll back the active unit and record the exact next command plus current model and provider in evidence/P04-S001/checkpoint.json.

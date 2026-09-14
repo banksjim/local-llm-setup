@@ -10,9 +10,9 @@
 | Hold reason | Phase Not Activated |
 | Risk | Low |
 | Actor | LLM |
-| Dependencies | P04-S011 |
+| Dependencies | P04-S014 |
 | Unlocks | P05-S002 |
-| Preferred route | Controller-selected economical research route with web access; architecture model only for unresolved synthesis. |
+| Preferred route | Interface: goagentic through a web-enabled cloud IDE or CLI; Provider: OpenAI or Anthropic with primary-source web access; Model class: current economical research model; Effort: medium; Fallback: current Sol or Sonnet-class synthesis route when sources conflict. |
 | Research freshness | Official product docs and candidate repositories and releases checked within 7 days. |
 
 ## 1. User story
@@ -33,48 +33,48 @@ Official product docs and candidate repositories and releases checked within 7 d
 
 ## 5. Preconditions and unlock conditions
 
-P04-S011. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P04-S014. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create and verify the official client integration matrix, OSS dictation candidate matrix, release and license evidence, provenance and privacy risk register, and shortlist decision; no client is installed. Store versioned implementation or guidance at the story-owned output path already named by this contract and sanitized run evidence under evidence/P05-S001/.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not weaken WSL isolation, overwrite unrelated editor settings, share Windows and Ubuntu credentials, enable cloud transcription or cleanup, silently replace a hosted model, expose a local endpoint to the LAN, or install an optional integration without owner opt-in.
 
 ## 8. Privilege and human approval
 
-Not applicable — active phase authorization is sufficient.
+No privileged authorization is required because P05-S001 performs source research and versioned documentation only; discovery of a required mutation creates or reroutes to a separately previewed story.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected; output is documentation, research, or learning evidence. New facts may raise risk; an LLM cannot lower it.
+Research and scoring alter recommendations only; provenance or privacy uncertainty blocks candidates.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and route to review. A dated matrix separates supported, experimental, incompatible, and paid or cloud paths.
+Create an activation packet; verify dependencies, freshness, and targets; preview the exact change; confirm revision-bound phase authorization where mutation is privileged; acquire the controller lease; produce docs/research/p05/P05-S001-refresh-integration-and-dictation-landscape-matrix.md; run the named positive and negative checks; record sanitized evidence; release the lease. Acceptance criterion: the matrix records license, current release and signature, maintenance, telemetry and cloud defaults, local engines, Windows support, hotkey and paste method, uninstall behavior, and primary-source integration contracts.
 
 ## 11. Automated acceptance tests
 
-A dated matrix separates supported, experimental, incompatible, and paid or cloud paths. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; justified exclusions are recorded.
+Assert the expected story inventory is nonzero, then verify that the matrix records license, current release and signature, maintenance, telemetry and cloud defaults, local engines, Windows support, hotkey and paste method, uninstall behavior, and primary-source integration contracts. Fail on missing evidence, unexpected targets, secrets, stale sources, an untested negative boundary, or a validator that matched zero fixtures.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient.
+Not applicable — P05-S001 is accepted through deterministic checks plus an independent review; no experiential or credential-bearing action is delegated to the LLM.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+A repeat run refreshes docs/research/p05/P05-S001-refresh-integration-and-dictation-landscape-matrix.md without duplicate records. Rollback restores its pre-story Git version and removes only unaccepted evidence/P05-S001/ evidence.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; change inventory; sanitized output; test, approval, idempotency, rollback, review, and human records.
+Commit docs/research/p05/P05-S001-refresh-integration-and-dictation-landscape-matrix.md or its versioned result plus evidence/P05-S001/activation.json, evidence/P05-S001/change-inventory.json, evidence/P05-S001/test-results.json, evidence/P05-S001/rollback.json, and evidence/P05-S001/review.md; include exact versions or digests, sanitized commands or observations, timestamps, and an explicit not-applicable human record.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; human evidence is genuine; no prohibited change occurred; state agrees; next story unlocks.
+P05-S001 is Done only when the matrix records license, current release and signature, maintenance, telemetry and cloud defaults, local engines, Windows support, hotkey and paste method, uninstall behavior, and primary-source integration contracts; the story-owned output and evidence inventory exist, independent review has no unresolved material finding, rollback and idempotency evidence is accepted, and controller state unlocks the declared next story.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back any atomic replacement before pausing.
+Pause after the activation packet, after each download, install, configuration backup, or other atomic unit, after tests, and after evidence is committed. Before pausing, finish or roll back the active unit and record the exact next command plus current model and provider in evidence/P05-S001/checkpoint.json.

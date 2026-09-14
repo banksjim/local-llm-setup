@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P03-S001 |
 | Unlocks | P03-S003 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected current assistant model; no unattended substitution. |
+| Preferred route | Interface: goagentic-guided session in the designated cloud IDE or CLI; Provider: owner's active OpenAI or Anthropic subscription; Model class: current economical teaching or validation model; Effort: medium; Fallback: pause for the owner or switch to the current Sol or Sonnet-class route when explanation quality fails. |
 | Research freshness | Current P03 research and official Ollama guidance. |
 
 ## 1. User story
@@ -37,45 +37,44 @@ P03-S001. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create and verify the lesson, two sizing worksheets, answer rubric, and owner response record; no Ollama setting or model is changed. Store versioned implementation or guidance at the story-owned output path already named by this contract and sanitized run evidence under evidence/P03-S002/.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not install containers or desktop clients, expose Ollama to the LAN, delete existing models, change BIOS or GPU drivers, accept floating model tags, or route unqualified controller work to a local model.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
+The owner completes the learning exercise and writes their answers, but no privileged authorization is requested and no system mutation is allowed in P03-S002.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected; output is documentation, research, or learning evidence. New facts may raise risk; an LLM cannot lower it.
+This human learning gate has no system mutation; incorrect answers block installation.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and route to review. The owner completes a sizing exercise and explains why advertised maximum context is not the default.
+Create an activation packet; verify dependencies, freshness, and targets; preview the exact change; confirm revision-bound phase authorization where mutation is privileged; acquire the controller lease; produce docs/learning/p03/P03-S002-learn-local-inference-parameters-quantization-and-context.md; run the named positive and negative checks; record sanitized evidence; release the lease. Acceptance criterion: the owner correctly explains B, quantization, context, KV cache, VRAM headroom, and chooses a profile from two sizing scenarios.
 
 ## 11. Automated acceptance tests
 
-The owner completes a sizing exercise and explains why advertised maximum context is not the default. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; justified exclusions are recorded.
+Assert that expected fixtures and checklist items are nonzero; validate the lesson or acceptance packet schema, prerequisite automated results, evidence paths, timestamps, and blank owner-answer fields before handoff. After handoff, verify only that genuine owner-authored evidence exists and matches the rubric; automation must not generate, infer, or change the owner's answers.
 
 ## 12. Human validation
 
-The owner completes the story checklist and records the result through the controller.
+The owner completes the guided exercise without answer substitution, explains the result in their own words, and records completion in evidence/P03-S002/human-validation.md.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+A repeat run refreshes docs/learning/p03/P03-S002-learn-local-inference-parameters-quantization-and-context.md without duplicate records. Rollback restores its pre-story Git version and removes only unaccepted evidence/P03-S002/ evidence.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; change inventory; sanitized output; test, approval, idempotency, rollback, review, and human records.
+Commit docs/learning/p03/P03-S002-learn-local-inference-parameters-quantization-and-context.md or its versioned result plus evidence/P03-S002/activation.json, evidence/P03-S002/change-inventory.json, evidence/P03-S002/test-results.json, evidence/P03-S002/rollback.json, and evidence/P03-S002/review.md; include exact versions or digests, sanitized commands or observations, timestamps, and genuine owner-authored human validation.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; human evidence is genuine; no prohibited change occurred; state agrees; next story unlocks.
+P03-S002 is Done only when the owner correctly explains B, quantization, context, KV cache, VRAM headroom, and chooses a profile from two sizing scenarios; the story-owned output and evidence inventory exist, independent review has no unresolved material finding, rollback and idempotency evidence is accepted, and controller state unlocks the declared next story.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back any atomic replacement before pausing.
-
+Pause after the activation packet, after each download, install, configuration backup, or other atomic unit, after tests, and after evidence is committed. Before pausing, finish or roll back the active unit and record the exact next command plus current model and provider in evidence/P03-S002/checkpoint.json.

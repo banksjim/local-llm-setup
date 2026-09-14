@@ -4,9 +4,29 @@
 **Required outcome:** Reliable desktop dictation and documented, reversible VS Code, Codex, Claude, ChatGPT, Cowork, autocomplete, and LM Studio workflows.  
 **Status:** Planned
 
+## Fixed architecture and execution boundary
+
+- VS Code remains the Windows desktop shell and opens repositories inside `AI-Workbench` through the WSL remote workflow. Python, Go, Node.js, and TypeScript language tooling runs in Ubuntu; Windows-only UI extensions remain on the Windows side.
+- Use the current Ollama-publisher VS Code language-model provider extension for local chat when it passes activation tests; VS Code's built-in Ollama provider is deprecated as of this review. Local inline completion is a separate optional extension path because local BYOK chat does not provide inline suggestions. Preserve ordinary IntelliSense and any existing native or Copilot completion configuration.
+- Run Codex CLI and Claude Code inside `AI-Workbench`. Codex uses its built-in `ollama` provider and `--oss`; Claude Code uses Ollama's supported `ollama launch claude`/Anthropic-compatible path. Cloud and local profiles are explicit, backed up, testable, and never switched silently mid-story.
+- ChatGPT, Codex desktop, Claude Desktop, and Claude Cowork receive a sourced compatibility matrix. Do not claim they can replace their hosted model with Ollama unless their current official documentation says so; MCP/tool connectivity is not the same as model-backend replacement.
+- Windows-wide dictation is selected by a same-corpus benchmark, initially led by OpenWhispr and at least two current credible OSS alternatives. Local transcription and any cleanup model must remain local during the acceptance test.
+- LM Studio remains an optional evaluation track. It stores its own compatible model files under `H:\ai\models\lm-studio`, binds only `127.0.0.1`, requires authentication where supported, and uses port `51239` only after an availability check. It may coexist with Ollama, but concurrent GPU residency is not assumed.
+- P05 produces reusable `operations/windows/p05`, `operations/ubuntu/p05`, and `tests/p05` preview/apply/verify/rollback operations plus user-facing integration guides; it does not build the final installer.
+
+## Current source baseline (refresh at activation)
+
+- [VS Code language-model documentation](https://code.visualstudio.com/docs/agent-customization/language-models)
+- [Continue repository status and license](https://github.com/continuedev/continue)
+- [Codex configuration reference](https://learn.chatgpt.com/docs/config-file/config-reference)
+- [Claude Code configuration reference](https://code.claude.com/docs/en/configuration)
+- [Ollama Claude Code integration](https://docs.ollama.com/integrations/claude-code)
+- [LM Studio local server](https://lmstudio.ai/docs/developer/core/server)
+- [OpenWhispr repository](https://github.com/OpenWhispr/openwhispr)
+
 ## Gate
 
-The phase activates only after dependencies are accepted and the owner authorizes its first story. Research and design may occur earlier, but implementation cannot cross this gate.
+P05-S001 research and P05-S002 learning may run after P04 acceptance without privileged authorization. Before P05-S003 installs benchmark candidates, the controller presents one revision-bound preview covering candidate provenance, microphone/clipboard/hotkey access, Windows startup changes, VS Code and WSL client settings, credential boundaries, optional-component opt-in gates, port 51239, model storage, tests, and rollback; the owner gives one P05 phase authorization. Authentication, microphone permission, optional opt-in, learning answers, and final acceptance remain genuine human actions rather than repeated approvals. Material changes to clients, extensions, endpoints, credential paths, privacy, risk, or operations invalidate the authorization.
 
 ## Story sequence
 
@@ -28,4 +48,3 @@ The phase activates only after dependencies are accepted and the owner authorize
 ## Completion
 
 Every non-superseded story is Done; human evidence is genuine; review findings resolve; rollback evidence exists; and the outcome is demonstrated on the reference workstation.
-

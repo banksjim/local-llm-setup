@@ -1,17 +1,17 @@
 # Formal Specification Review
 
 **Review date:** 2026-09-13  
-**Scope:** Master program, four system specifications, ten phase specifications, canonical story contract, 129 story documents, README, navigation, local/remote delivery state, and removed legacy paths
+**Scope:** Master program, four system specifications, ten phase specifications, canonical story contract, current 132-story inventory, README, navigation, local/remote delivery state, and removed legacy paths
 
 **Method:** Two adversarial architecture passes, requirement trace, bootstrap-dependency analysis, story-sizing review, semantic anti-pattern scan, schema inspection, sequence and dependency-DAG validation, reciprocal-reference validation, link validation, obsolete-path inspection, and Git checks
 
-**Result:** Remediation in progress; the earlier pass decision was withdrawn after deeper semantic inspection
+**Result:** Batches 1 and 2 pass their bounded reviews; full-program remediation remains in progress
 
 ## Executive conclusion
 
 The former plan was not safe to execute as written. It combined two operating systems and several independent systems in one document, contained bootstrap and runtime-boundary contradictions, used an overloaded state model, and did not express all approved work as testable stories. Later passes corrected many structural defects but incorrectly treated structural completeness as semantic completeness. A deeper audit found widespread template-only scope, evidence, rollback, completion, routing, and risk language. The architecture remains a useful Windows-only, ten-phase decomposition, but the specification set is not yet safe to execute without remediation.
 
-No workstation implementation has started. The written plan remains under bounded remediation; no story may become Ready merely because its document exists.
+No workstation implementation has started. P01-P02 and P03-P05 are remediated; P06-P10 remain blocking. The written plan remains under bounded remediation, and no story may become Ready merely because its document exists.
 
 ## Withdrawn decision and active remediation
 
@@ -71,6 +71,16 @@ These findings are material. The final review decision stays open until all thre
 | R37 | High | P01 implicitly depended on Pester even though its bootstrap must run before later tooling is installed. | Required dependency-free Windows PowerShell tests in P01; an external framework is permitted only if current inventory proves it is already present and the activation packet pins it. |
 | R38 | Critical | Early P01 execution contracts still required acquiring the controller lease before P01-S006 implemented and accepted that lease. | Required the Git-based bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted. |
 | R39 | High | P02 referred to a dedicated Linux user without assigning any story to create, select, or verify that account. | Added one owner-named non-root default account to P02-S005, prohibited password capture, and required default-user and secret-leak checks. |
+| R40 | High | P04 used one integration story for search, extraction, vector storage, speech, and acceptance, preventing independent execution and diagnosis. | Decomposed it into five bounded stories and updated the dependency graph, phase table, README count, and downstream P05 dependency. |
+| R41 | High | Current VS Code and extension facts had drifted: the built-in Ollama provider is deprecated, local BYOK chat does not provide inline suggestions, and Continue is no longer actively maintained. | Required current official Ollama-publisher provider research for chat, separated optional autocomplete research, and prohibited preselecting Continue. |
+| R42 | Critical | The plan put models and project data on `H:` but silently left Rancher's growing WSL data disk and named volumes on the system drive. | Added exact `H:\ai\containers` distribution/snapshot targets, current Microsoft/Rancher method research, verified export and inventory checks, reset-path revalidation, and a prohibition on live PostgreSQL bind mounts. |
+| R43 | Medium | Nine P03-P05 human-validation sections still named generic GUI, credential, elevation, and microphone actions, including actions irrelevant to their stories. | Replaced them with exact owner actions, private-input boundaries, and story-specific evidence. |
+| R44 | High | The backlog headline said 132 stories while its phase table still listed P04 as 11, yielding an internally inconsistent total. | Corrected P04 to 14 and added a phase-count sum assertion to the review. |
+| R45 | High | OpenWhispr's current scope now includes accounts, sync, meetings, calendars, agents, screen context, and remote interfaces beyond local dictation. | Kept it as a benchmark candidate but required a minimal dictation-only configuration, explicit feature disablement, connected traffic capture, and disqualification if unrelated access cannot be disabled. |
+| R46 | High | The Open WebUI document/vector story did not explicitly bind indexing and query to the same accepted embedding model and dimension. | Added the P03 profile/dimension to configuration and made mismatch a pre-index hard failure. |
+| R47 | High | Three acceptance stories named prohibited outcomes but did not explicitly make their detection fail the automated gate. | Added zero-fixture, external-traffic, isolation, restore, workflow, and boundary failure clauses to P04-S012, P04-S014, and P05-S012. |
+| R48 | High | Six story-specific human-validation gates still allowed ambiguity about whether an LLM could author the owner's observations. | Added explicit anti-fabrication language to each gate and validated all 15 P03-P05 human gates independently. |
+| R49 | Medium | P05 cited Ollama's Claude Code integration but omitted Claude Code's own current configuration authority. | Added the current official Claude Code configuration reference and included its domain in the source-baseline check. |
 
 ## Redundancy removed
 
@@ -114,21 +124,24 @@ These are controlled gates, not missing requirements:
 
 ## Automated review results
 
-The earlier table is retained as structural-history evidence, not a current full-program pass. Batch 1 completed two consecutive clean passes: 129 story files were asserted, and all 27 P01-P02 stories passed the revised semantic and trace checks. P03-P10 still contain 97 generic-scope/evidence stories and 102 incomplete routes. Those residual counts keep the program review open.
+The earlier Batch 1 table is retained as structural-history evidence, not a current full-program pass. At that time 129 story files were asserted and all 27 P01-P02 stories passed. The current inventory is 132 after P04 decomposition. Batch 2 completed two consecutive clean passes covering all 37 P03-P05 stories and the full 132-node graph. P06-P10 still contain 63 measured generic core story blocks and 68 incomplete routes; those residuals keep the program review open.
 
 | Check | Result |
 |---|---|
-| Story count | 129, explicitly asserted before dependent checks run |
-| Unique story IDs | 129 |
+| Story count | 132 current; Batch 1's historical assertion was 129 |
+| Unique story IDs | 132 current |
 | Required properties and 16 sections | Pass |
 | Per-phase sequence uniqueness and continuity | Pass |
-| Dependency graph | Pass; 129 of 129 nodes visited with no cycle |
+| Dependency graph | Pass; 132 of 132 reciprocal nodes visited with no cycle and independently topologically ordered |
 | Reciprocal dependency and unlock references | Pass |
 | Phase-table sequence, step, and risk agreement | Pass |
-| Local Markdown links | Pass after relative-depth correction |
+| Local Markdown links | Pass; 208 references resolved in the current tree |
 | Ambiguous learning and contradictory research prose | Pass; zero matches |
 | Placeholder and obsolete terminology scan | Pass; explanatory README history is intentional |
 | Removed documentation-tree presence | Pass; no active or empty legacy folder remains locally |
+| P03-P05 concrete output and evidence contracts | Pass; 37 of 37 |
+| P03-P05 Critical-risk controls | Pass; four of four include authorization, negative tests, and recovery |
+| P03-P05 human-validation authenticity | Pass; 15 of 15 include an owner action and anti-fabrication boundary |
 | Git whitespace validation | Pass |
 | Workstation implementation evidence | Not applicable — implementation has not started |
 
@@ -142,4 +155,4 @@ The earlier table is retained as structural-history evidence, not a current full
 
 ## Review decision
 
-No pass decision is currently in force. The structural results above remain useful evidence, but semantic remediation is blocking. When remediation eventually passes and the owner explicitly starts P01, P01-S015 will be the only story eligible for activation; its separate mutation preview and approval will gate creation of the personal GitHub Project.
+Batch 2 passes its bounded review; this is not a full-program pass. P06-P10 and their RAG/memory system specifications remain blocking until Batch 3 correction and two consecutive full-program passes complete. When the full program eventually passes and the owner explicitly starts P01, P01-S015 will be the only story eligible for activation; its separate mutation preview and approval will gate creation of the personal GitHub Project.
