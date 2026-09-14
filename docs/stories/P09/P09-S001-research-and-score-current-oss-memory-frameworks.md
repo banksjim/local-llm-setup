@@ -7,74 +7,43 @@
 | Sequence | 1 |
 | Status | Planned |
 | Step | Research |
-| Hold reason | Phase Not Activated |
+| Hold reason | Dependency |
 | Risk | Medium |
 | Actor | LLM |
 | Dependencies | P08-S010 |
 | Unlocks | P09-S002 |
-| Preferred route | Controller-selected economical research route with web access. |
-| Research freshness | Official repositories, docs, releases, issues, licenses, and security advisories checked within 7 days. |
+| Preferred route | Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: research-capable; Effort: high; Fallback: second provider for disputed license, security, or feature claims. |
+| Research freshness | Official repositories, docs, releases, issues, licenses, benchmarks, and advisories checked within 7 days. |
 
 ## 1. User story
-
-As the workstation owner, I want this story to evaluate current Mem0, Letta, Zep community options, LangGraph components, and credible new GitHub projects against SYS-MEM, so progress is inspectable and independent of chat memory.
-
+As the owner, I want a reproducible current comparison so the memory layer is chosen from evidence rather than popularity.
 ## 2. Bounded objective
-
-Evaluate current Mem0, Letta, Zep community options, LangGraph components, and credible new GitHub projects against SYS-MEM.
-
+Create docs/research/p09/P09-S001-oss-memory-scorecard.md plus sources.json and scores.json comparing Mem0, LangGraph Store/LangMem, Graphiti, Letta, Cognee, Hindsight, Supermemory, and credible new alternatives.
 ## 3. Learning objective
-
-Not applicable — this research story prepares the evidence used by the following learning gate and does not teach an owner-operated procedure.
-
+Not applicable — P09-S003 teaches the selected design after selection.
 ## 4. Current research requirements
-
-Official repositories, docs, releases, issues, licenses, and security advisories checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
-
+Verify repository and release activity, exact license, self-hosted feature parity, local Ollama compatibility, telemetry, dependencies, resource needs, security disclosures, export/deletion, and benchmark methodology from primary sources. Separate managed-product claims from OSS evidence.
 ## 5. Preconditions and unlock conditions
-
-P08-S010. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
-
+P08-S010 is Done and SYS-MEM is current. The activation packet fixes weighted criteria, minimum gates, hardware budget, and research cutoff before scoring.
 ## 6. In scope
-
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
-
+Runnable isolated smoke tests with synthetic data; license and maintenance health; WSL/Rancher fit; LangGraph integration; provenance; owner-review overlay feasibility; namespaces; deletion/export; offline behavior; migration; observability; and total resource cost.
 ## 7. Out of scope and prohibited changes
-
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
-
+No winner chosen in advance, persistent install, private data, cloud signup, paid key, vendor benchmark accepted without reproduction, or SaaS feature counted as OSS.
 ## 8. Privilege and human approval
-
-Not applicable — phase authorization is sufficient.
-
+No privilege. Disposable local test processes require no phase authorization and are removed after evidence capture.
 ## 9. Risk rationale
-
-Work changes bounded repository or user-level configuration and is directly reversible. New facts may raise risk; an LLM cannot lower it.
-
+Medium: research executes untrusted packages in isolation but creates no persistent service or private data.
 ## 10. Execution contract
-
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. A reproducible scorecard covers license, self-hosting, integration, provenance, review, security, portability, and maintenance.
-
+Freeze criteria; verify primary sources; test each viable candidate in an isolated network/storage namespace; reproduce a small common retain/recall/update/delete/export suite; score with uncertainty; document rejected candidates and a composable baseline; and obtain fresh-session review.
 ## 11. Automated acceptance tests
-
-A reproducible scorecard covers license, self-hosting, integration, provenance, review, security, portability, and maintenance. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
-
+Require all eight named candidates or an evidence-backed disqualification; validate score arithmetic, licenses, source dates, feature provenance, synthetic smoke-test parity, cleanup, and contradictions. Fail any candidate needing cloud service, unexplained telemetry, missing export/delete, or opaque sole storage.
 ## 12. Human validation
-
-Not applicable — automated evidence and independent review suffice.
-
+Not applicable — technical comparison is independently reviewed; P09-S002 presents only owner-relevant tradeoffs.
 ## 13. Idempotency and rollback
-
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
-
+Reruns preserve prior scores and append superseding evidence. Rollback removes disposable environments and restores the prior research record.
 ## 14. Required evidence
-
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
-
+evidence/P09-S001/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, sources.json, scores.json, licenses.json, smoke-tests.json, and contradictions.json.
 ## 15. Definition of done
-
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
-
+Every candidate has a reproducible result, no managed claim is misrepresented, uncertainty is explicit, and P09-S002 has a ranked recommendation plus fallback.
 ## 16. Pause-safe boundaries
-
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Update evidence/P09-S001/checkpoint.json after each candidate; remove its disposable process/network before pausing.

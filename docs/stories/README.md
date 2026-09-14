@@ -1,6 +1,6 @@
 # Windows Program Story Backlog
 
-The active Windows program contains 136 sequenced stories. Every story follows the [canonical contract](../specifications/standards/STORY-CONTRACT.md), including explicit research, learning, scope, risk, approval, tests, evidence, rollback, and pause boundaries. P04 contains 14 stories after its integration work was decomposed; P07 contains 19 because private Langflow deployment and private knowledge-repository initialization are separate prerequisites; P08 contains 12 because the shared runtime and daily check-in are independent tactical units.
+The active Windows program contains 137 sequenced stories. Every story follows the [canonical contract](../specifications/standards/STORY-CONTRACT.md), including explicit research, learning, scope, risk, approval, tests, evidence, rollback, and pause boundaries. P04 contains 14 stories after its integration work was decomposed; P07 contains 19 because private Langflow deployment and private knowledge-repository initialization are separate prerequisites; P08 contains 12 because the shared runtime and daily check-in are independent tactical units; P09 contains 13 because framework selection and private deployment are separate gates.
 
 | Phase | Stories | Index |
 |---|---:|---|
@@ -12,7 +12,7 @@ The active Windows program contains 136 sequenced stories. Every story follows t
 | P06 | 14 | [Agent engineering](../specifications/phases/P06-agent-engineering-foundation.md) |
 | P07 | 19 | [RAG and knowledge base](../specifications/phases/P07-rag-ingestion-and-knowledge-base-capstone.md) |
 | P08 | 12 | [Personal agents](../specifications/phases/P08-practical-personal-agents.md) |
-| P09 | 12 | [Durable memory](../specifications/phases/P09-durable-agent-memory.md) |
+| P09 | 13 | [Durable memory](../specifications/phases/P09-durable-agent-memory.md) |
 | P10 | 15 | [Operations and acceptance](../specifications/phases/P10-operations-and-final-acceptance.md) |
 
 The files are specifications, not proof of completion. Initial status remains Planned until the owner explicitly starts P01. P01-S015 is sequence 1: it creates the personal GitHub Project and imports all approved stories as visible, deduplicated draft items. Story IDs remain stable and therefore are not required to match sequence order.

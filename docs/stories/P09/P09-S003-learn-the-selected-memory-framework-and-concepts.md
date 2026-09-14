@@ -11,71 +11,39 @@
 | Risk | Low |
 | Actor | Human + LLM |
 | Dependencies | P09-S002 |
-| Unlocks | P09-S004 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
-| Research freshness | Current official selected-framework tutorials checked within 7 days. |
+| Unlocks | P09-S013 |
+| Preferred route | Interface: browser/Open WebUI lesson through goagentic; Provider: controller-selected value cloud model; Model class: teaching; Effort: medium; Fallback: alternate P09-S001-vetted resource. |
+| Research freshness | Official selected-framework docs and vetted concept/hands-on videos checked within 24 hours. |
 
 ## 1. User story
-
-As the workstation owner, I want this story to teach working versus long-term memory, namespaces, provenance, conflicts, poisoning, retention, and selected APIs, so progress is inspectable and independent of chat memory.
-
+As the owner, I want focused training on the memory system I will actually operate before it is deployed.
 ## 2. Bounded objective
-
-Teach working versus long-term memory, namespaces, provenance, conflicts, poisoning, retention, and selected APIs.
-
+Deliver docs/learning/p09/P09-S003-durable-memory.md as a 60–90 minute pauseable module with a synthetic retain/review/recall/correct/delete exercise.
 ## 3. Learning objective
-
-Complete the targeted concepts and demonstrate them through the acceptance exercise.
-
+The owner can distinguish thread context, candidate, durable ledger, projection, and RAG; explain why review is mandatory; identify poisoning; and use review, correction, deletion, disable, and restore controls.
 ## 4. Current research requirements
-
-Current official selected-framework tutorials checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
-
+Vet one short conceptual and one thorough hands-on video plus official docs for recency, ratings/authority, exact selected version, accessibility, and technical accuracy.
 ## 5. Preconditions and unlock conditions
-
-P09-S002. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
-
+P09-S002 is Done. The lesson reflects the accepted ADR and contains objectives, diagram, glossary, exercises, answer key, time boxes, and pause points.
 ## 6. In scope
-
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
-
+Project-specific memory concepts, selected framework, privacy, provenance, conflicts, retention, restricted data, failure behavior, owner inbox, and safe operating actions.
 ## 7. Out of scope and prohibited changes
-
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
-
+No general database/AI course, implementation, private memory, technical certification by the owner, or pass based only on watching videos.
 ## 8. Privilege and human approval
-
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
-
+No privilege. The owner controls pacing and may use prior-learning credit only with an evidence-linked retention and delta check.
 ## 9. Risk rationale
-
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
-
+Low: education and synthetic exercises only.
 ## 10. Execution contract
-
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Owner completes a local exercise and explains candidate versus durable memory.
-
+Teach in short modules; run synthetic examples; provide feedback; record only genuine answers and completion; allow “needs reinforcement”; and block deployment until all objectives pass or are validly credited.
 ## 11. Automated acceptance tests
-
-Owner completes a local exercise and explains candidate versus durable memory. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
-
+Validate resource vetting, version alignment, every objective/exercise/answer mapping, time/accessibility, and no mutation. Never fabricate owner responses.
 ## 12. Human validation
-
-Owner completes the story checklist and records it through the controller.
-
+The owner completes or validly skips each module, performs the exercise, and attests understanding or requests reinforcement.
 ## 13. Idempotency and rollback
-
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
-
+Reruns retain completed unchanged modules and reopen only deltas/failures. Rollback removes learning progress only.
 ## 14. Required evidence
-
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
-
+evidence/P09-S003/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, learning-material-vetting.json, module-progress.json, knowledge-check.json, and owner-attestation.md.
 ## 15. Definition of done
-
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
-
+All objectives are demonstrated, owner evidence is genuine, current selected-framework material is used, and P09-S013 is unlocked.
 ## 16. Pause-safe boundaries
-
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-
+Update evidence/P09-S003/checkpoint.json at every module boundary with exact resume point; never infer completion after interruption.

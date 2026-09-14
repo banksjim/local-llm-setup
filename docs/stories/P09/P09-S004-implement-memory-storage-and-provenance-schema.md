@@ -4,77 +4,46 @@
 |---|---|
 | Story ID | P09-S004 |
 | Phase | P09 — Durable Agent Memory |
-| Sequence | 4 |
+| Sequence | 5 |
 | Status | Planned |
 | Step | Implementation |
 | Hold reason | Dependency |
-| Risk | High |
+| Risk | Critical |
 | Actor | LLM |
-| Dependencies | P09-S003 |
+| Dependencies | P09-S013 |
 | Unlocks | P09-S005 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
-| Research freshness | Current selected framework and storage docs checked within 7 days. |
+| Preferred route | Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability data engineering; Effort: high; Fallback: framework-neutral PostgreSQL ledger with projection disabled. |
+| Research freshness | ADR-selected storage, transaction, migration, encryption, and projection docs checked within 7 days. |
 
 ## 1. User story
-
-As the workstation owner, I want this story to create versioned shared, agent-private, and restricted records with source and supersession history, so progress is inspectable and independent of chat memory.
-
+As the owner, I want an authoritative, portable ledger so approved memory never depends on an opaque derived index.
 ## 2. Bounded objective
-
-Create versioned shared, agent-private, and restricted records with source and supersession history.
-
+Implement workloads/agents/memory/ledger/ and operations/ubuntu/p09/P09-S004-memory-ledger/ with the SYS-MEM record, append-only versions, decision receipts, content tombstones, and rebuildable projections.
 ## 3. Learning objective
-
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P09-S003; this story introduces no separate learning objective.
-
+Not applicable — P09-S003 covers the data layers.
 ## 4. Current research requirements
-
-Current selected framework and storage docs checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
-
+Confirm selected transaction, migration, indexing, encryption, and deletion semantics; record deviations from the ADR.
 ## 5. Preconditions and unlock conditions
-
-P09-S003. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
-
+P09-S013 is Done. Activation fixes schema version, namespace grammar, canonical serialization, retention, integrity algorithm, embedding profile/dimension, and migration checkpoint.
 ## 6. In scope
-
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
-
+Typed schemas; candidate/durable tables; immutable versions; provenance; anti-replay decision receipt; sensitivity/access policy; supersession; content purge plus non-content tombstone; export format; projection outbox; migrations; and synthetic fixtures.
 ## 7. Out of scope and prohibited changes
-
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
-
+No extraction, owner UI, agent recall, mutable history, raw chat archive, secret storage, automatic approval, framework-only canonical state, or real personal data.
 ## 8. Privilege and human approval
-
-Not applicable — phase authorization is sufficient.
-
+Covered by P09 authorization; schema or deletion-semantic change invalidates it.
 ## 9. Risk rationale
-
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
-
+Critical: this establishes authoritative private-data and deletion boundaries. Revision-bound authorization, isolated migration rehearsal, cross-provider review, and P09-S012 owner acceptance are mandatory.
 ## 10. Execution contract
-
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Schema, migration, duplicate, conflict, export, and invalid-provenance tests pass.
-
+Define schemas/validators; rehearse forward/back migration in isolation; implement transactional ledger/outbox; verify canonical hashes, version/supersession, purge/tombstone, export/import, projection rebuild, concurrency, restore, and no-op; review independently.
 ## 11. Automated acceptance tests
-
-Schema, migration, duplicate, conflict, export, and invalid-provenance tests pass. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
-
+Reject missing provenance/decision/scope, mutable version, forged/replayed receipt, invalid transition, secret canary, cross-owner ID, dimension mismatch, resurrection, and partial outbox commit. Prove concurrent writes, migration round trip, projection rebuild equivalence, purge, backup restore, and exact export.
 ## 12. Human validation
-
-Not applicable — automated evidence and independent review suffice.
-
+Not applicable — synthetic data and independent data/security review suffice.
 ## 13. Idempotency and rollback
-
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
-
+Migrations are versioned and repeat-safe. Rollback restores the isolated rehearsal or pre-migration checkpoint; it never rewrites accepted history.
 ## 14. Required evidence
-
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
-
+evidence/P09-S004/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, schemas.json, migration-results.json, integrity-results.json, purge-results.json, and projection-rebuild.json.
 ## 15. Definition of done
-
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
-
+The ledger is authoritative, append-only except explicit purge, portable, integrity-checked, projection-independent, migration-safe, and independently reviewed.
 ## 16. Pause-safe boundaries
-
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Update evidence/P09-S004/checkpoint.json after schema and each migration/transaction/restore gate; never pause mid-migration or partial ledger/outbox transaction.

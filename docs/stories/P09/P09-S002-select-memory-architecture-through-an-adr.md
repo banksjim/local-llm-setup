@@ -12,69 +12,38 @@
 | Actor | Human + LLM |
 | Dependencies | P09-S001 |
 | Unlocks | P09-S003 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
-| Research freshness | P09 framework research must be current. |
+| Preferred route | Interface: goagentic guided decision; Provider: different cloud provider from P09-S001 reviewer; Model class: high-reliability architecture; Effort: high; Fallback: select the framework-neutral LangGraph/PostgreSQL baseline if no candidate clears every gate. |
+| Research freshness | P09-S001 sources and candidate releases rechecked within 24 hours. |
 
 ## 1. User story
-
-As the workstation owner, I want this story to choose a framework or composable design based on evidence and document migration and fallback consequences, so progress is inspectable and independent of chat memory.
-
+As the owner, I want a clear recommendation and reversible architecture decision without being made responsible for technical correctness.
 ## 2. Bounded objective
-
-Choose a framework or composable design based on evidence and document migration and fallback consequences.
-
+Create docs/decisions/P09-S002-memory-architecture.md fixing the selected framework/components, canonical ledger, projection, encryption, resource allocation, migration seams, and rejected alternatives.
 ## 3. Learning objective
-
-Not applicable — this ADR selects the memory architecture that P09-S003 teaches; training before selection would be premature.
-
+Not applicable — the selected architecture is taught in P09-S003.
 ## 4. Current research requirements
-
-P09 framework research must be current. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
-
+Revalidate the winning and fallback versions, licenses, breaking changes, local-model path, and every claimed self-hosted capability.
 ## 5. Preconditions and unlock conditions
-
-P09-S001. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
-
+P09-S001 is Done with no unresolved material contradiction. The decision packet translates engineering differences into privacy, cost, maintenance, and usability consequences.
 ## 6. In scope
-
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
-
+Threat model; authoritative ledger versus derived projection; framework adapter; storage/encryption/key recovery; candidate retention; deletion/backup semantics; resource budget; observability; upgrade/migration; exit criteria; and pilot agent.
 ## 7. Out of scope and prohibited changes
-
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
-
+No deployment, technical vote by the owner, cloud dependency, auto-promotion, opaque sole store, self-editing agent identity, or use of private data.
 ## 8. Privilege and human approval
-
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
-
+No privileged mutation. The owner chooses only among explained privacy/cost/operator tradeoffs and confirms the proposed P09 scope; engineering validity requires cross-provider review.
 ## 9. Risk rationale
-
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
-
+High: an incorrect architecture could expose or corrupt future sensitive memory across agents.
 ## 10. Execution contract
-
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Owner approves the ADR and no SaaS-only feature is misrepresented as OSS.
-
+Apply gates before weighted scoring; recommend one design; map every SYS-MEM invariant; provide data-flow and trust-boundary diagrams; prove a migration/export seam with synthetic data; obtain cross-provider review; then record the owner's preference without attributing technical certification to them.
 ## 11. Automated acceptance tests
-
-Owner approves the ADR and no SaaS-only feature is misrepresented as OSS. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
-
+Validate ADR fields, source hashes, gate results, complete invariant mapping, resource arithmetic, migration fixture, threat mitigations, and rollback. Reject any design whose OSS path cannot run locally or whose durable data cannot be independently exported.
 ## 12. Human validation
-
-Owner completes the story checklist and records it through the controller.
-
+The owner records understood privacy, cost, and operating tradeoffs and accepts, rejects, or requests clarification. The LLM cannot author that response.
 ## 13. Idempotency and rollback
-
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
-
+Re-running without new evidence produces no change. Supersession requires a new ADR linked to this one; rollback restores no service because none is deployed.
 ## 14. Required evidence
-
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
-
+evidence/P09-S002/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, invariant-map.json, threat-model.json, migration-fixture.json, and owner-decision.md.
 ## 15. Definition of done
-
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
-
+One design clears all gates, maps every invariant, has an exit path, passes cross-provider review, and receives a genuine owner tradeoff decision.
 ## 16. Pause-safe boundaries
-
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Update evidence/P09-S002/checkpoint.json after gates, draft ADR, reviews, and owner decision; pause before recording a final decision if any material issue is open.

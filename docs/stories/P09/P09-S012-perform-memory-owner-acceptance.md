@@ -4,77 +4,46 @@
 |---|---|
 | Story ID | P09-S012 |
 | Phase | P09 — Durable Agent Memory |
-| Sequence | 12 |
+| Sequence | 13 |
 | Status | Planned |
 | Step | Human Validation |
-| Hold reason | Dependency |
+| Hold reason | Approval |
 | Risk | Critical |
 | Actor | Human + LLM |
 | Dependencies | P09-S011 |
 | Unlocks | P10-S001 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
-| Research freshness | Not applicable — validation uses the implemented memory system. |
+| Preferred route | Interface: Open WebUI plus the P09-S006 local inbox operation; Provider: accepted local Ollama profiles; Model class: P09-qualified runtime with value cloud facilitator only for guidance; Effort: owner-paced; Fallback: disable capture/recall and restore the P08 stateless life planner. |
+| Research freshness | Installed UI/runtime instructions and P09-S010/S011 results checked within 24 hours; no new product claim is introduced. |
 
 ## 1. User story
-
-As the workstation owner, I want this story to have the owner review candidates, promote, edit, reject, correct a memory, test isolation, and recover after restart, so progress is inspectable and independent of chat memory.
-
+As the owner, I want guided acceptance so I can decide whether reviewed memory is transparent, useful, controllable, and comfortable.
 ## 2. Bounded objective
-
-Have the owner review candidates, promote, edit, reject, correct a memory, test isolation, and recover after restart.
-
+Run one owner-paced life-planning memory cycle—capture, review, edit/approve/reject, recall, correct, restrict, export, delete, restart, disable—and record genuine decisions at evidence/P09-S012/owner-acceptance.md.
 ## 3. Learning objective
-
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P09-S003; this story introduces no separate learning objective.
-
+The owner can see memory status/provenance, operate the inbox, prevent capture, correct/delete/export memory, recognize stateless fallback, and disable memory.
 ## 4. Current research requirements
-
-Not applicable — validation uses the accepted memory-system revision and recorded dependencies and makes no new product recommendation.
-
+Recheck only version-specific UI steps and accepted safety/resource links; route any design change back to the owning story.
 ## 5. Preconditions and unlock conditions
-
-P09-S011. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
-
+P09-S011 is Done; no High/Critical finding remains. The full sequence, cleanup, and rollback pass an isolated synthetic rehearsal. Packet shows exact versions, disclosures, known limits, safe prompts, expected results, and choices.
 ## 6. In scope
-
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
-
+Synthetic plus optional owner-chosen low-sensitivity memory; capture-off/on; `do not learn`; candidate inbox; approve/edit/reject/defer; recall provenance; correction; Restricted denial; export manifest; scoped deletion; restart; outage/stateless disclosure; disable; and accept/reject/needs-change.
 ## 7. Out of scope and prohibited changes
-
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
-
+No technical certification, forced sensitive disclosure, crisis/medical/financial memory, bulk approval, cloud transfer, hidden capture, other P08 agent, unsafe destructive live test, or inferred consent.
 ## 8. Privilege and human approval
-
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
-
+This is owner participation under the revision-bound P09 authorization. Capture and recall become enabled for personal use only after explicit final acceptance; silence is never consent.
 ## 9. Risk rationale
-
-Work crosses a security, privilege, destructive-data, authentication, or acceptance boundary and requires explicit owner control. New facts may raise risk; an LLM cannot lower it.
-
+Critical: this authorizes persistent personal context in ongoing use. Revision-bound authorization, isolated rehearsal, cross-provider review, and genuine owner acceptance are mandatory.
 ## 10. Execution contract
-
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Owner accepts transparency and control; P09 evidence contains no restricted values.
-
+Present plain-language results; verify stateless baseline/rollback; guide one action at a time; state expected privacy effect; stop on discomfort; record decision only; clean test data; route defects to smallest owning story; never fabricate observations.
 ## 11. Automated acceptance tests
-
-Owner accepts transparency and control; P09 evidence contains no restricted values. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
-
+Before each step verify exact hashes, private binding, policy, hard-suite pass, trace redaction, backup, and rollback. Afterward prove ledger/action/audit match owner choices, deleted content is absent, disabled memory makes no calls, and no private value entered Git/evidence.
 ## 12. Human validation
-
-Owner completes the story checklist and records it through the controller.
-
+The owner rates usefulness, accuracy, transparency, inbox clarity, control, speed, and comfort; demonstrates correction/delete/disable; and records accept, reject, or needs change. No technical judgment is required.
 ## 13. Idempotency and rollback
-
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
-
+Rerun preserves decisions and retests changed behavior only. Rejection atomically disables capture/recall and restores the accepted P08 stateless preset while retaining owner-accessible export/deletion controls.
 ## 14. Required evidence
-
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
-
+evidence/P09-S012/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, owner-acceptance.md, action-outcomes.json, privacy-cleanup.json, disable-results.json, and routing-outcomes.json.
 ## 15. Definition of done
-
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
-
+The owner explicitly accepts memory or it remains disabled with corrections routed; controls are demonstrated; evidence is genuine and private-value-free; P10 unlocks only after acceptance.
 ## 16. Pause-safe boundaries
-
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Update evidence/P09-S012/checkpoint.json after each owner action with decision, enabled state, cleanup, and exact next step; unaccepted memory remains disabled during every pause.
