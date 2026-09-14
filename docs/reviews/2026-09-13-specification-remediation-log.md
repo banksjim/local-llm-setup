@@ -2,10 +2,10 @@
 
 **Started:** 2026-09-13
 
-**Working branch:** `work-2026-09-14-p08-agents`
+**Working branch:** `work-2026-09-14-p09-memory`
 
 **Worktree policy for this planning phase:** Use the ordinary repository checkout; do not create a worktree.
-**Status:** Batches 1 and 2 complete; Batch 3 in progress; P06 through P08 correction cycle 1 applied; no workstation implementation has started.
+**Status:** Batches 1 and 2 complete; Batch 3 in progress; P06 through P09 correction cycle 1 applied; no workstation implementation has started.
 
 This file is the durable restart point for the specification-quality remediation. It records work state, not proof that a batch passed.
 
@@ -21,7 +21,7 @@ No Git-workflow document will be added to the public repository. Repository-leve
 |---|---|---|
 | 1 | README, master program, story contract, controller specification, formal review, phase specifications P01-P02, and all P01-P02 stories | Complete; two consecutive clean passes |
 | 2 | Phase specifications and stories P03-P05 plus the directly dependent desktop-dictation system specification | Complete; two consecutive clean passes |
-| 3 | System specifications for RAG and memory; phase specifications and stories P06-P10; final cross-program review | In progress; P06-P08 correction cycle 1 applied |
+| 3 | System specifications for RAG and memory; phase specifications and stories P06-P10; final cross-program review | In progress; P06-P09 correction cycle 1 applied |
 
 The LM Studio evaluation endpoint changes from assigned user port `1239` to private/dynamic port `51239`. The port remains localhost-only and must pass an availability check at activation.
 
@@ -119,15 +119,19 @@ P08 correction cycle 1 rebuilt all ten inherited leaf contracts and added two mi
 
 The P08 internal review loop then found and corrected five defects: noncanonical Hold-reason and Actor values, an underspecified Open WebUI-to-agent protocol, accidental ambiguity about creating a second checkpoint store, no fixed private export/state root, and missing Critical controls on the private-RAG boundary. Two different phase-local passes now assert 12 complete contracts, five-field routes, distinct outputs and evidence, continuous sequence 1–12, phase-table agreement, exact safety/privacy/model requirements, Critical rehearsal/authorization/acceptance controls, a 136-node reciprocal acyclic program graph, 183 resolving local Markdown links, and a clean Git whitespace check. These are internal phase-local checks, not independent review and not a Batch 3 clean pass.
 
+P09 correction cycle 1 rewrote SYS-MEM and all 12 inherited stories, then added P09-S013 as the missing private deployment gate. The design now makes the owner the sole durable-promotion authority; separates quarantined candidates, a framework-neutral append-only ledger, rebuildable projections, and sanitized audit; fixes the life-planning agent as the only pilot; binds decisions against replay; and defines correction, Restricted data, purge/tombstone, backup aging, and non-resurrection behavior. The current comparison must include Mem0, LangGraph Store/LangMem, Graphiti, Letta, Cognee, Hindsight, Supermemory, and new credible OSS alternatives, while separating managed claims from reproducible self-hosted behavior. P10 remains uncorrected; 15 routes and 10 measured generic core blocks remain, so no Batch 3 clean pass is claimed.
+
+The P09 internal review loop caught and corrected an incomplete Critical-control statement and an uncontracted `goagentic memory inbox` subcommand; the inbox now exposes a story-owned operation that `goagentic next` may recommend without changing the controller command contract. Two different internal phase-local passes assert 137 complete reciprocal acyclic story nodes, 13 P09 contracts and five-field routes, phase metadata agreement, exact Critical controls, the full framework/owner-authority/privacy/recovery/pilot trace, 184 resolving local Markdown links, current story counts, and clean Git whitespace. These are internal checks, not independent or Batch 3 review.
+
 ## Exact resume action
 
 1. Read this file, the root `README.md`, the master program specification, `STORY-CONTRACT.md`, the relevant phase/system specifications, and the formal review.
 2. Inspect `git status` and all active repository-level Codex project instructions.
 3. Work from an ordinary planning branch; do not create a worktree during specification development.
-4. Remediate SYS-MEM and P09-P10 and their 27 stories. Replace the remaining 22 measured generic core blocks and complete all 27 five-field routes, then run the final two-pass cross-program review.
+4. Complete the P09/SYS-MEM phase-local review, then remediate P10's 15 stories. Replace the remaining 10 measured generic core blocks and complete all 15 five-field routes, then run the final two-pass cross-program review.
 5. Keep the formal review `Remediation in progress`; do not claim a full-program pass until Batch 3 and the final two-pass review complete.
 6. Do not install or configure workstation software.
 
 ## Delivery state
 
-Batch 1 was delivered through pull request 1 and merged as `4601476fc844fc3082374e94d116bb28815f7896`. Batch 2 was delivered through pull request 2 and merged as `5f7a8dd309b34c7bc32537d2eff8064c16e9bc79`. The P06 Batch 3 correction was delivered through pull request 3 and merged as `2ba7e2c36e395265c62f87e638d21f9dc4239c79`. The P07 correction was delivered through pull request 4 and merged as `2769920cc53968509a608e0b097b1bd8a5fc8466`. The P08 correction is uncommitted on the ordinary branch named above. Git commits, pull requests, merge state, and branch cleanup are authoritative in Git/GitHub history.
+Batch 1 was delivered through pull request 1 and merged as `4601476fc844fc3082374e94d116bb28815f7896`. Batch 2 was delivered through pull request 2 and merged as `5f7a8dd309b34c7bc32537d2eff8064c16e9bc79`. The P06 Batch 3 correction was delivered through pull request 3 and merged as `2ba7e2c36e395265c62f87e638d21f9dc4239c79`. The P07 correction was delivered through pull request 4 and merged as `2769920cc53968509a608e0b097b1bd8a5fc8466`. The P08 correction was delivered through pull request 5 and merged as `9fb54a24279f956659de1268bbb4720789e3983c`. The P09 correction is prepared by the ordinary branch named above; its durable delivery record is the resulting Git commit and GitHub pull request. Git commits, pull requests, merge state, and branch cleanup are authoritative in Git/GitHub history.

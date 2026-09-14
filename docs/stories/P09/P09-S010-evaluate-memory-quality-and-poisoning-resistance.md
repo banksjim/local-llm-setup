@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P09-S010 |
 | Phase | P09 — Durable Agent Memory |
-| Sequence | 10 |
+| Sequence | 11 |
 | Status | Planned |
 | Step | Testing |
 | Hold reason | Dependency |
@@ -12,69 +12,38 @@
 | Actor | LLM |
 | Dependencies | P09-S009 |
 | Unlocks | P09-S011 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
-| Research freshness | Current memory evaluation research checked within 7 days. |
+| Preferred route | Interface: WSL test runner through goagentic; Provider: different cloud provider from the pilot implementer; Model class: high-reliability evaluator; Effort: high; Fallback: deterministic suite plus two fresh-session reviews while model judging is unavailable. |
+| Research freshness | Current memory benchmarks, OWASP memory poisoning, MLflow GenAI evaluation, and selected-framework docs checked within 7 days. |
 
 ## 1. User story
-
-As the workstation owner, I want this story to measure correct recall, false recall, conflict resolution, provenance, isolation, and poisoning behavior, so progress is inspectable and independent of chat memory.
-
+As the owner, I want rigorous measurement so convincing anecdotes cannot hide false, stale, leaked, or poisoned recall.
 ## 2. Bounded objective
-
-Measure correct recall, false recall, conflict resolution, provenance, isolation, and poisoning behavior.
-
+Build tests/p09/P09-S010-memory-evaluation/ and a redacted MLflow evaluation comparing stateless versus memory-enabled life planning across fixed synthetic multi-session fixtures.
 ## 3. Learning objective
-
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P09-S003; this story introduces no separate learning objective.
-
+Not applicable — results are explained during P09-S012.
 ## 4. Current research requirements
-
-Current memory evaluation research checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
-
+Verify benchmark licenses/methods, current threat taxonomy, MLflow APIs, and evaluator limitations. External benchmarks supplement but never replace project-specific tests.
 ## 5. Preconditions and unlock conditions
-
-P09-S009. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
-
+P09-S009 is Done. Dataset, seeds, versions, hard thresholds, non-inferiority margin, evaluator identity/cost, and privacy rules are frozen before execution.
 ## 6. In scope
-
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
-
+Capture precision/recall; durable recall precision/recall; false/stale/conflict recall; provenance; owner-decision fidelity; namespace/Restricted isolation; poisoning/prompt injection; correction/deletion; utility; latency/token/storage; outage; variance; and P08 regressions.
 ## 7. Out of scope and prohibited changes
-
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
-
+No real private corpus, production conversation traces, vendor score substitution, threshold tuning after results, sole LLM-judge gate, automatic promotion, or enabled failed route.
 ## 8. Privilege and human approval
-
-Required — the mutation must be covered by the active bounded privileged-phase approval; no separate approval is needed unless scope changes.
-
+Covered by P09 authorization. Cloud judges, if authorized, receive only synthetic redacted cases; no real value leaves the machine.
 ## 9. Risk rationale
-
-Work crosses a security, privilege, destructive-data, authentication, or acceptance boundary and requires explicit owner control. New facts may raise risk; an LLM cannot lower it.
-
+Critical: evaluation gates a privacy-sensitive feature where false negatives can expose or distort memory. Revision-bound authorization, isolated synthetic evaluation, cross-provider review, and P09-S012 owner acceptance are mandatory.
 ## 10. Execution contract
-
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. All Critical thresholds pass and failures produce traces without restricted raw data.
-
+Snapshot versions; run deterministic gates first; execute blinded repeated multi-session trials; compare stateless baseline; segment failures; verify redaction; corrupt fixtures/scorers to prove detection; resolve findings and rerun full affected matrix; cross-provider review.
 ## 11. Automated acceptance tests
-
-All Critical thresholds pass and failures produce traces without restricted raw data. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
-
+Require zero cross-boundary/candidate/secret/deleted recall; zero policy change from memory; exact owner-decision/correction/deletion behavior; fixed minimum recall/provenance and maximum false/stale rates; no P08 hard regression; bounded latency/storage; reproducible variance. An LLM judge cannot override a deterministic failure.
 ## 12. Human validation
-
-Not applicable — automated evidence and independent review suffice.
-
+Not applicable — subjective benefit and comfort are P09-S012; technical/safety evidence is independently reviewed.
 ## 13. Idempotency and rollback
-
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
-
+Same frozen inputs yield results within declared tolerance. Rollback removes evaluation-only records/credentials and disables memory on hard failure while preserving signed reports.
 ## 14. Required evidence
-
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
-
+evidence/P09-S010/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, evaluation-manifest.json, score-matrix.json, poisoning-results.json, redaction-audit.json, variance.json, and recommendation.json.
 ## 15. Definition of done
-
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
-
+All hard floors pass, benefit exceeds the fixed non-inferiority rule, privacy is verified, no High/Critical finding remains, and a plain-language packet is ready.
 ## 16. Pause-safe boundaries
-
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Update evidence/P09-S010/checkpoint.json after each deterministic/model/scenario/privacy/review partition; disable memory before pausing on any hard failure.
