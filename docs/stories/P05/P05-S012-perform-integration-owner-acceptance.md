@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P05-S011 |
 | Unlocks | P06-S001 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected current assistant model; no unattended substitution. |
+| Preferred route | Interface: goagentic-guided session in the designated cloud IDE or CLI; Provider: owner's active OpenAI or Anthropic subscription; Model class: current economical teaching or validation model; Effort: medium; Fallback: pause for the owner or switch to the current Sol or Sonnet-class route when explanation quality fails. |
 | Research freshness | Not applicable — validation is experiential. |
 
 ## 1. User story
@@ -37,44 +37,44 @@ P05-S011. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create and verify an owner checklist, provider and model identification task, representative VS Code, Codex, Claude, Open WebUI, and dictation tasks, pause and resume drill, one settings restore drill, defect record, and genuine sign-off. Include LM Studio live only with recorded opt-in; otherwise require the owner to locate its optional guide and explain that it is not installed. Store evidence under evidence/P05-S012/.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not weaken WSL isolation, overwrite unrelated editor settings, share Windows and Ubuntu credentials, enable cloud transcription or cleanup, silently replace a hosted model, expose a local endpoint to the LAN, or install an optional integration without owner opt-in.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
+No new approval is required while the revision-bound P05 phase authorization still matches the work. The owner must personally perform the named GUI, authentication, elevation, microphone, preference, or acceptance actions; changed scope stops for a new preview.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+Human acceptance exercises all integrations and a restore path; it can reveal but must not silently repair defects.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and route to review. Owner confirms usability and can identify which model and endpoint are active.
+Create a blank owner packet from the accepted P05-S011 matrix; mark LM Studio live or guide-only from the recorded opt-in; verify the rollback checkpoint; guide but do not answer each task; stop and open a defect for any failure; let the owner sign the result; reconcile controller state without repairing acceptance failures inside this story.
 
 ## 11. Automated acceptance tests
 
-Owner confirms usability and can identify which model and endpoint are active. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; justified exclusions are recorded.
+Assert that expected fixtures and checklist items are nonzero; validate the lesson or acceptance packet schema, prerequisite automated results, evidence paths, timestamps, and blank owner-answer fields before handoff. Fail if any required workflow is omitted, the optional LM Studio disposition is missing, a provider boundary differs from the accepted design, owner evidence is absent, or the validator matches zero checklist items. After handoff, verify only that genuine owner-authored evidence exists and matches the rubric; automation must not generate, infer, or change the owner's answers.
 
 ## 12. Human validation
 
-The owner completes the story checklist and records the result through the controller.
+The owner identifies the active provider and model, completes VS Code local chat, Codex cloud and local, Claude cloud and local, Open WebUI, and Windows dictation tasks, runs the pause and resume drill, restores one integration, and records the result in evidence/P05-S012/human-validation.md. With no LM Studio opt-in, the owner instead locates its guide and confirms it is not installed. The LLM cannot author the answers.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores only story-owned changes and preserves user data.
+Tests use synthetic or owner-approved fixtures and leave accepted services and configuration unchanged. Rollback removes story-created fixtures and restores the pre-test snapshot recorded in evidence/P05-S012/rollback.json.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; change inventory; sanitized output; test, approval, idempotency, rollback, review, and human records.
+Commit the genuine owner-authored evidence/P05-S012/human-acceptance.md, the completed VS Code/Codex/Claude Code workflow checklist, endpoint and model-profile observations, desktop-dictation result, optional-track disposition, and evidence/P05-S012/activation.json, change-inventory.json, test-results.json, rollback.json, and review.md. Include exact client and extension versions, timestamps, and sanitized observations without credentials or dictated content.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; human evidence is genuine; no prohibited change occurred; state agrees; next story unlocks.
+P05-S012 is Done only when all required owner tasks, provider identification, pause/resume, and restore pass; LM Studio passes live only when opted in or is correctly verified as guide-only; genuine owner evidence exists; independent review has no unresolved material finding; and P06-S001 unlocks.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back any atomic replacement before pausing.
+Pause after the activation packet, after each download, install, configuration backup, or other atomic unit, after tests, and after evidence is committed. Before pausing, finish or roll back the active unit and record the exact next command plus current model and provider in evidence/P05-S012/checkpoint.json.

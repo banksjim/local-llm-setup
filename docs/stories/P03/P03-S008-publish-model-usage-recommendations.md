@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P03-S007 |
 | Unlocks | P03-S009 |
-| Preferred route | Controller-selected value route; qualified local model allowed after P03; cloud fallback per SYS-CTL. |
+| Preferred route | Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic; Model class: current implementation model; Effort: medium; Fallback: current Sol or Sonnet-class route; no local implementation route before P03-S009 qualifies it. |
 | Research freshness | P03 benchmark evidence; external sources refreshed if recommendations change. |
 
 ## 1. User story
@@ -37,44 +37,44 @@ P03-S007. Applicable specs, clean Git, valid controller state, current research,
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Create and verify the task-to-profile model guide, machine-readable profile manifest, unsupported-use table, and operator switching checklist; no model or client setting is changed. Store versioned implementation or guidance at the story-owned output path already named by this contract and sanitized run evidence under evidence/P03-S008/. Reusable operation: operations/windows/p03/P03-S008-publish-model-usage-recommendations.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+Do not install containers or desktop clients, expose Ollama to the LAN, delete existing models, change BIOS or GPU drivers, accept floating model tags, or route unqualified controller work to a local model.
 
 ## 8. Privilege and human approval
 
-Not applicable — active phase authorization is sufficient.
+No new approval is required while the revision-bound P03 phase authorization still matches the work. The LLM may execute only the previewed story-owned operations; any changed target, network boundary, data class, risk, or destructive action stops for a new preview.
 
 ## 9. Risk rationale
 
-Work changes bounded repository or user-level configuration and is directly reversible from versioned backup. New facts may raise risk; an LLM cannot lower it.
+Usage guidance drives later client and agent routes, so unsupported recommendations could cause broad quality or resource failures.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and route to review. The guide maps every model to context, temperature or thinking, concurrency, and when not to use it.
+Create an activation packet; verify dependencies, freshness, and targets; preview the exact change; confirm revision-bound phase authorization where mutation is privileged; acquire the controller lease; produce operations/windows/p03/P03-S008-publish-model-usage-recommendations; run the named positive and negative checks; record sanitized evidence; release the lease. Acceptance criterion: every supported task maps to a measured model, context, thinking mode, concurrency limit, expected headroom, fallback, and unsupported-use warning.
 
 ## 11. Automated acceptance tests
 
-The guide maps every model to context, temperature or thinking, concurrency, and when not to use it. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; justified exclusions are recorded.
+Assert the expected story inventory is nonzero, then verify that every supported task maps to a measured model, context, thinking mode, concurrency limit, expected headroom, fallback, and unsupported-use warning. Fail on missing evidence, unexpected targets, secrets, stale sources, an untested negative boundary, or a validator that matched zero fixtures.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient.
+Not applicable — P03-S008 is accepted through deterministic checks plus an independent review; no experiential or credential-bearing action is delegated to the LLM.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores only story-owned changes and preserves user data.
+The operation at operations/windows/p03/P03-S008-publish-model-usage-recommendations must implement preview, apply, verify, and story-owned rollback. A second apply is a no-op; rollback restores the recorded pre-story configuration without deleting user models, databases, documents, repositories, or unrelated settings.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; change inventory; sanitized output; test, approval, idempotency, rollback, review, and human records.
+Commit operations/windows/p03/P03-S008-publish-model-usage-recommendations or its versioned result plus evidence/P03-S008/activation.json, evidence/P03-S008/change-inventory.json, evidence/P03-S008/test-results.json, evidence/P03-S008/rollback.json, and evidence/P03-S008/review.md; include exact versions or digests, sanitized commands or observations, timestamps, and an explicit not-applicable human record.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; human evidence is genuine; no prohibited change occurred; state agrees; next story unlocks.
+P03-S008 is Done only when every supported task maps to a measured model, context, thinking mode, concurrency limit, expected headroom, fallback, and unsupported-use warning; the story-owned output and evidence inventory exist, independent review has no unresolved material finding, rollback and idempotency evidence is accepted, and controller state unlocks the declared next story.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back any atomic replacement before pausing.
+Pause after the activation packet, after each download, install, configuration backup, or other atomic unit, after tests, and after evidence is committed. Before pausing, finish or roll back the active unit and record the exact next command plus current model and provider in evidence/P03-S008/checkpoint.json.

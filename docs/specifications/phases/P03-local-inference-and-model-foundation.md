@@ -4,9 +4,26 @@
 **Required outcome:** Native Ollama uses the RTX 4090 with measured, role-qualified model profiles and a remaining-story routing reassessment.  
 **Status:** Planned
 
+## Fixed architecture and execution boundary
+
+- Run Ollama natively on Windows so the RTX 4090 uses the supported Windows NVIDIA path. Store model blobs under `H:\ai\models\ollama`; keep generated logs and benchmark artifacts under `H:\ai\logs\ollama` and `H:\ai\benchmarks`.
+- Keep Ollama's native listener on Windows loopback. A story-owned Windows gateway exposes only activation-verified inference/read routes required by `AI-Workbench`; it binds an activation-selected private port, restricts the current WSL subnet in Windows Firewall, and rejects Ollama administration routes. A WSL user-level loopback forward presents that gateway on the local address expected by supported clients without changing Ollama's Windows bind. WSL-to-Windows addressing is discovered at activation rather than hard-coded. P04 may add a separate, equally narrow Rancher Desktop source rule only for Open WebUI.
+- Treat 24 GB VRAM as a ceiling, not a target. The baseline comparison set is `qwen3.8:27b-q4_K_M` (primary multimodal/agent candidate), `qwen3.5:9b-q4_K_M` (fast multimodal candidate), and `qwen3-embedding:0.6b` (economical embedding baseline). Exact tags, digests, licenses, sizes, and a credible challenger must be refreshed by P03-S001; no floating tag is installed by later stories.
+- Benchmark 16K first for interactive use. Test 32K and at least 64K only where the client or role requires it, recording KV-cache VRAM, spill, latency, and quality. Advertised maximum context is never accepted as the workstation default without measurement.
+- Preserve at least 3 GB VRAM headroom during normal interactive use and test concurrent service load. A candidate that routinely spills into system RAM or displaces desktop/service headroom is not the default even if it completes the prompt.
+- P03 produces reusable `operations/windows/p03`, `operations/ubuntu/p03`, and `tests/p03` preview/apply/verify/rollback operations for later composition; it does not build the final installer.
+
+## Current source baseline (refresh at activation)
+
+- [Ollama Windows documentation](https://docs.ollama.com/windows)
+- [Ollama context-length guidance](https://docs.ollama.com/context-length)
+- [Ollama Qwen3.8 registry entry](https://ollama.com/library/qwen3.8)
+- [Ollama Qwen3.5 tags](https://ollama.com/library/qwen3.5/tags)
+- [Ollama Qwen3 Embedding registry entry](https://ollama.com/library/qwen3-embedding)
+
 ## Gate
 
-The phase activates only after dependencies are accepted and the owner authorizes its first story. Research and design may occur earlier, but implementation cannot cross this gate.
+P03-S001 research and P03-S002 learning may run after P02 acceptance without privileged authorization. Before P03-S003 mutates the workstation, the controller presents one revision-bound preview covering the pinned Ollama install, H-drive targets, gateway/firewall, model downloads, benchmark load, and rollback operations; the owner gives one P03 phase authorization. Elevation prompts, learning answers, model preference, and final acceptance remain genuine human actions, not repeated approvals. Material changes to targets, network exposure, model inventory, risk, or operations invalidate the authorization.
 
 ## Story sequence
 
@@ -27,4 +44,3 @@ The phase activates only after dependencies are accepted and the owner authorize
 ## Completion
 
 Every non-superseded story is Done; human evidence is genuine; review findings resolve; rollback evidence exists; and the outcome is demonstrated on the reference workstation.
-

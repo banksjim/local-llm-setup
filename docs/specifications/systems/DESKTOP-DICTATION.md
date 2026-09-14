@@ -15,11 +15,11 @@ The activation story performs a fresh GitHub and release review. The initial sho
 
 | Candidate | Current reason to test |
 |---|---|
-| OpenWhispr | Cross-platform, global hotkey, local Whisper/Parakeet, rich feature set |
-| Handy | Focused offline dictation, Whisper/Parakeet, GPU support, simple workflow |
-| WhisPaste | Offline global hotkey and auto-paste, MIT license |
+| OpenWhispr | Current lead to benchmark: MIT-licensed, Windows build, global hotkey, and local speech engines; its broader agent, meeting, sync, account, calendar, and optional screen-context features increase the permission surface and must remain disabled for this project |
+| Handy | Established focused offline dictation candidate with Whisper/Parakeet and GPU support |
+| Whisper Local | Current fully offline Windows/macOS candidate with global hotkey, transforms, and published source |
 
-New credible OSS candidates discovered at activation are scored before the shortlist is frozen. No candidate wins from marketing claims alone.
+P05-S001 may replace a candidate when current provenance, maintenance, signing, privacy, or compatibility evidence is stronger. Newly advertised projects must have a readable OSS license, reproducible release provenance, active issue handling, and no unresolved security concern before benchmarking. No candidate wins from marketing claims or star count alone.
 
 ## 3. Evaluation
 
@@ -36,15 +36,15 @@ The owner performs experiential scoring because comfort, correction burden, and 
 
 ## 4. Selection and installation
 
-The highest-scoring acceptable candidate becomes the default. The runner-up is documented as fallback. Installation is pinned, checksum/provenance checked where available, reversible, and configured for local processing. Cloud cleanup or rewrite features remain disabled unless separately approved.
+The highest-scoring acceptable candidate becomes the default. The runner-up is documented as fallback. Installation is pinned, checksum/provenance checked where available, reversible, and configured for local processing. Configure the winner for the minimum dictation-only feature set: no account or team space, cloud transcription, sync, meeting capture, calendar access, assistant/agent calls, screen capture, remote MCP/API exposure, cloud cleanup, or rewrite feature. A candidate that cannot disable unrelated collection or network features fails rather than receiving broader permission.
 
 ## 5. Acceptance
 
-The chosen application works in every target class, remains local during a network-disconnected test, meets an owner-approved accuracy/latency threshold, coexists with Ollama, survives restart, and can be removed without leaving models, startup tasks, hotkeys, or private recordings behind.
+The chosen application works in every target class, remains local during a network-disconnected test, makes no unexpected outbound request during a connected traffic-capture test, exposes only the selected microphone/hotkey/paste permissions, meets an owner-approved accuracy/latency threshold, coexists with Ollama, survives restart, and can be removed without leaving models, startup tasks, hotkeys, accounts, integrations, or private recordings behind.
 
 ## 6. Current project sources
 
 - [OpenWhispr repository](https://github.com/OpenWhispr/openwhispr)
 - [Handy repository](https://github.com/cjpais/Handy)
-- [WhisPaste repository](https://github.com/whispaste/whispaste)
+- [Whisper Local repository](https://github.com/drajb/whisper-local)
 - [Open WebUI speech-to-text configuration](https://docs.openwebui.com/features/chat-conversations/audio/speech-to-text/stt-config/)

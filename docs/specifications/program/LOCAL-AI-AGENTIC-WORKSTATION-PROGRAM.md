@@ -5,8 +5,8 @@
 **Active platform:** Windows 11  
 **Reference hardware:** Ryzen 7 9800X3D, RTX 4090 24 GB, 64 GB RAM  
 **Primary data root:** `H:\ai`  
-**Status:** Approved design; implementation not started  
-**Last reviewed:** 2026-09-13
+**Status:** Design approved; specification remediation in progress; implementation not started
+**Last reviewed:** 2026-09-14
 
 ## 1. Purpose
 
@@ -64,6 +64,7 @@ flowchart LR
     G --> W[Windows host]
     G --> L[Ubuntu WSL2]
     W --> O[Native Ollama on RTX 4090]
+    W --> GW[Bounded inference gateway]
     W --> D[Desktop dictation]
     W --> R[Rancher Desktop]
     R --> OW[Open WebUI]
@@ -75,8 +76,9 @@ flowchart LR
     L --> AG[LangChain + LangGraph agents]
     AG --> MCP[MCP + skills + scripts]
     AG --> MF
-    AG -->|allowlisted inference| O
-    OW --> O
+    AG -->|WSL loopback forward| GW
+    OW -->|Rancher source allowlist| GW
+    GW -->|inference/read routes only| O
     OW --> SX
     OW --> DB
 ```
@@ -131,6 +133,17 @@ Workstation application data is rooted at `H:\ai`. Knowledge bases use two physi
 
 ```text
 H:\ai\
+├── models\
+│   ├── ollama\
+│   └── lm-studio\
+├── containers\
+│   ├── rancher-desktop-data\
+│   └── rancher-desktop-snapshots\
+├── wsl\AI-Workbench\
+├── backups\
+├── logs\
+├── manifests\
+├── tmp\
 ├── knowledge-sources\<knowledge-base-id>\
 │   ├── originals\
 │   ├── docling-json\
@@ -186,7 +199,7 @@ The program is complete only when:
 
 ## 12. Current primary references
 
-These references were checked on 2026-09-13. Activated stories must recheck the sources relevant to their work.
+These references were last checked on 2026-09-14. Activated stories must recheck the sources relevant to their work.
 
 - [Ollama Qwen3.8 tags](https://ollama.com/library/qwen3.8/tags)
 - [Ollama Qwen3.5 tags](https://ollama.com/library/qwen3.5/tags)
