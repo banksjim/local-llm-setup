@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P02-S003 |
 | Unlocks | P02-S005 |
-| Preferred route | Controller-selected quality route; cross-provider review required; qualified local execution only under current policy. |
+| Preferred route | Interface: Codex CLI plus Windows PowerShell; Provider: OpenAI; Model class: architecture-capable implementation; Effort: medium; Fallback: Claude Code with an Anthropic architecture-capable model at medium effort; cross-provider review is required and local execution is not yet qualified. |
 | Research freshness | Current Windows ACL and filesystem guidance checked within 30 days. |
 
 ## 1. User story
@@ -37,19 +37,19 @@ P02-S003. Applicable specifications, clean Git state, valid controller state, cu
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Implement preview/apply/verify/rollback operations under `operations/windows/p02/` for `H:\ai\models`, `containers`, `wsl\AI-Workbench`, `knowledge-sources`, `knowledge-repos`, `backups`, `logs`, `manifests`, and `tmp`; create a managed-path manifest; apply only explicitly approved ACL changes; and add tests under `tests/p02/`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Formatting or repartitioning `H:`, taking ownership of pre-existing user content, recursive deletion, broad deny ACLs, moving existing files, creating knowledge-base remotes, installing software, and treating an unexpected nonempty path as managed.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+No new approval for unchanged scope — the exact paths and ACL operations are included in the P02 phase authorization. Elevation may require owner presence; any different path, recursive change, or nonempty-target decision requires reauthorization.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The story is High risk because it establishes shared storage and ACLs on a real data drive; a path or permission error could affect unrelated files or future private data. Exact path resolution, nonempty-path stops, reversible ACL snapshots, idempotency, and cross-provider review are mandatory.
 
 ## 10. Execution contract
 
@@ -61,20 +61,20 @@ Dry run, first run, and second run pass; unknown files are preserved; rollback r
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — exact path, content-preservation, ACL, rerun, and fixture-rollback checks are deterministic and independently reviewed. The owner reviews the overall storage layout later in P02-S012.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+An unchanged second apply reports zero created paths and zero ACL changes. Before apply, capture existence, contents, owner, and ACL for each target. Rollback restores recorded ACLs and removes only empty directories created by this operation; it never removes a nonempty directory or unknown file.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Story and operation revisions; resolved absolute paths; pre-change existence/content/ACL inventory; phase authorization; preview; created-path and ACL change manifest; first and second apply results; unknown-file preservation test; rollback rehearsal in a fixture and safe real-state verification; and cross-provider verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+All managed directories exist with verified intended ownership; pre-existing and unknown content is unchanged; the manifest exactly matches managed paths; the second apply is a no-op; rollback behavior is proven without data deletion; and P02-S005 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause after preflight inventory, after preview authorization is confirmed, after directory creation, after ACL application, and after verification. Never pause during one ACL replacement; finish or restore that path before stopping.

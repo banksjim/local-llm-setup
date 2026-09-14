@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P01-S012 |
 | Unlocks | P01-S014 |
-| Preferred route | Fresh cross-provider reviewer selected by goagentic; current model confirmed at activation. |
+| Preferred route | Interface: fresh Codex CLI or Claude Code session; Provider: different from the implementation provider; Model class: architecture/security review; Effort: high; Fallback: another fresh cloud-provider session that preserves provider independence; local review is prohibited in P01. |
 | Research freshness | Current provider availability checked at activation. |
 
 ## 1. User story
@@ -37,23 +37,23 @@ P01-S012. Applicable specifications, clean Git state, current research, required
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Provide a fresh reviewer with the approved authority chain, controller diff, threat model, tests, failure-injection results, and no author conclusions; record findings in `evidence/P01-S013/review.md` with severity, file or operation location, exploit or failure path, required correction, and disposition.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Using the implementation provider as the only reviewer, asking the reviewer to fix findings silently, omitting failed tests or known limitations, reviewing workstation phases, or accepting unresolved Critical or High findings without an explicit owner decision and follow-up validation.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+Not applicable for the read-only review. An owner decision is required only for a disputed finding, risk acceptance, or proposed scope change and is recorded separately.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The review is High risk because it is the principal independent check on the controller that will later authorize system changes. It is read-only, but an incomplete or non-independent review could expose the full future blast radius; provider independence and finding traceability are mandatory.
 
 ## 10. Execution contract
 
-Preview changes and tests; verify preconditions; acquire the lease; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the lease; and route to review or human validation. Every finding is resolved or explicitly accepted by the owner with evidence.
+Preview changes and tests; verify preconditions; acquire the currently accepted P01 mutation guard—the bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the guard; and route to review or human validation. Every finding is resolved or explicitly accepted by the owner with evidence.
 
 ## 11. Automated acceptance tests
 
@@ -61,20 +61,20 @@ Every finding is resolved or explicitly accepted by the owner with evidence. App
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+The owner is required only if a finding needs risk acceptance, a disputed disposition, or a scope decision. The reviewer cannot manufacture that decision or close an unresolved owner item.
 
 ## 13. Idempotency and rollback
 
-A repeat produces an updated or identical evidence record without changing accepted implementation. Rollback is reversion of the story commit or evidence record.
+Review execution is read-only. A repeat creates a separately identified verdict or appends a new review round; it never overwrites the original findings. Rollback reverts only the review-record commit and cannot erase a finding from Git history.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Reviewer provider, model class, and effort plus proof it differs from the implementer; reviewed commit; supplied evidence inventory; complete findings table including categories with no finding; author responses; correction commits; rerun results; residual risks; and final reviewer verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+The reviewer inspected every controller trust boundary and failure category; all Critical and High findings are corrected and retested or explicitly rejected by the owner with rationale; Medium findings have dispositions; reviewer independence is proven; and P01-S014 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause after the evidence inventory is accepted, after the initial findings table, after each correction round, and before final verdict. Never overwrite or silently close an unresolved finding across a pause.

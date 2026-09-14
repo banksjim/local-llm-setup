@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P02-S006 |
 | Unlocks | P02-S008 |
-| Preferred route | Controller-selected quality route; cross-provider review required; qualified local execution only under current policy. |
+| Preferred route | Interface: Codex CLI operating inside the dedicated Ubuntu distribution; Provider: OpenAI; Model class: systems implementation; Effort: medium; Fallback: Claude Code inside the same distribution with an Anthropic coding model at medium effort; cross-provider review is required. |
 | Research freshness | Current official language/toolchain installation sources checked within 7 days. |
 
 ## 1. User story
@@ -37,19 +37,19 @@ P02-S006. Applicable specifications, clean Git state, valid controller state, cu
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Implement idempotent Ubuntu operations under `operations/ubuntu/p02/` for the P02-S001-selected package/version strategy; install baseline build tools, PowerShell 7, Python, Go, Node.js, npm-compatible package tooling, and TypeScript; create version manifests and smoke projects; and add verification/rollback tests under `tests/p02/`.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Using Windows-host language runtimes from Ubuntu, installing editors or AI services, changing shell dotfiles beyond managed marked blocks, global unpinned npm packages other than the approved baseline, replacing user-created environments, and installing versions not resolved in the activation packet.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+No new approval for unchanged scope — the pinned Ubuntu package and runtime operations are included in the P02 phase authorization. Repository/key or package-plan drift invalidates that authorization.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The story is High risk because it changes Ubuntu packages, repositories, PATH, and four development ecosystems and can destabilize the canonical environment. All changes remain inside `AI-Workbench`, but require a package plan, version pins, smoke builds, idempotency, rollback/export recovery, and cross-provider review.
 
 ## 10. Execution contract
 
@@ -61,20 +61,20 @@ Version checks and hello-world tests pass for every language; repeat run is no-o
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — version, path, build, lint, test, repeat, and recovery checks are automated and independently reviewed. The owner validates daily tool use in P02-S012.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+The second apply installs or edits nothing and every version remains identical. Capture package, repository, PATH, and managed-dotfile state plus a WSL export checkpoint before apply. Rollback removes only manifest-owned packages/blocks where safe; if system package reversal is unsafe, restore the verified export rather than approximate prior state.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Selected strategy and official sources; exact package/runtime versions and repositories; operation hashes; pre-change package/PATH/export inventory; P02 authorization; first and second apply logs; Python, Go, Node.js, TypeScript, PowerShell, lint, test, and build smoke results; rollback decision and rehearsal; and cross-provider verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Each runtime resolves from inside `AI-Workbench`, the four smoke projects build and test, the manifest matches installed versions, no Windows executable or host runtime is used, the second apply is a no-op, recovery is proven, and P02-S008 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause after repository or key setup, after each package group, after each runtime installation, and after each smoke project. Do not pause during package-manager transactions; allow completion or invoke the documented recovery path.

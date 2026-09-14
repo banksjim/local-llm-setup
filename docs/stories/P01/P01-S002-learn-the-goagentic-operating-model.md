@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P01-S001 |
 | Unlocks | P01-S003 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected current assistant model; no unattended substitution. |
+| Preferred route | Interface: interactive Codex or Claude Code session; Provider: OpenAI or Anthropic; Model class: general-purpose guide; Effort: low; Fallback: switch provider if the primary interface is unavailable; no model may substitute for human evidence. |
 | Research freshness | Current project specifications; external sources are not required. |
 
 ## 1. User story
@@ -25,11 +25,11 @@ Teach the owner the state, step, hold, lease, evidence, pause, resume, review, a
 
 ## 3. Learning objective
 
-Complete the targeted concepts in the objective and demonstrate them through the acceptance exercise.
+Given synthetic story scenarios, the owner can identify Status, Step, Hold reason, active guard, required evidence, and the one safe next action; distinguish `pause` from inspection-only `resume`; explain when review or human evidence blocks progress; and state why only exact `goagentic go` with valid authorization may execute work after trust is established.
 
 ## 4. Current research requirements
 
-Current project specifications; external sources are not required. Record access date, version, direct links, material claims, conflicts, and inferences. Do not rely on model training memory for changeable facts.
+Use the exact committed revisions of the master program, story contract, P01 phase, and controller specification accepted by P01-S001. Record their Git commit and paths. External sources are not required because the lesson teaches this project's own operating contract rather than a changeable product.
 
 ## 5. Preconditions and unlock conditions
 
@@ -37,23 +37,23 @@ P01-S001. Applicable specifications, clean Git state, current research, required
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+A project-specific lesson, a short scenario exercise, and `evidence/P01-S002/owner-learning.md` recording the owner's own answers about Status, Step, Hold reason, lease ownership, evidence, `pause`, `resume`, review, human gates, and `goagentic go` authorization.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+General project-management or AI-agent coursework; executing a real program story; changing controller or GitHub state; accepting paraphrased LLM answers as the owner's evidence; and marking completion without the owner performing the explain-back.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the declared work; an LLM may guide but cannot create completion evidence.
+Required human learning — the owner completes the exercise and supplies the explain-back. This is evidence under the P01 phase authorization, not a new approval, and the LLM cannot manufacture it.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected; output is documentation, research, or learning evidence. New facts may raise risk; an LLM cannot lower it.
+The lesson is Low risk because it changes only a learning-evidence file and asks the owner to reason about synthetic scenarios. It grants no authorization and performs no program mutation.
 
 ## 10. Execution contract
 
-Preview changes and tests; verify preconditions; acquire the lease; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the lease; and route to review or human validation. The owner completes the exercise and accurately explains why resume does not execute and why only goagentic go authorizes work.
+Preview changes and tests; verify preconditions; acquire the currently accepted P01 mutation guard—the bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the guard; and route to review or human validation. The owner completes the exercise and accurately explains why resume does not execute and why only goagentic go authorizes work.
 
 ## 11. Automated acceptance tests
 
@@ -61,20 +61,20 @@ The owner completes the exercise and accurately explains why resume does not exe
 
 ## 12. Human validation
 
-The owner completes the story-specific checklist and records the result through the controller.
+The owner answers the scenarios in their own words, demonstrates the exact next-command choice, and records completion. The guiding LLM may score and explain but may not generate or rewrite the owner's answers.
 
 ## 13. Idempotency and rollback
 
-A repeat produces an updated or identical evidence record without changing accepted implementation. Rollback is reversion of the story commit or evidence record.
+The lesson can be repeated without changing controller state. A later attempt appends or supersedes the prior scored exercise rather than rewriting the owner's original answers; rollback reverts only the learning-evidence commit.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Lesson revision; linked controller and story-contract revisions; interface/provider/model/effort used for guidance; the owner's ungenerated answers; scored scenarios for pause versus resume versus authorization; completion timestamp; and the owner's explicit acknowledgement that conversational “go” is not controller authorization.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+The owner correctly classifies every scenario, explains why `resume` cannot execute work, identifies genuine human evidence, and invokes no mutating command. The signed learning record is committed and P01-S003 alone becomes eligible for activation.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause between lesson modules or scenarios and before the owner signs the evidence. Preserve answered scenarios exactly; never pause while transforming or scoring an answer without first saving the original.

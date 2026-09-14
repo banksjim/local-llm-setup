@@ -5,13 +5,28 @@
 
 **Method:** Two adversarial architecture passes, requirement trace, bootstrap-dependency analysis, story-sizing review, semantic anti-pattern scan, schema inspection, sequence and dependency-DAG validation, reciprocal-reference validation, link validation, obsolete-path inspection, and Git checks
 
-**Result:** Pass with corrections applied; specifications only, workstation implementation not started
+**Result:** Remediation in progress; the earlier pass decision was withdrawn after deeper semantic inspection
 
 ## Executive conclusion
 
-The former plan was not safe to execute as written. It combined two operating systems and several independent systems in one document, contained bootstrap and runtime-boundary contradictions, used an overloaded state model, and did not express all approved work as testable stories. The first replacement pass also put GitHub Project creation too late, allowed early controller stories to assume unfinished controller controls, retained ambiguous generated prose, and left one oversized final-deliverables story. The corrected design is a Windows-only, ten-phase program with 129 canonical stories. macOS and software-factory work are explicitly deferred.
+The former plan was not safe to execute as written. It combined two operating systems and several independent systems in one document, contained bootstrap and runtime-boundary contradictions, used an overloaded state model, and did not express all approved work as testable stories. Later passes corrected many structural defects but incorrectly treated structural completeness as semantic completeness. A deeper audit found widespread template-only scope, evidence, rollback, completion, routing, and risk language. The architecture remains a useful Windows-only, ten-phase decomposition, but the specification set is not yet safe to execute without remediation.
 
-No workstation implementation has started. The next gate is owner review of the written specification set.
+No workstation implementation has started. The written plan remains under bounded remediation; no story may become Ready merely because its document exists.
+
+## Withdrawn decision and active remediation
+
+The prior “Pass with corrections applied” decision is withdrawn. The active remediation record is [2026-09-13-specification-remediation-log.md](2026-09-13-specification-remediation-log.md).
+
+The deeper audit found:
+
+- 123 of 129 story scopes still depended on template language rather than named outputs and boundaries;
+- 89 evidence and completion sections were generic;
+- 67 rollback sections did not describe the story-owned state;
+- preferred routes did not consistently provide all five contract fields;
+- risk rationales were commonly copied instead of derived; and
+- implementation stories did not consistently define reusable operations for later installer composition.
+
+These findings are material. The final review decision stays open until all three remediation batches complete and two consecutive full-program passes find no material defect.
 
 ## Findings and corrections
 
@@ -50,6 +65,12 @@ No workstation implementation has started. The next gate is owner review of the 
 | R31 | High | P10-S008 combined the full installer, maintenance suite, all guides, diagrams, and prompts in one non-tactical story. | Split production into P10-S012 through P10-S015 and made P10-S008 a read-only catalog-validation gate. |
 | R32 | Medium | The future macOS plan could either repeat all training or silently assume Windows knowledge. | Defined portable prior-learning dispositions, exact evidence and freshness checks, and mandatory macOS-specific delta learning while preserving standalone execution. |
 | R33 | High | Planned stories intentionally defer current versions and exact targets, but the readiness transition did not require those variables to be resolved before execution. | Added a committed Ready-state activation packet with exact revisions, targets, versions, tests, risk, route, approvals, checkpoints, and rollback; unresolved material assumptions block Ready. |
+| R34 | Critical | Structural completeness was incorrectly reported as a semantic pass even though most stories still contained template-only scope, evidence, rollback, routing, risk, and completion language. | Withdrew the pass decision, added executability/specificity rules and a bounded review stop rule, and began three remediation batches tracked in a durable log. |
+| R35 | High | A dependency-check command matched zero story files and still printed `PASS`, demonstrating that a green result without an asserted test inventory is unsafe. | Corrected the filter, required exactly 129 stories and nonempty phase inventories, reran successfully, and made zero-applicable-test success invalid in the canonical contract. |
+| R36 | High | “One approval per privileged phase” was still conflated with later human learning, login, elevation, and acceptance actions. | Defined one revision-bound phase authorization and distinguished later required human participation; material scope, target, risk, or operation change invalidates the authorization. |
+| R37 | High | P01 implicitly depended on Pester even though its bootstrap must run before later tooling is installed. | Required dependency-free Windows PowerShell tests in P01; an external framework is permitted only if current inventory proves it is already present and the activation packet pins it. |
+| R38 | Critical | Early P01 execution contracts still required acquiring the controller lease before P01-S006 implemented and accepted that lease. | Required the Git-based bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted. |
+| R39 | High | P02 referred to a dedicated Linux user without assigning any story to create, select, or verify that account. | Added one owner-named non-root default account to P02-S005, prohibited password capture, and required default-user and secret-leak checks. |
 
 ## Redundancy removed
 
@@ -68,7 +89,7 @@ No workstation implementation has started. The next gate is owner review of the 
 | Windows 11, 9800X3D, RTX 4090, 64 GB, and `H:\ai` | Master sections 1, 2, 7, and 8; P02, P03, and P10 |
 | Open WebUI, Ollama, current primary/fast/vision models, SearXNG, Docling, and Rancher Desktop | Master sections 2 and 7; P03 and P04 |
 | Windows-wide local dictation rather than chat-only STT | SYS-STT and P05-S001 through P05-S004 |
-| VS Code, Codex CLI, Claude Code, desktop-client compatibility, optional autocomplete, and LM Studio port 1239 | P02, P05, and P10-S014 |
+| VS Code, Codex CLI, Claude Code, desktop-client compatibility, optional autocomplete, and LM Studio localhost port 51239 | P02, P05, and P10-S014 |
 | Python, Go, Node.js, and TypeScript inside protected Ubuntu WSL | P02 and master security boundaries |
 | LangChain, LangGraph, MCP, skills/assets/scripts, MLflow, and targeted learning | P06 and master learning policy |
 | RAG, Langflow, Crawl4AI, nine source categories, deterministic YAML, visuals, and 27 private samples | SYS-RAG and P07 |
@@ -93,9 +114,11 @@ These are controlled gates, not missing requirements:
 
 ## Automated review results
 
+The earlier table is retained as structural-history evidence, not a current full-program pass. Batch 1 completed two consecutive clean passes: 129 story files were asserted, and all 27 P01-P02 stories passed the revised semantic and trace checks. P03-P10 still contain 97 generic-scope/evidence stories and 102 incomplete routes. Those residual counts keep the program review open.
+
 | Check | Result |
 |---|---|
-| Story count | 129 |
+| Story count | 129, explicitly asserted before dependent checks run |
 | Unique story IDs | 129 |
 | Required properties and 16 sections | Pass |
 | Per-phase sequence uniqueness and continuity | Pass |
@@ -119,4 +142,4 @@ These are controlled gates, not missing requirements:
 
 ## Review decision
 
-The specification set passes the second internal review but remains specifications, not authorization to build the workstation. When the owner explicitly starts P01, P01-S015 is the only story eligible for activation; its separate mutation preview and approval gate the creation of the personal GitHub Project.
+No pass decision is currently in force. The structural results above remain useful evidence, but semantic remediation is blocking. When remediation eventually passes and the owner explicitly starts P01, P01-S015 will be the only story eligible for activation; its separate mutation preview and approval will gate creation of the personal GitHub Project.

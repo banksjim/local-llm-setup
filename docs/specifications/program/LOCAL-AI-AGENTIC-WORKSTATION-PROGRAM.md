@@ -43,7 +43,7 @@ The completed Windows program provides:
 - GitHub Projects as a visible progress board, backed by repository state.
 - Cloud models early in the program and qualified local models later.
 - A separate optional local VS Code autocomplete setup guide.
-- A separate optional LM Studio evaluation guide using port `1239`, without sharing Ollama model files.
+- A separate optional LM Studio evaluation guide using localhost port `51239`, without sharing Ollama model files. Activation must verify that the port is free and may select another unoccupied dynamic/private port if necessary.
 
 ### Deferred to a separate future program
 
@@ -167,6 +167,8 @@ Before a story becomes Ready, a versioned activation packet resolves its exact t
 
 Implementation and review are separate activities. High-risk architecture or security changes require cross-provider review and owner validation. Tests, idempotency, rollback, evidence, and research freshness are enforced by tooling rather than accepted from model confidence.
 
+Specification quality uses a bounded correction loop: structural validation, story-level semantic review, correction, cross-document trace, current-source review, and a fresh parent-to-leaf pass. A review may claim completion only after two consecutive full passes find no material defect. Each batch stops after five correction cycles; unresolved material defects are reported and remain blocking rather than being relabeled as minor. A material defect changes scope, safety, executability, testability, traceability, factual currency, or workflow integrity.
+
 ## 11. Success criteria
 
 The program is complete only when:
@@ -198,6 +200,7 @@ These references were checked on 2026-09-13. Activated stories must recheck the 
 - [MLflow agent tracing](https://mlflow.org/docs/latest/genai/tracing)
 - [Crawl4AI documentation](https://docs.crawl4ai.com/)
 - [Google Workspace export formats](https://developers.google.com/workspace/drive/api/guides/ref-export-formats)
+- [IANA service-name and port-number registry](https://www.iana.org/assignments/service-names-port-numbers)
 
 ## 13. Change control
 

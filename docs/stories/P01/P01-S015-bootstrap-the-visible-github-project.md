@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | Not applicable — this is the first program story. |
 | Unlocks | P01-S001 |
-| Preferred route | Current authenticated GitHub CLI with an economical cloud implementation model; human approval immediately before external creation. |
+| Preferred route | Interface: authenticated GitHub CLI from the Windows repository shell guided by Codex; Provider: OpenAI; Model class: standard integration; Effort: medium; Fallback: Claude Code with an Anthropic general-purpose model and the same GitHub CLI; owner approval is required immediately before external creation. |
 | Research freshness | Current official GitHub Projects and GitHub CLI documentation checked within 7 days. |
 
 ## 1. User story
@@ -33,11 +33,11 @@ Check current official GitHub Projects, draft-item, field, view, visibility, and
 
 ## 5. Preconditions and unlock conditions
 
-The written specification set passes local structural validation; the repository remote is confirmed; GitHub CLI authentication and Project scopes pass a sanitized read-only check; and the owner explicitly approves the previewed external mutations. This story unlocks P01-S001 only after the Project URL and reconciliation inventory are recorded.
+The written specification set passes local structural validation; the repository remote is confirmed; GitHub CLI authentication and Project scopes pass a sanitized read-only check; and the owner approves the complete revision-bound P01 phase preview, including these external mutations. This story unlocks P01-S001 only after the Project URL and reconciliation inventory are recorded.
 
 ## 6. In scope
 
-One personal Project; selected private visibility unless the owner explicitly chooses public; canonical fields and useful table/board views; one draft item per approved story; phase, sequence, workflow, risk, owner-action, and document-link metadata; and a sanitized local bootstrap record.
+One personal Project; selected private visibility unless the owner explicitly chooses public; canonical fields and useful table/board views; one draft item per approved story; phase, sequence, workflow, risk, owner-action, and document-link metadata; a sanitized local bootstrap record; and a versioned dependency-free PowerShell bootstrap operation under `goagentic/bootstrap/` with preview, apply, verify, and story-owned rollback modes using authenticated GitHub CLI calls.
 
 ## 7. Out of scope and prohibited changes
 
@@ -45,11 +45,11 @@ Controller automation, workstation installation, bulk repository issues for stor
 
 ## 8. Privilege and human approval
 
-Required — present the exact Project owner, title, visibility, fields, views, and item count before creation. The owner approves this external high-volume mutation separately from approval of the specification edit.
+Required phase authorization — the P01 preview names the exact Project owner, title, visibility, fields, views, item count, and controller mutation set. The owner authorizes that bounded phase once before creation; authentication or scope renewal is a separate human action, while any material preview change requires reauthorization.
 
 ## 9. Risk rationale
 
-The operation creates and updates many externally hosted records and depends on authenticated GitHub access. It is reversible, but a partial import or duplicate rerun could create widespread clutter; therefore preview, stable item keys, reconciliation, and rollback evidence are mandatory.
+The story is High risk because it creates and updates many externally hosted records through authenticated GitHub access. It is reversible, but a partial import or duplicate rerun could create widespread clutter; therefore preview, stable item keys, reconciliation, rollback evidence, and independent review are mandatory.
 
 ## 10. Execution contract
 

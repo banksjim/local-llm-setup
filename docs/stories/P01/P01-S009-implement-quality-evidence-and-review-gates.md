@@ -12,7 +12,7 @@
 | Actor | LLM |
 | Dependencies | P01-S008 |
 | Unlocks | P01-S010 |
-| Preferred route | Controller-selected quality route; cross-provider review required; qualified local execution only under current policy. |
+| Preferred route | Interface: Codex CLI in the repository; Provider: OpenAI; Model class: architecture-capable implementation; Effort: medium; Fallback: Claude Code with an Anthropic architecture-capable model at medium effort; independent cross-provider review is required and local execution is prohibited before P03 qualification. |
 | Research freshness | Current testing and supply-chain guidance checked within 30 days. |
 
 ## 1. User story
@@ -37,23 +37,23 @@ P01-S008. Applicable specifications, clean Git state, current research, required
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Implement risk derivation, activation-packet validation, scope checking, evidence completeness, freshness, idempotency, rollback, secret scan, and reviewer-independence gates in `goagentic/src/Quality.psm1` and `goagentic/src/Evidence.psm1`; implement `verify`, `review`, and `audit`; and add fixtures for every required rejection.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Judging subjective human experience as automated fact, letting the implementer self-approve, lowering risk without owner evidence, accepting stale sources, redacting only after secret material is committed, or marking a story Done from a generic “tests pass” statement.
 
 ## 8. Privilege and human approval
 
-Not applicable — no separate human action is required beyond active phase authorization.
+Not applicable — repository implementation and fixtures are covered by the P01 phase authorization. Only a proposed risk reduction or disputed human-only boundary requires owner action.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The story is High risk because these gates decide whether every later story is executable and complete. A false positive could propagate unsafe work across the program; comprehensive negative fixtures, failure injection, and cross-provider review are required.
 
 ## 10. Execution contract
 
-Preview changes and tests; verify preconditions; acquire the lease; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the lease; and route to review or human validation. Stories cannot complete when an applicable gate or independent verdict is absent.
+Preview changes and tests; verify preconditions; acquire the currently accepted P01 mutation guard—the bootstrap lock through P01-S006 and the controller lease only after P01-S006 is accepted; execute the smallest reversible operations; stop on drift; test; record sanitized evidence; release the guard; and route to review or human validation. Stories cannot complete when an applicable gate or independent verdict is absent.
 
 ## 11. Automated acceptance tests
 
@@ -61,20 +61,20 @@ Stories cannot complete when an applicable gate or independent verdict is absent
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review are sufficient for this story.
+Not applicable — positive and negative fixtures prove each machine-enforced gate, and cross-provider review checks the human-only boundaries. The owner resolves only proposed risk reductions or disputed findings.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Verification and audit are read-only except for versioned evidence output and produce the same verdict for unchanged inputs. Review records append rather than overwrite. Rollback restores prior modules and schemas while retaining accepted historical evidence and findings.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Story revision; gate-to-contract trace; module and fixture hashes; positive and every negative result; risk-derivation examples; stale-source, scope-drift, missing-evidence, secret, self-review, and forged-human-evidence denials; repeat result; rollback rehearsal; and cross-provider verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Every canonical rule has an enforcing check or an explicitly identified human gate; every negative fixture is rejected for the expected reason; no implementer can be sole reviewer; risk cannot be silently lowered; and P01-S010 is unblocked after cross-provider review.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause after each gate and its negative-fixture pair, after the contract trace, and after the combined audit. Never accept partial evidence or temporarily disable a gate across a pause.

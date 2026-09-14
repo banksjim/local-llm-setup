@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P02-S005 |
 | Unlocks | P02-S007 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected current assistant model; no unattended substitution. |
+| Preferred route | Interface: interactive Codex CLI with Ubuntu and Windows shells; Provider: OpenAI; Model class: architecture and security implementation; Effort: high; Fallback: Claude Code with an Anthropic architecture/security model using the same accepted policy; P02 phase authorization and isolated rollback rehearsal are mandatory. |
 | Research freshness | Current Microsoft WSL configuration and networking docs checked within 7 days. |
 
 ## 1. User story
@@ -37,19 +37,19 @@ P02-S005. Applicable specifications, clean Git state, valid controller state, cu
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Implement preview/apply/verify/rollback operations under `operations/ubuntu/p02/` for the accepted `/etc/wsl.conf` security profile in `AI-Workbench`: disable automatic Windows-drive mounting and Windows executable interoperability, preserve required localhost or NAT networking, restart only the target distribution, and test access denials plus required network reachability.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Changing global WSL settings or other distributions; mounting `C:` or `H:`; exposing the container socket; blocking required Windows-to-WSL VS Code startup without a documented resolution; changing Windows Firewall; enabling systemd unless selected by current P02 research; and weakening the boundary merely for convenience.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the declared work; an LLM may guide but cannot create completion evidence.
+Required human participation — the existing P02 phase authorization covers the accepted security profile. The owner observes restart and connectivity checks and performs acceptance evidence; a changed mount, interoperability, networking, or security design requires a new phase preview and authorization.
 
 ## 9. Risk rationale
 
-Work crosses a security, privilege, destructive-data, authentication, or program-acceptance boundary and requires explicit owner control. New facts may raise risk; an LLM cannot lower it.
+The story is Critical because it defines the host/agent security boundary and an error can either expose Windows data and executables or make the environment unusable. It requires the existing P02 authorization, exact backup, isolated config validation, restart recovery, owner validation, and cross-provider security review.
 
 ## 10. Execution contract
 
@@ -61,20 +61,20 @@ Windows drives and executables are unavailable, Ubuntu networking works, and rol
 
 ## 12. Human validation
 
-The owner completes the story-specific checklist and records the result through the controller.
+The owner confirms that Windows-initiated VS Code access and required networking still work while Windows drives and executables remain unavailable inside `AI-Workbench`.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+Applying the same normalized configuration twice changes nothing. Before replacement, save the exact prior `wsl.conf` and distribution state. Rollback restores that file, terminates only `AI-Workbench`, and verifies its prior mount, interop, networking, and VS Code-connectivity state.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Current Microsoft and VS Code requirements; configuration and operation hashes; pre-change file/state backup; P02 authorization; preview; syntax validation; post-restart mount and Windows-executable denial tests; required network and Windows-initiated VS Code checks; repeat result; rollback rehearsal; owner validation; and cross-provider verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Inside `AI-Workbench`, Windows drives are absent and Windows executables cannot launch; required package/network access and Windows-initiated VS Code connectivity still work; other distributions are unchanged; rerun and rollback pass; and P02-S007 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause before replacing `wsl.conf`, after syntax validation, after terminating only `AI-Workbench`, after restart, and after each boundary check. Never leave an unverified configuration as accepted state.

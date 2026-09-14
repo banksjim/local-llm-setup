@@ -12,7 +12,7 @@
 | Actor | Human + LLM |
 | Dependencies | P02-S007 |
 | Unlocks | P02-S009 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected current assistant model; no unattended substitution. |
+| Preferred route | Interface: interactive Codex CLI plus Ubuntu shell and browser device flow; Provider: OpenAI; Model class: security-aware systems guide; Effort: medium; Fallback: Claude Code with an Anthropic security-aware model using the same native-Linux credential boundary; the owner performs authentication. |
 | Research freshness | Current GitHub CLI authentication and credential-storage docs checked within 7 days. |
 
 ## 1. User story
@@ -37,19 +37,19 @@ P02-S007. Applicable specifications, clean Git state, valid controller state, cu
 
 ## 6. In scope
 
-Only the objective, declared files and services, automated tests, documentation, evidence, and minimum safe supporting changes.
+Create an idempotent managed Git-configuration and verification operation under `operations/ubuntu/p02/`; configure Git identity and the P02-S001-selected native-Linux credential storage for the dedicated Ubuntu user; perform owner-controlled GitHub device or browser authentication; configure GitHub CLI and Git to use that boundary for all Linux repositories; and verify access with a disposable private-or-public-safe test that exposes no token. Authentication entry and credential-store unlock remain manual.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved architecture changes, public exposure, secret disclosure, destructive cleanup, and actions not named in this story.
+Copying or mounting Windows `%APPDATA%`, roaming GitHub tokens, `.git-credentials`, SSH private keys, or credential-manager files; storing a plaintext token in a repository or shell history; per-repository duplicate authentication; changing organization policy; and exposing repository names not needed for evidence.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the declared work; an LLM may guide but cannot create completion evidence.
+Required human participation — the owner completes the device or browser authentication and any credential-store unlock. The accepted P02 phase authorization covers configuration; the LLM never enters, reads, records, or approves credentials.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, integration state, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+The story is High risk because it creates a durable credential boundary and authenticated remote access. Credential entry is human-only; secret storage, filesystem permissions, history hygiene, least scopes, revocation, redacted evidence, and cross-provider security review are required.
 
 ## 10. Execution contract
 
@@ -61,20 +61,20 @@ Clone, fetch, and push to an approved test repository works from CLI and VS Code
 
 ## 12. Human validation
 
-The owner completes the story-specific checklist and records the result through the controller.
+The owner performs authentication, confirms the expected GitHub account and scopes without exposing them unnecessarily, and verifies that logout or revocation instructions are understandable.
 
 ## 13. Idempotency and rollback
 
-A second execution must report no unintended change. Before mutation, capture the exact rollback point; rollback restores only story-owned changes and preserves user data.
+A rerun recognizes valid authentication and correct Git configuration without requesting or writing a second credential. Rollback removes only managed Git configuration and invokes the documented logout/revocation path if the owner chooses; it never prints, copies, or commits the credential and preserves unrelated keys/configuration.
 
 ## 14. Required evidence
 
-Story revision; actor, provider/model and effort when applicable; dated sources; changed-file and operation inventory; sanitized outputs; acceptance results; approval; idempotency and rollback; independent verdict; and human evidence when required.
+Official authentication and credential-storage sources; selected backend and threat tradeoffs; managed Git configuration diff; owner-performed authentication timestamp; sanitized `gh auth status`; secret location and permission check without content; clone/fetch/push-safe verification; shell-history and repository secret scans; rerun; revocation/rollback procedure; and cross-provider verdict.
 
 ## 15. Definition of done
 
-The objective and tests pass; evidence is complete; no prohibited change occurred; review is accepted; human validation is genuine; controller and Git/GitHub agree; and the next story is unblocked.
+Git and GitHub CLI work for repositories from the dedicated Ubuntu user through one native-Linux credential boundary; no Windows credential path is mounted or referenced; no secret appears in history, output, or Git; rerun creates nothing; and P02-S009 is unblocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
+Pause before the trusted authentication prompt, after authentication status verifies, after managed Git configuration, and after remote tests. Never record, echo, or inspect credential content at a checkpoint.
