@@ -4,77 +4,81 @@
 |---|---|
 | Story ID | P07-S008 |
 | Phase | P07 — RAG, Ingestion, and Knowledge-Base Capstone |
-| Sequence | 8 |
+| Sequence | 10 |
 | Status | Planned |
 | Step | Implementation |
 | Hold reason | Dependency |
 | Risk | High |
-| Actor | LLM |
+| Actor | Human + LLM |
 | Dependencies | P07-S007 |
 | Unlocks | P07-S009 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
-| Research freshness | Current Crawl4AI docs, releases, and target-site authorization checked within 7 days. |
+| Preferred route | Interface: WSL coding agent plus isolated crawler service; Provider: controller-selected cloud provider; Model class: high-reliability coding; Effort: high; Fallback: second provider and static-HTML adapter. |
+| Research freshness | Current Crawl4AI stable docs/releases, browser security notes, robots/legal guidance, and target-independent web standards checked within 7 days. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to capture authorized public pages with JavaScript rendering and non-LLM Markdown or CSS or XPath paths, so progress is inspectable and independent of chat memory.
+As the owner, I want safe one-off URL capture without LLM scraping so selected web pages become reproducible knowledge documents at low cost.
 
 ## 2. Bounded objective
 
-Capture authorized public pages with JavaScript rendering and non-LLM Markdown or CSS or XPath paths.
+Implement a public-web adapter under workloads/rag/adapters/web/ and reusable operation operations/windows/p07/P07-S008-crawl4ai-web-intake using Crawl4AI deterministic Markdown plus raw HTML or MHTML snapshot, bounded browser rendering, response metadata, links/media inventory, and the standard snapshot/derivative contracts.
 
 ## 3. Learning objective
 
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P07-S003; this story introduces no separate learning objective.
+Not applicable — P07-S002 covers the RAG concepts; this story implements the approved Crawl4AI adapter.
 
 ## 4. Current research requirements
 
-Current Crawl4AI docs, releases, and target-site authorization checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Pin the current compatible release; verify current cache defaults, safe declarative hooks, session behavior, SSRF controls, redirect handling, and raw/MHTML capture. Record security advisories and license.
 
 ## 5. Preconditions and unlock conditions
 
-P07-S007. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P07-S007 is Done. Activation resolves crawler image digest, URL allow/deny policy, resource/time limits, user agent, capture profile, permitted outbound network, and synthetic/local test site.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Owner-supplied HTTP(S) URL; DNS/IP validation before and after redirects; public-address-only default; fresh bounded retrieval; deterministic non-LLM Markdown; CSS/XPath selection; raw capture; response/final-URL provenance; restart and quarantine.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No crawling discovered links, scheduled scraping, LLM extraction/filtering, stealth/evasion defaults, proxy rotation, file/data URLs, localhost/private/link-local/cloud-metadata access, downloads/executables, authentication, CAPTCHA/paywall bypass, or arbitrary Python hooks.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+P07 authorization covers bounded outbound retrieval from the isolated crawler. Each live URL is owner supplied or explicitly allowlisted; no technical sign-off is requested.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+High: browser-rendered outbound content is untrusted and could target internal services or leak data.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Fixtures record redirects, time, and hash and prove no LLM extraction or access-control bypass.
+Validate scheme/host, resolve and reject prohibited addresses, fetch with size/time/redirect limits, revalidate every redirect, preserve allowed raw content and metadata, convert without LLM, scan outputs, then enter the common validation pipeline. Dynamic code runs only inside the isolated browser with no private mounts or credentials.
 
 ## 11. Automated acceptance tests
 
-Fixtures record redirects, time, and hash and prove no LLM extraction or access-control bypass. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Local controlled fixtures prove static HTML, JavaScript-rendered text, CSS selection, redirect provenance, image/link capture, and unchanged reingest. Denials cover localhost, RFC1918, link-local/metadata IP, DNS rebinding simulation, non-HTTP scheme, redirect to denied host, oversized body, timeout, executable download, malicious filename, arbitrary hook code, and network failure. All failures leave the active corpus unchanged.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+The owner supplies one public test URL and confirms the captured page title and useful body match the page. The LLM owns security and fidelity review.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Same captured bytes/profile reuse the snapshot and derivative. Rollback disables the adapter and removes synthetic/staged derivatives; immutable accepted captures remain.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+The directory evidence/P07-S008/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, and review.md in addition to the story-specific artifacts below.
+
+Pinned image/license, network policy, fixture results, at least twelve denial results, final/requested URL record, raw/Markdown hashes, no-LLM proof, second-run result, owner test outcome, rollback, and review at evidence/P07-S008/.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+Bounded one-off public capture works; SSRF and code-execution denials pass; no LLM is invoked; failures do not publish; and P07-S009 becomes Ready.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Before every pause, update evidence/P07-S008/checkpoint.json with completed unit, verified state, active model/provider, safe rollback point, and exact next operation.
+
+Pause before outbound fetch or after immutable snapshot/manifest commit. An open browser session is closed before pausing.

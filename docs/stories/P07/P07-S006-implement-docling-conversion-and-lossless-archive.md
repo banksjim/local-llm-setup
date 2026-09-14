@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P07-S006 |
 | Phase | P07 — RAG, Ingestion, and Knowledge-Base Capstone |
-| Sequence | 6 |
+| Sequence | 8 |
 | Status | Planned |
 | Step | Implementation |
 | Hold reason | Dependency |
@@ -12,69 +12,73 @@
 | Actor | LLM |
 | Dependencies | P07-S005 |
 | Unlocks | P07-S007 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
-| Research freshness | Current Docling formats, CLI, serialization, and API docs checked within 7 days. |
+| Preferred route | Interface: WSL coding agent plus isolated Rancher workload; Provider: controller-selected cloud provider; Model class: high-reliability coding; Effort: high; Fallback: second provider review and pinned prior converter profile. |
+| Research freshness | Current Docling supported-format, CLI/API, OCR, serialization, model-download, and security documentation checked within 7 days. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to convert PDF, DOCX, XLSX, PPTX, and Markdown to lossless Docling JSON plus referenced-image Markdown drafts, so progress is inspectable and independent of chat memory.
+As the owner, I want deterministic PDF and Office conversion so structure and assets can be reproduced without rereading live sources.
 
 ## 2. Bounded objective
 
-Convert PDF, DOCX, XLSX, PPTX, and Markdown to lossless Docling JSON plus referenced-image Markdown drafts.
+Implement a versioned Docling profile under workloads/rag/profiles/docling/ and reusable operation operations/windows/p07/P07-S006-docling-conversion that reads accepted snapshots and writes staged Docling JSON, Markdown draft, referenced images, and a conversion manifest for PDF, DOCX, XLSX, and PPTX.
 
 ## 3. Learning objective
 
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P07-S003; this story introduces no separate learning objective.
+Not applicable — this is the converter implementation behind the concepts learned in P07-S002.
 
 ## 4. Current research requirements
 
-Current Docling formats, CLI, serialization, and API docs checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Select the current compatible Docling release at activation, record package/model digests and licenses, verify offline behavior after model acquisition, and document OCR/table/image limitations. Do not hard-code an obsolete major.
 
 ## 5. Preconditions and unlock conditions
 
-P07-S005. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P07-S005 is Done. Activation resolves the pinned converter image/dependencies, model cache, CPU/GPU policy, output root, limits, and synthetic corpus. Only snapshotted inputs are eligible.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Four format adapters, OCR decision rules, page/sheet/slide counts, referenced-image export, lossless JSON, normalized error codes, resource limits, restart from snapshotted state, and converter provenance.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No frontmatter, final Git publication, web/Google adapters, LLM text cleanup, source overwrite, macros, embedded-code execution, external-resource retrieval, or active-index mutation.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+P07 authorization covers the pinned container/model download and narrow private mount. No additional human participation is needed unless a new model license or network source appears.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+High: private content is processed across a container and model cache; failure must not publish partial derivatives.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Fixtures verify structure and detect Markdown table-span loss; failures quarantine atomically.
+Convert into a job-specific staging directory. Record input hash, profile, Docling/package/model versions, warnings, counts, output hashes, duration, and resource use. Validate JSON and every referenced asset before atomically advancing converted. Disable network after approved dependency/model acquisition where supported.
 
 ## 11. Automated acceptance tests
 
-Fixtures verify structure and detect Markdown table-span loss; failures quarantine atomically. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+For each of four formats, verify headings/tables/counts and referenced assets against golden synthetic fixtures. Inject corrupted input, OCR failure, converter crash, timeout, out-of-memory limit, missing model, missing asset, output-hash mismatch, and attempted external reference; each must quarantine or fail without final Markdown, Git commit, or active-index change. A second run must reproduce normalized outputs byte-for-byte.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — fixture fidelity and failure isolation are technically reviewed. Owner visual judgment occurs in P07-S016.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Same snapshot/profile reuses verified conversion or reproduces identical normalized outputs. Rollback removes only staged/derived converter outputs and profile deployment; immutable snapshots remain.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+The directory evidence/P07-S006/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, and review.md in addition to the story-specific artifacts below.
+
+Pinned versions/digests/licenses, profile file, four golden comparisons, all nine failure results, offline/network observation, output hashes, second-run comparison, resource measurements, rollback rehearsal, and reviewer findings at evidence/P07-S006/.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+Four formats yield validated lossless records and deterministic drafts; all failure cases preserve prior state; and P07-S007 becomes Ready.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Before every pause, update evidence/P07-S006/checkpoint.json with completed unit, verified state, active model/provider, safe rollback point, and exact next operation.
+
+Pause before conversion or after converted-state manifest commit. A partial staging directory is never resumed without input/profile/hash validation.

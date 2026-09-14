@@ -28,7 +28,7 @@ An open-source-first, Git-based program for building a private local AI and agen
 
 1. Read the [master program specification](docs/specifications/program/LOCAL-AI-AGENTIC-WORKSTATION-PROGRAM.md).
 2. Review the [phase map](docs/specifications/phases/README.md).
-3. See the [132 sequenced stories](docs/stories/README.md).
+3. See the [134 sequenced stories](docs/stories/README.md).
 4. Read the [canonical story contract](docs/specifications/standards/STORY-CONTRACT.md).
 
 The specifications are designed so a future `goagentic` controller can reconstruct the project after a reboot or long pause and give exactly one safe next action. That controller does not exist yet; it is built and accepted in Phase P01. The first P01 story creates the personal GitHub Project and imports the approved backlog, so progress becomes visible before controller or workstation implementation begins.
@@ -64,7 +64,7 @@ This playbook repository is public and contains only specifications and, later, 
 
 - Requirements and major architecture decisions: complete for review.
 - Master, system, phase, and story specifications: drafted.
-- Formal adversarial review: [remediation in progress](docs/reviews/2026-09-13-formal-specification-review.md); P01-P05 have passed their bounded batch reviews and P06 has completed its first Batch 3 correction cycle, while P07-P10 and the final Batch 3/full-program review remain blocking.
+- Formal adversarial review: [remediation in progress](docs/reviews/2026-09-13-formal-specification-review.md); P01-P05 passed their bounded batch reviews, and P06-P07 have completed correction cycles. P08-P10 plus the final Batch 3/full-program review remain blocking.
 - GitHub Project creation and controller implementation: not started.
 - Workstation installation and testing: not started.
 - macOS program: deferred.

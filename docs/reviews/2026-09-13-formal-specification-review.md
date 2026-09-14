@@ -1,7 +1,7 @@
 # Formal Specification Review
 
 **Review date:** 2026-09-13  
-**Scope:** Master program, four system specifications, ten phase specifications, canonical story contract, current 132-story inventory, README, navigation, local/remote delivery state, and removed legacy paths
+**Scope:** Master program, four system specifications, ten phase specifications, canonical story contract, current 134-story inventory, README, navigation, local/remote delivery state, and removed legacy paths
 
 **Method:** Two adversarial architecture passes, requirement trace, bootstrap-dependency analysis, story-sizing review, semantic anti-pattern scan, schema inspection, sequence and dependency-DAG validation, reciprocal-reference validation, link validation, obsolete-path inspection, and Git checks
 
@@ -11,7 +11,7 @@
 
 The former plan was not safe to execute as written. It combined two operating systems and several independent systems in one document, contained bootstrap and runtime-boundary contradictions, used an overloaded state model, and did not express all approved work as testable stories. Later passes corrected many structural defects but incorrectly treated structural completeness as semantic completeness. A deeper audit found widespread template-only scope, evidence, rollback, completion, routing, and risk language. The architecture remains a useful Windows-only, ten-phase decomposition, but the specification set is not yet safe to execute without remediation.
 
-No workstation implementation has started. P01-P02 and P03-P05 passed their bounded batches. P06 completed its first Batch 3 correction cycle, but P07-P10 and the Batch 3/full-program reviews remain blocking. No story may become Ready merely because its document exists.
+No workstation implementation has started. P01-P02 and P03-P05 passed their bounded batches. P06 and P07 completed first Batch 3 correction cycles, but P08-P10 and the Batch 3/full-program reviews remain blocking. No story may become Ready merely because its document exists.
 
 ## Withdrawn decision and active remediation
 
@@ -82,6 +82,7 @@ These findings are material. The final review decision stays open until all thre
 | R48 | High | Six story-specific human-validation gates still allowed ambiguity about whether an LLM could author the owner's observations. | Added explicit anti-fabrication language to each gate and validated all 15 P03-P05 human gates independently. |
 | R49 | Medium | P05 cited Ollama's Claude Code integration but omitted Claude Code's own current configuration authority. | Added the current official Claude Code configuration reference and included its domain in the source-baseline check. |
 | R50 | Critical | P06 treated Ollama, LangChain, LangGraph, MCP, skills, and MLflow as a generic implementation objective without fixed authority, persistence, privacy, or evaluation boundaries. | Fixed the layer responsibilities; constrained the first agent and MCP server to synthetic read-only capabilities; required dedicated checkpoint storage, replay-safe effects, pre-emission trace redaction, deterministic safety checks, and 14 story-specific contracts. |
+| R51 | Critical | P07's leaf stories were generic, publication was not atomic across Git and vectors, private-source safety was incomplete, the plan taught Langflow before any story deployed it, and no story initialized the separate knowledge repository. | Rebuilt SYS-RAG around immutable source, normalized record, Git derivative, and disposable index layers; added a durable job state machine with paired Git/index reconciliation; specified file, web, OAuth, credential, deletion, and restore denials; and inserted P07-S018 and P07-S019 as explicit Langflow and private-repository prerequisites. |
 
 ## Redundancy removed
 
@@ -125,18 +126,18 @@ These are controlled gates, not missing requirements:
 
 ## Automated review results
 
-The earlier Batch 1 table is retained as structural-history evidence, not a current full-program pass. At that time 129 story files were asserted and all 27 P01-P02 stories passed. The current inventory is 132 after P04 decomposition. Batch 2 completed two consecutive clean passes covering all 37 P03-P05 stories and the full 132-node graph. P06 correction cycle 1 replaced all 14 generic contracts and routes in that phase; P07-P10 still contain 49 measured generic core story blocks and 54 incomplete routes. Batch 3 has not reached its two clean passes, so these residuals keep the program review open.
+The earlier Batch 1 table is retained as structural-history evidence, not a current full-program pass. At that time 129 story files were asserted and all 27 P01-P02 stories passed. The current inventory is 134 after P04 decomposition and two added P07 prerequisites. Batch 2 completed two consecutive clean passes covering all 37 P03-P05 stories. P06 and P07 correction cycle 1 replaced all prior generic contracts and routes in those phases. P08-P10 still contain 32 measured generic core story blocks and 37 incomplete routes. Batch 3 has not reached its two clean passes, so these residuals keep the program review open.
 
 | Check | Result |
 |---|---|
-| Story count | 132 current; Batch 1's historical assertion was 129 |
-| Unique story IDs | 132 current |
+| Story count | 134 current; Batch 1's historical assertion was 129 |
+| Unique story IDs | 134 current |
 | Required properties and 16 sections | Pass |
 | Per-phase sequence uniqueness and continuity | Pass |
-| Dependency graph | Pass; 132 of 132 reciprocal nodes visited with no cycle and independently topologically ordered |
+| Dependency graph | Pass; 134 of 134 reciprocal nodes visited with no cycle |
 | Reciprocal dependency and unlock references | Pass |
 | Phase-table sequence, step, and risk agreement | Pass |
-| Local Markdown links | Pass; 208 references resolved in the current tree |
+| Local Markdown links | Pass; 181 references parsed by the current validator and all resolve |
 | Ambiguous learning and contradictory research prose | Pass; zero matches |
 | Placeholder and obsolete terminology scan | Pass; explanatory README history is intentional |
 | Removed documentation-tree presence | Pass; no active or empty legacy folder remains locally |
@@ -144,6 +145,7 @@ The earlier Batch 1 table is retained as structural-history evidence, not a curr
 | P03-P05 Critical-risk controls | Pass; four of four include authorization, negative tests, and recovery |
 | P03-P05 human-validation authenticity | Pass; 15 of 15 include an owner action and anti-fabrication boundary |
 | P06 contract and route remediation | Correction cycle 1 passes phase-local structural and semantic checks; 14 of 14, but no Batch 3 pass is claimed |
+| P07 contract and route remediation | Checked correction cycle passes phase-local structural and semantic validation for 19 of 19; no Batch 3 pass is claimed |
 | Git whitespace validation | Pass |
 | Workstation implementation evidence | Not applicable — implementation has not started |
 
@@ -157,4 +159,4 @@ The earlier Batch 1 table is retained as structural-history evidence, not a curr
 
 ## Review decision
 
-Batch 2 passes its bounded review; P06 has a checked correction cycle, but this is not a Batch 3 or full-program pass. P07-P10 and the RAG/memory specifications remain blocking until Batch 3 correction and two consecutive full-program passes complete. When the full program eventually passes and the owner explicitly starts P01, P01-S015 will be the only story eligible for activation; its separate mutation preview and approval will gate creation of the personal GitHub Project.
+Batch 2 passes its bounded review; P06 and P07 have correction cycles, but this is not a Batch 3 or full-program pass. P08-P10 and the memory specification remain blocking until Batch 3 correction and two consecutive full-program passes complete. When the full program eventually passes and the owner explicitly starts P01, P01-S015 will be the only story eligible for activation; its separate mutation preview and approval will gate creation of the personal GitHub Project.

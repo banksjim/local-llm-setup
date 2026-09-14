@@ -12,69 +12,73 @@
 | Actor | LLM |
 | Dependencies | P06-S014 |
 | Unlocks | P07-S002 |
-| Preferred route | Controller-selected economical research route with web access. |
-| Research freshness | Official sources and project releases checked within 7 days. |
+| Preferred route | Interface: web-capable coding agent; Provider: controller-selected cloud provider; Model class: economical research; Effort: medium; Fallback: second cloud provider if a primary-source conflict remains. |
+| Research freshness | Official documentation, repositories, releases, licenses, and security notices checked within 7 days of activation. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to research current Docling, Crawl4AI, Google exports, Langflow, PGVector, embedding, chunking, and evaluation guidance, so progress is inspectable and independent of chat memory.
+As the owner, I want a dated technology decision record so implementation uses current tools and known limitations rather than training-memory assumptions.
 
 ## 2. Bounded objective
 
-Research current Docling, Crawl4AI, Google exports, Langflow, PGVector, embedding, chunking, and evaluation guidance.
+Create docs/research/p07/P07-S001-rag-tool-baseline.md and evidence/P07-S001/activation-data.json covering Docling, Crawl4AI, Google Drive export/OAuth, Langflow, LangChain PostgreSQL integration, pgvector, local embedding candidates, and MLflow tracing/evaluation.
 
 ## 3. Learning objective
 
-Not applicable — this research story prepares the evidence used by the following learning gate and does not teach an owner-operated procedure.
+Not applicable — this produces the evidence used to construct the next two owner learning modules.
 
 ## 4. Current research requirements
 
-Official sources and project releases checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Use primary sources. Record access date, stable URL, current stable version or immutable release/tag, license, supported role, material limitations, security advisories, conflicts, and whether each conclusion is fact or inference. Revalidate the P03-selected embedding profile; compare replacements only if it is unavailable, incompatible, materially stale, or fails the P07 corpus qualification—never by leaderboard alone.
 
 ## 5. Preconditions and unlock conditions
 
-P06-S014. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P06-S014 is Done; the repository is clean; the controller validates the authority chain and creates the activation packet. Completion unlocks P07-S002 only after link and inventory checks pass.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Research and decisions for the exact P07 stack, including the current Docling major, Crawl4AI safe deployment mode, Google export formats/scopes, Langflow invocation boundary, Python PostgreSQL adapter, pgvector index options, embedding candidates, and evaluation metrics.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No installation, credential request, external account mutation, model download, service start, private-source access, or replacement of the approved SYS-RAG architecture.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+Phase authorization is sufficient; this story performs read-only public research. The owner is not asked to technically review it.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
+Low: public read-only research and repository documentation only. A conflict that could alter architecture creates a design-change finding and stops unlock.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. A dated record confirms formats, versions, licenses, and known fidelity limits.
+The research record ends with a decision table containing component, selected role, current candidate, version resolution, license, primary sources, rejected alternatives, known failure modes, and stories affected. The activation-data file is machine-readable and contains no credentials.
 
 ## 11. Automated acceptance tests
 
-A dated record confirms formats, versions, licenses, and known fidelity limits. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert eight component rows exist; every row has a source accessed within seven days; all URLs resolve; every versioned selection has a release/tag or runtime-resolution rule; every license is identified; no TBD, bare “latest,” or unsupported benchmark claim remains; and repository secret/link/schema checks pass.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — an independent qualified LLM reviews evidence against primary sources; the owner supplies preferences only if research exposes a material choice.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+Rerun replaces the dated record only when evidence changed and otherwise produces no diff. Rollback reverts the two story-owned files.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+The directory evidence/P07-S001/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, and review.md in addition to the story-specific artifacts below.
+
+Sanitized source table, version/license table, search dates, conflict resolutions, rejected alternatives, acceptance output, changed-file list, and reviewer findings at evidence/P07-S001/.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+All eight technology areas have current, primary-source-backed decisions; automated checks pass; independent review has no unresolved material finding; and the controller records P07-S002 as Ready.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Before every pause, update evidence/P07-S001/checkpoint.json with completed unit, verified state, active model/provider, safe rollback point, and exact next operation.
+
+Pause after each component row or before committing the final decision table. Partial research leaves the story Waiting with Hold reason Paused and cannot unlock P07-S002.
