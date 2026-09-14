@@ -2,10 +2,10 @@
 
 **Started:** 2026-09-13
 
-**Working branch:** `work-2026-09-14-batch3`
+**Working branch:** `work-2026-09-14-p07-rag`
 
 **Worktree policy for this planning phase:** Use the ordinary repository checkout; do not create a worktree.
-**Status:** Batches 1 and 2 complete; Batch 3 in progress; P06 correction cycle 1 applied; no workstation implementation has started.
+**Status:** Batches 1 and 2 complete; Batch 3 in progress; P06 and P07 correction cycle 1 applied; no workstation implementation has started.
 
 This file is the durable restart point for the specification-quality remediation. It records work state, not proof that a batch passed.
 
@@ -76,7 +76,7 @@ Batch 1 is complete under the bounded stop rule. The counts in this section are 
 
 ## Batch 2 correction history
 
-The current inventory is 132 story documents. P04 grew from 11 to 14 stories when the former four-system integration/acceptance story was decomposed into separate SearXNG, document/vector, in-chat speech, automated acceptance, and owner-acceptance units. Batch 2 therefore contains 37 P03-P05 stories rather than the originally estimated 34.
+At the start of the completed Batch 2 review, the inventory was 132 story documents. P04 grew from 11 to 14 stories when the former four-system integration/acceptance story was decomposed into separate SearXNG, document/vector, in-chat speech, automated acceptance, and owner-acceptance units. Batch 2 therefore contains 37 P03-P05 stories rather than the originally estimated 34.
 
 Correction cycles found and addressed:
 
@@ -109,17 +109,21 @@ The remaining P06-P10 inventory is 68 stories. A measured scan currently finds 6
 
 ## Batch 3 correction history
 
-P06 correction cycle 1 replaced the 14 incomplete routes and generic contracts with exact learning artifacts, WSL workspace paths, agent packages, operations, fixtures, tests, evidence, rollback, and checkpoint boundaries. The P06 parent now fixes the separation among Ollama, LangChain, LangGraph, MCP, skills/assets/scripts, and self-hosted MLflow; requires a dedicated PostgreSQL checkpointer database/role; constrains the first agent and MCP server to synthetic read-only capabilities; excludes secrets/private content before tracing; and keeps deterministic safety checks independent of model judges. Current primary sources were checked on 2026-09-14, including the current LangChain/LangGraph documentation, current ChatOllama integration, the official MCP Python SDK and protocol line, and current MLflow tracing/evaluation documentation. P07-P10 and SYS-RAG/SYS-MEM remain uncorrected, so no Batch 3 clean pass is claimed.
+P06 correction cycle 1 replaced the 14 incomplete routes and generic contracts with exact learning artifacts, WSL workspace paths, agent packages, operations, fixtures, tests, evidence, rollback, and checkpoint boundaries. The P06 parent now fixes the separation among Ollama, LangChain, LangGraph, MCP, skills/assets/scripts, and self-hosted MLflow; requires a dedicated PostgreSQL checkpointer database/role; constrains the first agent and MCP server to synthetic read-only capabilities; excludes secrets/private content before tracing; and keeps deterministic safety checks independent of model judges. Current primary sources were checked on 2026-09-14, including the current LangChain/LangGraph documentation, current ChatOllama integration, the official MCP Python SDK and protocol line, and current MLflow tracing/evaluation documentation. At that correction point P07-P10 and SYS-RAG/SYS-MEM remained uncorrected, so no Batch 3 clean pass was claimed.
+
+P07 correction cycle 1 replaced 17 generic leaf contracts, added missing Langflow deployment and private knowledge-repository initialization stories, and rewrote SYS-RAG around four distinct data layers and atomic publication. The current inventory is 134 stories, with 19 in P07. P07 now requires content-addressed immutable snapshots, deterministic normalized records and Markdown, transaction-specific Git refs paired with shadow indexes, failure reconciliation, least-privilege Google OAuth, SSRF-safe one-off Crawl4AI capture, disposable authenticated-browser profiles, labeled local-vision enrichment, genuine 27-input owner acceptance, and isolated restore. Current primary sources checked on 2026-09-14 include official Docling, Crawl4AI, Google Drive, Langflow, LangChain PostgreSQL, pgvector, and MLflow documentation. P08-P10 and SYS-MEM remain uncorrected; 37 leaf stories retain incomplete routes and 32 retain measured generic core blocks, so no Batch 3 clean pass is claimed.
+
+The P07 review loop found and corrected four material omissions after the initial rewrite: no safe Langflow deployment prerequisite, no owner for initializing the independent private knowledge repository, no paired Git/index publication protocol, and a volatile frontmatter timestamp that contradicted byte-stable reingestion. The post-correction phase-local pass asserts 19 contracts and five-field routes, 19 concrete operation/artifact paths, continuous sequence 1–19 despite stable out-of-order IDs, phase-table agreement, actor/risk controls, all required denial families, and zero targeted generic blocks. The global graph now contains 134 reciprocal acyclic nodes and all 181 parsed local Markdown links resolve. This is a checked P07 correction cycle, not a Batch 3 clean pass.
 
 ## Exact resume action
 
 1. Read this file, the root `README.md`, the master program specification, `STORY-CONTRACT.md`, the relevant phase/system specifications, and the formal review.
 2. Inspect `git status` and all active repository-level Codex project instructions.
-3. After Batch 2 is merged and synchronized, create an ordinary planning branch for Batch 3; do not create a worktree during specification development.
-4. Remediate the RAG and memory system specifications, P06-P10 phase specifications, and all 68 remaining stories. Replace the measured 63 generic core blocks and complete all 68 five-field routes, then run the final two-pass cross-program review.
+3. Work from an ordinary planning branch; do not create a worktree during specification development.
+4. Remediate SYS-MEM, P08-P10, and their 37 stories. Replace the remaining 32 measured generic core blocks and complete all 37 five-field routes, then run the final two-pass cross-program review.
 5. Keep the formal review `Remediation in progress`; do not claim a full-program pass until Batch 3 and the final two-pass review complete.
 6. Do not install or configure workstation software.
 
 ## Delivery state
 
-Batch 1 was delivered through pull request 1 and merged as `4601476fc844fc3082374e94d116bb28815f7896`. Batch 2 was delivered through pull request 2 and merged as `5f7a8dd309b34c7bc32537d2eff8064c16e9bc79`. Batch 3 is uncommitted on the ordinary branch named above. Git commits, pull requests, merge state, and branch cleanup are authoritative in Git/GitHub history.
+Batch 1 was delivered through pull request 1 and merged as `4601476fc844fc3082374e94d116bb28815f7896`. Batch 2 was delivered through pull request 2 and merged as `5f7a8dd309b34c7bc32537d2eff8064c16e9bc79`. The P06 Batch 3 correction was delivered through pull request 3 and merged as `2ba7e2c36e395265c62f87e638d21f9dc4239c79`. The P07 correction is uncommitted on the ordinary branch named above. Git commits, pull requests, merge state, and branch cleanup are authoritative in Git/GitHub history.

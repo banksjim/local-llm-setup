@@ -4,78 +4,81 @@
 |---|---|
 | Story ID | P07-S003 |
 | Phase | P07 — RAG, Ingestion, and Knowledge-Base Capstone |
-| Sequence | 3 |
+| Sequence | 4 |
 | Status | Planned |
 | Step | Learning |
 | Hold reason | Dependency |
 | Risk | Low |
 | Actor | Human + LLM |
-| Dependencies | P07-S002 |
+| Dependencies | P07-S018 |
 | Unlocks | P07-S004 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
-| Research freshness | Current official Langflow docs and tutorials checked within 7 days. |
+| Preferred route | Interface: goagentic learn; Provider: controller-selected cloud provider; Model class: economical tutor with screen-guidance capability; Effort: medium; Fallback: alternate provider using the committed lesson and screenshots. |
+| Research freshness | Current Langflow stable documentation and maintained tutorials checked within 7 days. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to teach only the components needed to inspect and build the capstone flow, so progress is inspectable and independent of chat memory.
+As the owner, I want a focused Langflow lesson so I can inspect, run, export, and troubleshoot the capstone flow without learning every Langflow feature.
 
 ## 2. Bounded objective
 
-Teach only the components needed to inspect and build the capstone flow.
+Create and complete docs/learning/p07/P07-S003-langflow-visual-rag.md using workloads/rag/fixtures/langflow/learning-flow.json, which accepts a question, retrieves supplied fixture text, and returns an answer with a source identifier.
 
 ## 3. Learning objective
 
-Complete the targeted concepts and demonstrate them through the acceptance exercise.
+Identify components, connections, inputs/outputs, secrets, vector retrieval, model calls, run logs, flow export/import, and the stable API boundary. Explain why Langflow is a visual learning/admin surface rather than the authoritative data store or primary user interface.
 
 ## 4. Current research requirements
 
-Current official Langflow docs and tutorials checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Use current official Langflow documentation for installation-independent concepts, flow export, the stable run endpoint, API-key handling, and troubleshooting. Include one short overview and one substantive current tutorial.
 
 ## 5. Preconditions and unlock conditions
 
-P07-S002. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P07-S018 is Done and its synthetic Langflow service is healthy. P07-S004 waits for genuine completion.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+A 45–90 minute guided lesson, one synthetic flow, one export/import exercise, one deliberate broken connection, one missing-secret failure, and four owner knowledge questions.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No private corpus, production flow, internet exposure, stored credentials, arbitrary custom component code, or full Langflow administration course.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
+Human participation is required, but no additional privileged authorization is needed. The owner judges usability, not implementation correctness.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
+Low: synthetic data in a prepared local learning surface.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Owner builds a fixture flow and explains every node and data boundary.
+The lesson guides the owner to trace data through the graph, run it, inspect citations, export it, import a copy, diagnose the two injected faults, and state what belongs outside the flow file.
 
 ## 11. Automated acceptance tests
 
-Owner builds a fixture flow and explains every node and data boundary. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Validate lesson/source freshness; the fixture flow export parses; imported and original flows produce the same fixture source ID; the missing-secret and broken-edge cases fail with named messages; and all four owner responses are present.
 
 ## 12. Human validation
 
-Owner completes the story checklist and records it through the controller.
+The owner successfully locates input, retriever, model, output, and run API; fixes or explains both injected faults; and answers at least 3/4 questions after feedback.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+Resume returns to the last exercise checkpoint. Synthetic flow copies use unique IDs and can be removed without affecting later production flow state.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+The directory evidence/P07-S003/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, and review.md in addition to the story-specific artifacts below.
+
+Lesson revision, current sources, sanitized screenshots or state captures, export hash, test results, owner answers, score, and completion attestation at evidence/P07-S003/.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+The owner demonstrates the targeted Langflow skills, evidence is genuine, and P07-S004 becomes Ready.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Before every pause, update evidence/P07-S003/checkpoint.json with completed unit, verified state, active model/provider, safe rollback point, and exact next operation.
 
+Pause after every concept and before import/export or fault injection. The controller records the exact next exercise.

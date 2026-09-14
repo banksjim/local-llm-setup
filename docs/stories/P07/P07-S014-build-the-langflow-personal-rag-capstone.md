@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P07-S014 |
 | Phase | P07 — RAG, Ingestion, and Knowledge-Base Capstone |
-| Sequence | 14 |
+| Sequence | 16 |
 | Status | Planned |
 | Step | Implementation |
 | Hold reason | Dependency |
@@ -12,69 +12,73 @@
 | Actor | Human + LLM |
 | Dependencies | P07-S013 |
 | Unlocks | P07-S015 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
-| Research freshness | Current Langflow component and export docs checked within 7 days. |
+| Preferred route | Interface: WSL coding agent plus localhost Langflow/Open WebUI; Provider: controller-selected cloud provider for integration and approved local Ollama model for runtime; Model class: high-reliability coding/local chat; Effort: high; Fallback: direct tested retrieval API while Langflow adapter is corrected. |
+| Research freshness | Current Langflow stable run/export/API-key docs and current Open WebUI extension/tool integration docs checked within 7 days. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to build one substantial private knowledge-base flow with citations, local models, and MLflow traces, so progress is inspectable and independent of chat memory.
+As the owner, I want the accepted retrieval pipeline represented in Langflow and callable from Open WebUI so I can learn visually while using one normal chat interface.
 
 ## 2. Bounded objective
 
-Deploy the pinned Langflow component and build one substantial private knowledge-base flow with citations, local models, and MLflow traces. Expose the accepted flow to Open WebUI through the currently supported localhost-only integration selected at activation.
+Build workloads/rag/langflow/personal-rag.json and reusable operation operations/windows/p07/P07-S014-langflow-capstone to deploy a localhost-only flow that queries the active index, invokes the approved local model, returns structured citations, emits redacted MLflow traces, and is invoked through Open WebUI.
 
 ## 3. Learning objective
 
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P07-S003; this story introduces no separate learning objective.
+Reinforce P07-S003 by showing the owner where retrieval, prompt grounding, model generation, citations, and traces appear in the production-like flow.
 
 ## 4. Current research requirements
 
-Current Langflow component and export docs checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Verify the current stable Langflow run endpoint/export format and Open WebUI integration mechanism at activation; avoid beta APIs unless no stable route exists and the activation packet records the risk/fallback.
 
 ## 5. Preconditions and unlock conditions
 
-P07-S013. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P07-S013 is Done. Activation resolves flow ID/name, endpoint, authentication, network policy, Open WebUI adapter, model, prompt, citation schema, trace redaction, timeout, and previous configuration checkpoint.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Versioned flow JSON, externalized secrets, active-index retriever, grounded prompt, abstention behavior, structured citations, local model, MLflow spans, localhost/private-network binding, Open WebUI adapter, health check, and export/import.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No public binding, cloud model, embedded credentials, arbitrary custom-code component without review, Langflow as primary UI/data store, beta API by convenience, uncited confident answers, or private source text in MLflow.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
+P07 authorization covers local service configuration and private derived content. The owner performs guided usability validation, not technical approval.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+High: integration spans Open WebUI, Langflow, Ollama, PGVector, and MLflow and handles private knowledge.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. The exported flow is versioned and reproducible, passes the agreed query set, and returns equivalent cited results when invoked from Open WebUI.
+Import the reviewed flow, inject secrets at runtime, validate only approved network routes, invoke stable run API, map citations into the Open WebUI response, redact before tracing, and preserve the prior Open WebUI/Langflow configuration checkpoint until acceptance.
 
 ## 11. Automated acceptance tests
 
-The deployment and exported flow are pinned, versioned, reproducible, and pass the agreed query set. A supported localhost-only Open WebUI call returns answers and citations without exposing Langflow to the LAN. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Test grounded answer, unknown-answer abstention, multiple citations, metadata filter, citation link resolution, Open WebUI invocation, flow export/import equivalence, trace redaction, and health restart. Inject Langflow unavailable, model unavailable, DB unavailable, invalid API key, prompt injection in a document, missing citation, timeout, malformed response, and private-text trace; every failure is bounded and does not expose or fabricate.
 
 ## 12. Human validation
 
-Owner completes the story checklist and records it through the controller.
+The owner asks three known and two unknown questions in Open WebUI, opens citations, identifies the flow stages in Langflow, and confirms unknown questions abstain. The checklist asks only about observable usefulness.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Redeploying the same flow/config creates no duplicate. Rollback restores the saved Open WebUI adapter and prior Langflow flow while leaving the accepted index intact.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+The directory evidence/P07-S014/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, and review.md in addition to the story-specific artifacts below.
+
+Flow export hash, endpoint/auth/network settings without secrets, prompt/citation schema, integration and nine failure results, trace-redaction scan, restart/import equivalence, owner five-question outcome, rerun, rollback, and cross-provider review at evidence/P07-S014/.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+Open WebUI invokes the local Langflow flow; answers cite or abstain; traces are sanitized; failure modes are bounded; the owner can inspect the flow; and P07-S015 becomes Ready.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Before every pause, update evidence/P07-S014/checkpoint.json with completed unit, verified state, active model/provider, safe rollback point, and exact next operation.
+
+Pause before configuration switch or after health and rollback checkpoints. Never pause with only one side of the Open WebUI/Langflow contract updated.

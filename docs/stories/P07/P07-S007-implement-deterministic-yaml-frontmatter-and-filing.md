@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P07-S007 |
 | Phase | P07 — RAG, Ingestion, and Knowledge-Base Capstone |
-| Sequence | 7 |
+| Sequence | 9 |
 | Status | Planned |
 | Step | Implementation |
 | Hold reason | Dependency |
@@ -12,69 +12,73 @@
 | Actor | LLM |
 | Dependencies | P07-S006 |
 | Unlocks | P07-S008 |
-| Preferred route | Controller-selected value route; qualified local model allowed after P03; cloud fallback per SYS-CTL. |
-| Research freshness | Current serializer documentation checked within 30 days. |
+| Preferred route | Interface: WSL coding agent; Provider: controller-selected cloud provider; Model class: general coding; Effort: high; Fallback: fresh-session second-provider review. |
+| Research freshness | Current safe YAML serializer, JSON Schema, Unicode, newline, and Git path behavior checked within 30 days. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to prepend safe canonical frontmatter, choose stable paths, count content, and reproduce unchanged output byte-for-byte, so progress is inspectable and independent of chat memory.
+As the owner, I want deterministic frontmatter and filing so normalized documents are readable, versionable, and safe to query across multiple knowledge bases.
 
 ## 2. Bounded objective
 
-Prepend safe canonical frontmatter, choose stable paths, count content, and reproduce unchanged output byte-for-byte.
+Implement deterministic rendering under workloads/rag/derivative/ and reusable operation operations/ubuntu/p07/P07-S007-render-frontmatter-and-file that transforms validated conversion records into stable Markdown and asset paths governed by the P07-S004 schemas.
 
 ## 3. Learning objective
 
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P07-S003; this story introduces no separate learning objective.
+Not applicable — deterministic metadata was covered conceptually in P07-S002.
 
 ## 4. Current research requirements
 
-Current serializer documentation checked within 30 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Confirm serializer safe-mode behavior, ambiguous scalar quoting, UTC formatting, UTF-8/LF normalization, Windows-reserved names, Unicode normalization, and Git case-collision behavior.
 
 ## 5. Preconditions and unlock conditions
 
-P07-S006. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P07-S006 is Done. Activation resolves the repository root, content taxonomy, path-length policy, serializer version, and synthetic fixtures. The repository must have no remote.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Fixed frontmatter schema, stable ordering, safe scalars, managed relative paths, deterministic filenames/assets, classification/tags supplied by rules or approved config, Markdown normalization, secret/path scan, and staged derivative validation.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No LLM-authored metadata, invented titles/tags, live Git commit, indexing, source mutation, absolute paths, credentials, arbitrary YAML objects/tags, or private fixture content in the public repo.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+Phase authorization is sufficient. The story writes only derived files in the approved private repository and public-safe code/tests in this repository.
 
 ## 9. Risk rationale
 
-Work changes bounded repository or user-level configuration and is directly reversible. New facts may raise risk; an LLM cannot lower it.
+Medium: derived data can be regenerated and changes are version controlled, but malformed metadata would affect downstream retrieval.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Schema, YAML escaping, hashes, idempotency, and path-collision tests pass without LLM calls.
+Render from validated manifests only. Separate volatile ingestion timestamps into private manifests so identical source/profile inputs produce byte-identical derivatives. Stage files, validate schema/references/hashes/secret rules, then mark validated; do not commit yet.
 
 ## 11. Automated acceptance tests
 
-Schema, YAML escaping, hashes, idempotency, and path-collision tests pass without LLM calls. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Positive fixtures cover all required fields and four converted file types plus native Markdown. Negative tests reject arbitrary YAML tags, duplicate keys, ambiguous unquoted scalars, invalid UTC time, path traversal, reserved names, case collisions, missing assets, absolute paths, tokens/cookies/signed URLs, and unknown schema. Two clean renders must be byte-identical.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — schema and byte comparisons are objective; owner fidelity review occurs later.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Repeated render produces identical bytes and no Git diff. Rollback removes story-owned staged derivatives; converter records and originals remain.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+The directory evidence/P07-S007/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, and review.md in addition to the story-specific artifacts below.
+
+Schema version, rendered synthetic tree, positive inventory, at least eleven named negative results, byte hashes from two runs, secret/path scan, Git diff result, rollback rehearsal, and reviewer findings at evidence/P07-S007/.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+Five local source categories render deterministically; every unsafe case is rejected; no volatile/private value leaks; and P07-S008 becomes Ready.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Before every pause, update evidence/P07-S007/checkpoint.json with completed unit, verified state, active model/provider, safe rollback point, and exact next operation.
+
+Pause before staging replacement or after the complete derivative validates. Never pause with a partially replaced document tree.

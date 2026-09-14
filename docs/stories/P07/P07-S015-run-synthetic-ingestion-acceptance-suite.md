@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P07-S015 |
 | Phase | P07 — RAG, Ingestion, and Knowledge-Base Capstone |
-| Sequence | 15 |
+| Sequence | 17 |
 | Status | Planned |
 | Step | Testing |
 | Hold reason | Dependency |
@@ -12,69 +12,73 @@
 | Actor | LLM |
 | Dependencies | P07-S014 |
 | Unlocks | P07-S016 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
-| Research freshness | Not applicable — tests use repository fixtures. |
+| Preferred route | Interface: WSL test runner through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability test/review; Effort: high; Fallback: second provider diagnoses failures without weakening thresholds. |
+| Research freshness | Current pinned stack health, security notices, and test-tool documentation checked within 7 days. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to run public synthetic fixtures across all nine categories plus corruption, duplication, and interruption, so progress is inspectable and independent of chat memory.
+As the owner, I want a public-safe end-to-end acceptance suite so defects are found before any private 27-document test.
 
 ## 2. Bounded objective
 
-Run public synthetic fixtures across all nine categories plus corruption, duplication, and interruption.
+Create and run tests/p07/P07-S015-synthetic-ingestion-acceptance for all nine categories, including mocked Google/authenticated sources, atomic publication, retrieval, citations, observability, restart, and rollback.
 
 ## 3. Learning objective
 
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P07-S003; this story introduces no separate learning objective.
+Not applicable — this is an engineering quality gate; the owner is not asked to interpret test output.
 
 ## 4. Current research requirements
 
-Not applicable — tests use versioned repository fixtures and the accepted ingestion build and make no new product recommendation.
+Recheck security advisories and compatibility for every pinned runtime. Record deviations from P07-S001 and create a correction story for any material change.
 
 ## 5. Preconditions and unlock conditions
 
-P07-S014. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P07-S014 is Done. Activation inventories fixtures, expected hashes/counts, service versions, network boundaries, test database/KB IDs, thresholds, and cleanup targets. It must assert nine categories before running.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Positive pipeline tests, denial/failure matrix from P07-S004 through S014, clean-start run, restart/resume, repeated run, concurrency/lease behavior, private-data canaries, active-index preservation, Git integrity, resource/cost measurement, and rollback.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No real private documents, live credentials, public endpoints, weakened assertions, zero-test success, production KB mutation, or acceptance based only on an LLM narrative.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+P07 authorization covers the isolated synthetic services. No owner participation is required; a qualified second-provider review examines the evidence.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+High: the suite exercises multiple services and destructive simulations, but only inside named disposable test roots and databases.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Every automated criterion produces inspectable evidence without personal data.
+Verify isolation and fixture inventory, snapshot service state, run positive matrix, run every required denial/failure family, restart mid-job, rerun unchanged, inspect Git/database/manifests/traces, execute rollback, then rerun a smoke set. Any skipped required test blocks completion.
 
 ## 11. Automated acceptance tests
 
-Every automated criterion produces inspectable evidence without personal data. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Assert exactly 27 positive inputs—three in each of nine category groups—with controlled local HTTP/OAuth mocks for remote categories. Aggregate all prior named negative tests; prove zero canary leaks, zero orphan active chunks, zero duplicate unchanged commits/vectors, valid citations, byte-stable derivatives, paired Git/index recovery on every publication fault, bounded resource use, and successful post-rollback smoke. Report test counts; zero is failure.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — the owner receives a plain-language summary only. A fresh qualified LLM and a second provider perform technical review.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Second full run over unchanged fixtures yields identical hashes/counts and no new accepted commit/index. Rollback removes only disposable test services, roots, DB objects, and profiles; fixtures and evidence remain.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+The directory evidence/P07-S015/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, and review.md in addition to the story-specific artifacts below.
+
+Version inventory, isolation proof, expected/actual category matrix, total positive/negative/skipped counts, failure-injection results, canary scan, Git/DB integrity, hashes, restart/rerun/rollback outcomes, resource measurements, and two reviews at evidence/P07-S015/.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+All required tests execute and pass with no skips; isolation and rollback are proven; both technical reviews have no unresolved material defect; and P07-S016 becomes Ready.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Before every pause, update evidence/P07-S015/checkpoint.json with completed unit, verified state, active model/provider, safe rollback point, and exact next operation.
+
+Pause only between test groups after state/evidence flush. A destructive simulation must complete or compensate before pausing.
