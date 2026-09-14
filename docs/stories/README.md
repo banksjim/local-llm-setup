@@ -1,6 +1,6 @@
 # Windows Program Story Backlog
 
-The active Windows program contains 134 sequenced stories. Every story follows the [canonical contract](../specifications/standards/STORY-CONTRACT.md), including explicit research, learning, scope, risk, approval, tests, evidence, rollback, and pause boundaries. P04 contains 14 stories after its integration work was decomposed; P07 contains 19 because private Langflow deployment and private knowledge-repository initialization are separate prerequisites.
+The active Windows program contains 136 sequenced stories. Every story follows the [canonical contract](../specifications/standards/STORY-CONTRACT.md), including explicit research, learning, scope, risk, approval, tests, evidence, rollback, and pause boundaries. P04 contains 14 stories after its integration work was decomposed; P07 contains 19 because private Langflow deployment and private knowledge-repository initialization are separate prerequisites; P08 contains 12 because the shared runtime and daily check-in are independent tactical units.
 
 | Phase | Stories | Index |
 |---|---:|---|
@@ -11,7 +11,7 @@ The active Windows program contains 134 sequenced stories. Every story follows t
 | P05 | 12 | [Desktop and tool integrations](../specifications/phases/P05-desktop-and-development-tool-integrations.md) |
 | P06 | 14 | [Agent engineering](../specifications/phases/P06-agent-engineering-foundation.md) |
 | P07 | 19 | [RAG and knowledge base](../specifications/phases/P07-rag-ingestion-and-knowledge-base-capstone.md) |
-| P08 | 10 | [Personal agents](../specifications/phases/P08-practical-personal-agents.md) |
+| P08 | 12 | [Personal agents](../specifications/phases/P08-practical-personal-agents.md) |
 | P09 | 12 | [Durable memory](../specifications/phases/P09-durable-agent-memory.md) |
 | P10 | 15 | [Operations and acceptance](../specifications/phases/P10-operations-and-final-acceptance.md) |
 

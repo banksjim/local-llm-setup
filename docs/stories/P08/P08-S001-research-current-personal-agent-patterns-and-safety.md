@@ -7,74 +7,74 @@
 | Sequence | 1 |
 | Status | Planned |
 | Step | Research |
-| Hold reason | Phase Not Activated |
+| Hold reason | Dependency |
 | Risk | Low |
 | Actor | LLM |
 | Dependencies | P07-S017 |
 | Unlocks | P08-S002 |
-| Preferred route | Controller-selected economical research route with web access. |
-| Research freshness | Primary safety and professional sources plus framework guidance checked within 7 days. |
+| Preferred route | Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: research-capable; Effort: high; Fallback: second cloud provider for disputed safety or integration claims. |
+| Research freshness | Official and primary sources checked during activation; product/tool facts no older than 7 days and public-health/consumer guidance checked for current revision. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to research OSS examples, coaching boundaries, prompt-injection defenses, crisis escalation, and domain limitations, so progress is inspectable and independent of chat memory.
+As the owner, I want a current evidence baseline so agent design is based on today's supported interfaces and safety guidance rather than stale model knowledge.
 
 ## 2. Bounded objective
 
-Research OSS examples, coaching boundaries, prompt-injection defenses, crisis escalation, and domain limitations.
+Create docs/research/p08/P08-S001-personal-agent-safety-baseline.md and a machine-readable decision inventory covering LangChain/LangGraph, Open WebUI, Ollama, MLflow, OWASP agentic threats, US crisis routing, adult physical-activity guidance, and consumer financial education.
 
 ## 3. Learning objective
 
-Not applicable — this research story prepares the evidence used by the following learning gate and does not teach an owner-operated procedure.
+Not applicable — P08-S002 converts the accepted research into targeted owner learning.
 
 ## 4. Current research requirements
 
-Primary safety and professional sources plus framework guidance checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Use official docs and primary authorities first. Record URL, title, publisher, checked-at UTC, version/revision, claim supported, license, and contradictory evidence. Vet one current short conceptual video and one current hands-on tutorial for P08-S002 by publisher authority, recency, technical accuracy, accessibility, and absence of unsafe claims.
 
 ## 5. Preconditions and unlock conditions
 
-P07-S017. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P07-S017 is Done. The activation packet identifies accepted P03 models, P04 service versions, P06 agent contracts, P07 retrieval contract, owner region, and research cutoff.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Current agent/runtime APIs; Open WebUI private model presets and supported integration path; deterministic/model guardrails; human interrupts; checkpoint semantics; tool budgets; prompt-injection defenses; trace redaction; evaluation; mental-wellness, fitness, and financial-education boundaries; and applicable current official resources.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No service change, model pull, package install, private-data access, clinical/legal interpretation, scraped advice site, social-media recommendation as authority, or implementation decision unsupported by evidence.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+No privileged action. Public read-only research is allowed; authenticated/private sources require separate authorization.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
+Low: repository documentation only, but weak research could cause unsafe downstream design.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. A dated record distinguishes helpful support from licensed professional advice.
+Refresh sources; reproduce important claims from primary documentation; compare at least two viable Open WebUI integration patterns; define rejected alternatives and exit criteria; identify version-sensitive assumptions; create a research expiry trigger; and obtain a fresh-session technical review.
 
 ## 11. Automated acceptance tests
 
-A dated record distinguishes helpful support from licensed professional advice. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Validate source metadata, URL reachability, age rules, primary-source coverage, contradiction log, license fields, named versions, and explicit conclusions. Fail on unsupported recommendations, missing owner-region handling, generic “latest” claims, or a learning resource without a vetting record.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — the owner is not asked to validate technical research. P08-S002 asks only whether the selected learning material is usable.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+Repeated research preserves prior citations and appends superseding evidence. Rollback restores the prior document and leaves a reasoned supersession record.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+evidence/P08-S001/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, sources.json, contradictions.json, and learning-material-vetting.json.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+The baseline is current, reproducible, source-backed, independently reviewed, and provides explicit inputs to P08-S002 and P08-S003.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Update evidence/P08-S001/checkpoint.json after each source family with claims accepted, unresolved contradictions, checked-at times, and exact next query. Pause only between source families.

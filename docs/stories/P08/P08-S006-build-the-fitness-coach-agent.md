@@ -4,77 +4,77 @@
 |---|---|
 | Story ID | P08-S006 |
 | Phase | P08 — Practical Personal Agents |
-| Sequence | 6 |
+| Sequence | 8 |
 | Status | Planned |
 | Step | Implementation |
 | Hold reason | Dependency |
 | Risk | High |
 | Actor | LLM |
-| Dependencies | P08-S005 |
+| Dependencies | P08-S011 |
 | Unlocks | P08-S007 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
-| Research freshness | Current authoritative physical-activity and safety guidance checked within 7 days. |
+| Preferred route | Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability safety implementation; Effort: high; Fallback: disable the preset and provide links to current official guidance only. |
+| Research freshness | Current CDC/HHS physical-activity guidance and source revisions checked within 24 hours; runtime and model docs within 7 days. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to create an educational fitness planning agent with injury and medical escalation and explicit user constraints, so progress is inspectable and independent of chat memory.
+As the owner, I want an educational fitness coach that helps structure safe activity plans while recognizing when a qualified professional is needed.
 
 ## 2. Bounded objective
 
-Create an educational fitness planning agent with injury and medical escalation and explicit user constraints.
+Implement workloads/agents/personal/fitness_coach/ and operation operations/windows/p08/P08-S006-fitness-coach/; register a private Open WebUI preset on the accepted primary model.
 
 ## 3. Learning objective
 
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P08-S002; this story introduces no separate learning objective.
+Not applicable — P08-S010 covers safe use and escalation expectations.
 
 ## 4. Current research requirements
 
-Current authoritative physical-activity and safety guidance checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Use current official public-health guidance as the baseline; record revision dates and population applicability. Verify model/runtime behavior and do not use influencer, supplement-vendor, or scraped wellness content as authority.
 
 ## 5. Preconditions and unlock conditions
 
-P08-S005. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P08-S011 is Done. Activation fixes model profile, current official sources, input schema for goals/experience/equipment/constraints, escalation rules, no-tool policy, and session retention.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Versioned official source cards under workloads/agents/personal/fitness_coach/sources/; educational activity concepts; owner-stated goals, constraints, equipment, experience, preferences, and time; conservative progressive plans; recovery reminders; uncertainty; current-source citations; plan revision; and explicit Markdown export confirmation.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No diagnosis, symptom interpretation, treatment, rehabilitation, nutrition prescription, eating-disorder coaching, medication/supplement advice, medical clearance, wearable/account integration, emergency action, RAG until P08-S008, durable memory, or silent write.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+Covered by P08 activation. Each export requires preview/confirmation. Requests involving symptoms, injury, chronic-condition uncertainty, pregnancy, medication, disordered eating, or urgent illness follow the deterministic escalation policy.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+High: incorrect or overconfident physical guidance can cause injury or delay appropriate care.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Scenarios cover safe progression, contraindications, uncertainty, and emergency redirection.
+Use structured intake without diagnosis; select only approved educational patterns; apply deterministic exclusion/escalation checks before generation and output validation after it; cite official guidance; label assumptions; avoid false precision; register privately; and cross-provider review.
 
 ## 11. Automated acceptance tests
 
-Scenarios cover safe progression, contraindications, uncertainty, and emergency redirection. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Test golden conservative-plan fixtures plus beginner and experienced goals, limited equipment/time, disability/chronic-condition uncertainty, injury/pain/chest-pain/fainting, medication/supplement, eating-disorder, rapid-weight-loss, youth/pregnancy, prompt injection, unsafe intensity, invented citations, no-memory disclosure, export controls, redaction, restart, rollback, and no-op rerun. Hard safety decisions use code fixtures, not only an LLM judge.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Deferred to P08-S010. The owner judges usefulness of a low-risk synthetic plan, not medical correctness.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Same configuration is a no-op. Rollback disables/removes the preset and graph, restores runtime configuration, and preserves owner-approved exports.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+evidence/P08-S006/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, source-applicability.json, safety-matrix.json, citation-results.json, and open-webui-registration.json.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+The agent produces conservative educational plans for supported cases, escalates excluded cases, cites current official sources, holds privacy/role boundaries, and passes independent review.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Update evidence/P08-S006/checkpoint.json after sources, graph, safety, citation, preset, and review gates. Disable the preset before pausing on any health-safety or citation failure.

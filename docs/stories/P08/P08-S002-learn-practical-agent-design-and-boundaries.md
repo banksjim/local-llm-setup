@@ -12,70 +12,69 @@
 | Actor | Human + LLM |
 | Dependencies | P08-S001 |
 | Unlocks | P08-S003 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
-| Research freshness | Current P08 research and selected tutorials. |
+| Preferred route | Interface: Open WebUI or browser lesson with goagentic evidence capture; Provider: controller-selected value cloud model; Model class: teaching; Effort: medium; Fallback: alternate vetted resource from P08-S001. |
+| Research freshness | Use only P08-S001-vetted resources still current at lesson time; recheck changed pages and videos within 24 hours. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to teach role, scope, tools, RAG, prompts, refusal, escalation, evaluation, and data minimization for personal agents, so progress is inspectable and independent of chat memory.
+As the owner, I want focused training on the exact personal-agent choices I will operate so I can make informed subjective decisions without learning unrelated framework internals.
 
 ## 2. Bounded objective
 
-Teach role, scope, tools, RAG, prompts, refusal, escalation, evaluation, and data minimization for personal agents.
+Deliver a 60–90 minute, pauseable module at docs/learning/p08/P08-S002-practical-personal-agents.md covering agent versus chatbot, graph state, tools/skills/RAG, trust boundaries, guardrails, privacy, citations, model tradeoffs, and escalation behavior.
 
 ## 3. Learning objective
 
-Complete the targeted concepts and demonstrate them through the acceptance exercise.
+The owner can explain what each layer controls, identify a tool request that requires approval, distinguish a thread checkpoint from durable memory, critique one unsafe agent response, and choose whether a proposed personal-agent interaction feels appropriate.
 
 ## 4. Current research requirements
 
-Current P08 research and selected tutorials. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Revalidate the selected official pages, short concept video, and hands-on video. Substitute material if it is obsolete, inaccessible, poorly rated, promotional without evidence, or inconsistent with the P08-S001 baseline.
 
 ## 5. Preconditions and unlock conditions
 
-P08-S001. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P08-S001 is Done and its resource vetting passes. The lesson packet includes time estimate, objectives, links, exercises, answer key, glossary, and pause points.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Project-specific concepts; a diagram of Open WebUI to LangGraph to Ollama/tools/RAG/MLflow; examples for all five agents; crisis/medical/financial boundaries; prompt-injection exercise; privacy and memory choices; short knowledge check; and owner reflection.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No general VS Code, Python, container, psychotherapy, medicine, investing, or LangGraph course; no implementation; no technical review assigned to the owner; and no pass based only on watching a video.
 
 ## 8. Privilege and human approval
 
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
+No privileged action. The owner controls pacing and may pause or repeat any section.
 
 ## 9. Risk rationale
 
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
+Low: education only; the gate prevents implementation before the owner understands operational boundaries.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Owner writes and critiques one safe agent contract.
+Present concepts in short sections; demonstrate one synthetic conversation; run the exercises; give immediate corrective feedback; record only completion and owner-authored notes; and ask the owner to attest understanding or request more explanation.
 
 ## 11. Automated acceptance tests
 
-Owner writes and critiques one safe agent contract. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Validate lesson structure, resource vetting, all five objective mappings, answer-key completeness, time budget, accessibility, and absence of implementation side effects. Score the knowledge check, but do not manufacture owner answers.
 
 ## 12. Human validation
 
-Owner completes the story checklist and records it through the controller.
+The owner completes the exercises and explicitly records “understood,” “needs reinforcement,” or “skip—already understood” for each module. A skip requires a short knowledge check, not redundant training.
 
 ## 13. Idempotency and rollback
 
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
+Reruns preserve completion evidence and reopen only changed or failed objectives. Rollback removes generated progress artifacts without changing implementation state.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+evidence/P08-S002/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, module-progress.json, knowledge-check.json, and owner-attestation.md.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+Every objective is completed or validly skipped, gaps are remediated, the owner attests to the boundaries, and P08-S003 is unlocked.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-
+Update evidence/P08-S002/checkpoint.json at each module boundary with completion, unresolved questions, and exact resume section. Never infer completion after interruption.

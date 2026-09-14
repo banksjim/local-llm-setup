@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P08-S009 |
 | Phase | P08 — Practical Personal Agents |
-| Sequence | 9 |
+| Sequence | 11 |
 | Status | Planned |
 | Step | Testing |
 | Hold reason | Dependency |
@@ -12,69 +12,69 @@
 | Actor | LLM |
 | Dependencies | P08-S008 |
 | Unlocks | P08-S010 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
-| Research freshness | Current evaluation methods checked within 7 days. |
+| Preferred route | Interface: WSL coding agent through goagentic; Provider: different cloud provider from the predominant P08 implementer; Model class: high-reliability evaluator; Effort: high; Fallback: two independent fresh-session reviews and deterministic suite only until judge access returns. |
+| Research freshness | Current MLflow evaluation/tracing APIs, model profiles, safety sources, and P08-S001 baseline checked within 7 days. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to run deterministic, adversarial, and owner-relevant evaluations through MLflow, so progress is inspectable and independent of chat memory.
+As the owner, I want repeatable independent evaluation so no agent is accepted because it merely sounded convincing in a few conversations.
 
 ## 2. Bounded objective
 
-Run deterministic, adversarial, and owner-relevant evaluations through MLflow.
+Build tests/p08/P08-S009-personal-agent-evaluation/ and an MLflow-backed, privacy-preserving evaluation report that compares accepted local model profiles across every agent and hard risk boundary.
 
 ## 3. Learning objective
 
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P08-S002; this story introduces no separate learning objective.
+Not applicable — P08-S010 explains owner-visible results and tradeoffs.
 
 ## 4. Current research requirements
 
-Current evaluation methods checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Confirm current MLflow GenAI evaluation, trace, code-scorer, multi-turn, and regression-test interfaces. Record judge provider/model/version and limitations; never use an LLM judge as the only oracle for a hard rule.
 
 ## 5. Preconditions and unlock conditions
 
-P08-S008. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P08-S008 is Done. All agent prompt/config/tool/RAG/model versions are frozen; synthetic/adversarial data is versioned; hard thresholds, non-inferiority margin, latency/storage targets, and reviewer independence are fixed before execution.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Deterministic policy/schema/calculation/access/citation/redaction scorers; multi-turn task and safety fixtures; prompt/tool/RAG injection; overreliance; crisis/health/financial boundaries; privacy; model disclosure; abstention; usefulness; latency; token/call budgets; restart/replay; regression baselines; and result segmentation by agent/model/scenario.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No real private conversation corpus, production trace mining, hidden threshold change, majority-vote override of a hard failure, sole LLM-judge acceptance, automatic model promotion, or technical review assigned to the owner.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+No new privilege. Cloud judge use, if authorized, receives only redacted synthetic fixtures; otherwise use the documented fallback. Any real-data evaluation requires separate preview and approval.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+High: an evaluation false negative can authorize harmful behavior, and careless traces can expose sensitive material.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Results compare quality, cost, and latency and block models that fail safety or grounding thresholds.
+Snapshot versions; run deterministic suites first; run multi-turn semantic evaluation with blinded labels; record every failure and uncertainty; verify trace redaction; compare primary/fast profiles without relaxing hard floors; run independent fresh-session and cross-provider review; fix and rerun the full affected matrix; publish a signed recommendation per agent/model.
 
 ## 11. Automated acceptance tests
 
-Results compare quality, cost, and latency and block models that fail safety or grounding thresholds. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Validate full matrix coverage, fixed thresholds, seed reproducibility, judge independence/version, golden arithmetic/access/policy outcomes, false-positive and false-negative safety cases, citation provenance, no raw private text, model non-inferiority, latency/call limits, repeated-run variance, regression output, and zero unresolved High/Critical finding. Intentionally corrupt one scorer, fixture, trace, and model route to prove the harness detects each.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — P08-S010 owns subjective usefulness. The owner is not asked to certify engineering or safety results.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Same frozen versions/seeds produce equivalent results within declared tolerance. Rollback removes evaluation-only data and judge credentials, restores agent versions, and retains signed reports and failure history.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+evidence/P08-S009/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, evaluation-manifest.json, score-matrix.json, model-recommendations.json, redaction-audit.json, failure-injection.json, and regression-baseline.json.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+Every agent/model combination has a defensible accept/reject result, all hard floors pass for enabled routes, privacy is verified, independent findings are resolved, and P08-S010 receives a plain-language acceptance packet.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Update evidence/P08-S009/checkpoint.json after each deterministic, agent/model, privacy, failure-injection, and review partition. Preserve frozen versions and disable any route with a hard failure before pausing.
