@@ -4,13 +4,13 @@
 |---|---|
 | Story ID | P01-S001 |
 | Phase | P01 — Program Control and Quality Foundation |
-| Sequence | 1 |
+| Sequence | 2 |
 | Status | Planned |
 | Step | Research |
-| Hold reason | Approval |
+| Hold reason | Dependency |
 | Risk | Low |
 | Actor | LLM |
-| Dependencies | Not applicable — this is the first program story. |
+| Dependencies | P01-S015 |
 | Unlocks | P01-S002 |
 | Preferred route | Controller-selected economical research route with web access; architecture model only for unresolved synthesis. |
 | Research freshness | Official product documentation and live CLI capability checks no older than 7 days. |
@@ -25,7 +25,7 @@ Produce a dated compatibility record for Codex, Claude Code, PowerShell, WSL, Gi
 
 ## 3. Learning objective
 
-Not applicable — a separate preceding learning story covers the major concept, or this story introduces no new owner-operated concept.
+Not applicable — this research story prepares the evidence used by the following learning gate and does not teach an owner-operated procedure.
 
 ## 4. Current research requirements
 
@@ -33,7 +33,7 @@ Official product documentation and live CLI capability checks no older than 7 da
 
 ## 5. Preconditions and unlock conditions
 
-Not applicable — this is the first program story.. Applicable specifications, clean Git state, valid controller state, current research, required model route, and lease checks must pass.
+P01-S015. Applicable specifications, clean Git state, current research, and the P01 bootstrap-protocol checks must pass.
 
 ## 6. In scope
 
@@ -78,4 +78,3 @@ The objective and tests pass; evidence is complete; no prohibited change occurre
 ## 16. Pause-safe boundaries
 
 Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
-

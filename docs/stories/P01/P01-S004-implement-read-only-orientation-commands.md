@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P01-S004 |
 | Phase | P01 — Program Control and Quality Foundation |
-| Sequence | 4 |
+| Sequence | 5 |
 | Status | Planned |
 | Step | Implementation |
 | Hold reason | Dependency |
@@ -25,7 +25,7 @@ Implement a static `START-HERE.md` plus bare goagentic, status, next, and model 
 
 ## 3. Learning objective
 
-Not applicable — a separate preceding learning story covers the major concept, or this story introduces no new owner-operated concept.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P01-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
@@ -33,7 +33,7 @@ Current PowerShell and CLI conventions checked within 30 days. Record access dat
 
 ## 5. Preconditions and unlock conditions
 
-P01-S003. Applicable specifications, clean Git state, valid controller state, current research, required model route, and lease checks must pass.
+P01-S003. Applicable specifications, clean Git state, current research, required model route, and the accepted bootstrap-or-controller checks must pass.
 
 ## 6. In scope
 

@@ -28,10 +28,10 @@ An open-source-first, Git-based program for building a private local AI and agen
 
 1. Read the [master program specification](docs/specifications/program/LOCAL-AI-AGENTIC-WORKSTATION-PROGRAM.md).
 2. Review the [phase map](docs/specifications/phases/README.md).
-3. See the [124 sequenced stories](docs/stories/README.md).
+3. See the [129 sequenced stories](docs/stories/README.md).
 4. Read the [canonical story contract](docs/specifications/standards/STORY-CONTRACT.md).
 
-The specifications are designed so a future `goagentic` controller can reconstruct the project after a reboot or long pause and give exactly one safe next action. That controller does not exist yet; it is built and accepted in Phase P01.
+The specifications are designed so a future `goagentic` controller can reconstruct the project after a reboot or long pause and give exactly one safe next action. That controller does not exist yet; it is built and accepted in Phase P01. The first P01 story creates the personal GitHub Project and imports the approved backlog, so progress becomes visible before controller or workstation implementation begins.
 
 ## Program phases
 
@@ -54,7 +54,7 @@ Targeted human learning stories precede every major concept. Human authenticatio
 
 These recommendations are specifications for the owner's personal hardware, not universal requirements. Other users must reassess model size, context, concurrency, storage, GPU offload, service resources, and thermal headroom.
 
-The independent M4 Pro MacBook Pro installation is deliberately deferred to a later program. Its previously stated 175 GB budget remains a future constraint, but there are no active macOS implementation stories in this Windows program.
+The independent M4 Pro MacBook Pro installation is deliberately deferred to a later program. Its previously stated 175 GB budget remains a future constraint, but there are no active macOS implementation stories in this Windows program. That future program will remain independently executable while allowing documented Windows learning to receive prior-learning credit after a current-version and macOS-delta check; Mac-specific learning cannot be skipped.
 
 ## Private knowledge-base boundary
 
@@ -64,9 +64,13 @@ This playbook repository is public and contains only specifications and, later, 
 
 - Requirements and major architecture decisions: complete for review.
 - Master, system, phase, and story specifications: drafted.
-- Formal adversarial review: [complete with corrections applied](docs/reviews/2026-09-13-formal-specification-review.md).
+- Formal adversarial review: [complete with two corrective passes applied](docs/reviews/2026-09-13-formal-specification-review.md).
 - GitHub Project creation and controller implementation: not started.
 - Workstation installation and testing: not started.
 - macOS program: deferred.
 
 Technical recommendations are refreshed from current documentation when each story activates. The project does not assume that a model, tool, extension, version, or tutorial remains current simply because it appears in this repository.
+
+## About the removed `superpowers` folder
+
+The active repository no longer uses `.superpowers` or `docs/superpowers`. Those were temporary planning and browser-walkthrough artifacts, not a runtime capability or requirement. Their useful decisions were incorporated into the ordinary Markdown specifications, tables, and Mermaid diagrams under `docs/`; their prior versions remain available only through Git history. If GitHub still shows the folder, the remote branch has not yet received the cleanup commit.

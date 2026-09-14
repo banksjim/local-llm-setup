@@ -25,11 +25,11 @@ Have the owner use every agent in realistic sessions and approve usefulness, ton
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the concept, or no owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P08-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — validation is personal and experiential. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Not applicable — owner validation is personal and experiential against accepted agent revisions and makes no new product recommendation.
 
 ## 5. Preconditions and unlock conditions
 

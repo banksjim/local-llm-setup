@@ -25,11 +25,11 @@ Have the owner inspect code, run the agent, interrupt and resume it, view traces
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the concept, or no owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P06-S011; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — validation uses the implemented agent. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Not applicable — validation uses the accepted agent build and recorded dependency versions and makes no new product recommendation.
 
 ## 5. Preconditions and unlock conditions
 

@@ -25,7 +25,7 @@ Back up originals, manifests, Git content and assets, database index metadata, a
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the concept, or no owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P07-S003; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 

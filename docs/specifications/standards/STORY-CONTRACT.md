@@ -23,6 +23,8 @@ Every implementation, learning, research, testing, review, and human-interventio
 | Preferred route | Interface, provider, model class, effort, and fallback |
 | Research freshness | Maximum age and sources that must be checked at activation |
 
+Story ID is an immutable key, not an ordering mechanism. `Sequence` controls execution order, so a later-added story may have a higher ID but an earlier sequence. Phase indexes must sort by Sequence and explain any intentional difference.
+
 ## Required sections
 
 1. User story.
@@ -95,3 +97,31 @@ The former display labels `Locked`, `Learning`, `Awaiting You`, `Testing`, `Revi
 - Research older than the declared window blocks execution.
 - Changes outside declared scope block acceptance.
 - Repeating the same failed action without new evidence is prohibited.
+- A story may depend only on controls that are already accepted. Bootstrap stories must name the temporary governance mechanism used in place of unfinished controller features.
+
+## Ready-state activation packet
+
+A `Planned` story is a schedulable specification, not permission to execute. Before it can become `Ready`, the controller—or the P01 bootstrap protocol—must compile and commit a self-contained activation packet containing:
+
+- the exact approved revisions of the master, system, phase, and story specifications;
+- resolved output paths, files, services, endpoints, and ownership boundaries;
+- current versions, immutable identifiers or digests where available, and dated primary sources;
+- the executable test list with expected results and required fixtures;
+- derived risk, approval requirements, actor, model route, effort, and budget class;
+- the exact mutation preview, safe checkpoints, rollback point, and rollback commands; and
+- explicit unresolved assumptions, each of which blocks `Ready` if it could change scope, architecture, safety, or acceptance.
+
+The packet may resolve variables that were intentionally deferred for freshness, but it may not broaden the bounded objective or silently redesign the story. A material change creates a design-change story. With this packet and its cited authority chain, a fresh qualified LLM must be able to execute and test the story without chat history.
+
+## Portable learning credit for future platform programs
+
+A future macOS program must contain its own complete learning stories so it can run independently, but the same owner should not repeat unchanged material. Every macOS learning story must record one disposition:
+
+| Disposition | Meaning |
+|---|---|
+| Required | No acceptable prior evidence exists. |
+| Satisfied by prior learning | Exact prior evidence is linked and a short retention and delta check passes. |
+| Delta refresher required | Core learning transfers, but current versions or platform behavior changed materially. |
+| Relearn required | Evidence is missing, stale, incompatible, or the retention check fails. |
+
+Credit requires the same owner, an exact source story and evidence reference, compatible concepts and major versions, a current-source freshness check, and a recorded retention/delta result. An LLM cannot grant credit from chat memory alone. Platform-specific learning—Apple unified memory, Metal or MLX, macOS permissions, filesystem layout, service management, storage limits, and macOS-specific Ollama or Rancher Desktop behavior—remains mandatory even when general concepts transfer.

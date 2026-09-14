@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P01-S012 |
 | Phase | P01 — Program Control and Quality Foundation |
-| Sequence | 12 |
+| Sequence | 13 |
 | Status | Planned |
 | Step | Testing |
 | Hold reason | Dependency |
@@ -25,15 +25,15 @@ Exercise interruption, corrupt state, stale lease, dirty Git, outage, stopped de
 
 ## 3. Learning objective
 
-Not applicable — a separate preceding learning story covers the major concept, or this story introduces no new owner-operated concept.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P01-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — this story tests the implemented contract rather than selecting a tool. Record access date, version, direct links, material claims, conflicts, and inferences. Do not rely on model training memory for changeable facts.
+Not applicable — this story tests the accepted controller contract and pinned test environment rather than selecting or recommending a changeable tool.
 
 ## 5. Preconditions and unlock conditions
 
-P01-S011. Applicable specifications, clean Git state, valid controller state, current research, required model route, and lease checks must pass.
+P01-S011. Applicable specifications, clean Git state, current research, required model route, and the accepted bootstrap-or-controller checks must pass.
 
 ## 6. In scope
 
@@ -78,4 +78,3 @@ The objective and tests pass; evidence is complete; no prohibited change occurre
 ## 16. Pause-safe boundaries
 
 Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
-

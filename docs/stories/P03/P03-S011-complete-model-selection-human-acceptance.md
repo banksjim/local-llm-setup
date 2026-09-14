@@ -25,11 +25,11 @@ Let the owner compare responsiveness and output quality for representative perso
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the major concept, or no new owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P03-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — validation uses measured candidate outputs. Record dates, versions, direct links, claims, conflicts, and inferences; do not rely on training memory for changeable facts.
+Not applicable — validation uses the accepted, measured candidate outputs and makes no new current-product recommendation.
 
 ## 5. Preconditions and unlock conditions
 

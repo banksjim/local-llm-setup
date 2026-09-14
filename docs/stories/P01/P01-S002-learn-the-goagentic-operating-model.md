@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P01-S002 |
 | Phase | P01 — Program Control and Quality Foundation |
-| Sequence | 2 |
+| Sequence | 3 |
 | Status | Planned |
 | Step | Learning |
 | Hold reason | Dependency |
@@ -33,7 +33,7 @@ Current project specifications; external sources are not required. Record access
 
 ## 5. Preconditions and unlock conditions
 
-P01-S001. Applicable specifications, clean Git state, valid controller state, current research, required model route, and lease checks must pass.
+P01-S001. Applicable specifications, clean Git state, current research, required model route, and the accepted bootstrap-or-controller checks must pass.
 
 ## 6. In scope
 
@@ -78,4 +78,3 @@ The objective and tests pass; evidence is complete; no prohibited change occurre
 ## 16. Pause-safe boundaries
 
 Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
-

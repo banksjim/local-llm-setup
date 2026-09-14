@@ -25,7 +25,7 @@ Create versioned Compose, environment templates, private network, health checks,
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the major concept, or no new owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P04-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
@@ -78,4 +78,3 @@ Objective and tests pass; evidence and review are accepted; human evidence is ge
 ## 16. Pause-safe boundaries
 
 Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back any atomic replacement before pausing.
-

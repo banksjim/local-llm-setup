@@ -25,11 +25,11 @@ Have the owner review candidates, promote, edit, reject, correct a memory, test 
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the concept, or no owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P09-S003; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — validation uses the implemented memory system. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Not applicable — validation uses the accepted memory-system revision and recorded dependencies and makes no new product recommendation.
 
 ## 5. Preconditions and unlock conditions
 

@@ -25,11 +25,11 @@ Run public synthetic fixtures across all nine categories plus corruption, duplic
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the concept, or no owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P07-S003; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — tests use repository fixtures. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Not applicable — tests use versioned repository fixtures and the accepted ingestion build and make no new product recommendation.
 
 ## 5. Preconditions and unlock conditions
 
@@ -78,4 +78,3 @@ Objective and tests pass; evidence and review are accepted; genuine human eviden
 ## 16. Pause-safe boundaries
 
 Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-

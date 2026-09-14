@@ -25,7 +25,7 @@ Record current supported Windows, WSL, Rancher Desktop prerequisites, networking
 
 ## 3. Learning objective
 
-Not applicable — a separate preceding learning story covers the major concept, or this story introduces no new owner-operated concept.
+Not applicable — this research story prepares the evidence used by the following learning gate and does not teach an owner-operated procedure.
 
 ## 4. Current research requirements
 

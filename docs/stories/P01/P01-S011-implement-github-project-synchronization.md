@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P01-S011 |
 | Phase | P01 — Program Control and Quality Foundation |
-| Sequence | 11 |
+| Sequence | 12 |
 | Status | Planned |
 | Step | Implementation |
 | Hold reason | Dependency |
@@ -17,15 +17,15 @@
 
 ## 1. User story
 
-As the workstation owner, I want this story to synchronize story fields and evidence links while preserving local authority and manual conflict detection, so that the program advances with inspectable quality and without relying on chat memory.
+As the workstation owner, I want this story to replace bootstrap Project maintenance with tested controller synchronization while preserving local authority and manual conflict detection, so that the program advances with inspectable quality and without relying on chat memory.
 
 ## 2. Bounded objective
 
-Synchronize story fields and evidence links while preserving local authority and manual conflict detection.
+Automate reconciliation of the Project created by P01-S015, including story fields, lifecycle transitions, activation-time issue creation or conversion, and evidence links, while preserving local authority and surfacing manual conflicts.
 
 ## 3. Learning objective
 
-Not applicable — a separate preceding learning story covers the major concept, or this story introduces no new owner-operated concept.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P01-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
@@ -33,7 +33,7 @@ Current GitHub Projects GraphQL and gh documentation checked within 7 days. Reco
 
 ## 5. Preconditions and unlock conditions
 
-P01-S010. Applicable specifications, clean Git state, valid controller state, current research, required model route, and lease checks must pass.
+P01-S010. Applicable specifications, clean Git state, current research, required model route, and the accepted bootstrap-or-controller checks must pass.
 
 ## 6. In scope
 
@@ -78,4 +78,3 @@ The objective and tests pass; evidence is complete; no prohibited change occurre
 ## 16. Pause-safe boundaries
 
 Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
-

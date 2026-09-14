@@ -25,11 +25,11 @@ Preserve changed originals, update stable Markdown through Git history, mark mis
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the concept, or no owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P07-S003; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — behavior is defined by SYS-RAG. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Not applicable — the behavior is fully defined by the owner-approved SYS-RAG lifecycle contract and does not depend on a changeable external interface.
 
 ## 5. Preconditions and unlock conditions
 
@@ -78,4 +78,3 @@ Objective and tests pass; evidence and review are accepted; genuine human eviden
 ## 16. Pause-safe boundaries
 
 Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-

@@ -23,6 +23,20 @@ The controller cannot initially depend on the Ubuntu environment it will help cr
 5. A Windows `goagentic` wrapper forwards requests into Ubuntu and fails safely if Ubuntu is unavailable.
 6. Early adapter packages are validated with contract fixtures; live PowerShell and WSL validation occurs in P02, and live Codex CLI and Claude Code validation occurs after those clients are configured in P05.
 
+### P01 bootstrap protocol
+
+The program cannot require unfinished controller features to build those same features. Until each control is accepted, P01 uses a deliberately small manual protocol stored in Git:
+
+- one active story recorded in a bootstrap ledger;
+- one explicit owner authorization recorded before mutation;
+- a repository-local lock record with actor, story, start time, operation, and safe checkpoint;
+- a clean-worktree check and named rollback point before mutation;
+- append-only evidence entries and a commit at each pause-safe boundary;
+- manual GitHub Project reconciliation after each story; and
+- stop-and-review behavior for ambiguity, drift, interruption, or a stale lock.
+
+The protocol never pretends an unimplemented feature exists. P01-S003 introduces schema validation, P01-S005 introduces atomic state, P01-S006 replaces the bootstrap lock with the tested mutation lease, P01-S007 introduces automated reconciliation, P01-S008 introduces bounded authorization, and P01-S011 replaces manual board maintenance with tested synchronization. Each transition requires evidence that the new control preserves all earlier safeguards before the corresponding bootstrap mechanism is retired.
+
 ## 3. Command contract
 
 Commands use `goagentic <command> [parameters]`. Bare `goagentic` is the zero-context entry point.
@@ -77,7 +91,9 @@ Only one mutation lease exists. It records story, role, model/provider, host/pro
 
 ## 7. GitHub Project mapping
 
-The board shows Phase, Story ID, Status, Step, Hold reason, Risk, Required model, Budget, Owner action, and Evidence link. Examples:
+P01-S015 creates the personal Project before other implementation work and imports the approved backlog as deduplicated draft items. This provides visibility without creating a public repository issue for every future story. When a story becomes Ready, the controller creates or converts the corresponding repository issue using the current supported GitHub mechanism. P01-S011 automates reconciliation; until then, the P01 bootstrap protocol maintains the board manually.
+
+The board shows Phase, Story ID, Sequence, Status, Step, Hold reason, Risk, Required model, Budget, Owner action, Specification link, and Evidence link. Examples:
 
 | Visible situation | Field values |
 |---|---|
@@ -109,7 +125,7 @@ Usage classes are Small, Normal, and Expensive. Warn at 70% of a known included-
 
 ## 9. Quality enforcement
 
-The controller validates the canonical story contract, freshness, dependencies, scope, tests, idempotency, rollback, secret scan, independent review, human evidence, and completion evidence. The implementer cannot be the sole reviewer. Reviewers write findings; they do not silently rewrite the work under review.
+The controller validates the canonical story contract, Ready-state activation packet, freshness, dependencies, scope, tests, idempotency, rollback, secret scan, independent review, human evidence, and completion evidence. It cannot execute directly from a generic `Planned` story. The implementer cannot be the sole reviewer. Reviewers write findings; they do not silently rewrite the work under review.
 
 ## 10. Trust stages
 

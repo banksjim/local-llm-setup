@@ -25,11 +25,11 @@ Verify daily VS Code, shell, Git, restart, backup-export, and rollback workflows
 
 ## 3. Learning objective
 
-Not applicable — a separate preceding learning story covers the major concept, or this story introduces no new owner-operated concept.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P02-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — validation uses the configured machine. Record access date, version, direct links, material claims, conflicts, and inferences. Do not rely on model training memory for changeable facts.
+Not applicable — validation uses the configured machine, recorded versions, and accepted P02 specification; it makes no new current-product recommendation.
 
 ## 5. Preconditions and unlock conditions
 

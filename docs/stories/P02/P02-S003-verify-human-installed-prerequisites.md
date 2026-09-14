@@ -25,7 +25,7 @@ Verify Windows updates, WSL2, Rancher Desktop, Git, virtualization, NVIDIA drive
 
 ## 3. Learning objective
 
-Not applicable — a separate preceding learning story covers the major concept, or this story introduces no new owner-operated concept.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P02-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 

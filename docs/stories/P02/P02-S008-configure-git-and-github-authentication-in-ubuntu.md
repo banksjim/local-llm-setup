@@ -25,7 +25,7 @@ Configure one durable Linux credential boundary usable by all Ubuntu repositorie
 
 ## 3. Learning objective
 
-Not applicable — a separate preceding learning story covers the major concept, or this story introduces no new owner-operated concept.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P02-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
@@ -78,4 +78,3 @@ The objective and tests pass; evidence is complete; no prohibited change occurre
 ## 16. Pause-safe boundaries
 
 Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
-

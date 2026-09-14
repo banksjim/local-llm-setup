@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P01-S014 |
 | Phase | P01 — Program Control and Quality Foundation |
-| Sequence | 14 |
+| Sequence | 15 |
 | Status | Planned |
 | Step | Human Validation |
 | Hold reason | Dependency |
@@ -25,15 +25,15 @@ Guide the owner through zero-context start, lesson, execution, pause, restart, r
 
 ## 3. Learning objective
 
-Not applicable — a separate preceding learning story covers the major concept, or this story introduces no new owner-operated concept.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P01-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — acceptance uses the built controller and approved specification. Record access date, version, direct links, material claims, conflicts, and inferences. Do not rely on model training memory for changeable facts.
+Not applicable — acceptance uses the built controller, its recorded versions, and the owner-approved specification; it makes no new current-product recommendation.
 
 ## 5. Preconditions and unlock conditions
 
-P01-S013. Applicable specifications, clean Git state, valid controller state, current research, required model route, and lease checks must pass.
+P01-S013. Applicable specifications, clean Git state, current research, required model route, and the accepted bootstrap-or-controller checks must pass.
 
 ## 6. In scope
 

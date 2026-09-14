@@ -25,7 +25,7 @@ Re-evaluate Ollama releases, licenses, model tags, quantizations, embeddings, vi
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the major concept, or no new owner-operated concept is introduced.
+Not applicable — this research story prepares the evidence used by the following learning gate and does not teach an owner-operated procedure.
 
 ## 4. Current research requirements
 

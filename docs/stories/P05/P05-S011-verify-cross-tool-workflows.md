@@ -25,11 +25,11 @@ Run representative Git, coding, chat, vision, dictation, and endpoint tests from
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the major concept, or no new owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P05-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — tests use the configured integrations. Record dates, versions, direct links, claims, conflicts, and inferences; do not rely on training memory for changeable facts.
+Not applicable — tests use the accepted integration versions and make no new current-product recommendation.
 
 ## 5. Preconditions and unlock conditions
 
@@ -78,4 +78,3 @@ Objective and tests pass; evidence and review are accepted; human evidence is ge
 ## 16. Pause-safe boundaries
 
 Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back any atomic replacement before pausing.
-

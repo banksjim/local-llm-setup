@@ -25,7 +25,7 @@ Preview, back up, pin, update, migrate, verify, and roll back every component wi
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the concept, or no owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P10-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
@@ -78,4 +78,3 @@ Objective and tests pass; evidence and review are accepted; genuine human eviden
 ## 16. Pause-safe boundaries
 
 Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-

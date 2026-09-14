@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P10-S011 |
 | Phase | P10 — Operations and Final Acceptance |
-| Sequence | 11 |
+| Sequence | 15 |
 | Status | Planned |
 | Step | Human Validation |
 | Hold reason | Dependency |
@@ -25,11 +25,11 @@ Guide daily workflows, incident recovery, update preview, full restore evidence,
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the concept, or no owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P10-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — validation uses the completed workstation. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Not applicable — validation uses the fixed workstation release candidate and accepted evidence and makes no new product recommendation.
 
 ## 5. Preconditions and unlock conditions
 
@@ -78,4 +78,3 @@ Objective and tests pass; evidence and review are accepted; genuine human eviden
 ## 16. Pause-safe boundaries
 
 Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-

@@ -25,7 +25,7 @@ Choose a framework or composable design based on evidence and document migration
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the concept, or no owner-operated concept is introduced.
+Not applicable — this ADR selects the memory architecture that P09-S003 teaches; training before selection would be premature.
 
 ## 4. Current research requirements
 
@@ -78,4 +78,3 @@ Objective and tests pass; evidence and review are accepted; genuine human eviden
 ## 16. Pause-safe boundaries
 
 Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
-

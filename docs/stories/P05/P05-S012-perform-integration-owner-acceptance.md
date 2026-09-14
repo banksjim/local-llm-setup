@@ -25,11 +25,11 @@ Have the owner complete normal VS Code, Codex, Claude, Open WebUI, and dictation
 
 ## 3. Learning objective
 
-Not applicable — a separate learning story covers the major concept, or no new owner-operated concept is introduced.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P05-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
-Not applicable — validation is experiential. Record dates, versions, direct links, claims, conflicts, and inferences; do not rely on training memory for changeable facts.
+Not applicable — owner validation is experiential against the accepted integration inventory and makes no new product recommendation.
 
 ## 5. Preconditions and unlock conditions
 

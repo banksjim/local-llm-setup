@@ -3,7 +3,7 @@
 **Status:** Approved design being prepared for user review  
 **Last reviewed:** 2026-09-13
 
-This directory is the authoritative specification set for the Local AI Workstation Playbook. Temporary browser walkthrough artifacts are not runtime dependencies.
+This directory is the authoritative specification set for the Local AI Workstation Playbook. Temporary browser walkthrough artifacts and the former `superpowers` planning tree are not runtime dependencies and are intentionally absent from the active branch.
 
 ## Reading order
 

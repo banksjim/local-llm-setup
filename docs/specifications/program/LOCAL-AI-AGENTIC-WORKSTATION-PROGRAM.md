@@ -100,11 +100,15 @@ Ollama serves models; it is not the agent framework. LangChain supplies model/to
 
 A later phase may be designed while the current phase is executing. Implementation cannot cross a phase gate until its dependencies, learning, tests, review, and required owner validation are complete.
 
+The first P01 story bootstraps a personal GitHub Project and imports every approved story as a draft item before controller or workstation work proceeds. This keeps the entire plan visible from the start without flooding the public repository with inactive issues. Stories become repository issues when they become Ready; automated synchronization replaces manual bootstrap maintenance later in P01.
+
 ## 6. Learning policy
 
 A human learning story precedes each major concept. Each module is narrowly tailored to the next implementation work and includes current official documentation, a recently verified short conceptual resource when useful, a deeper tutorial when warranted, a hands-on exercise, and an observable explain-back. Implementation pauses until the owner records completion.
 
 Learning sources are researched when the story activates. Popularity is supporting evidence, not a substitute for currency, technical accuracy, maintainer credibility, and version match.
+
+The future macOS program must include its own full training path so it can execute independently. For the same owner, unchanged general material may be marked `Satisfied by prior learning` only when it links exact Windows evidence and passes a current-source retention and delta check. Material changes require a targeted refresher or relearning. macOS-specific subjects—including unified memory, Metal or MLX, permissions, filesystem and service behavior, the 175 GB limit, and platform-specific Ollama or Rancher Desktop operation—remain mandatory.
 
 ## 7. Model policy
 
@@ -157,7 +161,9 @@ The preflight computes required storage from actual selected models and retentio
 
 ## 10. Quality policy
 
-Every story conforms to the canonical contract. Blank, omitted, unfinished-marker, and unexplained not-applicable values fail validation. Risk is named `Low`, `Medium`, `High`, or `Critical`; the highest applicable impact dimension wins. An LLM may raise risk but cannot lower it. Lowering risk requires owner approval and a durable rationale.
+Every story conforms to the canonical contract. Blank, omitted, unfinished-marker, boilerplate alternative, and unexplained not-applicable values fail validation. Risk is named `Low`, `Medium`, `High`, or `Critical`; the highest applicable impact dimension wins. An LLM may raise risk but cannot lower it. Lowering risk requires owner approval and a durable rationale.
+
+Before a story becomes Ready, a versioned activation packet resolves its exact targets, versions, tests, route, approvals, checkpoints, and rollback from current evidence. This preserves fresh recommendations without asking an executing LLM to invent missing scope. The packet may resolve variables but cannot broaden the approved objective.
 
 Implementation and review are separate activities. High-risk architecture or security changes require cross-provider review and owner validation. Tests, idempotency, rollback, evidence, and research freshness are enforced by tooling rather than accepted from model confidence.
 

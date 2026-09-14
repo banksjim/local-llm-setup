@@ -4,7 +4,7 @@
 |---|---|
 | Story ID | P01-S007 |
 | Phase | P01 — Program Control and Quality Foundation |
-| Sequence | 7 |
+| Sequence | 8 |
 | Status | Planned |
 | Step | Implementation |
 | Hold reason | Dependency |
@@ -25,7 +25,7 @@ Implement safe-boundary pause and non-executing resume across clean return, cras
 
 ## 3. Learning objective
 
-Not applicable — a separate preceding learning story covers the major concept, or this story introduces no new owner-operated concept.
+Not applicable — the owner preparation for this story is explicitly covered and evidenced by P01-S002; this story introduces no separate learning objective.
 
 ## 4. Current research requirements
 
@@ -33,7 +33,7 @@ Current recovery/state-machine guidance checked within 30 days. Record access da
 
 ## 5. Preconditions and unlock conditions
 
-P01-S006. Applicable specifications, clean Git state, valid controller state, current research, required model route, and lease checks must pass.
+P01-S006. Applicable specifications, clean Git state, current research, required model route, and the accepted bootstrap-or-controller checks must pass.
 
 ## 6. In scope
 
@@ -78,4 +78,3 @@ The objective and tests pass; evidence is complete; no prohibited change occurre
 ## 16. Pause-safe boundaries
 
 Pause before mutation, after each independently reversible operation, after tests, and after durable evidence. Never pause during partial replacement; finish or roll back that atomic operation first.
-
