@@ -1,9 +1,6 @@
-.superpowers/
-
 # Local configuration and generated state
 .env
 *.local
 logs/
 reports/
 backups/
-

@@ -1,118 +1,72 @@
 # Local AI Workstation Playbook
 
-An open-source-first plan for building two independent, private local AI workstations: a Windows 11 desktop optimized for an RTX 4090 and a MacBook Pro optimized for Apple silicon and a fixed storage budget.
+An open-source-first, Git-based program for building a private local AI and agent-development workstation. The active plan is tailored to the repository owner's Windows 11 desktop: Ryzen 7 9800X3D, RTX 4090 with 24 GB VRAM, 64 GB RAM, and persistent AI storage under `H:\ai`.
 
 > [!IMPORTANT]
-> **Design complete; implementation not started; not yet installable.**
+> **The specification and story backlog exist; implementation has not started.**
 >
-> This repository currently contains approved design specifications. Installers, deployment configuration, operational guides, and verification tooling have not been implemented or tested yet.
+> This repository is not currently an installer. Do not treat planned commands, versions, or acceptance criteria as completed or verified workstation behavior.
 
-## Project goals
+## What is planned
 
-The completed playbook is intended to provide:
+- Open WebUI as the main local AI interface.
+- Native Ollama model management and RTX 4090 inference.
+- Rancher Desktop with Moby/dockerd for supporting containers; Kubernetes disabled.
+- SearXNG search, Docling extraction, PostgreSQL with PGVector, and self-hosted MLflow.
+- Windows-wide local desktop dictation selected by an actual comparison of current OSS applications.
+- VS Code on Windows connected to a dedicated, hardened Ubuntu WSL2 agent and development environment.
+- Python, Go, Node.js, and TypeScript development.
+- Codex CLI, Claude Code, and accurately documented desktop-client integrations.
+- LangChain, LangGraph, MCP, skills, assets, scripts, tracing, and evaluations for real agents.
+- Multi-format private RAG ingestion using Docling, Crawl4AI, Google Workspace exports, YAML-frontmatter Markdown, and local vision enrichment.
+- A substantial personal knowledge-base capstone.
+- Thought-partner, life-planning, fitness, financial-education, and daily-check-in agents.
+- An OSS durable-memory system with a reviewed candidate inbox.
+- Idempotent installers and complete verification, tuning, troubleshooting, update, backup, restore, and removal guidance.
 
-- Open WebUI as the primary interface.
-- Ollama for native model management and inference.
-- Local vision, document ingestion, retrieval-augmented generation, speech-to-text, and live web search.
-- Optional personal-agent profiles for reflective, coaching, planning, and daily check-in use.
-- Rancher Desktop for containerized supporting services without requiring Docker Desktop.
-- Independent Windows and macOS installations with localhost-only defaults.
-- Idempotent installers, maintenance scripts, verification reports, troubleshooting guidance, and Codex prompt templates.
+## Start here
 
-## Reference hardware
+1. Read the [master program specification](docs/specifications/program/LOCAL-AI-AGENTIC-WORKSTATION-PROGRAM.md).
+2. Review the [phase map](docs/specifications/phases/README.md).
+3. See the [124 sequenced stories](docs/stories/README.md).
+4. Read the [canonical story contract](docs/specifications/standards/STORY-CONTRACT.md).
 
-This playbook is designed around the repository owner's personal devices:
+The specifications are designed so a future `goagentic` controller can reconstruct the project after a reboot or long pause and give exactly one safe next action. That controller does not exist yet; it is built and accepted in Phase P01.
 
-| Platform | Reference system | Planned constraints |
-|---|---|---|
-| Windows 11 | AMD Ryzen 7 9800X3D, NVIDIA RTX 4090 with 24 GB VRAM, 64 GB RAM | Persistent AI data rooted at `H:\ai`; inference and context settings optimized for the RTX 4090 |
-| macOS | MacBook Pro with M4 Pro and 48 GB unified memory | Independent installation with a 175 GB storage budget and enough headroom for normal work |
+## Program phases
 
-These are reference configurations, not universal hardware requirements. Other users should expect to adjust model sizes, context limits, concurrency, storage paths, and service resource allocations for their available GPU, memory, CPU, and disk capacity. Broader hardware profiles have not yet been tested.
-
-## Planned architecture
-
-The approved design uses native inference with containerized supporting services:
-
-| Component | Planned role |
+| Phase | Scope |
 |---|---|
-| Open WebUI | Primary chat, vision, RAG, and speech interface |
-| Ollama | Native model management and inference on CUDA or Apple silicon |
-| Rancher Desktop | Moby/dockerd runtime for supporting containers, with Kubernetes disabled |
-| SearXNG | Live web search integrated with Open WebUI |
-| Docling Serve | Structured document extraction |
-| PostgreSQL with PGVector | Application data and vector storage |
-| Faster-Whisper | Local speech-to-text through Open WebUI |
-| whisper.cpp | Optional native transcription workflow |
+| P01 | Project controller and quality foundation |
+| P02 | Windows, WSL, Git, VS Code, and development toolchains |
+| P03 | Ollama, RTX 4090 model selection, benchmarking, and qualification |
+| P04 | Open WebUI and supporting AI services |
+| P05 | Desktop dictation and development-tool integrations |
+| P06 | LangChain, LangGraph, MCP, skills, and MLflow agent foundation |
+| P07 | RAG, ingestion, and personal knowledge-base capstone |
+| P08 | Practical personal agents |
+| P09 | Durable reviewed agent memory |
+| P10 | Security, operations, performance, recovery, and final acceptance |
 
-Each machine is planned as a separate, localhost-only installation. Models, documents, indexes, services, and state will not be shared between the Windows and macOS systems.
+Targeted human learning stories precede every major concept. Human authentication, privileged changes, experiential testing, and acceptance are separate, visible stories.
 
-## Currently available
+## Hardware and portability
 
-- [Local AI Workstation Playbook design specification](docs/superpowers/specs/2026-08-04-local-ai-workstation-playbook-design.md) — approved architecture, constraints, model profiles, data flows, repository structure, operations, and acceptance criteria.
-- [Root README design specification](docs/superpowers/specs/2026-08-05-readme-design.md) — approved scope and accuracy requirements for this README.
+These recommendations are specifications for the owner's personal hardware, not universal requirements. Other users must reassess model size, context, concurrency, storage, GPU offload, service resources, and thermal headroom.
 
-The design specification is the authoritative source for planned behavior. Technical recommendations will be researched again before implementation because local AI models and tools change quickly.
+The independent M4 Pro MacBook Pro installation is deliberately deferred to a later program. Its previously stated 175 GB budget remains a future constraint, but there are no active macOS implementation stories in this Windows program.
 
-## Not yet available
+## Private knowledge-base boundary
 
-The following planned deliverables do not exist yet:
+This playbook repository is public and contains only specifications and, later, synthetic fixtures. Real source documents and Docling JSON will live outside Git. Final generated Markdown and meaningful visual assets will live in separate local knowledge-base repositories that may only use private personal or business-organization remotes after explicit approval.
 
-- Windows PowerShell installer and maintenance scripts.
-- macOS shell installer and maintenance scripts.
-- Rancher Desktop Compose configuration and pinned component versions.
-- Windows and macOS installation guides.
-- Architecture, model usage, performance tuning, storage, security, troubleshooting, update, backup, restore, and uninstall guides.
-- Client integration guidance for Claude Code, Codex, ChatGPT, Claude Cowork, and VS Code.
-- Personal-agent recommendations and safety guidance.
-- Automated static, preflight, service, functional, persistence, idempotency, and backup/restore verification.
-- Test fixtures, diagrams, example reports, and Codex CLI prompts.
+## Current status
 
-There are intentionally no installation commands in this README while those assets remain unimplemented.
+- Requirements and major architecture decisions: complete for review.
+- Master, system, phase, and story specifications: drafted.
+- Formal adversarial review: [complete with corrections applied](docs/reviews/2026-09-13-formal-specification-review.md).
+- GitHub Project creation and controller implementation: not started.
+- Workstation installation and testing: not started.
+- macOS program: deferred.
 
-## Planned repository structure
-
-```text
-local-llm-setup/
-├── README.md
-├── docs/
-│   ├── architecture/
-│   ├── install/
-│   ├── operations/
-│   ├── personal-agents/
-│   ├── research/
-│   └── superpowers/specs/
-├── windows/
-│   ├── configs/
-│   ├── docs/
-│   ├── scripts/
-│   └── tests/
-├── macos/
-│   ├── configs/
-│   ├── docs/
-│   ├── scripts/
-│   └── tests/
-├── shared/
-│   ├── compose/
-│   ├── fixtures/
-│   └── versions/
-└── prompts/
-```
-
-Most of these directories will be created during implementation and are shown here only to describe the approved organization.
-
-## Roadmap
-
-- [x] Establish workstation requirements and operating constraints.
-- [x] Research the initial architecture, tool choices, and model profiles.
-- [x] Approve and publish the project design specification.
-- [x] Document the repository's current status and intended contents.
-- [ ] Refresh model and tool research immediately before implementation.
-- [ ] Implement the shared container stack and pinned version catalog.
-- [ ] Implement the Windows installer, scripts, tests, and documentation.
-- [ ] Implement the macOS installer, scripts, tests, and documentation.
-- [ ] Add client integration guides and usage recommendations.
-- [ ] Add personal-agent profiles and usage guides.
-- [ ] Validate the complete playbook on both reference machines.
-
-See the [full design specification](docs/superpowers/specs/2026-08-04-local-ai-workstation-playbook-design.md) for the detailed scope and acceptance criteria.
+Technical recommendations are refreshed from current documentation when each story activates. The project does not assume that a model, tool, extension, version, or tutorial remains current simply because it appears in this repository.
