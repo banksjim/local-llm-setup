@@ -11,70 +11,70 @@
 | Risk | Medium |
 | Actor | LLM |
 | Dependencies | P08-S002 |
-| Unlocks | P08-S004 |
-| Preferred route | Controller-selected value route; qualified local model allowed after P03; cloud fallback per SYS-CTL. |
-| Research freshness | Current LangChain and LangGraph structured configuration docs checked within 30 days. |
+| Unlocks | P08-S012 |
+| Preferred route | Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability architecture; Effort: high; Fallback: cross-provider design review before code generation. |
+| Research freshness | P08-S001 must be unexpired; current LangChain/LangGraph, Open WebUI, Ollama, MLflow, and OWASP docs rechecked within 7 days. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to define identity, goals, permitted tools and data, prohibited claims and actions, uncertainty, escalation, tracing, and evaluation, so progress is inspectable and independent of chat memory.
+As the owner, I want one enforceable agent contract so every personal agent inherits consistent privacy, safety, capability, and evidence rules.
 
 ## 2. Bounded objective
 
-Define identity, goals, permitted tools and data, prohibited claims and actions, uncertainty, escalation, tracing, and evaluation.
+Create versioned schemas and policy assets under workloads/agents/personal/contracts/ plus reusable validation at operations/ubuntu/p08/P08-S003-personal-agent-contract/.
 
 ## 3. Learning objective
 
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P08-S002; this story introduces no separate learning objective.
+Not applicable — the concepts were completed in P08-S002.
 
 ## 4. Current research requirements
 
-Current LangChain and LangGraph structured configuration docs checked within 30 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Confirm current middleware hooks, interrupt semantics, checkpoint replay rules, Open WebUI preset fields, native tool behavior, Ollama request controls, MLflow trace/evaluation APIs, and OWASP prompt-injection guidance before freezing the schema.
 
 ## 5. Preconditions and unlock conditions
 
-P08-S002. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P08-S002 is Done. Inputs include accepted provider/model profiles, owner region, P06 capability registry, P07 retrieval registry, P04 MLflow/Open WebUI endpoints, and explicit P09 memory prohibition.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Schemas for identity, purpose, input/output, provider/model disclosure, role boundaries, allowed tools/data/RAG, denied capabilities, tool/model call limits, timeouts, token budget, citations, uncertainty, escalation, thread retention/deletion, trace redaction, explicit export confirmation, test requirements, version, and provenance.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No agent implementation, service deployment, generic shell/browser/filesystem/network capability, account connection, unreviewed MCP server, cross-thread semantic memory, silent write, prompt-only authorization, or raw private-text tracing.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+No privileged action. Policy changes affecting safety, data access, or writes require a future revision-bound activation packet.
 
 ## 9. Risk rationale
 
-Work changes bounded repository or user-level configuration and is directly reversible. New facts may raise risk; an LLM cannot lower it.
+Medium: repository-only change, but this contract governs later high-risk behavior.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Schema and adversarial fixtures reject missing boundaries and overbroad authority.
+Define JSON Schema plus readable policy; use deny-by-default capability resolution; separate deterministic enforcement from model instructions; require replay-safe side effects; version all prompts/skills/tools; define regional emergency-resource lookup; and provide valid and invalid fixtures for every agent class.
 
 ## 11. Automated acceptance tests
 
-Schema and adversarial fixtures reject missing boundaries and overbroad authority. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+Validate schemas and fixtures; reject unknown capabilities, wildcard resources, public endpoints, missing disclosures, absent limits, trace payloads containing seeded PII, cross-thread memory, uncited sourced claims, unconfirmed writes, and policy changes introduced by retrieved text or tool output.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — engineering correctness is independently reviewed. Owner-facing behavior is tested in P08-S010.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Generation is deterministic from versioned inputs. Rollback restores the prior schema set; incompatible revisions require migration metadata and cannot silently reinterpret stored state.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+evidence/P08-S003/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, schema-validation.json, negative-fixtures.json, and policy-diff.json.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+The contract is machine-validatable, deny-by-default, model-independent, covers every fixed architecture boundary, passes negative tests, and receives fresh-session architecture review.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Update evidence/P08-S003/checkpoint.json after schema, fixtures, validators, and review. Pause only with the repository validation suite green and no partially migrated schema.

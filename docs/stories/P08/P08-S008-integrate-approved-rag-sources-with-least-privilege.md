@@ -4,77 +4,77 @@
 |---|---|
 | Story ID | P08-S008 |
 | Phase | P08 — Practical Personal Agents |
-| Sequence | 8 |
+| Sequence | 10 |
 | Status | Planned |
 | Step | Implementation |
 | Hold reason | Dependency |
-| Risk | High |
+| Risk | Critical |
 | Actor | LLM |
 | Dependencies | P08-S007 |
 | Unlocks | P08-S009 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
-| Research freshness | Current retrieval security guidance checked within 7 days. |
+| Preferred route | Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability security implementation; Effort: high; Fallback: detach all collections and operate agents without RAG. |
+| Research freshness | P07 retrieval contract, current Open WebUI/LangChain RAG behavior, and OWASP prompt-injection/vector threats checked within 7 days. |
 
 ## 1. User story
 
-As the workstation owner, I want this story to give each agent only the knowledge collections and read-only tools required for its role, so progress is inspectable and independent of chat memory.
+As the owner, I want each agent to retrieve only explicitly approved knowledge so useful context never becomes a path to data leakage or policy override.
 
 ## 2. Bounded objective
 
-Give each agent only the knowledge collections and read-only tools required for its role.
+Implement workloads/agents/personal/retrieval/ and operation operations/windows/p08/P08-S008-agent-rag-access/ with an explicit agent-to-knowledge-base allowlist, provenance-preserving citations, and retrieval treated as untrusted data.
 
 ## 3. Learning objective
 
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P08-S002; this story introduces no separate learning objective.
+Not applicable — P07 and P08-S002 cover RAG and capability boundaries.
 
 ## 4. Current research requirements
 
-Current retrieval security guidance checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
+Revalidate P07 namespace/authentication semantics, current retrieval APIs, Open WebUI attached-knowledge behavior, model tool reliability, and prompt-injection defenses. Reject implicit global collection access.
 
 ## 5. Preconditions and unlock conditions
 
-P08-S007. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
+P08-S007 and P07-S017 are Done. Activation names exact immutable collection versions per agent, principal/credential references, source sensitivity, allowed metadata filters, citation format, query/result limits, and rollback snapshot.
 
 ## 6. In scope
 
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
+Deny-by-default allowlist; separate read-only service identities; collection/version pinning; metadata filters; bounded top-k/query size; provenance; source date/applicability; citations; injection-resistant data framing; policy isolation; audit events without raw content; and detach/revoke operations.
 
 ## 7. Out of scope and prohibited changes
 
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
+No write/update/delete to a knowledge base, wildcard/all-collection access, direct source-root mount, cross-agent result sharing, web browsing, unapproved external source, retrieved instruction execution, P09 memory, or credential in Git/log/prompt.
 
 ## 8. Privilege and human approval
 
-Not applicable — phase authorization is sufficient.
+The explicit revision-bound P08 phase authorization covers the exact collection/principal matrix. Any added source, widened namespace, or write capability requires a new preview and approval; owner acceptance remains separately required in P08-S010.
 
 ## 9. Risk rationale
 
-Work affects services, private data, credentials, networking, or several components; integration evidence and rollback are mandatory. New facts may raise risk; an LLM cannot lower it.
+Critical: this creates an access-control boundary around private knowledge; namespace or authorization failure could disclose owner data across agents. The explicit revision-bound P08 phase authorization, isolated rehearsal, cross-provider review, and genuine owner acceptance in P08-S010 are mandatory.
 
 ## 10. Execution contract
 
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Namespace denial, prompt injection, citation, and stale-source tests pass.
+Checkpoint agent/runtime/P07 state; rehearse the complete access matrix in an isolated synthetic namespace; create least-privilege principals; attach only pinned collections; wrap retrieved chunks as untrusted evidence; strip active content; enforce policy outside the prompt; preserve citations; validate source freshness; register config; test; and cross-provider security review.
 
 ## 11. Automated acceptance tests
 
-Namespace denial, prompt injection, citation, and stale-source tests pass. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
+First prove the full matrix, detach, revoke, and rollback in an isolated synthetic P07 knowledge base. Then prove each agent reads only its real approved matrix entries; unauthorized/cross-namespace/version-mismatch requests fail; retrieved “ignore policy,” tool-call, secret-exfiltration, false-citation, poisoned metadata, oversize, stale, and deleted-source fixtures cannot alter policy or access. Verify citations map to immutable derivatives, credentials/redacted traces are clean, detach/revoke is immediate, restart and no-op rerun work, and P07 data is unchanged.
 
 ## 12. Human validation
 
-Not applicable — automated evidence and independent review suffice.
+Not applicable — technical access and injection testing are automated and independently reviewed. Owner judges answer usefulness in P08-S010.
 
 ## 13. Idempotency and rollback
 
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
+Same matrix produces no change. Rollback detaches collections, revokes P08 principals, restores agent configuration, and leaves P07 source/normalized/Git/index layers unchanged.
 
 ## 14. Required evidence
 
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
+evidence/P08-S008/ must contain activation.json, change-inventory.json, test-results.json, rollback.json, checkpoint.json, review.md, access-matrix.json, isolation-results.json, injection-results.json, citation-results.json, and revocation-results.json.
 
 ## 15. Definition of done
 
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
+Access is explicit and least-privilege, citations preserve provenance, injected retrieval cannot change policy or capability, revocation works, and P07 integrity remains verified.
 
 ## 16. Pause-safe boundaries
 
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Update evidence/P08-S008/checkpoint.json after each principal, collection, injection, revocation, and review gate. Detach the affected collection before pausing on any isolation or policy failure.
