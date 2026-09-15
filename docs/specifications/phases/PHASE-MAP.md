@@ -1,6 +1,6 @@
 # Windows Program Phase Map
 
-Execute phases in order. Each phase specification links to its independently executable and testable stories.
+Execute phases in order. Each phase specification links to its independently executable and testable story documents.
 
 1. [P01 — Program Control and Quality Foundation](P01-program-control-and-quality-foundation.md)
 2. [P02 — Windows, WSL, Git, and VS Code Foundation](P02-windows-wsl-git-and-vs-code-foundation.md)

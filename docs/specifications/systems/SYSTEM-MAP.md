@@ -7,4 +7,4 @@
 | Desktop dictation | [Desktop Dictation](DESKTOP-DICTATION.md) | P05 |
 | Durable agent memory | [Agent Memory](AGENT-MEMORY.md) | P09 |
 
-System specifications define boundaries shared by several stories. Phase specifications define sequencing. Story documents define the smallest authorized unit of work.
+System specifications define boundaries shared by multiple stories. Phase specifications define sequencing. Story documents define the smallest authorized unit of work.

@@ -27,8 +27,8 @@ An open-source-first, Git-based program for building a private local AI and agen
 ## Start here
 
 1. Read the [master program specification](docs/specifications/program/LOCAL-AI-AGENTIC-WORKSTATION-PROGRAM.md).
-2. Review the [phase map](docs/specifications/phases/README.md).
-3. See the [137 sequenced stories](docs/stories/README.md).
+2. Review the [phase map](docs/specifications/phases/PHASE-MAP.md).
+3. See the [137 sequenced stories](docs/stories/STORY-BACKLOG.md).
 4. Read the [canonical story contract](docs/specifications/standards/STORY-CONTRACT.md).
 
 The specifications are designed so a future `goagentic` controller can reconstruct the project after a reboot or long pause and give exactly one safe next action. That controller does not exist yet; it is built and accepted in Phase P01. The first P01 story creates the personal GitHub Project and imports the approved backlog, so progress becomes visible before controller or workstation implementation begins.
@@ -70,7 +70,3 @@ This playbook repository is public and contains only specifications and, later, 
 - macOS program: deferred.
 
 Technical recommendations are refreshed from current documentation when each story activates. The project does not assume that a model, tool, extension, version, or tutorial remains current simply because it appears in this repository.
-
-## About the removed `superpowers` folder
-
-The active repository no longer uses `.superpowers` or `docs/superpowers`. Those were temporary planning and browser-walkthrough artifacts, not a runtime capability or requirement. Their useful decisions were incorporated into the ordinary Markdown specifications, tables, and Mermaid diagrams under `docs/`; their prior versions remain available only through Git history.
