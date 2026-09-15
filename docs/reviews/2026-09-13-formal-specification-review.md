@@ -5,11 +5,11 @@
 
 **Method:** Two adversarial architecture passes, requirement trace, bootstrap-dependency analysis, story-sizing review, semantic anti-pattern scan, schema inspection, sequence and dependency-DAG validation, reciprocal-reference validation, link validation, obsolete-path inspection, and Git checks
 
-**Result:** Pass for controlled planning execution; all three remediation batches and two consecutive full-program passes complete
+**Result:** Pass for controlled planning execution; all three remediation batches and two consecutive internal full-program passes complete
 
 ## Executive conclusion
 
-The former plan was not safe to execute as written. It combined two operating systems and several independent systems in one document, contained bootstrap and runtime-boundary contradictions, used an overloaded state model, and did not express all approved work as testable stories. Later passes corrected structural defects but initially mistook structural completeness for semantic completeness. Three bounded remediation batches have now replaced the template-only contracts, repaired architecture and dependency gaps, and completed two consecutive full-program passes.
+The former plan was not safe to execute as written. It combined two operating systems and several independent systems in one document, contained bootstrap and runtime-boundary contradictions, used an overloaded state model, and did not express all approved work as testable stories. Later passes corrected structural defects but initially mistook structural completeness for semantic completeness. Three bounded remediation batches have now replaced the template-only contracts, repaired architecture and dependency gaps, and completed two consecutive internal full-program passes.
 
 No workstation implementation has started. The Windows-only ten-phase specification is now suitable for controlled execution through its controller, research, learning, authorization, testing, review, and owner gates. This verdict does not authorize implementation: no story may become Ready merely because its document exists, and only P01-S015 may be considered after the owner explicitly starts the program.
 
@@ -26,7 +26,7 @@ The deeper audit found:
 - risk rationales were commonly copied instead of derived; and
 - implementation stories did not consistently define reusable operations for later installer composition.
 
-These findings were material. All three remediation batches are now complete, and two consecutive full-program passes after the final P10 correction found no material defect.
+These findings were material. All three remediation batches are now complete, and two consecutive internal full-program passes after the final P10 correction found no material defect.
 
 ## Findings and corrections
 
@@ -129,7 +129,7 @@ These are controlled gates, not missing requirements:
 
 ## Automated review results
 
-The earlier Batch 1 table is retained as structural-history evidence, not the basis for the current verdict. At that time 129 story files were asserted and all 27 P01-P02 stories passed. The current inventory is 137 after P04 decomposition and added P07-P09 prerequisites. Batch 2 completed two clean passes over P03-P05. Batch 3 rebuilt P06-P10 and SYS-RAG/SYS-MEM, then completed two consecutive full-program passes after the last material correction. Pass 1 reconstructed all story metadata, phase tables, routes, and the reciprocal acyclic graph. Pass 2 independently checked concrete P10 contracts, Critical controls, exact release inventories, requirement trace, links, removed paths, and whitespace.
+The earlier Batch 1 table is retained as structural-history evidence, not the basis for the current verdict. At that time 129 story files were asserted and all 27 P01-P02 stories passed. The current inventory is 137 after P04 decomposition and added P07-P09 prerequisites. Batch 2 completed two clean internal passes over P03-P05. Batch 3 rebuilt P06-P10 and SYS-RAG/SYS-MEM, then completed two consecutive internal full-program passes after the last material correction. Pass 1 reconstructed all story metadata, phase tables, routes, and the reciprocal acyclic graph. Pass 2 used a different internal check set for concrete P10 contracts, Critical controls, exact release inventories, requirement trace, links, removed paths, and whitespace. These planning reviews are internal self-review; they are not the future cross-provider reviews required during story execution.
 
 | Check | Result |
 |---|---|
@@ -166,4 +166,4 @@ The earlier Batch 1 table is retained as structural-history evidence, not the ba
 
 ## Review decision
 
-The planning specification passes its bounded adversarial review. All three remediation batches and two consecutive full-program passes are complete with no known material defect. This is a specification verdict, not implementation evidence or permission to build. When the owner explicitly starts P01, P01-S015 is the only story eligible for activation; its bootstrap preview and revision-bound phase authorization gate creation of the personal GitHub Project.
+The planning specification passes its bounded adversarial review. All three remediation batches and two consecutive internal full-program passes are complete with no known material defect. This is a specification verdict, not implementation evidence, external certification, or permission to build. When the owner explicitly starts P01, P01-S015 is the only story eligible for activation; its bootstrap preview and revision-bound phase authorization gate creation of the personal GitHub Project.

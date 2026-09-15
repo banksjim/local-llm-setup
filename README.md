@@ -64,7 +64,7 @@ This playbook repository is public and contains only specifications and, later, 
 
 - Requirements, major architecture decisions, and the 137-story Windows plan: complete and reviewed.
 - Master, system, phase, and story specifications: ready for controlled story activation, not proof of implementation.
-- Formal adversarial review: [planning specification passed](docs/reviews/2026-09-13-formal-specification-review.md) after all three remediation batches and two clean full-program passes.
+- Formal adversarial self-review: [planning specification passed](docs/reviews/2026-09-13-formal-specification-review.md) after all three remediation batches and two clean internal full-program passes; execution stories still require their specified cross-provider reviews.
 - GitHub Project creation and controller implementation: not started.
 - Workstation installation and testing: not started.
 - macOS program: deferred.
