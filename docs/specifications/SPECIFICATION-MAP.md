@@ -1,17 +1,17 @@
 # Specification Map
 
 **Status:** Approved design being prepared for user review  
-**Last reviewed:** 2026-09-13
+**Last reviewed:** 2026-09-15
 
-This directory is the authoritative specification set for the Local AI Workstation Playbook. Temporary browser walkthrough artifacts and the former `superpowers` planning tree are not runtime dependencies and are intentionally absent from the active branch.
+This directory is the authoritative specification set for the Local AI Workstation Playbook. Runtime behavior is defined by the approved specifications, story documents, accepted evidence, and controller state retained in the active repository.
 
 ## Reading order
 
 1. [Master program specification](program/LOCAL-AI-AGENTIC-WORKSTATION-PROGRAM.md)
 2. [Canonical story contract](standards/STORY-CONTRACT.md)
-3. [Phase specifications](phases/README.md)
-4. [System specifications](systems/README.md)
-5. [Sequenced story documents](../stories/README.md)
+3. [Phase specifications](phases/PHASE-MAP.md)
+4. [System specifications](systems/SYSTEM-MAP.md)
+5. [Sequenced story documents](../stories/STORY-BACKLOG.md)
 
 ## Authority
 

@@ -1,6 +1,6 @@
 # Windows Program Story Backlog
 
-The active Windows program contains 137 sequenced stories. Every story follows the [canonical contract](../specifications/standards/STORY-CONTRACT.md), including explicit research, learning, scope, risk, approval, tests, evidence, rollback, and pause boundaries. P04 contains 14 stories after its integration work was decomposed; P07 contains 19 because private Langflow deployment and private knowledge-repository initialization are separate prerequisites; P08 contains 12 because the shared runtime and daily check-in are independent tactical units; P09 contains 13 because framework selection and private deployment are separate gates.
+The active Windows program contains 137 sequenced story documents. Every story follows the [canonical contract](../specifications/standards/STORY-CONTRACT.md), including explicit research, learning, scope, risk, approval, tests, evidence, rollback, and pause boundaries. P04 contains 14 stories after its integration work was decomposed; P07 contains 19 because private Langflow deployment and private knowledge-repository initialization are separate prerequisites; P08 contains 12 because the shared runtime and daily check-in are independent tactical units; P09 contains 13 because framework selection and private deployment are separate gates.
 
 | Phase | Stories | Index |
 |---|---:|---|
