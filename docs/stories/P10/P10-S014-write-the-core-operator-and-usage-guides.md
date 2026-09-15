@@ -12,69 +12,38 @@
 | Actor | LLM |
 | Dependencies | P10-S013 |
 | Unlocks | P10-S015 |
-| Preferred route | Controller-selected value route; qualified local documentation model allowed with independent factual review. |
-| Research freshness | All product-specific instructions checked against current official documentation within the freshness window of the owning component. |
+| Preferred route | Interface: coding agent through goagentic; Provider: controller-selected value cloud provider; Model class: technical documentation; Effort: medium; Fallback: qualified local documentation model with independent cloud factual review. |
+| Research freshness | Product instructions checked against accepted installed versions and official sources within each owning story’s freshness window. |
 
 ## 1. User story
-
-As the workstation owner, I want focused install, architecture, model, usage, integration, agent, RAG, memory, and prompt guides, so that I can use the system without reconstructing decisions from implementation history.
-
+As the owner, I want one navigable guide set that tells me what exists, which model/settings to use, and how to use it from my actual tools.
 ## 2. Bounded objective
-
-Write and cross-link the core conceptual and daily-use guides, including Mermaid architecture diagrams, platform boundaries, model-selection tables, tool integration instructions, and reusable Codex CLI prompts.
-
+Update root `README.md`; create `docs/architecture/WINDOWS-ARCHITECTURE.md`, `docs/guides/windows/INSTALL.md`, `QUICKSTART.md`, `MODEL-GUIDE.md`, `USAGE-RECOMMENDATIONS.md`, `OPEN-WEBUI.md`, `TOOL-INTEGRATIONS.md`, `VS-CODE.md`, `AGENTS.md`, `RAG-AND-INGESTION.md`, `MEMORY.md`, and `DICTATION.md`; create `prompts/README.md`, shared `prompts/program/resume.md`, `execute-next-story.md`, `review-story.md`, and `complete-gate.md`, plus `prompts/claude-code/implement-goagentic-command-skills.md`.
 ## 3. Learning objective
-
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P10-S002; this story consolidates previously taught workflows.
-
+Not applicable — consolidate earlier targeted lessons and link their evidence; do not add redundant general training.
 ## 4. Current research requirements
-
-Recheck every product-specific instruction against official documentation and the accepted installed versions. Date sources and identify any instruction derived from measured local behavior rather than documentation.
-
+Recheck every product-specific step against official docs and the accepted release; date citations and label locally measured recommendations. Current model/tool tables must be generated from the accepted registry, not training memory.
 ## 5. Preconditions and unlock conditions
-
-P10-S013 is accepted; the installed architecture and model registry are stable; all earlier usage and learning evidence is available; links, Git, controller, route, and lease checks pass.
-
+P10-S013 is Done; accepted architecture, commands, ports, profiles, model registry, integrations, lessons, and evidence are stable. The activation packet fixes the required prompt inventory and intended reader tasks.
 ## 6. In scope
-
-Install overview, architecture, model guide, task-to-model usage recommendations, Open WebUI and tool integrations, VS Code/Codex/Claude workflows, agent/RAG/memory usage, security boundaries, Mermaid diagrams, and prompts folder documentation.
-
+Windows/WSL/container responsibility; storage; data flow/trust Mermaid diagrams; Rancher/Ollama/Open WebUI setup/use; task-to-model and context/profile matrix for all supported Windows models; VS Code Windows-versus-WSL extensions for Python/Go/Node/TypeScript; Codex CLI, Claude Code, ChatGPT, Claude Cowork, OpenAI-compatible clients, and optional LM Studio port 51239; autocomplete optional track; dictation; agent skills/assets/scripts/MCP; MLflow; RAG/Crawl4AI/Docling/Google export; durable-memory inbox; privacy/safety; prompts and exact next links.
 ## 7. Out of scope and prohibited changes
-
-Operations recovery procedures owned by P10-S015, new architecture decisions, unsupported product claims, copied long-form third-party content, secrets, and workstation mutation.
-
+No unaccepted model/tool, private content, secret, copied long-form tutorial, workstation mutation, macOS implementation, operations/recovery procedures owned by P10-S015, or implication that optional LM Studio shares Ollama model files.
 ## 8. Privilege and human approval
-
-Not applicable — this story changes versioned documentation and prompts only; external publication beyond the existing repository requires separate approval.
-
+Documentation changes need no new approval. External publication beyond this existing public playbook and any private-data example requires separate scope.
 ## 9. Risk rationale
-
-Documentation is reversible, but inaccurate instructions could cause later unsafe actions. Current-source verification, measured-command validation, and independent review make Medium risk appropriate.
-
+Medium: reversible files, but incorrect commands or model guidance can cause unsafe use or wasted storage/time.
 ## 10. Execution contract
-
-Derive instructions from accepted evidence, write for a nonexpert operator, separate Windows and WSL contexts, mark optional paths, use copy-safe commands, link authoritative sources, and keep prompts provider-independent where possible.
-
+Write for a nonexpert; lead with choices/outcomes; separate Windows/WSL/container commands; use exact tested wrappers; label required/optional/manual; include expected results and stop links; use concise original explanations; preserve hardware-specific caveat; cross-link rather than duplicate; never show real secrets or personal paths beyond declared architecture.
 ## 11. Automated acceptance tests
-
-Required-file inventory, Markdown links, heading structure, Mermaid syntax, command parsing or safe validation, model-table registry consistency, platform-label checks, prompt presence, freshness metadata, secret scan, and terminology checks pass.
-
+All 19 artifacts named in the bounded objective exist; `prompts/README.md` explains direct Codex CLI and Claude Code use, while the Claude-specific document is sufficient to implement equivalent command skills; required headings/tasks and both Windows/WSL contexts are present; local links resolve; Mermaid parses; commands parse or match accepted help; model/settings tables match registry and 4090 profiles; integration endpoints/ports match config; extension IDs validate; prompt schemas contain scope/test/evidence/pause; source dates are fresh; terminology/privacy/secret/license scans pass.
 ## 12. Human validation
-
-The owner follows one model-selection workflow and one tool-integration lookup from the documentation without using this chat and reports any ambiguity.
-
+Owner uses only the guides to choose a model/profile for three tasks, find the correct VS Code/agent/RAG/memory/dictation instructions, and locate how to begin installation. Ambiguity becomes a documentation defect.
 ## 13. Idempotency and rollback
-
-Regeneration with unchanged accepted evidence produces no semantic change. Git reversion restores documentation without changing workstation state.
-
+Regeneration from unchanged evidence makes no semantic change. Git reversion restores guides/prompts without workstation mutation.
 ## 14. Required evidence
-
-Guide inventory; source and measurement map; generated diagrams; link, command, prompt, freshness, terminology, and secret checks; changed-file list; independent review; and owner usability notes.
-
+Commit guides/prompts plus `evidence/P10-S014/activation.json`, guide/prompt inventory, source/measurement map, link/Mermaid/command/model/extension/freshness/privacy checks, changed-file list, owner usability result, independent factual review, and `checkpoint.json`.
 ## 15. Definition of done
-
-The complete core guide set and prompts are accurate, navigable, current, and usable independently; all checks pass; and P10-S015 is unblocked.
-
+The named guide and prompt set is current, internally consistent, independently reviewed, and usable without chat history; owner tasks pass; P10-S015 unlocks.
 ## 16. Pause-safe boundaries
-
-Pause between individual guides, after each validated diagram or command set, and after durable commits. Do not leave a moved or renamed guide with broken incoming links.
+Pause after each complete guide/prompt and its validation; never leave moved/renamed documents with broken incoming links.

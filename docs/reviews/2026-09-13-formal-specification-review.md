@@ -5,17 +5,17 @@
 
 **Method:** Two adversarial architecture passes, requirement trace, bootstrap-dependency analysis, story-sizing review, semantic anti-pattern scan, schema inspection, sequence and dependency-DAG validation, reciprocal-reference validation, link validation, obsolete-path inspection, and Git checks
 
-**Result:** Batches 1 and 2 pass their bounded reviews; full-program remediation remains in progress
+**Result:** Pass for controlled planning execution; all three remediation batches and two consecutive full-program passes complete
 
 ## Executive conclusion
 
-The former plan was not safe to execute as written. It combined two operating systems and several independent systems in one document, contained bootstrap and runtime-boundary contradictions, used an overloaded state model, and did not express all approved work as testable stories. Later passes corrected many structural defects but incorrectly treated structural completeness as semantic completeness. A deeper audit found widespread template-only scope, evidence, rollback, completion, routing, and risk language. The architecture remains a useful Windows-only, ten-phase decomposition, but the specification set is not yet safe to execute without remediation.
+The former plan was not safe to execute as written. It combined two operating systems and several independent systems in one document, contained bootstrap and runtime-boundary contradictions, used an overloaded state model, and did not express all approved work as testable stories. Later passes corrected structural defects but initially mistook structural completeness for semantic completeness. Three bounded remediation batches have now replaced the template-only contracts, repaired architecture and dependency gaps, and completed two consecutive full-program passes.
 
-No workstation implementation has started. P01-P02 and P03-P05 passed their bounded batches. P06-P09 completed first Batch 3 correction cycles, but P10 and the Batch 3/full-program reviews remain blocking. No story may become Ready merely because its document exists.
+No workstation implementation has started. The Windows-only ten-phase specification is now suitable for controlled execution through its controller, research, learning, authorization, testing, review, and owner gates. This verdict does not authorize implementation: no story may become Ready merely because its document exists, and only P01-S015 may be considered after the owner explicitly starts the program.
 
-## Withdrawn decision and active remediation
+## Withdrawn decision and completed remediation
 
-The prior “Pass with corrections applied” decision is withdrawn. The active remediation record is [2026-09-13-specification-remediation-log.md](2026-09-13-specification-remediation-log.md).
+The earlier unsupported “Pass with corrections applied” decision remains withdrawn. The completed remediation record is [2026-09-13-specification-remediation-log.md](2026-09-13-specification-remediation-log.md).
 
 The deeper audit found:
 
@@ -26,7 +26,7 @@ The deeper audit found:
 - risk rationales were commonly copied instead of derived; and
 - implementation stories did not consistently define reusable operations for later installer composition.
 
-These findings are material. The final review decision stays open until all three remediation batches complete and two consecutive full-program passes find no material defect.
+These findings were material. All three remediation batches are now complete, and two consecutive full-program passes after the final P10 correction found no material defect.
 
 ## Findings and corrections
 
@@ -48,7 +48,7 @@ These findings are material. The final review decision stays open until all thre
 | R14 | High | Reingestion and missing sources could cause destructive replacement or deletion. | Preserve source versions, use Git history, mark missing sources, and require approval for deletion. |
 | R15 | Medium | Important visuals could be lost or invisible to retrieval. | Preserve meaningful assets, use Git LFS thresholds, and add provenance-labeled local vision enrichment. |
 | R16 | High | “Speech-to-text” conflated chat audio with Windows-wide dictation. | Split chat STT from a dedicated desktop-dictation selection and implementation specification. |
-| R17 | High | The full PowerShell installer and maintenance suite was not explicitly gated. | Added it to P10-S008 with analysis, dry-run, idempotency, rollback, and deliverable checks. |
+| R17 | High | The full PowerShell installer and maintenance suite was not explicitly gated. | Assigned production to P10-S012 and P10-S013 with analysis, dry-run, idempotency, rollback, and exact command inventories; P10-S008 independently validates the catalog. |
 | R18 | High | Sharing one Windows token into WSL would undermine isolation. | Defined one credential store per security environment: Windows once and Ubuntu once, never per repository. |
 | R19 | High | Local models might be used too early or never adopted. | Added role qualification and mandatory P03 reassessment of every remaining story, with probation and cloud review. |
 | R20 | Medium | Learning content could go stale or become generic courses. | Made targeted lessons blocking and required current official docs plus vetted short/deep materials at activation. |
@@ -85,6 +85,7 @@ These findings are material. The final review decision stays open until all thre
 | R51 | Critical | P07's leaf stories were generic, publication was not atomic across Git and vectors, private-source safety was incomplete, the plan taught Langflow before any story deployed it, and no story initialized the separate knowledge repository. | Rebuilt SYS-RAG around immutable source, normalized record, Git derivative, and disposable index layers; added a durable job state machine with paired Git/index reconciliation; specified file, web, OAuth, credential, deletion, and restore denials; and inserted P07-S018 and P07-S019 as explicit Langflow and private-repository prerequisites. |
 | R52 | Critical | P08 described personal-agent personas without a deployable shared runtime, combined two agents in one story, relied too heavily on prose boundaries, and did not clearly separate thread checkpoints, explicit exports, and future durable memory. | Added P08-S012 for a private LangGraph/Open WebUI runtime and P08-S011 for daily check-ins; rebuilt all 12 contracts around deterministic policy enforcement, bounded capabilities, current primary sources, redacted MLflow evaluation, explicit export confirmation, and a hard P09 memory boundary. |
 | R53 | Critical | SYS-MEM allowed a deterministic rule to promote memory, treated a framework store as potentially authoritative, omitted a deployment story, and left candidate isolation, decision replay, deletion resurrection, and the pilot agent ambiguous. | Made owner review the sole promotion authority; separated quarantined candidates, an append-only portable ledger, and rebuildable projections; added P09-S013 deployment; specified anti-replay decisions and deletion tombstones; and fixed the accepted P08 life-planning agent as the only P09 pilot. |
+| R54 | Critical | P10 retained generic operational shells, incomplete model routes, no fixed release architecture, ambiguous backup/removal boundaries, and an early lesson that appeared to depend on final runbooks not yet written. | Rebuilt all 15 contracts around named research, lesson, security, 4090 profile, lifecycle, backup, removal, installer, maintenance, guide, catalog, end-to-end, review, and acceptance artifacts; made the lesson use accepted P01–P09 operations; and fixed exact failure, privacy, rehearsal, rollback, prompt, and release controls. |
 
 ## Redundancy removed
 
@@ -128,7 +129,7 @@ These are controlled gates, not missing requirements:
 
 ## Automated review results
 
-The earlier Batch 1 table is retained as structural-history evidence, not a current full-program pass. At that time 129 story files were asserted and all 27 P01-P02 stories passed. The current inventory is 137 after P04 decomposition and the added P07-P09 prerequisites. Batch 2 completed two consecutive clean passes covering all 37 P03-P05 stories. P06-P09 correction cycle 1 replaced all prior generic contracts and routes in those phases. P10 still contains 10 measured generic core story blocks and 15 incomplete routes. Batch 3 has not reached its two clean passes, so these residuals keep the program review open.
+The earlier Batch 1 table is retained as structural-history evidence, not the basis for the current verdict. At that time 129 story files were asserted and all 27 P01-P02 stories passed. The current inventory is 137 after P04 decomposition and added P07-P09 prerequisites. Batch 2 completed two clean passes over P03-P05. Batch 3 rebuilt P06-P10 and SYS-RAG/SYS-MEM, then completed two consecutive full-program passes after the last material correction. Pass 1 reconstructed all story metadata, phase tables, routes, and the reciprocal acyclic graph. Pass 2 independently checked concrete P10 contracts, Critical controls, exact release inventories, requirement trace, links, removed paths, and whitespace.
 
 | Check | Result |
 |---|---|
@@ -146,10 +147,12 @@ The earlier Batch 1 table is retained as structural-history evidence, not a curr
 | P03-P05 concrete output and evidence contracts | Pass; 37 of 37 |
 | P03-P05 Critical-risk controls | Pass; four of four include authorization, negative tests, and recovery |
 | P03-P05 human-validation authenticity | Pass; 15 of 15 include an owner action and anti-fabrication boundary |
-| P06 contract and route remediation | Correction cycle 1 passes phase-local structural and semantic checks; 14 of 14, but no Batch 3 pass is claimed |
-| P07 contract and route remediation | Checked correction cycle passes phase-local structural and semantic validation for 19 of 19; no Batch 3 pass is claimed |
-| P08 contract and route remediation | Checked correction cycle passes phase-local structural and semantic validation for 12 of 12; no Batch 3 pass is claimed |
-| P09/SYS-MEM contract and route remediation | Checked correction cycle passes two internal phase-local structural and semantic passes for 13 of 13; no Batch 3 pass is claimed |
+| P06 contract and route remediation | Pass; 14 of 14 and included in the clean Batch 3/full-program result |
+| P07/SYS-RAG contract and route remediation | Pass; 19 of 19 and included in the clean Batch 3/full-program result |
+| P08 contract and route remediation | Pass; 12 of 12 and included in the clean Batch 3/full-program result |
+| P09/SYS-MEM contract and route remediation | Pass; 13 of 13 and included in the clean Batch 3/full-program result |
+| P10 contract and route remediation | Pass; 15 of 15 have exact outputs, five-field routes, story-specific tests/evidence/rollback, and continuous phase sequencing |
+| Batch 3 full-program review | Pass; two consecutive complete passes after the final material correction |
 | Git whitespace validation | Pass |
 | Workstation implementation evidence | Not applicable — implementation has not started |
 
@@ -163,4 +166,4 @@ The earlier Batch 1 table is retained as structural-history evidence, not a curr
 
 ## Review decision
 
-Batch 2 passes its bounded review; P06-P09 have correction cycles, but this is not a Batch 3 or full-program pass. P10 remains blocking until Batch 3 correction and two consecutive full-program passes complete. When the full program eventually passes and the owner explicitly starts P01, P01-S015 will be the only story eligible for activation; its separate mutation preview and approval will gate creation of the personal GitHub Project.
+The planning specification passes its bounded adversarial review. All three remediation batches and two consecutive full-program passes are complete with no known material defect. This is a specification verdict, not implementation evidence or permission to build. When the owner explicitly starts P01, P01-S015 is the only story eligible for activation; its bootstrap preview and revision-bound phase authorization gate creation of the personal GitHub Project.

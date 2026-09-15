@@ -12,69 +12,38 @@
 | Actor | Human + LLM |
 | Dependencies | P10-S006 |
 | Unlocks | P10-S012 |
-| Preferred route | Human through a goagentic-guided checklist with the controller-selected assistant; no unattended substitution. |
-| Research freshness | Current component uninstall docs checked within 7 days. |
+| Preferred route | Interface: Codex CLI on Windows through goagentic; Provider: high-reliability cloud provider; Model class: destructive-operation safety; Effort: high; Fallback: Anthropic security/recovery model with cross-provider review and disposable-target rehearsal. |
+| Research freshness | Current official uninstall, factory-reset, data-location, WSL unregister, package-manager, and model-removal guidance checked within 7 days. |
 
 ## 1. User story
-
-As the workstation owner, I want this story to separate application, service, and model removal from retained private data using exact paths and previews, so progress is inspectable and independent of chat memory.
-
+As the owner, I want removal to distinguish software from my irreplaceable data and show exactly what will happen before anything is deleted.
 ## 2. Bounded objective
-
-Separate application, service, and model removal from retained private data using exact paths and previews.
-
+Implement `operations/windows/p10/P10-S007-removal/Get-RemovalPlan.ps1`, `Uninstall-LocalAIComponent.ps1`, and `Test-RemovalState.ps1`, `config/removal/data-classes.yaml`, and `tests/p10/removal/`.
 ## 3. Learning objective
-
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P10-S002; this story introduces no separate learning objective.
-
+Not applicable — P10-S002 covers destructive stop boundaries; this story provides a plain-language choice sheet.
 ## 4. Current research requirements
-
-Current component uninstall docs checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
-
+Resolve actual uninstall effects and retained paths for every accepted component. Explicitly distinguish Rancher application uninstall, factory reset, snapshots/cache, and WSL distributions; distinguish Ollama application versus model/data removal.
 ## 5. Preconditions and unlock conditions
-
-P10-S006. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
-
+P10-S006 has a verified restorable generation. Activation resolves the exact component inventory, story-owned artifacts, discovered unknown files, retention choice, before-state, and disposable rehearsal roots.
 ## 6. In scope
-
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
-
+Independent choices for application binaries, services, containers/images/volumes, models, WSL runtime, caches/logs, configuration, databases, agent state, memory, knowledge repositories, original documents, backups, and project-owned firewall/settings entries; default is retain all user/private data.
 ## 7. Out of scope and prohibited changes
-
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
-
+No broad recursive delete, wildcard/computed target without canonical containment check, removing WSL/Rancher prerequisites installed separately unless explicitly selected, deleting backup/recovery keys with the live copy, unrelated package removal, or automatic treatment of unknown files.
 ## 8. Privilege and human approval
-
-Required — the human performs or validates the work; an LLM cannot create completion evidence.
-
+Covered by P10 authorization, but the owner must make the retention choices and confirm the exact final plan immediately before destructive apply. This is participation; any new target or broader scope invalidates the plan.
 ## 9. Risk rationale
-
-Work crosses a security, privilege, destructive-data, authentication, or acceptance boundary and requires explicit owner control. New facts may raise risk; an LLM cannot lower it.
-
+Critical: a faulty target can destroy original documents, private repositories, memory, backups, WSL data, or unrelated host content. P10 phase authorization, disposable removal rehearsal, cross-provider review, and P10-S011 final owner acceptance are mandatory.
 ## 10. Execution contract
-
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Dry run and disposable removal prove no broad recursive deletion or unknown-file loss.
-
+Inventory first; canonicalize and containment-check every literal target; classify known/unknown ownership; generate a counts/sizes/recoverability preview; require backup validity for selected private-data deletion; use product uninstall interfaces before file cleanup; stop services; delete only confirmed rows; verify retained/deleted sets; write sanitized tombstone evidence.
 ## 11. Automated acceptance tests
-
-Dry run and disposable removal prove no broad recursive deletion or unknown-file loss. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
-
+Dry-run never mutates; default retains every private/user data class; traversal, root, drive root, unresolved variable, symlink/junction escape, unknown file, active service, missing backup, stale plan, and mismatched hash are rejected. Disposable install removal deletes only selected owned artifacts, retains sentinels and prerequisites, supports partial interruption/resume, and a second run no-ops.
 ## 12. Human validation
-
-Owner completes the story checklist and records it through the controller.
-
+Owner reviews a plain-language disposable plan, chooses retain/remove per data class, and verifies sentinel files remain after rehearsal. No live private data is removed for acceptance.
 ## 13. Idempotency and rollback
-
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
-
+Plans bind to a before-state hash and expire on drift. Software removal rollback reinstalls the pinned version and configuration where supported; data deletion is not called reversible and requires a proven backup restore path before confirmation.
 ## 14. Required evidence
-
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
-
+Commit operations/config/tests plus `evidence/P10-S007/activation.json`, sanitized inventory, choice record, exact plan, containment checks, dry-run, negative fixtures, disposable rehearsal, retained/deleted verification, second run, recovery result, human validation, cross-provider review, and `checkpoint.json`.
 ## 15. Definition of done
-
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
-
+Every component/data class has an explicit default and effect, all destructive negative cases fail closed, disposable rehearsal preserves unknown/user data, recovery claims are honest, and P10-S012 unlocks.
 ## 16. Pause-safe boundaries
-
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Pause before final confirmation and after each product-level removal plus verification. Finish or restore an atomic unit before pausing; never leave a broadened target cached for resume.

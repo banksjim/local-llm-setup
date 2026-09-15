@@ -12,69 +12,38 @@
 | Actor | LLM |
 | Dependencies | P10-S012 |
 | Unlocks | P10-S014 |
-| Preferred route | Controller-selected quality route with independent cross-provider review; qualified local model may implement bounded commands. |
-| Research freshness | Current component health, update, backup, restore, and removal interfaces checked within 7 days. |
+| Preferred route | Interface: Codex CLI on Windows through goagentic; Provider: controller-selected cloud provider; Model class: PowerShell integration; Effort: high; Fallback: Anthropic coding model with cross-provider review of destructive wrappers. |
+| Research freshness | P10-S001 and accepted component health/lifecycle interfaces refreshed within 7 days. |
 
 ## 1. User story
-
-As the workstation owner, I want a consistent maintenance command suite, so that routine health, start, stop, update preview, backup, restore, and removal tasks are safe and memorable.
-
+As the owner, I want memorable maintenance scripts so routine operation and recovery do not require reconstructing internal commands.
 ## 2. Bounded objective
-
-Implement separate discoverable maintenance entry points that wrap the accepted operational workflows without duplicating installer logic.
-
+Create `scripts/windows/LocalAIWorkstation.psm1` and wrappers `Get-LocalAIStatus.ps1`, `Start-LocalAI.ps1`, `Stop-LocalAI.ps1`, `Get-LocalAILogs.ps1`, `Get-LocalAIUpdatePlan.ps1`, `Update-LocalAI.ps1`, `Backup-LocalAI.ps1`, `Restore-LocalAI.ps1`, `Undo-LocalAIChange.ps1`, and `Uninstall-LocalAI.ps1`.
 ## 3. Learning objective
-
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P10-S002; this story introduces no separate learning objective.
-
+Not applicable — P10-S002 teaches boundaries and P10-S014/S015 document use.
 ## 4. Current research requirements
-
-Refresh official interfaces for the installed versions within 7 days and record any changed health, lifecycle, backup, migration, or removal behavior.
-
+Revalidate the exact health, lifecycle, log, backup, restore, rollback, and removal entry points for pinned components; changed interfaces return to owning operations.
 ## 5. Preconditions and unlock conditions
-
-P10-S012 is accepted; P10-S003 through P10-S007 define the approved operations; Git, controller state, route, lease, and research checks pass.
-
+P10-S012 is Done; P10-S003 through S007 operations are accepted; each wrapper has exactly one authoritative delegate, risk class, approval behavior, expected output schema, and help example.
 ## 6. In scope
-
-Status, health, start, stop, log collection, update preview, backup, restore, rollback, uninstall preview, retained-data choices, help, structured output, and shared modules.
-
+Discoverable help; safe defaults; status/start/stop; redacted log bundle; update preview/apply; backup/restore; rollback; removal preview/apply; shared configuration; structured output; exact target display; and controller evidence integration.
 ## 7. Out of scope and prohibited changes
-
-Automatic unapproved updates, scheduled unattended mutation, new backup destinations, secret output, broad deletion, installer duplication, and GUI development.
-
+No duplicated installer/component logic, hidden mutation, unattended scheduling, automatic update/restore/removal, GUI, new destination, raw logs/secrets, broad delete, or bypass of controller authorization.
 ## 8. Privilege and human approval
-
-Required for live commands that elevate privileges, restore data, remove components, or cross a separately defined approval boundary; read-only health and preview commands require no additional approval.
-
+Read-only status/help/preview requires none. Mutating wrappers enforce the owning operation’s active authorization, `ShouldProcess`, exact plan binding, and human participation; `-Force` never bypasses controller authorization or data-class confirmation.
 ## 9. Risk rationale
-
-Most commands are bounded, but restore, rollback, update, and removal can affect multiple services or data. Each command must preserve the risk and approval rules of the underlying accepted workflow.
-
+High: wrappers expose multi-service update, restore, rollback, and removal; they must preserve Critical controls even though the wrapper code is small.
 ## 10. Execution contract
-
-Every command supports help and preview where meaningful, delegates to one authoritative implementation, validates exact targets, reports intended and actual changes, stops on ambiguity, and writes sanitized evidence.
-
+Parse/validate first; provide `-WhatIf`/preview where meaningful; show target and impact; delegate once; preserve exit/result schema; redact at source; stop on ambiguity; record planned versus actual result. Test external-process and cross-module preview explicitly.
 ## 11. Automated acceptance tests
-
-Command discovery, help, parameter validation, read-only status, structured output, no-op behavior, mocked success/failure, privilege rejection, exact-target enforcement, secret scan, and delegation-without-duplication tests pass for every entry point.
-
+All ten wrappers exist, parse/analyze, expose help/examples and expected parameters, use shared module, map one-to-one to accepted operations, reject bad targets/config/authorization, redact fixture secrets, preserve structured output/exit behavior, perform zero mutation in preview, handle mocked success/failure/interruption, no-op on repeat where applicable, and contain no duplicate core logic.
 ## 12. Human validation
-
-The owner runs help, status, and one safe preview from a fresh shell and confirms the commands are understandable without this chat.
-
+From a fresh shell, owner runs help, status, redacted log preview, update preview, backup preview, and uninstall preview, then identifies which commands mutate and where they stop for confirmation.
 ## 13. Idempotency and rollback
-
-Read-only and preview commands never mutate. Repeated mutation commands no-op or reconcile safely, and each delegates to the tested rollback contract of its owning operation.
-
+Read-only/preview wrappers never mutate. Mutating wrappers inherit the accepted operation’s no-op, checkpoint, and rollback contract and add no independent state.
 ## 14. Required evidence
-
-Command catalog; ownership mapping; source revisions; current interface sources; test matrix and outputs; privilege and target checks; secret scan; no-op results; review verdict; and owner usability result.
-
+Commit module/wrappers/tests plus `evidence/P10-S013/activation.json`, command catalog, ownership map, help validation, static/negative/preview/failure/no-op results, redaction scan, owner validation, cross-provider review, and `checkpoint.json`.
 ## 15. Definition of done
-
-Every accepted maintenance workflow has one tested, documented entry point with correct safety behavior and no duplicate implementation; P10-S014 is unblocked.
-
+Every accepted routine/recovery workflow has one understandable tested wrapper, safety is neither duplicated nor weakened, owner usability passes, and P10-S014 unlocks.
 ## 16. Pause-safe boundaries
-
-Pause between commands and at the safe boundaries defined by each delegated workflow. Never pause during an atomic restore, migration, or replacement.
+Pause between wrapper implementations/tests and at delegated operation checkpoints; never pause inside atomic restore/migration/removal.

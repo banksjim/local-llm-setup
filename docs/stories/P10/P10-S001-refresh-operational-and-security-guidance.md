@@ -12,69 +12,38 @@
 | Actor | LLM |
 | Dependencies | P09-S012 |
 | Unlocks | P10-S002 |
-| Preferred route | Controller-selected economical research route with web access. |
-| Research freshness | Official docs, releases, and security advisories checked within 7 days. |
+| Preferred route | Interface: web-capable coding agent through goagentic; Provider: controller-selected cloud provider; Model class: economical research with synthesis; Effort: medium; Fallback: second cloud provider verifies unresolved or security-significant claims. |
+| Research freshness | Official documentation, stable releases, migration notes, and security advisories checked within 7 days of activation. |
 
 ## 1. User story
-
-As the workstation owner, I want this story to review current advisories, upgrade paths, backup guidance, and Windows, WSL, and container hardening, so progress is inspectable and independent of chat memory.
-
+As the owner, I want one current operational baseline so later work does not rely on stale model memory or scattered web notes.
 ## 2. Bounded objective
-
-Review current advisories, upgrade paths, backup guidance, and Windows, WSL, and container hardening.
-
+Create `docs/research/P10/source-register.yaml`, `component-lifecycle-matrix.yaml`, `risk-register.yaml`, and `operational-security-baseline.md` for every accepted P02–P09 component and data class.
 ## 3. Learning objective
-
-Not applicable — this research story prepares the evidence used by the following learning gate and does not teach an owner-operated procedure.
-
+Not applicable — P10-S002 teaches the owner from these results.
 ## 4. Current research requirements
-
-Official docs, releases, and security advisories checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
-
+Use primary Windows/WSL, PowerShell, Rancher Desktop, Ollama, Open WebUI, NVIDIA, container-image, database, and selected-framework sources. Record retrieval date, applicable installed/planned version, direct URL, supported claim, conflicts, and inference. Security advisories override general guides.
 ## 5. Preconditions and unlock conditions
-
-P09-S012. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
-
+P09-S012 is Done. The activation packet fixes the accepted component inventory and rejects a zero-item scan.
 ## 6. In scope
-
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
-
+Install/update/removal interfaces; database migrations; configuration/data locations; listeners; telemetry; credentials; backup consistency; restore prerequisites; driver/runtime compatibility; and known rollback limits.
 ## 7. Out of scope and prohibited changes
-
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
-
+No downloads, installation, authentication, workstation probing beyond accepted read-only inventory, component replacement, private-data access, or architecture change.
 ## 8. Privilege and human approval
-
-Not applicable — phase authorization is sufficient.
-
+Not applicable — public research and sanitized read-only inventory only.
 ## 9. Risk rationale
-
-No privileged mutation or user-data risk is expected. New facts may raise risk; an LLM cannot lower it.
-
+Low: reversible documentation only. A finding that changes scope or architecture blocks unlock and becomes a design-change story.
 ## 10. Execution contract
-
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. A dated operational risk register maps changes to bounded work.
-
+Reconcile the accepted inventory with live read-only versions; research every row; distinguish stable from preview releases; never treat marketing, a search snippet, or an LLM assertion as authority; map every material finding to a later P10 story.
 ## 11. Automated acceptance tests
-
-A dated operational risk register maps changes to bounded work. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
-
+The component matrix contains every accepted component and data class; every changeable claim has a dated primary URL; every row names update, backup, rollback, and removal behavior or a justified unsupported value; URLs resolve; no source is older than the freshness window; and no secret/private content appears.
 ## 12. Human validation
-
-Not applicable — automated evidence and independent review suffice.
-
+Not applicable — independent lightweight review checks coverage and citations.
 ## 13. Idempotency and rollback
-
-Repeat updates or reproduces evidence without changing accepted implementation; rollback reverts the story record.
-
+Rerun replaces dated research deterministically for the same cutoff and inventory. Git reversion removes this story’s records.
 ## 14. Required evidence
-
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
-
+Commit the four research artifacts plus `evidence/P10-S001/activation.json`, `inventory.json`, `source-check.json`, `coverage.json`, `review.md`, and `checkpoint.json`.
 ## 15. Definition of done
-
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
-
+Every component and data class has current, traceable operating facts; conflicts are resolved or blocking; downstream story mappings are complete; checks pass; and P10-S002 unlocks.
 ## 16. Pause-safe boundaries
-
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Pause after any completed source row and committed checkpoint; never report a partial inventory as complete.

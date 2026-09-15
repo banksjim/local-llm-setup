@@ -12,69 +12,38 @@
 | Actor | LLM |
 | Dependencies | P10-S014 |
 | Unlocks | P10-S008 |
-| Preferred route | Controller-selected quality route with cross-provider review of destructive and recovery instructions. |
-| Research freshness | Current operational documentation and accepted local test evidence checked within 7 days. |
+| Preferred route | Interface: coding agent through goagentic; Provider: high-reliability cloud provider; Model class: operations/recovery documentation; Effort: high; Fallback: different cloud provider reviews every destructive/recovery instruction against test evidence. |
+| Research freshness | Accepted local results and pinned-component operational documentation checked within 7 days. |
 
 ## 1. User story
-
-As the workstation owner, I want tested tuning, troubleshooting, update, backup, restore, rollback, and uninstall guides, so that I can operate and recover the system safely when normal workflows fail.
-
+As the owner, I want tested runbooks with clear stop conditions so I can recover safely when normal operation fails.
 ## 2. Bounded objective
-
-Write operational runbooks tied to the accepted maintenance commands and proven test evidence, with symptoms, diagnostics, stop conditions, escalation, expected results, and exact recovery boundaries.
-
+Create `docs/guides/windows/OPERATIONS.md`, `PERFORMANCE-TUNING.md`, `SECURITY-AND-PRIVACY.md`, `TROUBLESHOOTING.md`, `UPDATE-AND-ROLLBACK.md`, `BACKUP-AND-RESTORE.md`, `UNINSTALL.md`, and `INCIDENTS.md`, mapped only to accepted commands and evidence.
 ## 3. Learning objective
-
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P10-S002; this story consolidates previously taught operational workflows.
-
+Not applicable — these are references for previously taught workflows; owner validates findability, not memorization.
 ## 4. Current research requirements
-
-Refresh official operational guidance for pinned components and use only accepted local measurements for workstation-specific claims. Record source dates, versions, commands, known limitations, and conflicts.
-
+Refresh official operational guidance for pinned versions and use accepted P10 measurements for workstation-specific claims. Record version/date and distinguish documented, measured, inferred, and unsupported behavior.
 ## 5. Preconditions and unlock conditions
-
-P10-S014 and all P10 operational implementation stories are accepted; failure and recovery evidence exists; exact commands and targets are stable; Git, controller, route, and lease checks pass.
-
+P10-S014 and operational producer stories are Done; exact commands, symptoms, failure/restore evidence, privilege boundaries, and known limitations are stable.
 ## 6. In scope
-
-Performance tuning, health interpretation, common failures, diagnostic decision trees, safe log collection, update and migration, backup and restore, rollback, uninstall and retained data, emergency stop, and escalation guidance.
-
+Daily start/stop/status/logs; profile selection and safe thermal/VRAM interpretation; exposure/credential/privacy checks; symptom-to-diagnosis decision trees; Windows/WSL/Rancher/Ollama/Open WebUI/service failures; update/migration and rollback; backup/restore; uninstall/retention; disk pressure; model OOM/queue/CPU spill; RAG/agent/memory faults; emergency stop; and escalation/evidence collection.
 ## 7. Out of scope and prohibited changes
-
-Untested fixes, generic internet advice, destructive shortcuts, credential display, unsupported hardware tuning, automatic update scheduling, and workstation mutation while authoring documentation.
-
+No untested repair, destructive shortcut, generic scraped advice, secret/raw private logs, disabling safeguards, unsupported hardware tuning, unattended mutation, live workstation change during authoring, or promise that backup/rollback can do what tests did not prove.
 ## 8. Privilege and human approval
-
-Not applicable for documentation edits. Every documented privileged, destructive, restore, publication, or security-boundary action must visibly retain its own approval requirement.
-
+Documentation edits need no approval. Every documented privileged, restore, update, removal, access-control, or publication action visibly retains its owning authorization/confirmation requirement.
 ## 9. Risk rationale
-
-These instructions may be followed during failures and include high-impact recovery operations. They require exact-target safeguards, tested outcomes, prominent stop conditions, and cross-provider review.
-
+High: these instructions will be used under stress and can invoke Critical recovery/destructive operations.
 ## 10. Execution contract
-
-Map each procedure to accepted commands and evidence; distinguish diagnosis from repair; begin with least-invasive checks; label privilege and data impact; provide expected outputs and abort criteria; and never invent a recovery step that was not tested or explicitly marked for human escalation.
-
+For every procedure state symptom/goal, context, prerequisites, data/privilege impact, least-invasive diagnosis, exact wrapper, expected result, abort criteria, recovery, evidence, and escalation. Never conflate diagnosis with repair; link rather than copy implementation; put irreversible boundaries before commands.
 ## 11. Automated acceptance tests
-
-Runbook inventory, command-to-implementation mapping, safe command validation, broken-link scan, symptom coverage, stop-condition presence, privilege/destructive warning checks, source freshness, secret scan, and evidence-link validation pass.
-
+All eight guides exist; every accepted maintenance wrapper appears in exactly one authoritative procedure and all cross-links resolve; activation symptom matrix has no uncovered row; commands match help/operation map; each mutating procedure has privilege/data warning, preview, expected result, abort/rollback/escalation; dangerous-command and broad-path scans pass; local claims link test evidence; sources are fresh; no secret/private content appears.
 ## 12. Human validation
-
-The owner follows one benign troubleshooting scenario and locates the correct update, restore, and uninstall safeguards without using this chat.
-
+Using only these guides, owner completes one benign diagnosis and correctly locates safe update, restore, uninstall-retention, exposure, and emergency-stop paths, identifying where each asks for confirmation.
 ## 13. Idempotency and rollback
-
-Regeneration from unchanged evidence yields no semantic change. Git reversion restores the prior guides; documentation execution examples must themselves preserve the underlying operation's idempotency and rollback rules.
-
+Unchanged evidence yields no semantic rewrite. Git reversion restores documents; command examples inherit the underlying operation’s no-op/rollback rules.
 ## 14. Required evidence
-
-Runbook and symptom inventory; command/evidence mapping; source dates and versions; link, warning, command, freshness, and secret checks; review findings; changed-file list; and owner usability notes.
-
+Commit eight guides plus `evidence/P10-S015/activation.json`, runbook/symptom/command/evidence maps, link/command/warning/freshness/privacy scans, changed-file list, owner usability result, cross-provider review, and `checkpoint.json`.
 ## 15. Definition of done
-
-Every accepted operational workflow has a tested, discoverable runbook with safe diagnostics, explicit approvals, stop conditions, and recovery guidance; P10-S008 is unblocked.
-
+Every supported routine, symptom, failure, and recovery path has a tested discoverable procedure with explicit safety boundaries; owner findability passes; P10-S008 unlocks.
 ## 16. Pause-safe boundaries
-
-Pause between runbooks and after link/command validation and durable commits. Never leave a renamed guide or command with unresolved references.
+Pause after a complete runbook plus validation; never leave a renamed command/guide or a destructive procedure without its warning and stop path.
