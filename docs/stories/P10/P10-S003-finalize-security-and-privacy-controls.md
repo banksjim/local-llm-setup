@@ -12,69 +12,38 @@
 | Actor | LLM |
 | Dependencies | P10-S002 |
 | Unlocks | P10-S004 |
-| Preferred route | Controller-selected quality route with cross-provider review; local use only under current qualification policy. |
-| Research freshness | Current platform and component security guidance checked within 7 days. |
+| Preferred route | Interface: Codex CLI in Windows and AI-Workbench through goagentic; Provider: high-reliability cloud provider; Model class: security implementation; Effort: high; Fallback: Anthropic architecture/security model with cross-provider review and identical activation packet. |
+| Research freshness | P10-S001 unexpired; relevant Microsoft, Rancher, Ollama, Open WebUI, OWASP, and selected-component security guidance checked within 7 days. |
 
 ## 1. User story
-
-As the workstation owner, I want this story to audit listeners, firewall, credentials, permissions, secrets, repositories, telemetry, agent tools, and private data paths, so progress is inspectable and independent of chat memory.
-
+As the owner, I want the accepted workstation security boundaries enforced and measured before it is tuned or declared operable.
 ## 2. Bounded objective
-
-Audit listeners, firewall, credentials, permissions, secrets, repositories, telemetry, agent tools, and private data paths.
-
+Implement `operations/windows/p10/P10-S003-security/` with `Get-SecurityBaseline.ps1`, `Set-SecurityBaseline.ps1`, `Test-SecurityBaseline.ps1`, and `Restore-SecurityBaseline.ps1`, plus `tests/p10/security/` fixtures.
 ## 3. Learning objective
-
-Not applicable — the owner preparation for this story is explicitly covered and evidenced by P10-S002; this story introduces no separate learning objective.
-
+Not applicable — P10-S002 covers the owner-facing concepts.
 ## 4. Current research requirements
-
-Current platform and component security guidance checked within 7 days. Record dates, versions, direct links, claims, conflicts, and inferences; do not use training memory for changeable facts.
-
+Revalidate listener, firewall, WSL networking, Windows ACL, Rancher settings, credential-store, telemetry, repository-ignore, container secret, and agent-tool guidance for exact accepted versions.
 ## 5. Preconditions and unlock conditions
-
-P10-S002. Applicable specs, clean Git, valid controller state, current research, route, and lease checks pass.
-
+P10-S002 is Done. The controller derives Critical risk and presents the revision-bound P10 phase preview including before-state capture, exact mutations, isolated rehearsal, and rollback; owner authorization is recorded.
 ## 6. In scope
-
-The objective, declared files or services, tests, documentation, evidence, and minimum safe supporting changes.
-
+Listener inventory and allowlist; loopback/private-network enforcement; least-privilege ACLs; ignored secret files; redaction; container/user identity; WSL mount boundary; telemetry inventory; credential-location assertions; agent/RAG/memory deny-by-default checks; and Windows Defender Firewall rules owned by this project.
 ## 7. Out of scope and prohibited changes
-
-Unrelated phase work, unapproved redesign, public exposure, secret disclosure, destructive cleanup, and unnamed actions.
-
+No router changes, public ingress, disabling Windows security, exporting credentials, moving private data, unrelated firewall/ACL edits, security-product purchase, or unsupported hardening.
 ## 8. Privilege and human approval
-
-Required — the mutation must be covered by the active bounded privileged-phase approval; no separate approval is needed unless scope changes.
-
+Covered by the active P10 privileged-phase authorization. The owner handles elevation; scope drift requires a new preview and authorization.
 ## 9. Risk rationale
-
-Work crosses a security, privilege, destructive-data, authentication, or acceptance boundary and requires explicit owner control. New facts may raise risk; an LLM cannot lower it.
-
+Critical: this crosses network, access-control, credential, and whole-workstation security boundaries. P10 phase authorization, synthetic/isolated rehearsal, cross-provider review, and P10-S011 final owner acceptance are mandatory.
 ## 10. Execution contract
-
-Preview, validate, lease, execute reversible units, stop on drift, test, record sanitized evidence, release, and review. Automated scans and cross-provider review find no unexplained exposure; rollback exists.
-
+Capture signed before-state; validate exact paths/rules/processes; rehearse with synthetic fixtures; apply one reversible control group at a time; verify from Windows, WSL, and container perspectives; redact before evidence emission; stop on unknown listener, inherited ACL ambiguity, or credential exposure.
 ## 11. Automated acceptance tests
-
-Automated scans and cross-provider review find no unexplained exposure; rollback exists. Applicable schema, scope, secret, link, static, idempotency, rollback, and dependency checks pass; exclusions are justified.
-
+Expected-listener count is nonzero and exact; all AI endpoints reject nonapproved interfaces; private container services are unreachable from host/LAN where prohibited; ACL and secret-negative fixtures pass; Git/private-content scans pass; telemetry is off or explicitly documented; agent capability negatives pass; no unrelated firewall/ACL entry changes; no-op second run and full rollback restore the captured fixture state.
 ## 12. Human validation
-
-Not applicable — automated evidence and independent review suffice.
-
+Owner reviews a plain-language exposure summary and confirms only expected local interfaces are available; no technical certification is requested.
 ## 13. Idempotency and rollback
-
-Second execution reports no unintended change; rollback restores story-owned changes and preserves user data.
-
+Second apply makes no change. Rollback removes only story-owned rules/settings and restores captured prior values without weakening pre-existing controls or deleting data.
 ## 14. Required evidence
-
-Story revision; actor and model; dated sources; changes; sanitized output; tests; approvals; idempotency; rollback; review; and human records.
-
+Commit operations/tests plus `evidence/P10-S003/activation.json`, `before-state.json`, `mutation-plan.json`, `listener-matrix.json`, `test-results.json`, `second-run.json`, `rollback.json`, `owner-summary.md`, `cross-provider-review.md`, and `checkpoint.json`.
 ## 15. Definition of done
-
-Objective and tests pass; evidence and review are accepted; genuine human evidence exists when required; state agrees; next story unlocks.
-
+Every expected boundary is enforced from all relevant perspectives, unexplained exposure is zero, failure/rollback/no-op tests pass, owner summary and independent cross-provider review are accepted, and P10-S004 unlocks.
 ## 16. Pause-safe boundaries
-
-Pause before mutation and after each reversible unit, tests, and durable evidence. Finish or roll back atomic replacement before pausing.
+Pause before elevation and after each verified control group or completed rollback; never pause with a temporary broad rule or weakened ACL active.

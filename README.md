@@ -62,9 +62,9 @@ This playbook repository is public and contains only specifications and, later, 
 
 ## Current status
 
-- Requirements and major architecture decisions: complete for review.
-- Master, system, phase, and story specifications: drafted.
-- Formal adversarial review: [remediation in progress](docs/reviews/2026-09-13-formal-specification-review.md); P01-P05 passed their bounded batch reviews, and P06-P09 have completed correction cycles. P10 plus the final Batch 3/full-program review remain blocking.
+- Requirements, major architecture decisions, and the 137-story Windows plan: complete and reviewed.
+- Master, system, phase, and story specifications: ready for controlled story activation, not proof of implementation.
+- Formal adversarial review: [planning specification passed](docs/reviews/2026-09-13-formal-specification-review.md) after all three remediation batches and two clean full-program passes.
 - GitHub Project creation and controller implementation: not started.
 - Workstation installation and testing: not started.
 - macOS program: deferred.
