@@ -1,0 +1,3028 @@
+{
+  "baselineCommit": "ef2833a8fce8bbb11262b7890883c07ea9e73b31",
+  "count": 137,
+  "byPhase": {
+    "P01": 15,
+    "P02": 12,
+    "P03": 11,
+    "P04": 14,
+    "P05": 12,
+    "P06": 14,
+    "P07": 19,
+    "P08": 12,
+    "P09": 13,
+    "P10": 15
+  },
+  "stories": [
+    {
+      "id": "P01-S015",
+      "phase": "P01",
+      "sequence": 1,
+      "title": "P01-S015: Bootstrap the visible GitHub Project",
+      "path": "docs/stories/P01/P01-S015-bootstrap-the-visible-github-project.md",
+      "sha256": "27de530b62de7546a9de226970a5740a7d8c7819c966ddf3693c0522a1a173fb",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S015-bootstrap-the-visible-github-project.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Approval",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [],
+      "unlocks": [
+        "P01-S001"
+      ],
+      "preferredRoute": "Interface: authenticated GitHub CLI from the Windows repository shell guided by Codex; Provider: OpenAI; Model class: standard integration; Effort: medium; Fallback: Claude Code with an Anthropic general-purpose model and the same GitHub CLI; owner approval is required immediately before external creation.",
+      "researchFreshness": "Current official GitHub Projects and GitHub CLI documentation checked within 7 days."
+    },
+    {
+      "id": "P01-S001",
+      "phase": "P01",
+      "sequence": 2,
+      "title": "P01-S001: Confirm current controller interfaces and provider capabilities",
+      "path": "docs/stories/P01/P01-S001-confirm-current-controller-interfaces-and-provider-capabilities.md",
+      "sha256": "440322cc1735e5d385fc5a3eac7d9bd2675e68252cddf0ec696aacb7cfaa4aeb",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S001-confirm-current-controller-interfaces-and-provider-capabilities.md",
+      "status": "Planned",
+      "step": "Research",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S015"
+      ],
+      "unlocks": [
+        "P01-S002"
+      ],
+      "preferredRoute": "Interface: Codex desktop or CLI with web access; Provider: OpenAI; Model class: economical research; Effort: low; Fallback: Claude Code with an Anthropic general-purpose model at low effort, escalating only unresolved synthesis.",
+      "researchFreshness": "Official product documentation and live CLI capability checks no older than 7 days."
+    },
+    {
+      "id": "P01-S002",
+      "phase": "P01",
+      "sequence": 3,
+      "title": "P01-S002: Learn the goagentic operating model",
+      "path": "docs/stories/P01/P01-S002-learn-the-goagentic-operating-model.md",
+      "sha256": "482d57d9a8e3336f96999aef2b4b7094ea1d5164eaa09ed426bf7482c652d626",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S002-learn-the-goagentic-operating-model.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P01-S001"
+      ],
+      "unlocks": [
+        "P01-S003"
+      ],
+      "preferredRoute": "Interface: interactive Codex or Claude Code session; Provider: OpenAI or Anthropic; Model class: general-purpose guide; Effort: low; Fallback: switch provider if the primary interface is unavailable; no model may substitute for human evidence.",
+      "researchFreshness": "Current project specifications; external sources are not required."
+    },
+    {
+      "id": "P01-S003",
+      "phase": "P01",
+      "sequence": 4,
+      "title": "P01-S003: Define machine-readable program and story schemas",
+      "path": "docs/stories/P01/P01-S003-define-machine-readable-program-and-story-schemas.md",
+      "sha256": "bbee6cfb36fa6cbd240281c735f22c27921f7cd05ca058135d75812ba509482b",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S003-define-machine-readable-program-and-story-schemas.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S002"
+      ],
+      "unlocks": [
+        "P01-S004"
+      ],
+      "preferredRoute": "Interface: Codex CLI in the repository; Provider: OpenAI; Model class: standard implementation; Effort: medium; Fallback: Claude Code with an Anthropic coding model at medium effort; local execution is prohibited before P03 qualification.",
+      "researchFreshness": "Current schema-library documentation checked within 30 days."
+    },
+    {
+      "id": "P01-S004",
+      "phase": "P01",
+      "sequence": 5,
+      "title": "P01-S004: Implement read-only orientation commands",
+      "path": "docs/stories/P01/P01-S004-implement-read-only-orientation-commands.md",
+      "sha256": "f212c9428ada8dfac74c425cec8ac7eece00af73dc0166f90c30f7e6985de141",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S004-implement-read-only-orientation-commands.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S003"
+      ],
+      "unlocks": [
+        "P01-S005"
+      ],
+      "preferredRoute": "Interface: Codex CLI in the repository; Provider: OpenAI; Model class: standard implementation; Effort: medium; Fallback: Claude Code with an Anthropic coding model at medium effort; local execution is prohibited before P03 qualification.",
+      "researchFreshness": "Current PowerShell and CLI conventions checked within 30 days."
+    },
+    {
+      "id": "P01-S005",
+      "phase": "P01",
+      "sequence": 6,
+      "title": "P01-S005: Implement atomic state and append-only events",
+      "path": "docs/stories/P01/P01-S005-implement-atomic-state-and-append-only-events.md",
+      "sha256": "2ccb6ae4127b12a8a78737d910d1c206a3b702710d1fed630b9f8a28adc11f95",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S005-implement-atomic-state-and-append-only-events.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S004"
+      ],
+      "unlocks": [
+        "P01-S006"
+      ],
+      "preferredRoute": "Interface: Codex CLI in the repository; Provider: OpenAI; Model class: architecture-capable implementation; Effort: medium; Fallback: Claude Code with an Anthropic architecture-capable model at medium effort; independent cross-provider review is required and local execution is prohibited before P03 qualification.",
+      "researchFreshness": "Current filesystem atomic-write guidance checked within 30 days."
+    },
+    {
+      "id": "P01-S006",
+      "phase": "P01",
+      "sequence": 7,
+      "title": "P01-S006: Implement mutation lease and concurrency rejection",
+      "path": "docs/stories/P01/P01-S006-implement-mutation-lease-and-concurrency-rejection.md",
+      "sha256": "4a3084970ab75d0cdf3fe5f265a5f87c26ce462b7e0058ae706c2957a41fed05",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S006-implement-mutation-lease-and-concurrency-rejection.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S005"
+      ],
+      "unlocks": [
+        "P01-S007"
+      ],
+      "preferredRoute": "Interface: Codex CLI in the repository; Provider: OpenAI; Model class: architecture-capable implementation; Effort: medium; Fallback: Claude Code with an Anthropic architecture-capable model at medium effort; independent cross-provider review is required and local execution is prohibited before P03 qualification.",
+      "researchFreshness": "Current process-locking guidance checked within 30 days."
+    },
+    {
+      "id": "P01-S007",
+      "phase": "P01",
+      "sequence": 8,
+      "title": "P01-S007: Implement pause and resume reconciliation",
+      "path": "docs/stories/P01/P01-S007-implement-pause-and-resume-reconciliation.md",
+      "sha256": "9af877161ea86d7ca6b0758291f468e439230d5b070d931f4e30d6a5d2a32281",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S007-implement-pause-and-resume-reconciliation.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S006"
+      ],
+      "unlocks": [
+        "P01-S008"
+      ],
+      "preferredRoute": "Interface: Codex CLI in the repository; Provider: OpenAI; Model class: architecture-capable implementation; Effort: medium; Fallback: Claude Code with an Anthropic architecture-capable model at medium effort; independent cross-provider review is required and local execution is prohibited before P03 qualification.",
+      "researchFreshness": "Current recovery/state-machine guidance checked within 30 days."
+    },
+    {
+      "id": "P01-S008",
+      "phase": "P01",
+      "sequence": 9,
+      "title": "P01-S008: Implement bounded authorization and human gates",
+      "path": "docs/stories/P01/P01-S008-implement-bounded-authorization-and-human-gates.md",
+      "sha256": "79e694b7837a826a22844d2882cb74fc7f3ce00de752fac46e494d5339afe26d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S008-implement-bounded-authorization-and-human-gates.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S007"
+      ],
+      "unlocks": [
+        "P01-S009"
+      ],
+      "preferredRoute": "Interface: interactive Codex CLI with the owner; Provider: OpenAI; Model class: architecture and security implementation; Effort: high; Fallback: Claude Code with an Anthropic architecture/security model at high effort; cross-provider review and genuine owner validation are mandatory.",
+      "researchFreshness": "Current secure approval and CLI input practices checked within 30 days."
+    },
+    {
+      "id": "P01-S009",
+      "phase": "P01",
+      "sequence": 10,
+      "title": "P01-S009: Implement quality, evidence, and review gates",
+      "path": "docs/stories/P01/P01-S009-implement-quality-evidence-and-review-gates.md",
+      "sha256": "fd9e47da8fa5c2e06427d71aa7d7c07d20ccfe8023899188f5e19074e26a5307",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S009-implement-quality-evidence-and-review-gates.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S008"
+      ],
+      "unlocks": [
+        "P01-S010"
+      ],
+      "preferredRoute": "Interface: Codex CLI in the repository; Provider: OpenAI; Model class: architecture-capable implementation; Effort: medium; Fallback: Claude Code with an Anthropic architecture-capable model at medium effort; independent cross-provider review is required and local execution is prohibited before P03 qualification.",
+      "researchFreshness": "Current testing and supply-chain guidance checked within 30 days."
+    },
+    {
+      "id": "P01-S010",
+      "phase": "P01",
+      "sequence": 11,
+      "title": "P01-S010: Implement Codex and Claude controller adapters",
+      "path": "docs/stories/P01/P01-S010-implement-codex-and-claude-controller-adapters.md",
+      "sha256": "ce6276404200ef64abbdbae7bf340927cf1cf35447a74bbe432910b22d2594f7",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S010-implement-codex-and-claude-controller-adapters.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S009"
+      ],
+      "unlocks": [
+        "P01-S011"
+      ],
+      "preferredRoute": "Interface: Codex CLI in the repository; Provider: OpenAI; Model class: architecture-capable implementation; Effort: medium; Fallback: Claude Code with an Anthropic architecture-capable model at medium effort; each provider adapter requires review using the other provider.",
+      "researchFreshness": "Current official Codex skills and Claude Code skills/commands documentation checked within 7 days."
+    },
+    {
+      "id": "P01-S011",
+      "phase": "P01",
+      "sequence": 12,
+      "title": "P01-S011: Implement GitHub Project synchronization",
+      "path": "docs/stories/P01/P01-S011-implement-github-project-synchronization.md",
+      "sha256": "a8a163ed09301e7dd6e3de4256ce6f3706a4e36cbbf843dc6427a3f6a70cb49d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S011-implement-github-project-synchronization.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S010"
+      ],
+      "unlocks": [
+        "P01-S012"
+      ],
+      "preferredRoute": "Interface: Codex CLI plus authenticated GitHub CLI; Provider: OpenAI; Model class: architecture-capable integration; Effort: medium; Fallback: Claude Code plus GitHub CLI with an Anthropic architecture-capable model at medium effort; live mutation must remain inside the P01 phase authorization and receive cross-provider review.",
+      "researchFreshness": "Current GitHub Projects GraphQL and gh documentation checked within 7 days."
+    },
+    {
+      "id": "P01-S012",
+      "phase": "P01",
+      "sequence": 13,
+      "title": "P01-S012: Run controller failure-injection suite",
+      "path": "docs/stories/P01/P01-S012-run-controller-failure-injection-suite.md",
+      "sha256": "9d5661fe6a42782d278fcc2027611c51ca84c44faa6a4bd2875d448558f436f2",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S012-run-controller-failure-injection-suite.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S011"
+      ],
+      "unlocks": [
+        "P01-S013"
+      ],
+      "preferredRoute": "Interface: Codex CLI in an isolated fixture workspace; Provider: OpenAI; Model class: test and diagnosis; Effort: medium; Fallback: Claude Code with an Anthropic diagnostic model at medium effort; the reviewer must use the other provider.",
+      "researchFreshness": "Not applicable — this story tests the implemented contract rather than selecting a tool."
+    },
+    {
+      "id": "P01-S013",
+      "phase": "P01",
+      "sequence": 14,
+      "title": "P01-S013: Perform independent cross-provider controller review",
+      "path": "docs/stories/P01/P01-S013-perform-independent-cross-provider-controller-review.md",
+      "sha256": "ecc2bcfbf0548ce466706669a3fb8b599ff0391a991c1b1ad0cfedfe32b637a4",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S013-perform-independent-cross-provider-controller-review.md",
+      "status": "Planned",
+      "step": "Review",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S012"
+      ],
+      "unlocks": [
+        "P01-S014"
+      ],
+      "preferredRoute": "Interface: fresh Codex CLI or Claude Code session; Provider: different from the implementation provider; Model class: architecture/security review; Effort: high; Fallback: another fresh cloud-provider session that preserves provider independence; local review is prohibited in P01.",
+      "researchFreshness": "Current provider availability checked at activation."
+    },
+    {
+      "id": "P01-S014",
+      "phase": "P01",
+      "sequence": 15,
+      "title": "P01-S014: Complete owner controller acceptance drill",
+      "path": "docs/stories/P01/P01-S014-complete-owner-controller-acceptance-drill.md",
+      "sha256": "e2cb8d09cec7946b092acc0df7040190c5a2f090e35d4d7d6adac81f5046a51b",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S014-complete-owner-controller-acceptance-drill.md",
+      "status": "Planned",
+      "step": "Human Validation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P01-S013"
+      ],
+      "unlocks": [
+        "P02-S001"
+      ],
+      "preferredRoute": "Interface: interactive Codex or Claude Code session plus the built controller; Provider: OpenAI or Anthropic; Model class: general-purpose guide; Effort: medium; Fallback: switch cloud provider while retaining the same accepted checklist; no model may substitute for owner actions or evidence.",
+      "researchFreshness": "Not applicable — acceptance uses the built controller and approved specification."
+    },
+    {
+      "id": "P02-S001",
+      "phase": "P02",
+      "sequence": 1,
+      "title": "P02-S001: Refresh Windows and WSL foundation guidance",
+      "path": "docs/stories/P02/P02-S001-refresh-windows-and-wsl-foundation-guidance.md",
+      "sha256": "2c081a63104303c3157c12d23406e553322b989fe2e38965108feca9c9eda3eb",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S001-refresh-windows-and-wsl-foundation-guidance.md",
+      "status": "Planned",
+      "step": "Research",
+      "holdReason": "Phase Not Activated",
+      "risk": "Low",
+      "actor": "LLM",
+      "dependencies": [
+        "P01-S014"
+      ],
+      "unlocks": [
+        "P02-S002"
+      ],
+      "preferredRoute": "Interface: Codex desktop or CLI with web access; Provider: OpenAI; Model class: economical research; Effort: low; Fallback: Claude Code with an Anthropic general-purpose model at low effort, escalating only unresolved architecture conflicts.",
+      "researchFreshness": "Microsoft, Rancher Desktop, GitHub, and VS Code sources checked within 7 days."
+    },
+    {
+      "id": "P02-S002",
+      "phase": "P02",
+      "sequence": 2,
+      "title": "P02-S002: Learn the Windows and WSL trust boundary",
+      "path": "docs/stories/P02/P02-S002-learn-the-windows-and-wsl-trust-boundary.md",
+      "sha256": "1ab3ffe2aa5f25f37c812fe972da65d4f1f7e99ee2434cbef74cb2fc345097c6",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S002-learn-the-windows-and-wsl-trust-boundary.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P02-S001"
+      ],
+      "unlocks": [
+        "P02-S003"
+      ],
+      "preferredRoute": "Interface: interactive Codex or Claude Code session; Provider: OpenAI or Anthropic; Model class: general-purpose guide; Effort: low; Fallback: switch provider if the primary interface is unavailable; no model may substitute for human evidence.",
+      "researchFreshness": "Current phase research record."
+    },
+    {
+      "id": "P02-S003",
+      "phase": "P02",
+      "sequence": 3,
+      "title": "P02-S003: Verify human-installed prerequisites",
+      "path": "docs/stories/P02/P02-S003-verify-human-installed-prerequisites.md",
+      "sha256": "c6807addb341a7271ff5fc7748de1002741c196d2d57c2b277826fb6fc4bd887",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S003-verify-human-installed-prerequisites.md",
+      "status": "Planned",
+      "step": "Human Validation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P02-S002"
+      ],
+      "unlocks": [
+        "P02-S004"
+      ],
+      "preferredRoute": "Interface: interactive Codex CLI plus Windows PowerShell; Provider: OpenAI; Model class: general-purpose diagnostic; Effort: low; Fallback: Claude Code with an Anthropic general-purpose model while running the same read-only checks; owner confirms GUI-only facts.",
+      "researchFreshness": "Current prerequisite requirements from P02 research."
+    },
+    {
+      "id": "P02-S004",
+      "phase": "P02",
+      "sequence": 4,
+      "title": "P02-S004: Create the H drive data layout",
+      "path": "docs/stories/P02/P02-S004-create-the-h-drive-data-layout.md",
+      "sha256": "77042015d42397efd972a05073e07f3fdc8cbd3fb1f8c550d369016b43b1563d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S004-create-the-h-drive-data-layout.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P02-S003"
+      ],
+      "unlocks": [
+        "P02-S005"
+      ],
+      "preferredRoute": "Interface: Codex CLI plus Windows PowerShell; Provider: OpenAI; Model class: architecture-capable implementation; Effort: medium; Fallback: Claude Code with an Anthropic architecture-capable model at medium effort; cross-provider review is required and local execution is not yet qualified.",
+      "researchFreshness": "Current Windows ACL and filesystem guidance checked within 30 days."
+    },
+    {
+      "id": "P02-S005",
+      "phase": "P02",
+      "sequence": 5,
+      "title": "P02-S005: Create and locate the dedicated Ubuntu distribution",
+      "path": "docs/stories/P02/P02-S005-create-and-locate-the-dedicated-ubuntu-distribution.md",
+      "sha256": "2555848a94aa7e95a08d9dd6ef02e417b880ca5fd30bf974655d192e2b812249",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S005-create-and-locate-the-dedicated-ubuntu-distribution.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P02-S004"
+      ],
+      "unlocks": [
+        "P02-S006"
+      ],
+      "preferredRoute": "Interface: interactive Codex CLI plus elevated Windows PowerShell; Provider: OpenAI; Model class: architecture and systems implementation; Effort: high; Fallback: Claude Code with an Anthropic architecture model using the same preview and checklist; P02 phase authorization and isolated rehearsal are mandatory.",
+      "researchFreshness": "Current Microsoft WSL import/export/move documentation checked within 7 days."
+    },
+    {
+      "id": "P02-S006",
+      "phase": "P02",
+      "sequence": 6,
+      "title": "P02-S006: Harden Ubuntu mounts and interoperability",
+      "path": "docs/stories/P02/P02-S006-harden-ubuntu-mounts-and-interoperability.md",
+      "sha256": "92d0ada0a96da4522ec8c0174377cd33029b5e30d17d788195a742c61bcbf4c6",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S006-harden-ubuntu-mounts-and-interoperability.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P02-S005"
+      ],
+      "unlocks": [
+        "P02-S007"
+      ],
+      "preferredRoute": "Interface: interactive Codex CLI with Ubuntu and Windows shells; Provider: OpenAI; Model class: architecture and security implementation; Effort: high; Fallback: Claude Code with an Anthropic architecture/security model using the same accepted policy; P02 phase authorization and isolated rollback rehearsal are mandatory.",
+      "researchFreshness": "Current Microsoft WSL configuration and networking docs checked within 7 days."
+    },
+    {
+      "id": "P02-S007",
+      "phase": "P02",
+      "sequence": 7,
+      "title": "P02-S007: Install Ubuntu baseline and language toolchains",
+      "path": "docs/stories/P02/P02-S007-install-ubuntu-baseline-and-language-toolchains.md",
+      "sha256": "48b213644304aa3d726fe438dfdd9b770167d5fe3030961f894bac3976a83482",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S007-install-ubuntu-baseline-and-language-toolchains.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P02-S006"
+      ],
+      "unlocks": [
+        "P02-S008"
+      ],
+      "preferredRoute": "Interface: Codex CLI operating inside the dedicated Ubuntu distribution; Provider: OpenAI; Model class: systems implementation; Effort: medium; Fallback: Claude Code inside the same distribution with an Anthropic coding model at medium effort; cross-provider review is required.",
+      "researchFreshness": "Current official language/toolchain installation sources checked within 7 days."
+    },
+    {
+      "id": "P02-S008",
+      "phase": "P02",
+      "sequence": 8,
+      "title": "P02-S008: Configure Git and GitHub authentication in Ubuntu",
+      "path": "docs/stories/P02/P02-S008-configure-git-and-github-authentication-in-ubuntu.md",
+      "sha256": "4f5352b891b5cd9196fb1c875b89984a6d71a331b35f94ea892806a504de019b",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S008-configure-git-and-github-authentication-in-ubuntu.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P02-S007"
+      ],
+      "unlocks": [
+        "P02-S009"
+      ],
+      "preferredRoute": "Interface: interactive Codex CLI plus Ubuntu shell and browser device flow; Provider: OpenAI; Model class: security-aware systems guide; Effort: medium; Fallback: Claude Code with an Anthropic security-aware model using the same native-Linux credential boundary; the owner performs authentication.",
+      "researchFreshness": "Current GitHub CLI authentication and credential-storage docs checked within 7 days."
+    },
+    {
+      "id": "P02-S009",
+      "phase": "P02",
+      "sequence": 9,
+      "title": "P02-S009: Install and configure VS Code WSL development",
+      "path": "docs/stories/P02/P02-S009-install-and-configure-vs-code-wsl-development.md",
+      "sha256": "ba38e93e56189609a3a6e76fe4d16dd472f5f9698d5cef0e974958379166f982",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S009-install-and-configure-vs-code-wsl-development.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P02-S008"
+      ],
+      "unlocks": [
+        "P02-S010"
+      ],
+      "preferredRoute": "Interface: interactive Codex CLI plus Windows VS Code; Provider: OpenAI; Model class: systems integration; Effort: medium; Fallback: Claude Code with an Anthropic coding model while the owner performs GUI actions; live owner validation is mandatory.",
+      "researchFreshness": "Current VS Code WSL documentation and extension requirements checked within 7 days."
+    },
+    {
+      "id": "P02-S010",
+      "phase": "P02",
+      "sequence": 10,
+      "title": "P02-S010: Install the approved VS Code extension baseline",
+      "path": "docs/stories/P02/P02-S010-install-the-approved-vs-code-extension-baseline.md",
+      "sha256": "464dd3eae1c3d20e81a65868814d896252c4bfb32fee33a18e225613706380c8",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S010-install-the-approved-vs-code-extension-baseline.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P02-S009"
+      ],
+      "unlocks": [
+        "P02-S011"
+      ],
+      "preferredRoute": "Interface: Codex CLI plus VS Code command line; Provider: OpenAI; Model class: standard implementation; Effort: low; Fallback: Claude Code with an Anthropic coding model at low effort; local execution is prohibited before P03 qualification.",
+      "researchFreshness": "Marketplace and maintainer documentation checked within 7 days."
+    },
+    {
+      "id": "P02-S011",
+      "phase": "P02",
+      "sequence": 11,
+      "title": "P02-S011: Migrate goagentic canonical runtime to Ubuntu",
+      "path": "docs/stories/P02/P02-S011-migrate-goagentic-canonical-runtime-to-ubuntu.md",
+      "sha256": "15326a28069eed1200ee5e3012308b3e1d25edd887a9c9ceab621735566aa2e2",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S011-migrate-goagentic-canonical-runtime-to-ubuntu.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P02-S010"
+      ],
+      "unlocks": [
+        "P02-S012"
+      ],
+      "preferredRoute": "Interface: Codex CLI across Windows and the dedicated Ubuntu distribution; Provider: OpenAI; Model class: architecture-capable migration; Effort: high; Fallback: Claude Code with an Anthropic architecture-capable model at high effort; cross-provider review and rollback rehearsal are required.",
+      "researchFreshness": "Current WSL invocation behavior checked within 30 days."
+    },
+    {
+      "id": "P02-S012",
+      "phase": "P02",
+      "sequence": 12,
+      "title": "P02-S012: Perform foundation human acceptance",
+      "path": "docs/stories/P02/P02-S012-perform-foundation-human-acceptance.md",
+      "sha256": "a2752c9253e43dc453bfc730ed93a1f6eba95c9c7d95b665f306dba232e4ba08",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P02/P02-S012-perform-foundation-human-acceptance.md",
+      "status": "Planned",
+      "step": "Human Validation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P02-S011"
+      ],
+      "unlocks": [
+        "P03-S001"
+      ],
+      "preferredRoute": "Interface: interactive Codex or Claude Code session plus Windows, Ubuntu, and VS Code; Provider: OpenAI or Anthropic; Model class: general-purpose acceptance guide; Effort: medium; Fallback: switch cloud provider while retaining the accepted checklist; no model may substitute for owner actions or evidence.",
+      "researchFreshness": "Not applicable — validation uses the configured machine."
+    },
+    {
+      "id": "P03-S001",
+      "phase": "P03",
+      "sequence": 1,
+      "title": "P03-S001: Research current Ollama and local model landscape",
+      "path": "docs/stories/P03/P03-S001-research-current-ollama-and-local-model-landscape.md",
+      "sha256": "10ebcd89fe7b24e3f354d3926d785bcf7d0003f0b36da80b020f6b0bf2a82386",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P03/P03-S001-research-current-ollama-and-local-model-landscape.md",
+      "status": "Planned",
+      "step": "Research",
+      "holdReason": "Phase Not Activated",
+      "risk": "Low",
+      "actor": "LLM",
+      "dependencies": [
+        "P02-S012"
+      ],
+      "unlocks": [
+        "P03-S002"
+      ],
+      "preferredRoute": "Interface: goagentic through a web-enabled cloud IDE or CLI; Provider: OpenAI or Anthropic with primary-source web access; Model class: current economical research model; Effort: medium; Fallback: current Sol or Sonnet-class synthesis route when sources conflict.",
+      "researchFreshness": "Official Ollama and model-publisher sources plus reproducible community benchmarks checked within 7 days."
+    },
+    {
+      "id": "P03-S002",
+      "phase": "P03",
+      "sequence": 2,
+      "title": "P03-S002: Learn local inference, parameters, quantization, and context",
+      "path": "docs/stories/P03/P03-S002-learn-local-inference-parameters-quantization-and-context.md",
+      "sha256": "37475afb3b67ac34aacc3598b8887e26c61055f42d275f217ff566fa06f32274",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P03/P03-S002-learn-local-inference-parameters-quantization-and-context.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P03-S001"
+      ],
+      "unlocks": [
+        "P03-S003"
+      ],
+      "preferredRoute": "Interface: goagentic-guided session in the designated cloud IDE or CLI; Provider: owner's active OpenAI or Anthropic subscription; Model class: current economical teaching or validation model; Effort: medium; Fallback: pause for the owner or switch to the current Sol or Sonnet-class route when explanation quality fails.",
+      "researchFreshness": "Current P03 research and official Ollama guidance."
+    },
+    {
+      "id": "P03-S003",
+      "phase": "P03",
+      "sequence": 3,
+      "title": "P03-S003: Install native Ollama with H drive model storage",
+      "path": "docs/stories/P03/P03-S003-install-native-ollama-with-h-drive-model-storage.md",
+      "sha256": "68fd889c5e0a2bef306d6f1f48804325fdc3ab55d04a2dd3b749d7de3ec8c1aa",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P03/P03-S003-install-native-ollama-with-h-drive-model-storage.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P03-S002"
+      ],
+      "unlocks": [
+        "P03-S004"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic; Model class: current implementation model; Effort: medium; Fallback: current Sol or Sonnet-class route; no local implementation route before P03-S009 qualifies it.",
+      "researchFreshness": "Current Ollama Windows install and environment documentation checked within 7 days."
+    },
+    {
+      "id": "P03-S004",
+      "phase": "P03",
+      "sequence": 4,
+      "title": "P03-S004: Configure the WSL inference-only gateway",
+      "path": "docs/stories/P03/P03-S004-configure-the-wsl-inference-only-gateway.md",
+      "sha256": "e9f3398b6485e8fc6b9e748e88a579fd0209e10cd0ed1541764a3e39badedd03",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P03/P03-S004-configure-the-wsl-inference-only-gateway.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P03-S003"
+      ],
+      "unlocks": [
+        "P03-S005"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic, different from the implementer for acceptance review; Model class: current quality or review model; Effort: high; Fallback: stop and switch to the current Sol or Sonnet-class route; qualified local models remain advisory during probation.",
+      "researchFreshness": "Current Ollama APIs, Windows Firewall, and WSL networking checked within 7 days."
+    },
+    {
+      "id": "P03-S005",
+      "phase": "P03",
+      "sequence": 5,
+      "title": "P03-S005: Pull candidate models with storage guards",
+      "path": "docs/stories/P03/P03-S005-pull-candidate-models-with-storage-guards.md",
+      "sha256": "0e37c5e9a4b399d5d4b7b97e914540b343bdd9e40dadaf596b9ba765d9ebe11d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P03/P03-S005-pull-candidate-models-with-storage-guards.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P03-S004"
+      ],
+      "unlocks": [
+        "P03-S006"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic; Model class: current implementation model; Effort: medium; Fallback: current Sol or Sonnet-class route; no local implementation route before P03-S009 qualifies it.",
+      "researchFreshness": "Model registry and license sources refreshed at execution."
+    },
+    {
+      "id": "P03-S006",
+      "phase": "P03",
+      "sequence": 6,
+      "title": "P03-S006: Benchmark primary and fast candidates",
+      "path": "docs/stories/P03/P03-S006-benchmark-primary-and-fast-candidates.md",
+      "sha256": "bddcb093d193fadb3510fb598c8af548fbe2b14af0355747fd99d26865e3cfa5",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P03/P03-S006-benchmark-primary-and-fast-candidates.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P03-S005"
+      ],
+      "unlocks": [
+        "P03-S007"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic, different from the implementer for acceptance review; Model class: current quality or review model; Effort: high; Fallback: stop and switch to the current Sol or Sonnet-class route; qualified local models remain advisory during probation.",
+      "researchFreshness": "Benchmark methodology and current model cards checked within 7 days."
+    },
+    {
+      "id": "P03-S007",
+      "phase": "P03",
+      "sequence": 7,
+      "title": "P03-S007: Evaluate embedding candidates",
+      "path": "docs/stories/P03/P03-S007-evaluate-embedding-candidates.md",
+      "sha256": "9b7117c88c2d512b0a680127c3a98a187384f456aac04d2958d32ec463c20fd5",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P03/P03-S007-evaluate-embedding-candidates.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P03-S006"
+      ],
+      "unlocks": [
+        "P03-S008"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic, different from the implementer for acceptance review; Model class: current quality or review model; Effort: high; Fallback: stop and switch to the current Sol or Sonnet-class route; qualified local models remain advisory during probation.",
+      "researchFreshness": "Current embedding model cards and retrieval evaluation guidance checked within 7 days."
+    },
+    {
+      "id": "P03-S008",
+      "phase": "P03",
+      "sequence": 8,
+      "title": "P03-S008: Publish model usage recommendations",
+      "path": "docs/stories/P03/P03-S008-publish-model-usage-recommendations.md",
+      "sha256": "3922f6e77a4774e93c9476c3e68f9ed70c0e9cba31572b5a47b06de080c232b8",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P03/P03-S008-publish-model-usage-recommendations.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P03-S007"
+      ],
+      "unlocks": [
+        "P03-S009"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic; Model class: current implementation model; Effort: medium; Fallback: current Sol or Sonnet-class route; no local implementation route before P03-S009 qualifies it.",
+      "researchFreshness": "P03 benchmark evidence; external sources refreshed if recommendations change."
+    },
+    {
+      "id": "P03-S009",
+      "phase": "P03",
+      "sequence": 9,
+      "title": "P03-S009: Qualify local models for controller roles",
+      "path": "docs/stories/P03/P03-S009-qualify-local-models-for-controller-roles.md",
+      "sha256": "2cbd89b362aaec8bd3bc55201755cc3562c197d14db94364613e3a429e13650a",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P03/P03-S009-qualify-local-models-for-controller-roles.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P03-S008"
+      ],
+      "unlocks": [
+        "P03-S010"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic, different from the implementer for acceptance review; Model class: current quality or review model; Effort: high; Fallback: stop and switch to the current Sol or Sonnet-class route; qualified local models remain advisory during probation.",
+      "researchFreshness": "Current cloud comparison route confirmed at activation."
+    },
+    {
+      "id": "P03-S010",
+      "phase": "P03",
+      "sequence": 10,
+      "title": "P03-S010: Reassess every remaining story for local execution",
+      "path": "docs/stories/P03/P03-S010-reassess-every-remaining-story-for-local-execution.md",
+      "sha256": "a3ab6935d78c982e15de3d80f1a9c8415e52591cd0d64060cafdaa95415f5379",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P03/P03-S010-reassess-every-remaining-story-for-local-execution.md",
+      "status": "Planned",
+      "step": "Review",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P03-S009"
+      ],
+      "unlocks": [
+        "P03-S011"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic, different from the implementer for acceptance review; Model class: current quality or review model; Effort: high; Fallback: stop and switch to the current Sol or Sonnet-class route; qualified local models remain advisory during probation.",
+      "researchFreshness": "Current provider and model availability checked within 7 days."
+    },
+    {
+      "id": "P03-S011",
+      "phase": "P03",
+      "sequence": 11,
+      "title": "P03-S011: Complete model selection human acceptance",
+      "path": "docs/stories/P03/P03-S011-complete-model-selection-human-acceptance.md",
+      "sha256": "16a417474fcda50bab9218fee3c34258860f21e088cd97559b102c51ae7a52ac",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P03/P03-S011-complete-model-selection-human-acceptance.md",
+      "status": "Planned",
+      "step": "Human Validation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P03-S010"
+      ],
+      "unlocks": [
+        "P04-S001"
+      ],
+      "preferredRoute": "Interface: goagentic-guided session in the designated cloud IDE or CLI; Provider: owner's active OpenAI or Anthropic subscription; Model class: current economical teaching or validation model; Effort: medium; Fallback: pause for the owner or switch to the current Sol or Sonnet-class route when explanation quality fails.",
+      "researchFreshness": "Not applicable — validation uses measured candidate outputs."
+    },
+    {
+      "id": "P04-S001",
+      "phase": "P04",
+      "sequence": 1,
+      "title": "P04-S001: Research current service releases and integration contracts",
+      "path": "docs/stories/P04/P04-S001-research-current-service-releases-and-integration-contracts.md",
+      "sha256": "d5499dbf43c2b7f90f58ba7717cd0cef90020e5622b9c28ecdd9a5c4249c55b8",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S001-research-current-service-releases-and-integration-contracts.md",
+      "status": "Planned",
+      "step": "Research",
+      "holdReason": "Phase Not Activated",
+      "risk": "Low",
+      "actor": "LLM",
+      "dependencies": [
+        "P03-S011"
+      ],
+      "unlocks": [
+        "P04-S002"
+      ],
+      "preferredRoute": "Interface: goagentic through a web-enabled cloud IDE or CLI; Provider: OpenAI or Anthropic with primary-source web access; Model class: current economical research model; Effort: medium; Fallback: current Sol or Sonnet-class synthesis route when sources conflict.",
+      "researchFreshness": "Official documentation, releases, and security advisories checked within 7 days."
+    },
+    {
+      "id": "P04-S002",
+      "phase": "P04",
+      "sequence": 2,
+      "title": "P04-S002: Learn Rancher Desktop and the local service stack",
+      "path": "docs/stories/P04/P04-S002-learn-rancher-desktop-and-the-local-service-stack.md",
+      "sha256": "56c5acfc3842f94505dce636e6a908ea69e7c98ae2f0beb87978733c59609d41",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S002-learn-rancher-desktop-and-the-local-service-stack.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P04-S001"
+      ],
+      "unlocks": [
+        "P04-S003"
+      ],
+      "preferredRoute": "Interface: goagentic-guided session in the designated cloud IDE or CLI; Provider: owner's active OpenAI or Anthropic subscription; Model class: current economical teaching or validation model; Effort: medium; Fallback: pause for the owner or switch to the current Sol or Sonnet-class route when explanation quality fails.",
+      "researchFreshness": "Current P04 research record."
+    },
+    {
+      "id": "P04-S003",
+      "phase": "P04",
+      "sequence": 3,
+      "title": "P04-S003: Configure Rancher Desktop for Moby without Kubernetes",
+      "path": "docs/stories/P04/P04-S003-configure-rancher-desktop-for-moby-without-kubernetes.md",
+      "sha256": "03994c92fb0c2b70c9cef4968df8213a448a14e02027a86fd3b6e1905d1e646d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S003-configure-rancher-desktop-for-moby-without-kubernetes.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P04-S002"
+      ],
+      "unlocks": [
+        "P04-S004"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current Rancher Desktop preferences and API documentation checked within 7 days."
+    },
+    {
+      "id": "P04-S004",
+      "phase": "P04",
+      "sequence": 4,
+      "title": "P04-S004: Implement pinned Compose and secret handling foundation",
+      "path": "docs/stories/P04/P04-S004-implement-pinned-compose-and-secret-handling-foundation.md",
+      "sha256": "5acd45ea0748bc8f98b89a6a594a0bfdea3aaeaacf2db4f99e6615859d1929fe",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S004-implement-pinned-compose-and-secret-handling-foundation.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P04-S003"
+      ],
+      "unlocks": [
+        "P04-S005"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current Compose specification and image documentation checked within 7 days."
+    },
+    {
+      "id": "P04-S005",
+      "phase": "P04",
+      "sequence": 5,
+      "title": "P04-S005: Deploy PostgreSQL and PGVector",
+      "path": "docs/stories/P04/P04-S005-deploy-postgresql-and-pgvector.md",
+      "sha256": "3905cb94c8a64c11a80bfe7ddc4348c66ee0211ba623eac02a2d7512a812784e",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S005-deploy-postgresql-and-pgvector.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P04-S004"
+      ],
+      "unlocks": [
+        "P04-S006"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current PostgreSQL and PGVector documentation checked within 7 days."
+    },
+    {
+      "id": "P04-S006",
+      "phase": "P04",
+      "sequence": 6,
+      "title": "P04-S006: Deploy SearXNG and verify private search",
+      "path": "docs/stories/P04/P04-S006-deploy-searxng-and-verify-private-search.md",
+      "sha256": "04affb0f490547126f59e79f47b8eee7cc3f6c15c6d6217548dd7448f0b63f9a",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S006-deploy-searxng-and-verify-private-search.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P04-S005"
+      ],
+      "unlocks": [
+        "P04-S007"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current SearXNG and Open WebUI integration docs checked within 7 days."
+    },
+    {
+      "id": "P04-S007",
+      "phase": "P04",
+      "sequence": 7,
+      "title": "P04-S007: Deploy Docling Serve",
+      "path": "docs/stories/P04/P04-S007-deploy-docling-serve.md",
+      "sha256": "b782f5cce8fcc81cbdd82020d6eaa0567d3fb850c494447a84d16127dc024701",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S007-deploy-docling-serve.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P04-S006"
+      ],
+      "unlocks": [
+        "P04-S008"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current Docling Serve releases and API docs checked within 7 days."
+    },
+    {
+      "id": "P04-S008",
+      "phase": "P04",
+      "sequence": 8,
+      "title": "P04-S008: Deploy self-hosted MLflow foundation",
+      "path": "docs/stories/P04/P04-S008-deploy-self-hosted-mlflow-foundation.md",
+      "sha256": "fa9cb5df0bdfc8169344919c1dc1781e8c0fc7a56030659d868f4d013128f834",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S008-deploy-self-hosted-mlflow-foundation.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P04-S007"
+      ],
+      "unlocks": [
+        "P04-S009"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current MLflow self-hosting and tracing docs checked within 7 days."
+    },
+    {
+      "id": "P04-S009",
+      "phase": "P04",
+      "sequence": 9,
+      "title": "P04-S009: Deploy and configure Open WebUI",
+      "path": "docs/stories/P04/P04-S009-deploy-and-configure-open-webui.md",
+      "sha256": "daec6814a0f37fb54248a089d436021159f48c53fdb52c6765443a8af0e9a4b2",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S009-deploy-and-configure-open-webui.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P04-S008"
+      ],
+      "unlocks": [
+        "P04-S010"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current Open WebUI deployment and environment docs checked within 7 days."
+    },
+    {
+      "id": "P04-S010",
+      "phase": "P04",
+      "sequence": 10,
+      "title": "P04-S010: Connect Open WebUI to SearXNG",
+      "path": "docs/stories/P04/P04-S010-connect-open-webui-to-searxng.md",
+      "sha256": "63c0bb6e57bcc6bdf7e490439f002c4aa54293cc68c30d9f179c515197338fdf",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S010-connect-open-webui-to-searxng.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P04-S009"
+      ],
+      "unlocks": [
+        "P04-S011"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current Open WebUI feature documentation checked within 7 days."
+    },
+    {
+      "id": "P04-S011",
+      "phase": "P04",
+      "sequence": 11,
+      "title": "P04-S011: Connect Open WebUI document extraction and vector storage",
+      "path": "docs/stories/P04/P04-S011-connect-open-webui-document-extraction-and-vector-storage.md",
+      "sha256": "036413c683da69e0447de4928e360a242cc0083a9d6182018173cca548d9c2a7",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S011-connect-open-webui-document-extraction-and-vector-storage.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P04-S010"
+      ],
+      "unlocks": [
+        "P04-S012"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current Open WebUI document-extraction and vector-database documentation, Docling Serve API, and PGVector image contract checked within 7 days."
+    },
+    {
+      "id": "P04-S012",
+      "phase": "P04",
+      "sequence": 12,
+      "title": "P04-S012: Configure Open WebUI local in-chat speech to text",
+      "path": "docs/stories/P04/P04-S012-configure-open-webui-local-in-chat-speech-to-text.md",
+      "sha256": "850b821b8e1fe01de96a41d21a3d330b09dcb1f84bd3252d3164e12baeb7a8f4",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S012-configure-open-webui-local-in-chat-speech-to-text.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P04-S011"
+      ],
+      "unlocks": [
+        "P04-S013"
+      ],
+      "preferredRoute": "Interface: goagentic-guided session in the designated cloud IDE or CLI; Provider: owner's active OpenAI or Anthropic subscription; Model class: current implementation model; Effort: medium; Fallback: pause for microphone permission or switch to the current Terra or Sonnet-class route for diagnosis.",
+      "researchFreshness": "Current Open WebUI speech-to-text configuration and selected local engine/model documentation checked within 7 days."
+    },
+    {
+      "id": "P04-S013",
+      "phase": "P04",
+      "sequence": 13,
+      "title": "P04-S013: Run automated service-stack acceptance",
+      "path": "docs/stories/P04/P04-S013-run-automated-service-stack-acceptance.md",
+      "sha256": "c711a7efad310ec2ceb4e41051e6ad2334ee55b8d0b557de6786132062d445fb",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S013-run-automated-service-stack-acceptance.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P04-S012"
+      ],
+      "unlocks": [
+        "P04-S014"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic, different from the implementer for acceptance review; Model class: current quality or review model; Effort: high; Fallback: stop and switch to the current Sol or Sonnet-class route; qualified local models remain advisory during probation.",
+      "researchFreshness": "Not applicable — tests execute the accepted P04 versions and contracts; version drift returns the story to research."
+    },
+    {
+      "id": "P04-S014",
+      "phase": "P04",
+      "sequence": 14,
+      "title": "P04-S014: Perform service-stack owner acceptance and restore drill",
+      "path": "docs/stories/P04/P04-S014-perform-service-stack-owner-acceptance-and-restore-drill.md",
+      "sha256": "6d493f6e3da70fc3c5c8bdeb8a411d7f1c83414fabf57a7c354adda0ef16b1c5",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P04/P04-S014-perform-service-stack-owner-acceptance-and-restore-drill.md",
+      "status": "Planned",
+      "step": "Human Validation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P04-S013"
+      ],
+      "unlocks": [
+        "P05-S001"
+      ],
+      "preferredRoute": "Interface: goagentic-guided session in the designated cloud IDE or CLI; Provider: owner's active OpenAI or Anthropic subscription; Model class: current economical validation model; Effort: medium; Fallback: pause for the owner or switch to the current Sol or Sonnet-class route when a drill fails.",
+      "researchFreshness": "Not applicable — owner validation uses the accepted P04 versions and P04-S013 evidence."
+    },
+    {
+      "id": "P05-S001",
+      "phase": "P05",
+      "sequence": 1,
+      "title": "P05-S001: Refresh integration and dictation landscape",
+      "path": "docs/stories/P05/P05-S001-refresh-integration-and-dictation-landscape.md",
+      "sha256": "1489f0756308764b578ed733e531faffbd07ce644a5d0b97569e610b1fbf6a9e",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S001-refresh-integration-and-dictation-landscape.md",
+      "status": "Planned",
+      "step": "Research",
+      "holdReason": "Phase Not Activated",
+      "risk": "Low",
+      "actor": "LLM",
+      "dependencies": [
+        "P04-S014"
+      ],
+      "unlocks": [
+        "P05-S002"
+      ],
+      "preferredRoute": "Interface: goagentic through a web-enabled cloud IDE or CLI; Provider: OpenAI or Anthropic with primary-source web access; Model class: current economical research model; Effort: medium; Fallback: current Sol or Sonnet-class synthesis route when sources conflict.",
+      "researchFreshness": "Official product docs and candidate repositories and releases checked within 7 days."
+    },
+    {
+      "id": "P05-S002",
+      "phase": "P05",
+      "sequence": 2,
+      "title": "P05-S002: Learn local client and endpoint boundaries",
+      "path": "docs/stories/P05/P05-S002-learn-local-client-and-endpoint-boundaries.md",
+      "sha256": "e0cdba267251352453b7b1598a387d57b9ef99cdb74e80f4aec1c3fd329462cb",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S002-learn-local-client-and-endpoint-boundaries.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P05-S001"
+      ],
+      "unlocks": [
+        "P05-S003"
+      ],
+      "preferredRoute": "Interface: goagentic-guided session in the designated cloud IDE or CLI; Provider: owner's active OpenAI or Anthropic subscription; Model class: current economical teaching or validation model; Effort: medium; Fallback: pause for the owner or switch to the current Sol or Sonnet-class route when explanation quality fails.",
+      "researchFreshness": "Current P05 research record."
+    },
+    {
+      "id": "P05-S003",
+      "phase": "P05",
+      "sequence": 3,
+      "title": "P05-S003: Benchmark OSS desktop dictation candidates",
+      "path": "docs/stories/P05/P05-S003-benchmark-oss-desktop-dictation-candidates.md",
+      "sha256": "0adf56f749d02ba298a54adce1855354e1ea1875b5caff78014747fac84326ca",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S003-benchmark-oss-desktop-dictation-candidates.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P05-S002"
+      ],
+      "unlocks": [
+        "P05-S004"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic, different from the implementer for acceptance review; Model class: current quality or review model; Effort: high; Fallback: stop and switch to the current Sol or Sonnet-class route; qualified local models remain advisory during probation.",
+      "researchFreshness": "Candidate repositories, releases, licenses, and security status checked within 7 days."
+    },
+    {
+      "id": "P05-S004",
+      "phase": "P05",
+      "sequence": 4,
+      "title": "P05-S004: Install and configure selected desktop dictation",
+      "path": "docs/stories/P05/P05-S004-install-and-configure-selected-desktop-dictation.md",
+      "sha256": "065d33715c9d34f6a6a949648fe9272d4005b817294618cf395cd320a2cce33d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S004-install-and-configure-selected-desktop-dictation.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P05-S003"
+      ],
+      "unlocks": [
+        "P05-S005"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Selected project's current official documentation checked within 7 days."
+    },
+    {
+      "id": "P05-S005",
+      "phase": "P05",
+      "sequence": 5,
+      "title": "P05-S005: Configure VS Code local AI chat workflow",
+      "path": "docs/stories/P05/P05-S005-configure-vs-code-local-ai-chat-workflow.md",
+      "sha256": "549a2c557fbbbecef152e0369efe9a0938f480537c0207de2374a04c6bd57e9a",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S005-configure-vs-code-local-ai-chat-workflow.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P05-S004"
+      ],
+      "unlocks": [
+        "P05-S006"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current official VS Code language-model documentation, Ollama-publisher provider extension listing or source, and selected VS Code version checked within 7 days."
+    },
+    {
+      "id": "P05-S006",
+      "phase": "P05",
+      "sequence": 6,
+      "title": "P05-S006: Create optional local autocomplete guide and prompt",
+      "path": "docs/stories/P05/P05-S006-create-optional-local-autocomplete-guide-and-prompt.md",
+      "sha256": "289fe5559d1fe916f6bc45114cdca766e9300f66e04f2eca0dd9d081cd2d8c1d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S006-create-optional-local-autocomplete-guide-and-prompt.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P05-S005"
+      ],
+      "unlocks": [
+        "P05-S007"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current VS Code inline-completion limitation plus current source, license, release, maintenance, privacy, and Ollama documentation for credible OSS completion extensions checked within 7 days."
+    },
+    {
+      "id": "P05-S007",
+      "phase": "P05",
+      "sequence": 7,
+      "title": "P05-S007: Configure Codex CLI local and cloud profiles",
+      "path": "docs/stories/P05/P05-S007-configure-codex-cli-local-and-cloud-profiles.md",
+      "sha256": "e22621f0008d964712f6f8701b5a705b8be3d60e13b548f7bd92b1f81915bafe",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S007-configure-codex-cli-local-and-cloud-profiles.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P05-S006"
+      ],
+      "unlocks": [
+        "P05-S008"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current official Codex and Ollama integration documentation checked within 7 days."
+    },
+    {
+      "id": "P05-S008",
+      "phase": "P05",
+      "sequence": 8,
+      "title": "P05-S008: Configure Claude Code local and cloud profiles",
+      "path": "docs/stories/P05/P05-S008-configure-claude-code-local-and-cloud-profiles.md",
+      "sha256": "2e1b20f0ee97e84049074629e8994c7b01a082ae3e13adab3d6000c89f4a2252",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S008-configure-claude-code-local-and-cloud-profiles.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P05-S007"
+      ],
+      "unlocks": [
+        "P05-S009"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current official Claude Code and Ollama integration docs checked within 7 days."
+    },
+    {
+      "id": "P05-S009",
+      "phase": "P05",
+      "sequence": 9,
+      "title": "P05-S009: Document ChatGPT and Claude desktop compatibility",
+      "path": "docs/stories/P05/P05-S009-document-chatgpt-and-claude-desktop-compatibility.md",
+      "sha256": "28185028c7dbd29629804c409204706544b8ec5cf0b6a91836e2c95833b9700a",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S009-document-chatgpt-and-claude-desktop-compatibility.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "LLM",
+      "dependencies": [
+        "P05-S008"
+      ],
+      "unlocks": [
+        "P05-S010"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current official OpenAI, Anthropic, and Ollama documentation checked within 7 days."
+    },
+    {
+      "id": "P05-S010",
+      "phase": "P05",
+      "sequence": 10,
+      "title": "P05-S010: Create optional LM Studio evaluation guide",
+      "path": "docs/stories/P05/P05-S010-create-optional-lm-studio-evaluation-guide.md",
+      "sha256": "d7740173affd9b5bcb9726fd66e7d0cd157e3327a6966ec2e9596631b558ecfe",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S010-create-optional-lm-studio-evaluation-guide.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P05-S009"
+      ],
+      "unlocks": [
+        "P05-S011"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: qualified local Ollama worker or OpenAI or Anthropic cloud; Model class: current implementation model; Effort: medium; Fallback: current Terra or Sonnet-class cloud route, then Sol or Sonnet-class diagnosis if verification fails.",
+      "researchFreshness": "Current LM Studio and Ollama documentation checked within 7 days."
+    },
+    {
+      "id": "P05-S011",
+      "phase": "P05",
+      "sequence": 11,
+      "title": "P05-S011: Verify cross-tool workflows",
+      "path": "docs/stories/P05/P05-S011-verify-cross-tool-workflows.md",
+      "sha256": "bcd1811c903f880fd2c400c1352840483a5b3bfaa4f216dd34250059727a3545",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S011-verify-cross-tool-workflows.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P05-S010"
+      ],
+      "unlocks": [
+        "P05-S012"
+      ],
+      "preferredRoute": "Interface: goagentic in the designated cloud IDE or CLI; Provider: OpenAI or Anthropic, different from the implementer for acceptance review; Model class: current quality or review model; Effort: high; Fallback: stop and switch to the current Sol or Sonnet-class route; qualified local models remain advisory during probation.",
+      "researchFreshness": "Not applicable — tests use the configured integrations."
+    },
+    {
+      "id": "P05-S012",
+      "phase": "P05",
+      "sequence": 12,
+      "title": "P05-S012: Perform integration owner acceptance",
+      "path": "docs/stories/P05/P05-S012-perform-integration-owner-acceptance.md",
+      "sha256": "491df135c44dfac6b7000737c6c022fdb997bab6f8eb39ba69d5870eb6afbbed",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P05/P05-S012-perform-integration-owner-acceptance.md",
+      "status": "Planned",
+      "step": "Human Validation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P05-S011"
+      ],
+      "unlocks": [
+        "P06-S001"
+      ],
+      "preferredRoute": "Interface: goagentic-guided session in the designated cloud IDE or CLI; Provider: owner's active OpenAI or Anthropic subscription; Model class: current economical teaching or validation model; Effort: medium; Fallback: pause for the owner or switch to the current Sol or Sonnet-class route when explanation quality fails.",
+      "researchFreshness": "Not applicable — validation is experiential."
+    },
+    {
+      "id": "P06-S001",
+      "phase": "P06",
+      "sequence": 1,
+      "title": "P06-S001: Refresh agent framework and protocol guidance",
+      "path": "docs/stories/P06/P06-S001-refresh-agent-framework-and-protocol-guidance.md",
+      "sha256": "5784167d7e1db204904beb34a1ef8a16355d5726998a7b0a38cb39b9f1abb059",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S001-refresh-agent-framework-and-protocol-guidance.md",
+      "status": "Planned",
+      "step": "Research",
+      "holdReason": "Phase Not Activated",
+      "risk": "Low",
+      "actor": "LLM",
+      "dependencies": [
+        "P05-S012"
+      ],
+      "unlocks": [
+        "P06-S002"
+      ],
+      "preferredRoute": "Interface: goagentic through a web-enabled cloud IDE or CLI; Provider: OpenAI or Anthropic with primary-source web access; Model class: current economical research model; Effort: medium; Fallback: current Sol- or Sonnet-class synthesis route when compatibility evidence conflicts.",
+      "researchFreshness": "Official framework and protocol docs and releases checked within 7 days."
+    },
+    {
+      "id": "P06-S002",
+      "phase": "P06",
+      "sequence": 2,
+      "title": "P06-S002: Learn agent fundamentals and tool safety",
+      "path": "docs/stories/P06/P06-S002-learn-agent-fundamentals-and-tool-safety.md",
+      "sha256": "0a8d7df44c75ff7ae2314ba6f89fdca9d587c9a44f9f6af725f954ea3becffef",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S002-learn-agent-fundamentals-and-tool-safety.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P06-S001"
+      ],
+      "unlocks": [
+        "P06-S003"
+      ],
+      "preferredRoute": "Interface: goagentic guided lesson in the owner's cloud IDE or CLI; Provider: OpenAI or Anthropic; Model class: economical teaching model with strong tool-safety reasoning; Effort: medium; Fallback: current Sol- or Sonnet-class tutor, never an unqualified local model.",
+      "researchFreshness": "Current P06 research record."
+    },
+    {
+      "id": "P06-S003",
+      "phase": "P06",
+      "sequence": 3,
+      "title": "P06-S003: Create the agent development workspace",
+      "path": "docs/stories/P06/P06-S003-create-the-agent-development-workspace.md",
+      "sha256": "e6a45fd55acf0c87017452ffa534aa0192eeb4f70f80a5439b8d9c41ff4cff7d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S003-create-the-agent-development-workspace.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P06-S002"
+      ],
+      "unlocks": [
+        "P06-S004"
+      ],
+      "preferredRoute": "Interface: goagentic using Codex or Claude Code inside AI-Workbench; Provider: qualified Ollama model for mechanical scaffolding with OpenAI or Anthropic fallback; Model class: economical coding model; Effort: medium; Fallback: current Terra- or Sonnet-class implementation route with independent review.",
+      "researchFreshness": "Current Python packaging and selected framework docs checked within 7 days."
+    },
+    {
+      "id": "P06-S004",
+      "phase": "P06",
+      "sequence": 4,
+      "title": "P06-S004: Learn LangChain models, messages, tools, and agents",
+      "path": "docs/stories/P06/P06-S004-learn-langchain-models-messages-tools-and-agents.md",
+      "sha256": "3c913ec36cb53d9bf331ee67930d606cec435e7a0217dabfd5b66779a369792d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S004-learn-langchain-models-messages-tools-and-agents.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P06-S003"
+      ],
+      "unlocks": [
+        "P06-S005"
+      ],
+      "preferredRoute": "Interface: goagentic lesson in the P06 VS Code/WSL workspace; Provider: qualified Ollama model with OpenAI or Anthropic teaching fallback; Model class: economical tool-capable model; Effort: medium; Fallback: current Sol- or Sonnet-class tutor.",
+      "researchFreshness": "Current official LangChain tutorials selected at activation."
+    },
+    {
+      "id": "P06-S005",
+      "phase": "P06",
+      "sequence": 5,
+      "title": "P06-S005: Build the first bounded LangChain tool agent",
+      "path": "docs/stories/P06/P06-S005-build-the-first-bounded-langchain-tool-agent.md",
+      "sha256": "fa78c02c7d4ae69c731a2f78976fbd79ed7897e915c0441c4e98c58ae23d7b27",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S005-build-the-first-bounded-langchain-tool-agent.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P06-S004"
+      ],
+      "unlocks": [
+        "P06-S006"
+      ],
+      "preferredRoute": "Interface: goagentic using Codex or Claude Code inside AI-Workbench; Provider: qualified Ollama model with OpenAI or Anthropic fallback; Model class: economical coding/tool-use model; Effort: medium; Fallback: current Terra- or Sonnet-class implementation route plus independent review.",
+      "researchFreshness": "Current LangChain and Ollama integration docs checked within 7 days."
+    },
+    {
+      "id": "P06-S006",
+      "phase": "P06",
+      "sequence": 6,
+      "title": "P06-S006: Learn LangGraph state and durable execution",
+      "path": "docs/stories/P06/P06-S006-learn-langgraph-state-and-durable-execution.md",
+      "sha256": "a4b53e210ff6231690093fbe95bb50fcde948e3a125089ef43c4d8dec4423602",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S006-learn-langgraph-state-and-durable-execution.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P06-S005"
+      ],
+      "unlocks": [
+        "P06-S007"
+      ],
+      "preferredRoute": "Interface: goagentic lesson in the P06 VS Code/WSL workspace; Provider: qualified Ollama model with OpenAI or Anthropic fallback; Model class: economical reasoning tutor; Effort: medium; Fallback: current Sol- or Sonnet-class tutor.",
+      "researchFreshness": "Current official LangGraph tutorials selected at activation."
+    },
+    {
+      "id": "P06-S007",
+      "phase": "P06",
+      "sequence": 7,
+      "title": "P06-S007: Convert the agent to a durable LangGraph workflow",
+      "path": "docs/stories/P06/P06-S007-convert-the-agent-to-a-durable-langgraph-workflow.md",
+      "sha256": "f740f0a8b91eafadbd2ef9c94cc4496322f0fe3750062f8c4895d949f07b52bc",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S007-convert-the-agent-to-a-durable-langgraph-workflow.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P06-S006"
+      ],
+      "unlocks": [
+        "P06-S008"
+      ],
+      "preferredRoute": "Interface: goagentic using Codex or Claude Code inside AI-Workbench; Provider: OpenAI or Anthropic with qualified Ollama for bounded iterations; Model class: strong coding/reasoning model; Effort: high; Fallback: current Sol- or Sonnet-class route with cross-provider review.",
+      "researchFreshness": "Current LangGraph persistence and durable execution docs checked within 7 days."
+    },
+    {
+      "id": "P06-S008",
+      "phase": "P06",
+      "sequence": 8,
+      "title": "P06-S008: Learn MCP and capability boundaries",
+      "path": "docs/stories/P06/P06-S008-learn-mcp-and-capability-boundaries.md",
+      "sha256": "161b45c0ed2a821b8f3a07371d12224d238c07f551e8ee6a6daa73f376cadf6e",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S008-learn-mcp-and-capability-boundaries.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P06-S007"
+      ],
+      "unlocks": [
+        "P06-S009"
+      ],
+      "preferredRoute": "Interface: goagentic lesson in the P06 VS Code/WSL workspace; Provider: OpenAI or Anthropic with qualified Ollama practice; Model class: economical protocol/security tutor; Effort: medium; Fallback: current Sol- or Sonnet-class tutor.",
+      "researchFreshness": "Current official MCP specification and security guidance checked within 7 days."
+    },
+    {
+      "id": "P06-S009",
+      "phase": "P06",
+      "sequence": 9,
+      "title": "P06-S009: Build and integrate one local MCP server",
+      "path": "docs/stories/P06/P06-S009-build-and-integrate-one-local-mcp-server.md",
+      "sha256": "aadfebe8927eadfe3ba3783239b4e5b25733ea5fa490b74f3f396aa62f3ec0b4",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S009-build-and-integrate-one-local-mcp-server.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P06-S008"
+      ],
+      "unlocks": [
+        "P06-S010"
+      ],
+      "preferredRoute": "Interface: goagentic using Codex or Claude Code in AI-Workbench; Provider: OpenAI or Anthropic with qualified Ollama test execution; Model class: strong protocol-aware coding model; Effort: high; Fallback: current Sol- or Sonnet-class route with cross-provider security review.",
+      "researchFreshness": "Current MCP SDK and client documentation checked within 7 days."
+    },
+    {
+      "id": "P06-S010",
+      "phase": "P06",
+      "sequence": 10,
+      "title": "P06-S010: Add skills, assets, and scripts to the agent",
+      "path": "docs/stories/P06/P06-S010-add-skills-assets-and-scripts-to-the-agent.md",
+      "sha256": "8b9929016b8245ccef3d6d8f6a899b5b826e9ba347a868ecabfff20a75ba6899",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S010-add-skills-assets-and-scripts-to-the-agent.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P06-S009"
+      ],
+      "unlocks": [
+        "P06-S011"
+      ],
+      "preferredRoute": "Interface: goagentic using Codex or Claude Code inside AI-Workbench; Provider: qualified Ollama model for bounded authoring with OpenAI or Anthropic review; Model class: strong coding/instruction model; Effort: high; Fallback: current Terra- or Sonnet-class route with cross-provider review.",
+      "researchFreshness": "Current selected skill formats and supply-chain guidance checked within 7 days."
+    },
+    {
+      "id": "P06-S011",
+      "phase": "P06",
+      "sequence": 11,
+      "title": "P06-S011: Learn MLflow tracing and evaluation",
+      "path": "docs/stories/P06/P06-S011-learn-mlflow-tracing-and-evaluation.md",
+      "sha256": "82e5dcfb383ae0b382e67107cbaf5d158c0225ad8c0f9705570550e1aa830d66",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S011-learn-mlflow-tracing-and-evaluation.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P06-S010"
+      ],
+      "unlocks": [
+        "P06-S012"
+      ],
+      "preferredRoute": "Interface: goagentic lesson using the localhost MLflow UI and P06 workspace; Provider: OpenAI or Anthropic with qualified Ollama exercises; Model class: economical observability tutor; Effort: medium; Fallback: current Sol- or Sonnet-class tutor.",
+      "researchFreshness": "Current official MLflow GenAI resources selected at activation."
+    },
+    {
+      "id": "P06-S012",
+      "phase": "P06",
+      "sequence": 12,
+      "title": "P06-S012: Instrument the agent with MLflow",
+      "path": "docs/stories/P06/P06-S012-instrument-the-agent-with-mlflow.md",
+      "sha256": "1c576b570217dd496f0e8a8248fb6b24aeef2402e9c4bd7cd633f04c56fe016b",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S012-instrument-the-agent-with-mlflow.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P06-S011"
+      ],
+      "unlocks": [
+        "P06-S013"
+      ],
+      "preferredRoute": "Interface: goagentic using Codex or Claude Code inside AI-Workbench; Provider: OpenAI or Anthropic with qualified Ollama for test iteration; Model class: strong coding/observability model; Effort: high; Fallback: current Sol- or Sonnet-class route with cross-provider privacy review.",
+      "researchFreshness": "Current MLflow LangChain, LangGraph, and OpenTelemetry docs checked within 7 days."
+    },
+    {
+      "id": "P06-S013",
+      "phase": "P06",
+      "sequence": 13,
+      "title": "P06-S013: Create the initial agent evaluation harness",
+      "path": "docs/stories/P06/P06-S013-create-the-initial-agent-evaluation-harness.md",
+      "sha256": "307c92eecf46aa7d8ebcec4159385c55034b4f6a7a7afd54a91f59ee4a2b6dac",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S013-create-the-initial-agent-evaluation-harness.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P06-S012"
+      ],
+      "unlocks": [
+        "P06-S014"
+      ],
+      "preferredRoute": "Interface: goagentic using Codex or Claude Code inside AI-Workbench; Provider: OpenAI or Anthropic for evaluation design with qualified Ollama candidates; Model class: strong evaluation/coding model; Effort: high; Fallback: current Sol- or Sonnet-class route with independent rubric review.",
+      "researchFreshness": "Current MLflow evaluation guidance checked within 7 days."
+    },
+    {
+      "id": "P06-S014",
+      "phase": "P06",
+      "sequence": 14,
+      "title": "P06-S014: Perform first-agent owner acceptance",
+      "path": "docs/stories/P06/P06-S014-perform-first-agent-owner-acceptance.md",
+      "sha256": "717d01d3f7a8f59f12b7090cc83806fa49cf87fe5f475df1c702502701a941a6",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P06/P06-S014-perform-first-agent-owner-acceptance.md",
+      "status": "Planned",
+      "step": "Human Validation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P06-S013"
+      ],
+      "unlocks": [
+        "P07-S001"
+      ],
+      "preferredRoute": "Interface: goagentic guided acceptance using VS Code/WSL, the agent CLI, and localhost MLflow UI; Provider: owner's accepted cloud assistant for guidance while the tested agent uses its qualified route; Model class: economical tutor plus recorded agent model; Effort: medium; Fallback: current Sol- or Sonnet-class guide, never unattended substitution.",
+      "researchFreshness": "Not applicable — validation uses the implemented agent."
+    },
+    {
+      "id": "P07-S001",
+      "phase": "P07",
+      "sequence": 1,
+      "title": "P07-S001: Refresh RAG and ingestion tool guidance",
+      "path": "docs/stories/P07/P07-S001-refresh-rag-and-ingestion-tool-guidance.md",
+      "sha256": "e6cd77a67629fba86d2a8540181bbbc828d5a4149c0e4b9813b3c50a3c9e95d5",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S001-refresh-rag-and-ingestion-tool-guidance.md",
+      "status": "Planned",
+      "step": "Research",
+      "holdReason": "Phase Not Activated",
+      "risk": "Low",
+      "actor": "LLM",
+      "dependencies": [
+        "P06-S014"
+      ],
+      "unlocks": [
+        "P07-S002"
+      ],
+      "preferredRoute": "Interface: web-capable coding agent; Provider: controller-selected cloud provider; Model class: economical research; Effort: medium; Fallback: second cloud provider if a primary-source conflict remains.",
+      "researchFreshness": "Official documentation, repositories, releases, licenses, and security notices checked within 7 days of activation."
+    },
+    {
+      "id": "P07-S002",
+      "phase": "P07",
+      "sequence": 2,
+      "title": "P07-S002: Learn RAG concepts and failure modes",
+      "path": "docs/stories/P07/P07-S002-learn-rag-concepts-and-failure-modes.md",
+      "sha256": "058223d98905594fb6720e514363f30dbd7f1164a478917b137851f50f3e5d9c",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S002-learn-rag-concepts-and-failure-modes.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S001"
+      ],
+      "unlocks": [
+        "P07-S018"
+      ],
+      "preferredRoute": "Interface: goagentic learn; Provider: controller-selected cloud provider; Model class: economical tutor; Effort: medium; Fallback: alternate provider using the same committed lesson.",
+      "researchFreshness": "Lesson sources regenerated from P07-S001 and checked within 7 days; videos checked for availability and current applicability."
+    },
+    {
+      "id": "P07-S018",
+      "phase": "P07",
+      "sequence": 3,
+      "title": "P07-S018: Deploy the private Langflow learning service",
+      "path": "docs/stories/P07/P07-S018-deploy-private-langflow-learning-service.md",
+      "sha256": "9e817acef9e4877b2700137d5ee40e32d9bcd28dc1fe8bae8b5588c567b17b23",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S018-deploy-private-langflow-learning-service.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P07-S002"
+      ],
+      "unlocks": [
+        "P07-S003"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic deployment; Provider: controller-selected cloud provider; Model class: high-reliability operations; Effort: high; Fallback: restore prior Rancher configuration and use a disposable documented local process for the lesson.",
+      "researchFreshness": "Current Langflow stable deployment, authentication, persistence, API, environment-variable, backup, and security documentation checked within 7 days."
+    },
+    {
+      "id": "P07-S003",
+      "phase": "P07",
+      "sequence": 4,
+      "title": "P07-S003: Learn Langflow for visual RAG",
+      "path": "docs/stories/P07/P07-S003-learn-langflow-for-visual-rag.md",
+      "sha256": "c9feff5f253d26996235736f685dd820416dd695af33455e75289d0b2b7647ea",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S003-learn-langflow-for-visual-rag.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S018"
+      ],
+      "unlocks": [
+        "P07-S004"
+      ],
+      "preferredRoute": "Interface: goagentic learn; Provider: controller-selected cloud provider; Model class: economical tutor with screen-guidance capability; Effort: medium; Fallback: alternate provider using the committed lesson and screenshots.",
+      "researchFreshness": "Current Langflow stable documentation and maintained tutorials checked within 7 days."
+    },
+    {
+      "id": "P07-S004",
+      "phase": "P07",
+      "sequence": 5,
+      "title": "P07-S004: Define multi-knowledge-base registry and schemas",
+      "path": "docs/stories/P07/P07-S004-define-multi-knowledge-base-registry-and-schemas.md",
+      "sha256": "a95ca63da49e5884016a5dfed3b016f85a883928bb6aa15b281c05420e83dbff",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S004-define-multi-knowledge-base-registry-and-schemas.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P07-S003"
+      ],
+      "unlocks": [
+        "P07-S019"
+      ],
+      "preferredRoute": "Interface: WSL coding agent; Provider: controller-selected cloud provider; Model class: general coding; Effort: high; Fallback: second provider review and correction.",
+      "researchFreshness": "JSON Schema, YAML safety, path, and identifier guidance checked within 30 days; tool versions inherited from P07-S001."
+    },
+    {
+      "id": "P07-S019",
+      "phase": "P07",
+      "sequence": 6,
+      "title": "P07-S019: Initialize the private knowledge-base roots and Git repository",
+      "path": "docs/stories/P07/P07-S019-initialize-private-knowledge-base-roots-and-git-repository.md",
+      "sha256": "1646f91ce44facdea3c9a35c14df4db871844bd6dfdd6309356c22b714c00ae5",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S019-initialize-private-knowledge-base-roots-and-git-repository.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P07-S004"
+      ],
+      "unlocks": [
+        "P07-S005"
+      ],
+      "preferredRoute": "Interface: Windows controller with WSL coding agent; Provider: controller-selected cloud provider; Model class: high-reliability operations; Effort: high; Fallback: restore the pre-story filesystem checkpoint and keep the KB uninitialized.",
+      "researchFreshness": "Current Git, Git LFS if proposed, Windows ACL, NTFS path, Rancher mount, and private-remote visibility guidance checked within 30 days."
+    },
+    {
+      "id": "P07-S005",
+      "phase": "P07",
+      "sequence": 7,
+      "title": "P07-S005: Implement private source intake and immutable snapshots",
+      "path": "docs/stories/P07/P07-S005-implement-private-source-intake-and-immutable-snapshots.md",
+      "sha256": "f8c298a1f249ddded3319c9774eddc533994d1120fd500a01239541934a18a25",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S005-implement-private-source-intake-and-immutable-snapshots.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S019"
+      ],
+      "unlocks": [
+        "P07-S006"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic deployment; Provider: controller-selected cloud provider; Model class: high-reliability coding; Effort: high; Fallback: second provider plus isolated rehearsal.",
+      "researchFreshness": "Current file-signature, safe-copy, hashing, Windows volume, container-mount, and malware-handling guidance checked within 30 days."
+    },
+    {
+      "id": "P07-S006",
+      "phase": "P07",
+      "sequence": 8,
+      "title": "P07-S006: Implement Docling conversion and lossless archive",
+      "path": "docs/stories/P07/P07-S006-implement-docling-conversion-and-lossless-archive.md",
+      "sha256": "d971ce93cf1a4b45ccb774910f3e697b68a76a19aaebc9b3113a20a458bad1b9",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S006-implement-docling-conversion-and-lossless-archive.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P07-S005"
+      ],
+      "unlocks": [
+        "P07-S007"
+      ],
+      "preferredRoute": "Interface: WSL coding agent plus isolated Rancher workload; Provider: controller-selected cloud provider; Model class: high-reliability coding; Effort: high; Fallback: second provider review and pinned prior converter profile.",
+      "researchFreshness": "Current Docling supported-format, CLI/API, OCR, serialization, model-download, and security documentation checked within 7 days."
+    },
+    {
+      "id": "P07-S007",
+      "phase": "P07",
+      "sequence": 9,
+      "title": "P07-S007: Implement deterministic YAML frontmatter and filing",
+      "path": "docs/stories/P07/P07-S007-implement-deterministic-yaml-frontmatter-and-filing.md",
+      "sha256": "8e6a47ac4590ebca08f77e8c58abdf3a557d68423072df34377865d41f57d5d5",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S007-implement-deterministic-yaml-frontmatter-and-filing.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P07-S006"
+      ],
+      "unlocks": [
+        "P07-S008"
+      ],
+      "preferredRoute": "Interface: WSL coding agent; Provider: controller-selected cloud provider; Model class: general coding; Effort: high; Fallback: fresh-session second-provider review.",
+      "researchFreshness": "Current safe YAML serializer, JSON Schema, Unicode, newline, and Git path behavior checked within 30 days."
+    },
+    {
+      "id": "P07-S008",
+      "phase": "P07",
+      "sequence": 10,
+      "title": "P07-S008: Implement Crawl4AI one-off web intake",
+      "path": "docs/stories/P07/P07-S008-implement-crawl4ai-one-off-web-intake.md",
+      "sha256": "a8c737da90056f12fc342bf8bdf62649431a7d35fcedd2c3ffd3aa6578da7a3c",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S008-implement-crawl4ai-one-off-web-intake.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S007"
+      ],
+      "unlocks": [
+        "P07-S009"
+      ],
+      "preferredRoute": "Interface: WSL coding agent plus isolated crawler service; Provider: controller-selected cloud provider; Model class: high-reliability coding; Effort: high; Fallback: second provider and static-HTML adapter.",
+      "researchFreshness": "Current Crawl4AI stable docs/releases, browser security notes, robots/legal guidance, and target-independent web standards checked within 7 days."
+    },
+    {
+      "id": "P07-S009",
+      "phase": "P07",
+      "sequence": 11,
+      "title": "P07-S009: Implement guarded authenticated web intake",
+      "path": "docs/stories/P07/P07-S009-implement-guarded-authenticated-web-intake.md",
+      "sha256": "5c4f45acb615ae4a91af802707d331c54d5b34c011e351c34b0e96d3d1dad4a5",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S009-implement-guarded-authenticated-web-intake.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S008"
+      ],
+      "unlocks": [
+        "P07-S010"
+      ],
+      "preferredRoute": "Interface: owner-visible browser plus WSL coding agent; Provider: controller-selected cloud provider; Model class: high-reliability coding/security; Effort: high; Fallback: documented unsupported result and manual export intake.",
+      "researchFreshness": "Current Crawl4AI authentication/session docs, site authorization constraints, and browser credential-isolation guidance checked within 7 days."
+    },
+    {
+      "id": "P07-S010",
+      "phase": "P07",
+      "sequence": 12,
+      "title": "P07-S010: Implement Google Docs, Sheets, and Slides intake",
+      "path": "docs/stories/P07/P07-S010-implement-google-docs-sheets-and-slides-intake.md",
+      "sha256": "9e58a47acaec25d9071d59a316c732f20c8ec72e56f4170f787b5858da203073",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S010-implement-google-docs-sheets-and-slides-intake.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S009"
+      ],
+      "unlocks": [
+        "P07-S011"
+      ],
+      "preferredRoute": "Interface: WSL coding agent plus owner-visible OAuth browser; Provider: controller-selected cloud provider; Model class: high-reliability coding/security; Effort: high; Fallback: owner manual export through file intake.",
+      "researchFreshness": "Current Google Drive API v3 export, download, OAuth desktop-app, scope, quota, and token-storage documentation checked within 7 days."
+    },
+    {
+      "id": "P07-S011",
+      "phase": "P07",
+      "sequence": 13,
+      "title": "P07-S011: Implement visual asset preservation and enrichment",
+      "path": "docs/stories/P07/P07-S011-implement-visual-asset-preservation-and-enrichment.md",
+      "sha256": "1752bc1f2869b0adc4f0f659832352ace242bc99848a4697fd8b9c020e30fdcd",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S011-implement-visual-asset-preservation-and-enrichment.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S010"
+      ],
+      "unlocks": [
+        "P07-S012"
+      ],
+      "preferredRoute": "Interface: WSL coding agent plus local Ollama vision endpoint; Provider: controller-selected cloud provider for code and approved local model for enrichment; Model class: high-reliability coding/local vision; Effort: high; Fallback: preserve assets without generated descriptions.",
+      "researchFreshness": "Current Docling image export, selected vision-model card/license, Ollama vision support, Git/LFS, and accessibility guidance checked within 7 days."
+    },
+    {
+      "id": "P07-S012",
+      "phase": "P07",
+      "sequence": 14,
+      "title": "P07-S012: Implement version, missing-source, and deletion workflow",
+      "path": "docs/stories/P07/P07-S012-implement-version-missing-source-and-deletion-workflow.md",
+      "sha256": "a45b02e016ca1c3057d1886b550db81201fef742156c77df4e51bc48025f8fc6",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S012-implement-version-missing-source-and-deletion-workflow.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S011"
+      ],
+      "unlocks": [
+        "P07-S013"
+      ],
+      "preferredRoute": "Interface: WSL coding agent with goagentic owner confirmation for deletion; Provider: controller-selected cloud provider; Model class: high-reliability coding/security; Effort: high; Fallback: disable deletion and retain prior accepted version.",
+      "researchFreshness": "Current Git recovery, PostgreSQL transaction, retention, and secure-deletion limitations checked within 30 days."
+    },
+    {
+      "id": "P07-S013",
+      "phase": "P07",
+      "sequence": 15,
+      "title": "P07-S013: Implement chunking, embeddings, and transactional indexing",
+      "path": "docs/stories/P07/P07-S013-implement-chunking-embeddings-and-transactional-indexing.md",
+      "sha256": "575c9afb893e3e8354e5c71812d5c39a5175fdc44ddec6ca590d7a1ac1b825cc",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S013-implement-chunking-embeddings-and-transactional-indexing.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S012"
+      ],
+      "unlocks": [
+        "P07-S014"
+      ],
+      "preferredRoute": "Interface: WSL coding agent plus local Ollama/PostgreSQL; Provider: controller-selected cloud provider for code and approved local embedding model at runtime; Model class: high-reliability coding; Effort: high; Fallback: exact-search small corpus and previous accepted embedding profile.",
+      "researchFreshness": "Current selected embedding model card/license, Ollama embedding API, LangChain PostgreSQL package, PostgreSQL, and pgvector docs/releases checked within 7 days."
+    },
+    {
+      "id": "P07-S014",
+      "phase": "P07",
+      "sequence": 16,
+      "title": "P07-S014: Build the Langflow personal RAG capstone",
+      "path": "docs/stories/P07/P07-S014-build-the-langflow-personal-rag-capstone.md",
+      "sha256": "95bc3221c72b1e609cc04e51947a62976314362de6766fa24aaa250fe5ec0567",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S014-build-the-langflow-personal-rag-capstone.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S013"
+      ],
+      "unlocks": [
+        "P07-S015"
+      ],
+      "preferredRoute": "Interface: WSL coding agent plus localhost Langflow/Open WebUI; Provider: controller-selected cloud provider for integration and approved local Ollama model for runtime; Model class: high-reliability coding/local chat; Effort: high; Fallback: direct tested retrieval API while Langflow adapter is corrected.",
+      "researchFreshness": "Current Langflow stable run/export/API-key docs and current Open WebUI extension/tool integration docs checked within 7 days."
+    },
+    {
+      "id": "P07-S015",
+      "phase": "P07",
+      "sequence": 17,
+      "title": "P07-S015: Run synthetic ingestion acceptance suite",
+      "path": "docs/stories/P07/P07-S015-run-synthetic-ingestion-acceptance-suite.md",
+      "sha256": "00b353b423413c2a518c0d742f668e6f5deb95be8ce28b9a0d394dbf2ae76a02",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S015-run-synthetic-ingestion-acceptance-suite.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P07-S014"
+      ],
+      "unlocks": [
+        "P07-S016"
+      ],
+      "preferredRoute": "Interface: WSL test runner through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability test/review; Effort: high; Fallback: second provider diagnoses failures without weakening thresholds.",
+      "researchFreshness": "Current pinned stack health, security notices, and test-tool documentation checked within 7 days."
+    },
+    {
+      "id": "P07-S016",
+      "phase": "P07",
+      "sequence": 18,
+      "title": "P07-S016: Run owner-provided 27-document acceptance",
+      "path": "docs/stories/P07/P07-S016-run-owner-provided-27-document-acceptance.md",
+      "sha256": "cb867ed787e519101a0dbe38d280e696a1c59b09fae1e2782b8445e8a118154e",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S016-run-owner-provided-27-document-acceptance.md",
+      "status": "Planned",
+      "step": "Human Validation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S015"
+      ],
+      "unlocks": [
+        "P07-S017"
+      ],
+      "preferredRoute": "Interface: goagentic guided intake and Open WebUI; Provider: controller-selected cloud provider for orchestration with approved local models for processing; Model class: high-reliability coordinator; Effort: high; Fallback: pause, preserve accepted items, and create correction stories.",
+      "researchFreshness": "Current source permissions, API/site constraints, pinned stack health, and evaluation guidance confirmed within 7 days."
+    },
+    {
+      "id": "P07-S017",
+      "phase": "P07",
+      "sequence": 19,
+      "title": "P07-S017: Prove knowledge-base backup and isolated restore",
+      "path": "docs/stories/P07/P07-S017-prove-knowledge-base-backup-and-isolated-restore.md",
+      "sha256": "8876dd4e3c3f892d42a69bb1b31d192280ef5abc2b4ae99226f1ca91fff7f160",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P07/P07-S017-prove-knowledge-base-backup-and-isolated-restore.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P07-S016"
+      ],
+      "unlocks": [
+        "P08-S001"
+      ],
+      "preferredRoute": "Interface: goagentic restore rehearsal plus WSL test runner; Provider: controller-selected cloud provider; Model class: high-reliability operations; Effort: high; Fallback: retain original system untouched and block P08.",
+      "researchFreshness": "Current Git bundle/LFS, PostgreSQL backup/restore, archive integrity, Rancher volume, and Windows filesystem guidance checked within 7 days."
+    },
+    {
+      "id": "P08-S001",
+      "phase": "P08",
+      "sequence": 1,
+      "title": "P08-S001: Research current personal-agent patterns and safety",
+      "path": "docs/stories/P08/P08-S001-research-current-personal-agent-patterns-and-safety.md",
+      "sha256": "d0438ac81114bc48f9dea3279120a893ea016215f9899b5c0d15f37b9857d54c",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S001-research-current-personal-agent-patterns-and-safety.md",
+      "status": "Planned",
+      "step": "Research",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "LLM",
+      "dependencies": [
+        "P07-S017"
+      ],
+      "unlocks": [
+        "P08-S002"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: research-capable; Effort: high; Fallback: second cloud provider for disputed safety or integration claims.",
+      "researchFreshness": "Official and primary sources checked during activation; product/tool facts no older than 7 days and public-health/consumer guidance checked for current revision."
+    },
+    {
+      "id": "P08-S002",
+      "phase": "P08",
+      "sequence": 2,
+      "title": "P08-S002: Learn practical agent design and boundaries",
+      "path": "docs/stories/P08/P08-S002-learn-practical-agent-design-and-boundaries.md",
+      "sha256": "f608a05016d0022cfc66eacb7e0daefbded28581642aa061ac383042d252afee",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S002-learn-practical-agent-design-and-boundaries.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P08-S001"
+      ],
+      "unlocks": [
+        "P08-S003"
+      ],
+      "preferredRoute": "Interface: Open WebUI or browser lesson with goagentic evidence capture; Provider: controller-selected value cloud model; Model class: teaching; Effort: medium; Fallback: alternate vetted resource from P08-S001.",
+      "researchFreshness": "Use only P08-S001-vetted resources still current at lesson time; recheck changed pages and videos within 24 hours."
+    },
+    {
+      "id": "P08-S003",
+      "phase": "P08",
+      "sequence": 3,
+      "title": "P08-S003: Define the shared personal-agent contract",
+      "path": "docs/stories/P08/P08-S003-define-the-shared-personal-agent-contract.md",
+      "sha256": "0632f52cbfaa2c27d93186ec87ce561ebcbf2d0782d13dc1d318cc3a1bb868c5",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S003-define-the-shared-personal-agent-contract.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P08-S002"
+      ],
+      "unlocks": [
+        "P08-S012"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability architecture; Effort: high; Fallback: cross-provider design review before code generation.",
+      "researchFreshness": "P08-S001 must be unexpired; current LangChain/LangGraph, Open WebUI, Ollama, MLflow, and OWASP docs rechecked within 7 days."
+    },
+    {
+      "id": "P08-S012",
+      "phase": "P08",
+      "sequence": 4,
+      "title": "P08-S012: Deploy the shared personal-agent runtime",
+      "path": "docs/stories/P08/P08-S012-deploy-the-shared-personal-agent-runtime.md",
+      "sha256": "7f552f2556eef5b3bfc76f804a9c400d6018f27fc18e74b3256fa77213a77850",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S012-deploy-the-shared-personal-agent-runtime.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P08-S003"
+      ],
+      "unlocks": [
+        "P08-S004"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic deployment; Provider: controller-selected cloud provider; Model class: high-reliability operations; Effort: high; Fallback: restore P07 service checkpoint and run the API as a disposable localhost-only WSL process.",
+      "researchFreshness": "Current stable LangChain/LangGraph, Open WebUI integration, Ollama API, MLflow tracing, dependency-security, and container guidance checked within 7 days."
+    },
+    {
+      "id": "P08-S004",
+      "phase": "P08",
+      "sequence": 5,
+      "title": "P08-S004: Build the thought-partner agent",
+      "path": "docs/stories/P08/P08-S004-build-the-thought-partner-agent.md",
+      "sha256": "996fb2445d14efea7de8a6cff0eec296c3941ae947f3b1fc68fdcc34aed0bdc7",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S004-build-the-thought-partner-agent.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P08-S012"
+      ],
+      "unlocks": [
+        "P08-S005"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability safety implementation; Effort: high; Fallback: disable preset and return to the shared diagnostic runtime.",
+      "researchFreshness": "P08-S001 baseline unexpired; current US 988/SAMHSA resources and owner-region applicability checked within 24 hours of activation."
+    },
+    {
+      "id": "P08-S005",
+      "phase": "P08",
+      "sequence": 6,
+      "title": "P08-S005: Build the life-planning agent",
+      "path": "docs/stories/P08/P08-S005-build-the-life-planning-agent.md",
+      "sha256": "2c66dacca7919597f3335c205855f335f6c41106e43a3a68bd77221cb6570560",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S005-build-the-life-planning-agent.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P08-S004"
+      ],
+      "unlocks": [
+        "P08-S011"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability agent implementation; Effort: high; Fallback: disable preset and retain only approved Markdown templates.",
+      "researchFreshness": "P08-S001 baseline and current runtime/preset documentation checked within 7 days."
+    },
+    {
+      "id": "P08-S011",
+      "phase": "P08",
+      "sequence": 7,
+      "title": "P08-S011: Build the daily-check-in agent",
+      "path": "docs/stories/P08/P08-S011-build-the-daily-check-in-agent.md",
+      "sha256": "0e853bf746589b888da5a0061efee52b4f36afe42429499a7c40a0b3ba9e57b0",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S011-build-the-daily-check-in-agent.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P08-S005"
+      ],
+      "unlocks": [
+        "P08-S006"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability implementation; Effort: high; Fallback: use the accepted primary model if the fast local profile misses any safety threshold.",
+      "researchFreshness": "P08-S001 baseline and current accepted fast-model evaluation checked within 7 days."
+    },
+    {
+      "id": "P08-S006",
+      "phase": "P08",
+      "sequence": 8,
+      "title": "P08-S006: Build the fitness-coach agent",
+      "path": "docs/stories/P08/P08-S006-build-the-fitness-coach-agent.md",
+      "sha256": "5230fd4c7c92e796d0c2d4d4f190bf513b2d8c593059f88f685031b4a2828cbe",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S006-build-the-fitness-coach-agent.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P08-S011"
+      ],
+      "unlocks": [
+        "P08-S007"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability safety implementation; Effort: high; Fallback: disable the preset and provide links to current official guidance only.",
+      "researchFreshness": "Current CDC/HHS physical-activity guidance and source revisions checked within 24 hours; runtime and model docs within 7 days."
+    },
+    {
+      "id": "P08-S007",
+      "phase": "P08",
+      "sequence": 9,
+      "title": "P08-S007: Build the financial-education agent",
+      "path": "docs/stories/P08/P08-S007-build-the-financial-education-agent.md",
+      "sha256": "7a4de5aea830b5fc77417b3bf1fcb1700d76b67ef0c279a81555db7e653fa8e4",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S007-build-the-financial-education-agent.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P08-S006"
+      ],
+      "unlocks": [
+        "P08-S008"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability safety implementation; Effort: high; Fallback: disable preset and expose only deterministic calculators plus official education links.",
+      "researchFreshness": "Current CFPB, Investor.gov/SEC, IRS or other applicable primary guidance checked within 24 hours; runtime/model docs within 7 days."
+    },
+    {
+      "id": "P08-S008",
+      "phase": "P08",
+      "sequence": 10,
+      "title": "P08-S008: Integrate approved RAG sources with least privilege",
+      "path": "docs/stories/P08/P08-S008-integrate-approved-rag-sources-with-least-privilege.md",
+      "sha256": "56ed37d41221f2b1530be84f6914d40d412005c871114a6de0cf4e372ab4c26c",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S008-integrate-approved-rag-sources-with-least-privilege.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P08-S007"
+      ],
+      "unlocks": [
+        "P08-S009"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability security implementation; Effort: high; Fallback: detach all collections and operate agents without RAG.",
+      "researchFreshness": "P07 retrieval contract, current Open WebUI/LangChain RAG behavior, and OWASP prompt-injection/vector threats checked within 7 days."
+    },
+    {
+      "id": "P08-S009",
+      "phase": "P08",
+      "sequence": 11,
+      "title": "P08-S009: Evaluate agents across models and risks",
+      "path": "docs/stories/P08/P08-S009-evaluate-agents-across-models-and-risks.md",
+      "sha256": "109d31b514be5790ea3330871a018d1832a6996f53ec977c1822eae602fc5d62",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S009-evaluate-agents-across-models-and-risks.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P08-S008"
+      ],
+      "unlocks": [
+        "P08-S010"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: different cloud provider from the predominant P08 implementer; Model class: high-reliability evaluator; Effort: high; Fallback: two independent fresh-session reviews and deterministic suite only until judge access returns.",
+      "researchFreshness": "Current MLflow evaluation/tracing APIs, model profiles, safety sources, and P08-S001 baseline checked within 7 days."
+    },
+    {
+      "id": "P08-S010",
+      "phase": "P08",
+      "sequence": 12,
+      "title": "P08-S010: Perform personal-agent owner acceptance",
+      "path": "docs/stories/P08/P08-S010-perform-personal-agent-owner-acceptance.md",
+      "sha256": "d4aa84219bec45f6dcfadc5dec738bfe9f37869d4db4e3bde83cc8d279aa112d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P08/P08-S010-perform-personal-agent-owner-acceptance.md",
+      "status": "Planned",
+      "step": "Human Validation",
+      "holdReason": "Approval",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P08-S009"
+      ],
+      "unlocks": [
+        "P09-S001"
+      ],
+      "preferredRoute": "Interface: Open WebUI with goagentic evidence capture; Provider: accepted local Ollama profiles; Model class: P08-qualified primary/fast routes; Effort: owner-paced; Fallback: pause, disable the affected preset, and return a bounded correction to its implementation story.",
+      "researchFreshness": "P08-S009 evaluation and P08-S001 safety resources must be unexpired; recheck current emergency and cited official resources within 24 hours."
+    },
+    {
+      "id": "P09-S001",
+      "phase": "P09",
+      "sequence": 1,
+      "title": "P09-S001: Research and score current OSS memory frameworks",
+      "path": "docs/stories/P09/P09-S001-research-and-score-current-oss-memory-frameworks.md",
+      "sha256": "8424e1193e8d4860c2691760dc01e88104092b27078d5eb81f7aabcedc1e24f5",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S001-research-and-score-current-oss-memory-frameworks.md",
+      "status": "Planned",
+      "step": "Research",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P08-S010"
+      ],
+      "unlocks": [
+        "P09-S002"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: research-capable; Effort: high; Fallback: second provider for disputed license, security, or feature claims.",
+      "researchFreshness": "Official repositories, docs, releases, issues, licenses, benchmarks, and advisories checked within 7 days."
+    },
+    {
+      "id": "P09-S002",
+      "phase": "P09",
+      "sequence": 2,
+      "title": "P09-S002: Select memory architecture through an ADR",
+      "path": "docs/stories/P09/P09-S002-select-memory-architecture-through-an-adr.md",
+      "sha256": "0c7edca741a237ed25d885512bf597505cbbba02c6ac08bc5488b69ecc3954b2",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S002-select-memory-architecture-through-an-adr.md",
+      "status": "Planned",
+      "step": "Review",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P09-S001"
+      ],
+      "unlocks": [
+        "P09-S003"
+      ],
+      "preferredRoute": "Interface: goagentic guided decision; Provider: different cloud provider from P09-S001 reviewer; Model class: high-reliability architecture; Effort: high; Fallback: select the framework-neutral LangGraph/PostgreSQL baseline if no candidate clears every gate.",
+      "researchFreshness": "P09-S001 sources and candidate releases rechecked within 24 hours."
+    },
+    {
+      "id": "P09-S003",
+      "phase": "P09",
+      "sequence": 3,
+      "title": "P09-S003: Learn the selected memory framework and concepts",
+      "path": "docs/stories/P09/P09-S003-learn-the-selected-memory-framework-and-concepts.md",
+      "sha256": "9a531e53f856316686dad0d97988214d4706ca522f2d163466d95f105994fa81",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S003-learn-the-selected-memory-framework-and-concepts.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P09-S002"
+      ],
+      "unlocks": [
+        "P09-S013"
+      ],
+      "preferredRoute": "Interface: browser/Open WebUI lesson through goagentic; Provider: controller-selected value cloud model; Model class: teaching; Effort: medium; Fallback: alternate P09-S001-vetted resource.",
+      "researchFreshness": "Official selected-framework docs and vetted concept/hands-on videos checked within 24 hours."
+    },
+    {
+      "id": "P09-S013",
+      "phase": "P09",
+      "sequence": 4,
+      "title": "P09-S013: Deploy the selected private memory foundation",
+      "path": "docs/stories/P09/P09-S013-deploy-the-selected-private-memory-foundation.md",
+      "sha256": "df1c1df54b1206ff40d12289fa7f464c33dc12cfdc6f6691e82fdb4edb46e178",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S013-deploy-the-selected-private-memory-foundation.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P09-S003"
+      ],
+      "unlocks": [
+        "P09-S004"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic deployment; Provider: controller-selected cloud provider; Model class: high-reliability operations; Effort: high; Fallback: restore P08/P04 checkpoints and defer P09 without memory.",
+      "researchFreshness": "Selected framework, images, storage, authentication, encryption, upgrade, Ollama, and advisory docs checked within 7 days."
+    },
+    {
+      "id": "P09-S004",
+      "phase": "P09",
+      "sequence": 5,
+      "title": "P09-S004: Implement memory storage and provenance schema",
+      "path": "docs/stories/P09/P09-S004-implement-memory-storage-and-provenance-schema.md",
+      "sha256": "9800d695d1182d5caa82698e04e68b6cbad1a066177b633774759cc396e5fc8d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S004-implement-memory-storage-and-provenance-schema.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P09-S013"
+      ],
+      "unlocks": [
+        "P09-S005"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability data engineering; Effort: high; Fallback: framework-neutral PostgreSQL ledger with projection disabled.",
+      "researchFreshness": "ADR-selected storage, transaction, migration, encryption, and projection docs checked within 7 days."
+    },
+    {
+      "id": "P09-S005",
+      "phase": "P09",
+      "sequence": 6,
+      "title": "P09-S005: Implement candidate-memory capture",
+      "path": "docs/stories/P09/P09-S005-implement-candidate-memory-capture.md",
+      "sha256": "423758fdc65d9f6a1a69ed60256769309064cff2b2665e04eae51511587e3e95",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S005-implement-candidate-memory-capture.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P09-S004"
+      ],
+      "unlocks": [
+        "P09-S006"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability agent implementation; Effort: high; Fallback: deterministic explicit-owner candidate form with model extraction disabled.",
+      "researchFreshness": "Selected extraction/local-model, structured-output, PII/secret, and framework docs checked within 7 days."
+    },
+    {
+      "id": "P09-S006",
+      "phase": "P09",
+      "sequence": 7,
+      "title": "P09-S006: Implement the reviewed inbox",
+      "path": "docs/stories/P09/P09-S006-implement-the-reviewed-inbox.md",
+      "sha256": "09bcdf18093372f7973eb8349fb52050c1f4a9968a8d802e92f79d5a29d49563",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S006-implement-the-reviewed-inbox.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P09-S005"
+      ],
+      "unlocks": [
+        "P09-S007"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability full-stack; Effort: high; Fallback: authenticated local CLI/TUI with the identical decision API.",
+      "researchFreshness": "Selected framework and current local UI/auth/accessibility guidance checked within 7 days."
+    },
+    {
+      "id": "P09-S007",
+      "phase": "P09",
+      "sequence": 8,
+      "title": "P09-S007: Implement durable promotion and correction",
+      "path": "docs/stories/P09/P09-S007-implement-durable-promotion-and-correction.md",
+      "sha256": "1541c2940a83cd9fe1789d4b0b66b9d3613b778da55a5a468c3b9d8c56f0117b",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S007-implement-durable-promotion-and-correction.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P09-S006"
+      ],
+      "unlocks": [
+        "P09-S008"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability security/data; Effort: high; Fallback: leave all candidates quarantined and durable writes disabled.",
+      "researchFreshness": "Current transaction, authentication, anti-replay, selected-framework, and deletion docs checked within 7 days."
+    },
+    {
+      "id": "P09-S008",
+      "phase": "P09",
+      "sequence": 9,
+      "title": "P09-S008: Implement namespace and restricted-memory enforcement",
+      "path": "docs/stories/P09/P09-S008-implement-namespace-and-restricted-memory-enforcement.md",
+      "sha256": "44d1831b0988fe9d78b7772b8a0a839210eb9b850bf6d85a51b6ebec4eb20a75",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S008-implement-namespace-and-restricted-memory-enforcement.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P09-S007"
+      ],
+      "unlocks": [
+        "P09-S009"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: different cloud provider from P09-S007 implementer; Model class: high-reliability security; Effort: high; Fallback: disable all recall and retain ledger-only administration.",
+      "researchFreshness": "Current authorization, encryption, selected-framework namespace/filter, logging, and backup docs checked within 7 days."
+    },
+    {
+      "id": "P09-S009",
+      "phase": "P09",
+      "sequence": 10,
+      "title": "P09-S009: Integrate memory with the life-planning agent",
+      "path": "docs/stories/P09/P09-S009-integrate-memory-with-one-accepted-personal-agent.md",
+      "sha256": "09118213439807a26aa55ae86ab43eb5da6ad0fbf4571c3d2116cac168c3d14c",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S009-integrate-memory-with-one-accepted-personal-agent.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P09-S008"
+      ],
+      "unlocks": [
+        "P09-S010"
+      ],
+      "preferredRoute": "Interface: WSL coding agent through goagentic; Provider: controller-selected cloud provider; Model class: high-reliability agent integration; Effort: high; Fallback: restore the accepted stateless P08 life planner and disable capture/recall.",
+      "researchFreshness": "Current LangGraph Store/selected adapter, P08 runtime/Open WebUI, local model, and MLflow docs checked within 7 days."
+    },
+    {
+      "id": "P09-S010",
+      "phase": "P09",
+      "sequence": 11,
+      "title": "P09-S010: Evaluate memory quality and poisoning resistance",
+      "path": "docs/stories/P09/P09-S010-evaluate-memory-quality-and-poisoning-resistance.md",
+      "sha256": "187f9b47b1683725ad43b345df5777bc68c525a54c5bdd14370282b05d83b86a",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S010-evaluate-memory-quality-and-poisoning-resistance.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P09-S009"
+      ],
+      "unlocks": [
+        "P09-S011"
+      ],
+      "preferredRoute": "Interface: WSL test runner through goagentic; Provider: different cloud provider from the pilot implementer; Model class: high-reliability evaluator; Effort: high; Fallback: deterministic suite plus two fresh-session reviews while model judging is unavailable.",
+      "researchFreshness": "Current memory benchmarks, OWASP memory poisoning, MLflow GenAI evaluation, and selected-framework docs checked within 7 days."
+    },
+    {
+      "id": "P09-S011",
+      "phase": "P09",
+      "sequence": 12,
+      "title": "P09-S011: Prove memory backup, restore, export, and deletion",
+      "path": "docs/stories/P09/P09-S011-prove-memory-backup-restore-export-and-deletion.md",
+      "sha256": "847e850f5d41f3c9c53b91bab51d67b0b9625427dc6fcd8d14ca132fc4ee88bb",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S011-prove-memory-backup-restore-export-and-deletion.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P09-S010"
+      ],
+      "unlocks": [
+        "P09-S012"
+      ],
+      "preferredRoute": "Interface: goagentic restore rehearsal with WSL test runner and guided local inspection; Provider: controller-selected cloud provider; Model class: high-reliability operations; Effort: high; Fallback: keep live system disabled and restore the last verified snapshot.",
+      "researchFreshness": "Current selected storage/framework, encryption, backup, secure-deletion, and migration docs checked within 7 days."
+    },
+    {
+      "id": "P09-S012",
+      "phase": "P09",
+      "sequence": 13,
+      "title": "P09-S012: Perform memory owner acceptance",
+      "path": "docs/stories/P09/P09-S012-perform-memory-owner-acceptance.md",
+      "sha256": "373ac48c7512e1b3e56992ee8b5165d9aab7e4a129b16ec5dc03cba9a1dca0e1",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P09/P09-S012-perform-memory-owner-acceptance.md",
+      "status": "Planned",
+      "step": "Human Validation",
+      "holdReason": "Approval",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P09-S011"
+      ],
+      "unlocks": [
+        "P10-S001"
+      ],
+      "preferredRoute": "Interface: Open WebUI plus the P09-S006 local inbox operation; Provider: accepted local Ollama profiles; Model class: P09-qualified runtime with value cloud facilitator only for guidance; Effort: owner-paced; Fallback: disable capture/recall and restore the P08 stateless life planner.",
+      "researchFreshness": "Installed UI/runtime instructions and P09-S010/S011 results checked within 24 hours; no new product claim is introduced."
+    },
+    {
+      "id": "P10-S001",
+      "phase": "P10",
+      "sequence": 1,
+      "title": "P10-S001: Refresh operational and security guidance",
+      "path": "docs/stories/P10/P10-S001-refresh-operational-and-security-guidance.md",
+      "sha256": "d5c8696b3b9db3a8062e856e7ea0815ce87b78324a96f12e1f620348cd4aa5bc",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S001-refresh-operational-and-security-guidance.md",
+      "status": "Planned",
+      "step": "Research",
+      "holdReason": "Phase Not Activated",
+      "risk": "Low",
+      "actor": "LLM",
+      "dependencies": [
+        "P09-S012"
+      ],
+      "unlocks": [
+        "P10-S002"
+      ],
+      "preferredRoute": "Interface: web-capable coding agent through goagentic; Provider: controller-selected cloud provider; Model class: economical research with synthesis; Effort: medium; Fallback: second cloud provider verifies unresolved or security-significant claims.",
+      "researchFreshness": "Official documentation, stable releases, migration notes, and security advisories checked within 7 days of activation."
+    },
+    {
+      "id": "P10-S002",
+      "phase": "P10",
+      "sequence": 2,
+      "title": "P10-S002: Learn routine operation and incident boundaries",
+      "path": "docs/stories/P10/P10-S002-learn-routine-operation-and-incident-boundaries.md",
+      "sha256": "f0d2155139763873ae08a8680b4d51ef7038fa08f274b15546c1eaebabe4266e",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S002-learn-routine-operation-and-incident-boundaries.md",
+      "status": "Planned",
+      "step": "Learning",
+      "holdReason": "Dependency",
+      "risk": "Low",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P10-S001"
+      ],
+      "unlocks": [
+        "P10-S003"
+      ],
+      "preferredRoute": "Interface: goagentic guided lesson in the owner’s chosen coding interface; Provider: controller-selected cloud provider; Model class: clear instructional; Effort: medium; Fallback: equivalent cloud assistant using the same committed lesson and scoring rubric.",
+      "researchFreshness": "Accepted P10-S001 pack and P01–P09 command/evidence interfaces checked within 7 days."
+    },
+    {
+      "id": "P10-S003",
+      "phase": "P10",
+      "sequence": 3,
+      "title": "P10-S003: Finalize security and privacy controls",
+      "path": "docs/stories/P10/P10-S003-finalize-security-and-privacy-controls.md",
+      "sha256": "bf925435ea91ad229813cc5a19ce23c9580f8b1f9394a15c8bb64b383be6107e",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S003-finalize-security-and-privacy-controls.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P10-S002"
+      ],
+      "unlocks": [
+        "P10-S004"
+      ],
+      "preferredRoute": "Interface: Codex CLI in Windows and AI-Workbench through goagentic; Provider: high-reliability cloud provider; Model class: security implementation; Effort: high; Fallback: Anthropic architecture/security model with cross-provider review and identical activation packet.",
+      "researchFreshness": "P10-S001 unexpired; relevant Microsoft, Rancher, Ollama, Open WebUI, OWASP, and selected-component security guidance checked within 7 days."
+    },
+    {
+      "id": "P10-S004",
+      "phase": "P10",
+      "sequence": 4,
+      "title": "P10-S004: Tune RTX 4090 and workstation performance",
+      "path": "docs/stories/P10/P10-S004-tune-rtx-4090-and-workstation-performance.md",
+      "sha256": "278f615afc513ea9f4b1fe2174163ebea879e38a0fd52c549488d4a35989d23f",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S004-tune-rtx-4090-and-workstation-performance.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P10-S003"
+      ],
+      "unlocks": [
+        "P10-S005"
+      ],
+      "preferredRoute": "Interface: Codex CLI across Windows and AI-Workbench through goagentic; Provider: controller-selected cloud provider; Model class: performance engineering; Effort: high; Fallback: second provider reviews measurements and profile choice before activation.",
+      "researchFreshness": "Current Ollama context/concurrency/keep-alive and NVIDIA NVSMI guidance checked within 7 days; exact model registry and drivers read at execution."
+    },
+    {
+      "id": "P10-S005",
+      "phase": "P10",
+      "sequence": 5,
+      "title": "P10-S005: Implement update, rollback, and migration workflow",
+      "path": "docs/stories/P10/P10-S005-implement-update-rollback-and-migration-workflow.md",
+      "sha256": "22b96499fc03e3b5d06ca870252a7ff4011a2aaf919ea6767315d4b7c1ed26ab",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S005-implement-update-rollback-and-migration-workflow.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P10-S004"
+      ],
+      "unlocks": [
+        "P10-S006"
+      ],
+      "preferredRoute": "Interface: Codex CLI across Windows and AI-Workbench through goagentic; Provider: high-reliability cloud provider; Model class: migration and recovery implementation; Effort: high; Fallback: Anthropic architecture-capable model with cross-provider review and isolated rehearsal.",
+      "researchFreshness": "Official release, migration, compatibility, and rollback documentation for every affected component checked at activation and again before apply."
+    },
+    {
+      "id": "P10-S006",
+      "phase": "P10",
+      "sequence": 6,
+      "title": "P10-S006: Implement comprehensive backup and restore",
+      "path": "docs/stories/P10/P10-S006-implement-comprehensive-backup-and-restore.md",
+      "sha256": "54779da8b9b18b702245d5d3ec214f613de03a71b2970665b832a7b937d88147",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S006-implement-comprehensive-backup-and-restore.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P10-S005"
+      ],
+      "unlocks": [
+        "P10-S007"
+      ],
+      "preferredRoute": "Interface: Codex CLI plus owner-selected backup destination through goagentic; Provider: high-reliability cloud provider; Model class: data recovery implementation; Effort: high; Fallback: Anthropic recovery-capable model with cross-provider review and isolated restore rehearsal.",
+      "researchFreshness": "Current source-component consistency, WSL export/import, encryption, and owner-selected local/OneDrive/NAS backup documentation checked within 7 days."
+    },
+    {
+      "id": "P10-S007",
+      "phase": "P10",
+      "sequence": 7,
+      "title": "P10-S007: Implement safe uninstall and retained-data choices",
+      "path": "docs/stories/P10/P10-S007-implement-safe-uninstall-and-retained-data-choices.md",
+      "sha256": "f6879150d6c969d65ce97739f7c62db0389e8d718a3d61d136287cf5d175f935",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S007-implement-safe-uninstall-and-retained-data-choices.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P10-S006"
+      ],
+      "unlocks": [
+        "P10-S012"
+      ],
+      "preferredRoute": "Interface: Codex CLI on Windows through goagentic; Provider: high-reliability cloud provider; Model class: destructive-operation safety; Effort: high; Fallback: Anthropic security/recovery model with cross-provider review and disposable-target rehearsal.",
+      "researchFreshness": "Current official uninstall, factory-reset, data-location, WSL unregister, package-manager, and model-removal guidance checked within 7 days."
+    },
+    {
+      "id": "P10-S012",
+      "phase": "P10",
+      "sequence": 8,
+      "title": "P10-S012: Assemble the idempotent PowerShell installer",
+      "path": "docs/stories/P10/P10-S012-assemble-the-idempotent-powershell-installer.md",
+      "sha256": "37299dcb2a360f9b97462d9a7eaa058b6a8c768767a3bf72295b61e02ca6a058",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S012-assemble-the-idempotent-powershell-installer.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P10-S007"
+      ],
+      "unlocks": [
+        "P10-S013"
+      ],
+      "preferredRoute": "Interface: Codex CLI on Windows and AI-Workbench through goagentic; Provider: high-reliability cloud provider; Model class: PowerShell systems integration; Effort: high; Fallback: Anthropic architecture/coding model with cross-provider review and isolated rehearsal.",
+      "researchFreshness": "Current PowerShell, Windows, WSL, Rancher Desktop, Ollama, and every invoked component interface checked within 7 days."
+    },
+    {
+      "id": "P10-S013",
+      "phase": "P10",
+      "sequence": 9,
+      "title": "P10-S013: Build the maintenance command suite",
+      "path": "docs/stories/P10/P10-S013-build-the-maintenance-command-suite.md",
+      "sha256": "a499570fc4ab08274d864cc59370d0de47a097b9409dbde755d183cb481049d1",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S013-build-the-maintenance-command-suite.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P10-S012"
+      ],
+      "unlocks": [
+        "P10-S014"
+      ],
+      "preferredRoute": "Interface: Codex CLI on Windows through goagentic; Provider: controller-selected cloud provider; Model class: PowerShell integration; Effort: high; Fallback: Anthropic coding model with cross-provider review of destructive wrappers.",
+      "researchFreshness": "P10-S001 and accepted component health/lifecycle interfaces refreshed within 7 days."
+    },
+    {
+      "id": "P10-S014",
+      "phase": "P10",
+      "sequence": 10,
+      "title": "P10-S014: Write the core operator and usage guides",
+      "path": "docs/stories/P10/P10-S014-write-the-core-operator-and-usage-guides.md",
+      "sha256": "97be41d9d6077f0b62f2fef8b7c621d2f64e50ec2251b47e03c9bd536a587255",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S014-write-the-core-operator-and-usage-guides.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "Medium",
+      "actor": "LLM",
+      "dependencies": [
+        "P10-S013"
+      ],
+      "unlocks": [
+        "P10-S015"
+      ],
+      "preferredRoute": "Interface: coding agent through goagentic; Provider: controller-selected value cloud provider; Model class: technical documentation; Effort: medium; Fallback: qualified local documentation model with independent cloud factual review.",
+      "researchFreshness": "Product instructions checked against accepted installed versions and official sources within each owning story’s freshness window."
+    },
+    {
+      "id": "P10-S015",
+      "phase": "P10",
+      "sequence": 11,
+      "title": "P10-S015: Write the operations, recovery, and troubleshooting guides",
+      "path": "docs/stories/P10/P10-S015-write-the-operations-recovery-and-troubleshooting-guides.md",
+      "sha256": "071132ce6bc8dbe676edb2394e50b396408806aa992f52077c4aa45a0d0a6453",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S015-write-the-operations-recovery-and-troubleshooting-guides.md",
+      "status": "Planned",
+      "step": "Implementation",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P10-S014"
+      ],
+      "unlocks": [
+        "P10-S008"
+      ],
+      "preferredRoute": "Interface: coding agent through goagentic; Provider: high-reliability cloud provider; Model class: operations/recovery documentation; Effort: high; Fallback: different cloud provider reviews every destructive/recovery instruction against test evidence.",
+      "researchFreshness": "Accepted local results and pinned-component operational documentation checked within 7 days."
+    },
+    {
+      "id": "P10-S008",
+      "phase": "P10",
+      "sequence": 12,
+      "title": "P10-S008: Validate the complete deliverable catalog",
+      "path": "docs/stories/P10/P10-S008-validate-the-complete-deliverable-catalog.md",
+      "sha256": "ea950a278d8564144bc4652f8bb2f8ebd896979ddcf0e319ed25c105374a943d",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S008-validate-the-complete-deliverable-catalog.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "High",
+      "actor": "LLM",
+      "dependencies": [
+        "P10-S015"
+      ],
+      "unlocks": [
+        "P10-S009"
+      ],
+      "preferredRoute": "Interface: fresh coding-agent session through goagentic; Provider: different cloud provider from the primary P10 documentation author; Model class: release/catalog verification; Effort: high; Fallback: another independent cloud provider with the same frozen candidate and no repair permission.",
+      "researchFreshness": "Producing-story sources must remain inside their declared windows; affected claims are refreshed before validation if expired."
+    },
+    {
+      "id": "P10-S009",
+      "phase": "P10",
+      "sequence": 13,
+      "title": "P10-S009: Run full automated end-to-end verification",
+      "path": "docs/stories/P10/P10-S009-run-full-automated-end-to-end-verification.md",
+      "sha256": "a2a5ed518a295cc6a45a9d5d8438386983472d15c4a7d8b53786c60dd2999318",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S009-run-full-automated-end-to-end-verification.md",
+      "status": "Planned",
+      "step": "Testing",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P10-S008"
+      ],
+      "unlocks": [
+        "P10-S010"
+      ],
+      "preferredRoute": "Interface: Codex CLI across Windows and AI-Workbench through goagentic; Provider: high-reliability cloud provider; Model class: systems verification; Effort: high; Fallback: Anthropic architecture/testing model with cross-provider result review and isolated destructive fixtures.",
+      "researchFreshness": "Fixed release-candidate sources and health interfaces rechecked within 7 days; no new product decision is allowed."
+    },
+    {
+      "id": "P10-S010",
+      "phase": "P10",
+      "sequence": 14,
+      "title": "P10-S010: Perform independent final architecture review",
+      "path": "docs/stories/P10/P10-S010-perform-independent-final-architecture-review.md",
+      "sha256": "8489f3a0e68db73a1f7a44ca4130a2464a56020f0041e7cf17005cff85efe141",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S010-perform-independent-final-architecture-review.md",
+      "status": "Planned",
+      "step": "Review",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "LLM",
+      "dependencies": [
+        "P10-S009"
+      ],
+      "unlocks": [
+        "P10-S011"
+      ],
+      "preferredRoute": "Interface: fresh Codex CLI or Claude Code session through goagentic; Provider: different from the primary P10 implementation provider; Model class: architecture/security/recovery review; Effort: high; Fallback: another independent cloud provider; the author and reviewer must remain distinct.",
+      "researchFreshness": "Provider availability and any security/release claim questioned by the reviewer checked at review time."
+    },
+    {
+      "id": "P10-S011",
+      "phase": "P10",
+      "sequence": 15,
+      "title": "P10-S011: Complete final owner acceptance and baseline",
+      "path": "docs/stories/P10/P10-S011-complete-final-owner-acceptance-and-baseline.md",
+      "sha256": "203df6175c56edacc1d2e5d4e579785083f50d181368d3ed81bcb62929776025",
+      "specificationUrl": "https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P10/P10-S011-complete-final-owner-acceptance-and-baseline.md",
+      "status": "Planned",
+      "step": "Human Validation",
+      "holdReason": "Dependency",
+      "risk": "Critical",
+      "actor": "Human + LLM",
+      "dependencies": [
+        "P10-S010"
+      ],
+      "unlocks": [],
+      "preferredRoute": "Interface: goagentic guided owner checklist in the preferred coding interface; Provider: controller-selected cloud provider; Model class: clear acceptance facilitator; Effort: medium; Fallback: equivalent cloud assistant using the identical committed checklist; no model may answer for the owner.",
+      "researchFreshness": "Frozen accepted release, guides, commands, evidence, and residual-risk record; changed behavior blocks and returns to the owning story."
+    }
+  ]
+}

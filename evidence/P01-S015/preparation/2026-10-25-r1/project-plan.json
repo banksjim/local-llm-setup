@@ -1,0 +1,65 @@
+{
+  "packetId": "ACT-P01-S015-2026-10-25-r1",
+  "programId": "LAW-WIN",
+  "owner": "banksjim",
+  "ownerType": "User",
+  "ownerDatabaseId": 7800938,
+  "ownerNodeId": "MDQ6VXNlcjc4MDA5Mzg=",
+  "repository": "banksjim/local-llm-setup",
+  "repositoryNodeId": "R_kgDOTu2BgQ",
+  "title": "Local AI Workstation Playbook (LAW-WIN)",
+  "visibility": "PRIVATE",
+  "shortDescription": "Windows local AI workstation program; repository specifications are authoritative.",
+  "projectReadme": "# Local AI Workstation Playbook (LAW-WIN)\n\nPrivate progress mirror for the public banksjim/local-llm-setup playbook. Program specifications, accepted evidence, and repository state are authoritative.\n\nProgram: LAW-WIN. Bootstrap story: P01-S015. Preparation packet: ACT-P01-S015-2026-10-25-r1.\n\nAll 137 approved stories are imported as drafts before the active story is converted to an issue. Only Ready/activated stories receive repository issues. No workstation installation is implied by a board item.\n\nUse All stories for phase/sequence order and Workflow for status. Story documents link to the pinned approved revision. Evidence remains Pending until accepted evidence exists. Future story model selections remain unresolved until their activation.\n\nOwner learning, independent review, and final acceptance are mandatory.\n",
+  "expectedStoryItems": 137,
+  "initialDraftCreations": 137,
+  "readyStoryIssueConversions": ["P01-S015"],
+  "finalDraftCountForThisStory": 136,
+  "publicIssueCountForThisStory": 1,
+  "publicIssueTitle": "P01-S015: Bootstrap the visible GitHub Project",
+  "publicIssueBody": "Program: LAW-WIN\nStory ID: P01-S015\nPhase: P01\nSequence: 1\n\nSpecification: https://github.com/banksjim/local-llm-setup/blob/ef2833a8fce8bbb11262b7890883c07ea9e73b31/docs/stories/P01/P01-S015-bootstrap-the-visible-github-project.md\n\nObjective: Create the owner's private program Project and verify the approved 137-story backlog. Track progress under the repository's story contract.\n\nThis issue contains public playbook metadata only. Private Project identifiers, authentication details, local paths, and private knowledge content are excluded.\n",
+  "fields": [
+    {"name": "Title", "type": "BUILT_IN", "operation": "reuse", "value": "story title including stable Story ID"},
+    {"name": "Phase", "type": "SINGLE_SELECT", "operation": "create", "options": ["P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10"]},
+    {"name": "Story ID", "type": "TEXT", "operation": "create"},
+    {"name": "Sequence", "type": "NUMBER", "operation": "create"},
+    {"name": "Status", "type": "SINGLE_SELECT", "operation": "reuse built-in; configure before import", "options": ["Planned", "Ready", "In Progress", "Waiting", "Done", "Superseded"]},
+    {"name": "Step", "type": "SINGLE_SELECT", "operation": "create", "options": ["Research", "Learning", "Implementation", "Testing", "Review", "Human Validation", "Merge"]},
+    {"name": "Hold reason", "type": "SINGLE_SELECT", "operation": "create", "options": ["None", "Phase Not Activated", "Dependency", "Approval", "Paused", "Blocked", "Usage Budget", "External System"]},
+    {"name": "Risk", "type": "SINGLE_SELECT", "operation": "create", "options": ["Low", "Medium", "High", "Critical"]},
+    {"name": "Required model", "type": "TEXT", "operation": "create"},
+    {"name": "Budget", "type": "SINGLE_SELECT", "operation": "create", "options": ["Small", "Normal", "Expensive"]},
+    {"name": "Owner action", "type": "TEXT", "operation": "create"},
+    {"name": "Specification link", "type": "TEXT", "operation": "create"},
+    {"name": "Evidence link", "type": "TEXT", "operation": "create"}
+  ],
+  "singleSelectOptionStyle": {"description": "Option label equals its canonical value; no extra semantics", "color": "GRAY", "preserveExistingOptionIdsOnUpdate": true},
+  "views": [
+    {"name": "All stories", "layout": "table", "filter": "", "visibleFields": ["Title", "Phase", "Story ID", "Sequence", "Status", "Step", "Hold reason", "Risk", "Required model", "Budget", "Owner action", "Specification link", "Evidence link"], "sortBy": [["Phase", "asc"], ["Sequence", "asc"]], "groupBy": []},
+    {"name": "Workflow", "layout": "board", "filter": "", "visibleFields": ["Title", "Phase", "Story ID", "Sequence", "Step", "Hold reason", "Risk", "Required model", "Budget", "Owner action", "Specification link", "Evidence link"], "sortBy": [["Phase", "asc"], ["Sequence", "asc"]], "groupBy": [], "verticalGroupBy": ["Status"]}
+  ],
+  "viewTransport": {"write": "gh api --method POST users/7800938/projectsV2/{captured-project-number}/views --input request.json", "apiVersion": "2026-03-10", "readAndReconcile": "GraphQL ProjectV2.views, fields, sortByFields, groupByFields, verticalGroupByFields; paginate every connection", "identifiers": "Resolve numeric REST field IDs from GraphQL databaseId. Resolve node IDs from returned API objects; never infer IDs from titles."},
+  "batchSize": 10,
+  "batchCount": 14,
+  "inventorySource": "story-inventory.json",
+  "defaultItemPolicy": {
+    "title": "inventory title",
+    "body": "Program: LAW-WIN; Story ID: exact ID; Specification: immutable URL; no full story duplication or private data",
+    "phaseSequenceStatusStepHoldRisk": "copy source inventory, then apply only the explicit lifecycle/risk overrides below",
+    "requiredModel": "exact Preferred route text; append 'Exact model pending activation' for unactivated stories",
+    "budget": "leave unset on unactivated stories; populated during activation, never invent a budget",
+    "ownerAction": "Not actionable: activation/dependencies pending, unless overridden below",
+    "specificationLink": "inventory specificationUrl",
+    "evidenceLink": "Pending - no accepted evidence"
+  },
+  "lifecycleOverrides": {
+    "duringExecution": {"P01-S015": {"Status": "In Progress", "Step": "Implementation", "Hold reason": "None", "Risk": "Critical", "Required model": "Codex / OpenAI gpt-6.1-sol / medium / Standard; fallback Claude Code / Anthropic claude-sonnet-5-5 / medium", "Budget": "Normal", "Owner action": "Review Project and complete genuine owner validation at the validation checkpoint"}},
+    "afterAcceptance": {
+      "P01-S015": {"Status": "Done", "Step": "Merge", "Hold reason": "None", "Risk": "Critical", "Owner action": "None - accepted; evidence retained"},
+      "P01-S001": {"Status": "Planned", "Step": "Research", "Hold reason": "Approval", "Owner action": "Explicitly authorize P01-S001; phase scope authorization alone does not execute it"}
+    },
+    "evidenceLinkPolicy": "Use a local evidence reference in the private Project until a sanitized artifact is separately approved for publication; never publish broken GitHub links or private Project details in public issues."
+  },
+  "existingResourcesPolicy": "Zero Projects and zero repository issues observed. Re-inventory immediately before apply. Unexpected existing content or a title collision stops execution for reconciliation; do not adopt or overwrite a pre-existing Project.",
+  "defaultViewsPolicy": "Inventory server-created views; configure one as All stories if possible, otherwise create both required views. Remove only extra default views proved created with this new Project and recorded in the ownership inventory. Exactly two views must remain."
+}

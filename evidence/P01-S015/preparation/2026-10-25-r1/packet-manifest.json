@@ -1,0 +1,83 @@
+{
+  "packetId": "ACT-P01-S015-2026-10-25-r1",
+  "specificationBaseline": "ef2833a8fce8bbb11262b7890883c07ea9e73b31",
+  "binding": "Exact preparation commit containing these files plus this manifest; approval must identify both packet ID and commit",
+  "fileCount": 15,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "0ef3c57e1d0fd738452c08ee58a22c328fdf6551937f120027ceac076014bdcd",
+      "bytes": 90
+    },
+    {
+      "path": "activation.md",
+      "sha256": "29b65d0c95ba2cb469867d2453ccb7ea3e9ad1b903f8a74b3c46f7eb9f82ccf1",
+      "bytes": 19895
+    },
+    {
+      "path": "authority-manifest.json",
+      "sha256": "58117144a4b179629b83d8870d845468ccfa9ee709a2376daf193d1438545ebf",
+      "bytes": 39298
+    },
+    {
+      "path": "bundle-validation.json",
+      "sha256": "eb4d1c2fbdaaea18abe8a8ae89c2ce9d5026112c31edbe7b4a669dd655f02d84",
+      "bytes": 1203
+    },
+    {
+      "path": "github-api-schema.json",
+      "sha256": "f1fb83d3a616febcddbb04152652e8f71ffeb91aa09ad894e225096531ed5416",
+      "bytes": 13211
+    },
+    {
+      "path": "issue-inventory.json",
+      "sha256": "ddffc78f699526ff7b039683ff3eeb100033f1fa2097b5fabacc81f57b800dfe",
+      "bytes": 162
+    },
+    {
+      "path": "phase-mutation-preview.md",
+      "sha256": "74787bc8dc83eceaa714d2b9b4753d62e9c8b3be9f14250c1ee81ebd6a892f04",
+      "bytes": 12591
+    },
+    {
+      "path": "prepare.py",
+      "sha256": "72609ab9763903e92bf39781923935dec693eab5c19efee83b8c51fa358e9680",
+      "bytes": 13294
+    },
+    {
+      "path": "prerequisites.json",
+      "sha256": "493f585d5fdd46a2faf6de9ca33ad909ba87ae6eec4ed9987e1bee3c21de279c",
+      "bytes": 1818
+    },
+    {
+      "path": "project-plan.json",
+      "sha256": "7725f4fe63fc6dc49a8190f29c3eceda462a5fead84e77c13b33a6d980270dca",
+      "bytes": 7304
+    },
+    {
+      "path": "provider-auth.json",
+      "sha256": "0ab4827fb1f165515a437dc28e6c9f4a985e084c9e0ef734b776242c04213fe7",
+      "bytes": 347
+    },
+    {
+      "path": "review-handoff.md",
+      "sha256": "8fd9ff9143db53ea7f1c7d7cd61d4aa2a564cee1e3371480c2c926601c53e3de",
+      "bytes": 2108
+    },
+    {
+      "path": "sources.md",
+      "sha256": "a42e5b06c6b1094580243d9a032d78e961792c653e2b3d8edbebedff08d834a8",
+      "bytes": 5514
+    },
+    {
+      "path": "story-inventory.json",
+      "sha256": "fbb2f5aeb580fcf418d963290933d0ae8099e7491c9b0e7594d9d6106fa67295",
+      "bytes": 161472
+    },
+    {
+      "path": "validation.json",
+      "sha256": "2ae3efa0f895a4409943df2ceb24e419e730f4eb6787f091e8e0139149513615",
+      "bytes": 856
+    }
+  ]
+}

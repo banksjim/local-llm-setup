@@ -1,0 +1,10 @@
+{
+    "accessDate":  "2026-10-25",
+    "command":  "claude auth status --json (whitelisted output only)",
+    "loggedIn":  true,
+    "authMethod":  "claude.ai",
+    "apiProvider":  "firstParty",
+    "subscriptionType":  "pro",
+    "specificModelEntitlement":  "Not verified; must pass before independent review",
+    "credentialsStored":  false
+}

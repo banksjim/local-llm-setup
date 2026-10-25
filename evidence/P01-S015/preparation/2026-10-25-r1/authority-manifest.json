@@ -1,0 +1,807 @@
+{
+  "packetId": "ACT-P01-S015-2026-10-25-r1",
+  "baselineCommit": "ef2833a8fce8bbb11262b7890883c07ea9e73b31",
+  "hashEncoding": "Canonical Git text bytes; normalize CRLF to LF when comparing working files",
+  "files": [
+    {
+      "path": "README.md",
+      "gitBlob": "c1694563bf206a2212e2bc43478291aa5e2c1b23",
+      "sha256": "c70b58b4e401f224f35f28467def1b5389fac9335d876ced093053d9750839aa"
+    },
+    {
+      "path": "docs/reviews/2026-09-13-formal-specification-review.md",
+      "gitBlob": "e2c247db4726cf15b47ad22df18d910ef26b6718",
+      "sha256": "76d6f0abb49a0a4c5e39a743dc172727a90570ac0148856b66dcdace73b622f4"
+    },
+    {
+      "path": "docs/reviews/2026-09-13-specification-remediation-log.md",
+      "gitBlob": "26cc7c7962753fe83484c555527a052b0fb60301",
+      "sha256": "5a52907a6cf924237819e5a75800bf01844aa879bb76f1b8f0f0e8db56630486"
+    },
+    {
+      "path": "docs/specifications/phases/P01-program-control-and-quality-foundation.md",
+      "gitBlob": "d9fd3ae0f10f76ec6d2cdb9da709d6c6fff563f6",
+      "sha256": "b274e73abb6bef4a8966654b83c0f36a42ace9aa2886cb8a7390af17c0cf7384"
+    },
+    {
+      "path": "docs/specifications/phases/P02-windows-wsl-git-and-vs-code-foundation.md",
+      "gitBlob": "fd85eff69bd6089cf9b5809ea484e2362d86bead",
+      "sha256": "86d694e0495a973aea7078eb8233c92858a6b2246d04ac10903c6a9e4c5c07b7"
+    },
+    {
+      "path": "docs/specifications/phases/P03-local-inference-and-model-foundation.md",
+      "gitBlob": "0742a8c92a140d07c8130e76efe2a6c2d4ff88b1",
+      "sha256": "7289308434a71fbf448a1e7dcde3f6f3be94177ef3ebde4d459a6fbf924f27e2"
+    },
+    {
+      "path": "docs/specifications/phases/P04-open-webui-and-supporting-ai-services.md",
+      "gitBlob": "f4a85274a5f3645e42ce69fc31beaca3fc4f65f9",
+      "sha256": "64d984032c7cb5982e1f800cbae0e7bdbe832dc1449617ef8f87e9e41b3de5ea"
+    },
+    {
+      "path": "docs/specifications/phases/P05-desktop-and-development-tool-integrations.md",
+      "gitBlob": "944916373253562b554e2379cb20070ae020aa58",
+      "sha256": "3bf924af0df92f9b1938eae70ff2e2afb1629ebf2ea598be7b7d4741a28d8ff3"
+    },
+    {
+      "path": "docs/specifications/phases/P06-agent-engineering-foundation.md",
+      "gitBlob": "31f92c7641119cfc25fc3614fb5c6d062d046b3f",
+      "sha256": "60ca362af6af885f87de0e9f3fa66ea5bfbb43797a09cda186fe3e60ceb1f6c3"
+    },
+    {
+      "path": "docs/specifications/phases/P07-rag-ingestion-and-knowledge-base-capstone.md",
+      "gitBlob": "34c0a7073480e85be18571f00e8616a4788a8adb",
+      "sha256": "2f99375a0579032b89de8d919ac68bf3e927a1ec38229aa2d52460c5f2149b1c"
+    },
+    {
+      "path": "docs/specifications/phases/P08-practical-personal-agents.md",
+      "gitBlob": "90f8c0e6d5aeb2b56686102ea785296eb3b2cfa9",
+      "sha256": "67ccb5ec0b0285086e92fc38921d92a821c37d9aad1db5900c5343c15e6a45b8"
+    },
+    {
+      "path": "docs/specifications/phases/P09-durable-agent-memory.md",
+      "gitBlob": "2e457e772dfaa19f9adeb3fd35ff032036ddda3a",
+      "sha256": "fd0011939ebc3ba4003d25fac78684005be93d2993804ca34e659990170327d4"
+    },
+    {
+      "path": "docs/specifications/phases/P10-operations-and-final-acceptance.md",
+      "gitBlob": "52f7920bf8c0b4b877353db05343abe46cc52b84",
+      "sha256": "63b392bcb0a89dee34c1fb865cdae3cd7b8adc81b989061c142d5197bc664a2a"
+    },
+    {
+      "path": "docs/specifications/phases/PHASE-MAP.md",
+      "gitBlob": "610252f6aacf59b23f90c84ec643c25c0475a9c1",
+      "sha256": "b68b9ca493234ca4fc7b05ce51bc68335168c73c309622581cb6bcac3dce4d3f"
+    },
+    {
+      "path": "docs/specifications/program/LOCAL-AI-AGENTIC-WORKSTATION-PROGRAM.md",
+      "gitBlob": "7831a1a6706334ecf2ee3fae498124f8a8392c6b",
+      "sha256": "d1229a3f0f01b7f8a92fa812aeb6acf865995dc10431ec4abeac7bb2d6acdcff"
+    },
+    {
+      "path": "docs/specifications/SPECIFICATION-MAP.md",
+      "gitBlob": "7444fe683cd911e6d4b5052eb1dd80dbab0cbc6e",
+      "sha256": "d54a28786f515970783c1044c904468b457f4c8f4dbf5ae0f698475d2215019b"
+    },
+    {
+      "path": "docs/specifications/standards/STORY-CONTRACT.md",
+      "gitBlob": "1ab3242ba6abca545443924b356f3d821ab66019",
+      "sha256": "732d007b501f7b5f4661034fd66208e804dfc8937565134d918c6414c754aa55"
+    },
+    {
+      "path": "docs/specifications/systems/AGENT-MEMORY.md",
+      "gitBlob": "2b71440d74b5600a5d7e617313fa3791f938bce5",
+      "sha256": "ad953d1c279bdd3e6e396d30a8bb0454c0c5a8b23090a1a0049cda5686c2c1ad"
+    },
+    {
+      "path": "docs/specifications/systems/DESKTOP-DICTATION.md",
+      "gitBlob": "23138649e9e7633ebce51b6a7d5f837dc6bc175d",
+      "sha256": "8f582473057c8d64f3895627b0aa83df780718f53d46f6ecbb6ea7186e16c11b"
+    },
+    {
+      "path": "docs/specifications/systems/GOAGENTIC-CONTROLLER.md",
+      "gitBlob": "617d58c60a4649306b81c2cc826897bd786a402d",
+      "sha256": "385946352c9b733797ff2d054471ff4c96f8316becdbde41b4f1243f39126257"
+    },
+    {
+      "path": "docs/specifications/systems/RAG-INGESTION.md",
+      "gitBlob": "baa83b9c13b4958eb2dd5343d713b31583f40316",
+      "sha256": "733493fdbedd0fce3833cb66f7661123844e00ddc34e2a6e9b2a558a19fe306b"
+    },
+    {
+      "path": "docs/specifications/systems/SYSTEM-MAP.md",
+      "gitBlob": "1b9a9ae689d6fc0739199c7b7369d204bfa4bb20",
+      "sha256": "0dbf3d1032d03cfe4f92721f1fd49d1532cac12ba19ca1e29b460f6e13e54d48"
+    },
+    {
+      "path": "docs/stories/P01/P01-S001-confirm-current-controller-interfaces-and-provider-capabilities.md",
+      "gitBlob": "62b2ab2a3f46f46908c0f0c50d89fc97959bf134",
+      "sha256": "440322cc1735e5d385fc5a3eac7d9bd2675e68252cddf0ec696aacb7cfaa4aeb"
+    },
+    {
+      "path": "docs/stories/P01/P01-S002-learn-the-goagentic-operating-model.md",
+      "gitBlob": "9f3d8508afa20d525f47bdb93cc9c655d06d326f",
+      "sha256": "482d57d9a8e3336f96999aef2b4b7094ea1d5164eaa09ed426bf7482c652d626"
+    },
+    {
+      "path": "docs/stories/P01/P01-S003-define-machine-readable-program-and-story-schemas.md",
+      "gitBlob": "064c9b14e2e8b1616d69cff6e2365d06046236df",
+      "sha256": "bbee6cfb36fa6cbd240281c735f22c27921f7cd05ca058135d75812ba509482b"
+    },
+    {
+      "path": "docs/stories/P01/P01-S004-implement-read-only-orientation-commands.md",
+      "gitBlob": "416a715ea18fcfda2ded4920921f0694500aee42",
+      "sha256": "f212c9428ada8dfac74c425cec8ac7eece00af73dc0166f90c30f7e6985de141"
+    },
+    {
+      "path": "docs/stories/P01/P01-S005-implement-atomic-state-and-append-only-events.md",
+      "gitBlob": "5641afa18c55eea311d0f02a8cf840fe0e320798",
+      "sha256": "2ccb6ae4127b12a8a78737d910d1c206a3b702710d1fed630b9f8a28adc11f95"
+    },
+    {
+      "path": "docs/stories/P01/P01-S006-implement-mutation-lease-and-concurrency-rejection.md",
+      "gitBlob": "3048fb69de1b11e79b37b346b11fa9ca1328b68e",
+      "sha256": "4a3084970ab75d0cdf3fe5f265a5f87c26ce462b7e0058ae706c2957a41fed05"
+    },
+    {
+      "path": "docs/stories/P01/P01-S007-implement-pause-and-resume-reconciliation.md",
+      "gitBlob": "e1f272ee5cfe368c38739c4e33bd242d6f1037ae",
+      "sha256": "9af877161ea86d7ca6b0758291f468e439230d5b070d931f4e30d6a5d2a32281"
+    },
+    {
+      "path": "docs/stories/P01/P01-S008-implement-bounded-authorization-and-human-gates.md",
+      "gitBlob": "1b29b2145771e80e80a54f9b3f7b90e92fc07f39",
+      "sha256": "79e694b7837a826a22844d2882cb74fc7f3ce00de752fac46e494d5339afe26d"
+    },
+    {
+      "path": "docs/stories/P01/P01-S009-implement-quality-evidence-and-review-gates.md",
+      "gitBlob": "102c6a5708d252c36bc9d3c67cfcfb440a4bdee3",
+      "sha256": "fd9e47da8fa5c2e06427d71aa7d7c07d20ccfe8023899188f5e19074e26a5307"
+    },
+    {
+      "path": "docs/stories/P01/P01-S010-implement-codex-and-claude-controller-adapters.md",
+      "gitBlob": "2cfb1fafa7c2c6e8de7805b2bb47445d8adbc6a4",
+      "sha256": "ce6276404200ef64abbdbae7bf340927cf1cf35447a74bbe432910b22d2594f7"
+    },
+    {
+      "path": "docs/stories/P01/P01-S011-implement-github-project-synchronization.md",
+      "gitBlob": "a81ab750fcadb1df3b9e76b744364cf87e560edf",
+      "sha256": "a8a163ed09301e7dd6e3de4256ce6f3706a4e36cbbf843dc6427a3f6a70cb49d"
+    },
+    {
+      "path": "docs/stories/P01/P01-S012-run-controller-failure-injection-suite.md",
+      "gitBlob": "48e8ea01ef349b658d0727bcc46bdea91782ac20",
+      "sha256": "9d5661fe6a42782d278fcc2027611c51ca84c44faa6a4bd2875d448558f436f2"
+    },
+    {
+      "path": "docs/stories/P01/P01-S013-perform-independent-cross-provider-controller-review.md",
+      "gitBlob": "21b98f71df840fa78a9346873cf66c2249a4dd46",
+      "sha256": "ecc2bcfbf0548ce466706669a3fb8b599ff0391a991c1b1ad0cfedfe32b637a4"
+    },
+    {
+      "path": "docs/stories/P01/P01-S014-complete-owner-controller-acceptance-drill.md",
+      "gitBlob": "e530e398136ee349426b60f7000dbc144e2a70fe",
+      "sha256": "e2cb8d09cec7946b092acc0df7040190c5a2f090e35d4d7d6adac81f5046a51b"
+    },
+    {
+      "path": "docs/stories/P01/P01-S015-bootstrap-the-visible-github-project.md",
+      "gitBlob": "e59f07b96e5fd37a8d9f835456c9e2d90e925a7e",
+      "sha256": "27de530b62de7546a9de226970a5740a7d8c7819c966ddf3693c0522a1a173fb"
+    },
+    {
+      "path": "docs/stories/P02/P02-S001-refresh-windows-and-wsl-foundation-guidance.md",
+      "gitBlob": "2348e4a59a2a0dc41f63a3c00a52b41d6ee3e22d",
+      "sha256": "2c081a63104303c3157c12d23406e553322b989fe2e38965108feca9c9eda3eb"
+    },
+    {
+      "path": "docs/stories/P02/P02-S002-learn-the-windows-and-wsl-trust-boundary.md",
+      "gitBlob": "9d13fba5eba77554424ef4f54f3f9026e40bb3bd",
+      "sha256": "1ab3ffe2aa5f25f37c812fe972da65d4f1f7e99ee2434cbef74cb2fc345097c6"
+    },
+    {
+      "path": "docs/stories/P02/P02-S003-verify-human-installed-prerequisites.md",
+      "gitBlob": "79005ec07e246d80a6bbc48bef902f55ba1c482c",
+      "sha256": "c6807addb341a7271ff5fc7748de1002741c196d2d57c2b277826fb6fc4bd887"
+    },
+    {
+      "path": "docs/stories/P02/P02-S004-create-the-h-drive-data-layout.md",
+      "gitBlob": "1dffcdc2c87b4520137c60a92ef8d246dc014fb5",
+      "sha256": "77042015d42397efd972a05073e07f3fdc8cbd3fb1f8c550d369016b43b1563d"
+    },
+    {
+      "path": "docs/stories/P02/P02-S005-create-and-locate-the-dedicated-ubuntu-distribution.md",
+      "gitBlob": "0ebc5842d42c3f0d25d1c4a01ea7339a8966c028",
+      "sha256": "2555848a94aa7e95a08d9dd6ef02e417b880ca5fd30bf974655d192e2b812249"
+    },
+    {
+      "path": "docs/stories/P02/P02-S006-harden-ubuntu-mounts-and-interoperability.md",
+      "gitBlob": "bc87e12702c7b0576cce0a8104d44fbdde23a208",
+      "sha256": "92d0ada0a96da4522ec8c0174377cd33029b5e30d17d788195a742c61bcbf4c6"
+    },
+    {
+      "path": "docs/stories/P02/P02-S007-install-ubuntu-baseline-and-language-toolchains.md",
+      "gitBlob": "25d4f50e516099a7c1121bb7139633b703c763cc",
+      "sha256": "48b213644304aa3d726fe438dfdd9b770167d5fe3030961f894bac3976a83482"
+    },
+    {
+      "path": "docs/stories/P02/P02-S008-configure-git-and-github-authentication-in-ubuntu.md",
+      "gitBlob": "5f00b26b8d3a8806cbe95c8daf4af31bff171f28",
+      "sha256": "4f5352b891b5cd9196fb1c875b89984a6d71a331b35f94ea892806a504de019b"
+    },
+    {
+      "path": "docs/stories/P02/P02-S009-install-and-configure-vs-code-wsl-development.md",
+      "gitBlob": "9cfb3d9051a9f261137070c2f6d9740227aa7e02",
+      "sha256": "ba38e93e56189609a3a6e76fe4d16dd472f5f9698d5cef0e974958379166f982"
+    },
+    {
+      "path": "docs/stories/P02/P02-S010-install-the-approved-vs-code-extension-baseline.md",
+      "gitBlob": "24e5163b690f4016c5b4a2f39a08017a188fad63",
+      "sha256": "464dd3eae1c3d20e81a65868814d896252c4bfb32fee33a18e225613706380c8"
+    },
+    {
+      "path": "docs/stories/P02/P02-S011-migrate-goagentic-canonical-runtime-to-ubuntu.md",
+      "gitBlob": "ea0fc42400861bd674dd7e35d5397a217f36a3bd",
+      "sha256": "15326a28069eed1200ee5e3012308b3e1d25edd887a9c9ceab621735566aa2e2"
+    },
+    {
+      "path": "docs/stories/P02/P02-S012-perform-foundation-human-acceptance.md",
+      "gitBlob": "4fce99cd6d2f5fbfb4faa5dbfc4c6b0df6e0e0f9",
+      "sha256": "a2752c9253e43dc453bfc730ed93a1f6eba95c9c7d95b665f306dba232e4ba08"
+    },
+    {
+      "path": "docs/stories/P03/P03-S001-research-current-ollama-and-local-model-landscape.md",
+      "gitBlob": "d92f57bd357604bb5d5fdf437454969728169007",
+      "sha256": "10ebcd89fe7b24e3f354d3926d785bcf7d0003f0b36da80b020f6b0bf2a82386"
+    },
+    {
+      "path": "docs/stories/P03/P03-S002-learn-local-inference-parameters-quantization-and-context.md",
+      "gitBlob": "ee9aca58846816398c7a6c3fc11c3d3fef5715e5",
+      "sha256": "37475afb3b67ac34aacc3598b8887e26c61055f42d275f217ff566fa06f32274"
+    },
+    {
+      "path": "docs/stories/P03/P03-S003-install-native-ollama-with-h-drive-model-storage.md",
+      "gitBlob": "42f16d32663121521aed50cb027c875fed52373f",
+      "sha256": "68fd889c5e0a2bef306d6f1f48804325fdc3ab55d04a2dd3b749d7de3ec8c1aa"
+    },
+    {
+      "path": "docs/stories/P03/P03-S004-configure-the-wsl-inference-only-gateway.md",
+      "gitBlob": "4a555eb548146453d135f858aac2a196c0aa28e6",
+      "sha256": "e9f3398b6485e8fc6b9e748e88a579fd0209e10cd0ed1541764a3e39badedd03"
+    },
+    {
+      "path": "docs/stories/P03/P03-S005-pull-candidate-models-with-storage-guards.md",
+      "gitBlob": "c5eb60fa5ae8583d31540e2fa65df28bb7bedb90",
+      "sha256": "0e37c5e9a4b399d5d4b7b97e914540b343bdd9e40dadaf596b9ba765d9ebe11d"
+    },
+    {
+      "path": "docs/stories/P03/P03-S006-benchmark-primary-and-fast-candidates.md",
+      "gitBlob": "b50fe196ca3ef22728d03a0b1fd1dfc16069db88",
+      "sha256": "bddcb093d193fadb3510fb598c8af548fbe2b14af0355747fd99d26865e3cfa5"
+    },
+    {
+      "path": "docs/stories/P03/P03-S007-evaluate-embedding-candidates.md",
+      "gitBlob": "94679a6a2e393dabde98b124ef6a2a991f6b8811",
+      "sha256": "9b7117c88c2d512b0a680127c3a98a187384f456aac04d2958d32ec463c20fd5"
+    },
+    {
+      "path": "docs/stories/P03/P03-S008-publish-model-usage-recommendations.md",
+      "gitBlob": "5dcc4db0a6807e767d45211e7edb98309f91e708",
+      "sha256": "3922f6e77a4774e93c9476c3e68f9ed70c0e9cba31572b5a47b06de080c232b8"
+    },
+    {
+      "path": "docs/stories/P03/P03-S009-qualify-local-models-for-controller-roles.md",
+      "gitBlob": "0c08854fd94f0846414daf14d48f5df7eeb5d9c4",
+      "sha256": "2cbd89b362aaec8bd3bc55201755cc3562c197d14db94364613e3a429e13650a"
+    },
+    {
+      "path": "docs/stories/P03/P03-S010-reassess-every-remaining-story-for-local-execution.md",
+      "gitBlob": "da2c7aaf45eb7f157c2aaf966a880b2c920e2cba",
+      "sha256": "a3ab6935d78c982e15de3d80f1a9c8415e52591cd0d64060cafdaa95415f5379"
+    },
+    {
+      "path": "docs/stories/P03/P03-S011-complete-model-selection-human-acceptance.md",
+      "gitBlob": "71179162e847e016c5301c39139b91472641d89a",
+      "sha256": "16a417474fcda50bab9218fee3c34258860f21e088cd97559b102c51ae7a52ac"
+    },
+    {
+      "path": "docs/stories/P04/P04-S001-research-current-service-releases-and-integration-contracts.md",
+      "gitBlob": "7c4dc0a87d1575372b48bb8d8b25e7e78f26f25e",
+      "sha256": "d5499dbf43c2b7f90f58ba7717cd0cef90020e5622b9c28ecdd9a5c4249c55b8"
+    },
+    {
+      "path": "docs/stories/P04/P04-S002-learn-rancher-desktop-and-the-local-service-stack.md",
+      "gitBlob": "22b018afada1b02be4bb2c6bae0342a2fe6aa192",
+      "sha256": "56c5acfc3842f94505dce636e6a908ea69e7c98ae2f0beb87978733c59609d41"
+    },
+    {
+      "path": "docs/stories/P04/P04-S003-configure-rancher-desktop-for-moby-without-kubernetes.md",
+      "gitBlob": "148333ff4921b5e7d84d52ff383e24dc27b67c95",
+      "sha256": "03994c92fb0c2b70c9cef4968df8213a448a14e02027a86fd3b6e1905d1e646d"
+    },
+    {
+      "path": "docs/stories/P04/P04-S004-implement-pinned-compose-and-secret-handling-foundation.md",
+      "gitBlob": "cf6fccab4bb200a39cd3f05d5ceccda2b430ad64",
+      "sha256": "5acd45ea0748bc8f98b89a6a594a0bfdea3aaeaacf2db4f99e6615859d1929fe"
+    },
+    {
+      "path": "docs/stories/P04/P04-S005-deploy-postgresql-and-pgvector.md",
+      "gitBlob": "2d2f034d834c734f7a451bc2f3e24fd2ac8959c0",
+      "sha256": "3905cb94c8a64c11a80bfe7ddc4348c66ee0211ba623eac02a2d7512a812784e"
+    },
+    {
+      "path": "docs/stories/P04/P04-S006-deploy-searxng-and-verify-private-search.md",
+      "gitBlob": "e81444d3dc73532ba9226391d4a3e3117bcf6885",
+      "sha256": "04affb0f490547126f59e79f47b8eee7cc3f6c15c6d6217548dd7448f0b63f9a"
+    },
+    {
+      "path": "docs/stories/P04/P04-S007-deploy-docling-serve.md",
+      "gitBlob": "110aa340c1f0976ab7de6da82dfb334cf4055aa1",
+      "sha256": "b782f5cce8fcc81cbdd82020d6eaa0567d3fb850c494447a84d16127dc024701"
+    },
+    {
+      "path": "docs/stories/P04/P04-S008-deploy-self-hosted-mlflow-foundation.md",
+      "gitBlob": "1164b8dc2010c3334be29a1b9c800ded68179c00",
+      "sha256": "fa9cb5df0bdfc8169344919c1dc1781e8c0fc7a56030659d868f4d013128f834"
+    },
+    {
+      "path": "docs/stories/P04/P04-S009-deploy-and-configure-open-webui.md",
+      "gitBlob": "772d4068571d50dd1b1de8be41a0e04554578116",
+      "sha256": "daec6814a0f37fb54248a089d436021159f48c53fdb52c6765443a8af0e9a4b2"
+    },
+    {
+      "path": "docs/stories/P04/P04-S010-connect-open-webui-to-searxng.md",
+      "gitBlob": "4d03f74a63f6241025d4fada81e7ae4629599bee",
+      "sha256": "63c0bb6e57bcc6bdf7e490439f002c4aa54293cc68c30d9f179c515197338fdf"
+    },
+    {
+      "path": "docs/stories/P04/P04-S011-connect-open-webui-document-extraction-and-vector-storage.md",
+      "gitBlob": "38191e286b15d0f86f08b7383a37ea7eff5929da",
+      "sha256": "036413c683da69e0447de4928e360a242cc0083a9d6182018173cca548d9c2a7"
+    },
+    {
+      "path": "docs/stories/P04/P04-S012-configure-open-webui-local-in-chat-speech-to-text.md",
+      "gitBlob": "53bbdd84bb0a1b122f662444abe3c7f7ac7db051",
+      "sha256": "850b821b8e1fe01de96a41d21a3d330b09dcb1f84bd3252d3164e12baeb7a8f4"
+    },
+    {
+      "path": "docs/stories/P04/P04-S013-run-automated-service-stack-acceptance.md",
+      "gitBlob": "3db82cbc583143f143ecb177f0b42b7a9f0a0506",
+      "sha256": "c711a7efad310ec2ceb4e41051e6ad2334ee55b8d0b557de6786132062d445fb"
+    },
+    {
+      "path": "docs/stories/P04/P04-S014-perform-service-stack-owner-acceptance-and-restore-drill.md",
+      "gitBlob": "0c86fa3798c08fa084d769b4e469801433ae1914",
+      "sha256": "6d493f6e3da70fc3c5c8bdeb8a411d7f1c83414fabf57a7c354adda0ef16b1c5"
+    },
+    {
+      "path": "docs/stories/P05/P05-S001-refresh-integration-and-dictation-landscape.md",
+      "gitBlob": "0d6b7cac2133f2c1ce348cbbd49fb66451a7215e",
+      "sha256": "1489f0756308764b578ed733e531faffbd07ce644a5d0b97569e610b1fbf6a9e"
+    },
+    {
+      "path": "docs/stories/P05/P05-S002-learn-local-client-and-endpoint-boundaries.md",
+      "gitBlob": "a82386e94c379c6eac6cd9f7abc1fa983f596bff",
+      "sha256": "e0cdba267251352453b7b1598a387d57b9ef99cdb74e80f4aec1c3fd329462cb"
+    },
+    {
+      "path": "docs/stories/P05/P05-S003-benchmark-oss-desktop-dictation-candidates.md",
+      "gitBlob": "14a048cc2c97476c7ec631ff6adebe561ad511ac",
+      "sha256": "0adf56f749d02ba298a54adce1855354e1ea1875b5caff78014747fac84326ca"
+    },
+    {
+      "path": "docs/stories/P05/P05-S004-install-and-configure-selected-desktop-dictation.md",
+      "gitBlob": "e10cbe81646498f7b272581297a611946ba52583",
+      "sha256": "065d33715c9d34f6a6a949648fe9272d4005b817294618cf395cd320a2cce33d"
+    },
+    {
+      "path": "docs/stories/P05/P05-S005-configure-vs-code-local-ai-chat-workflow.md",
+      "gitBlob": "3fb354b1f23cc3271e23696f418dd2c3f0e13e6a",
+      "sha256": "549a2c557fbbbecef152e0369efe9a0938f480537c0207de2374a04c6bd57e9a"
+    },
+    {
+      "path": "docs/stories/P05/P05-S006-create-optional-local-autocomplete-guide-and-prompt.md",
+      "gitBlob": "fdfe437ac2253d3666bdb1af68e1d5e318fbd70b",
+      "sha256": "289fe5559d1fe916f6bc45114cdca766e9300f66e04f2eca0dd9d081cd2d8c1d"
+    },
+    {
+      "path": "docs/stories/P05/P05-S007-configure-codex-cli-local-and-cloud-profiles.md",
+      "gitBlob": "426c655fb4cd90f0b4715d30b3b303af355bbc35",
+      "sha256": "e22621f0008d964712f6f8701b5a705b8be3d60e13b548f7bd92b1f81915bafe"
+    },
+    {
+      "path": "docs/stories/P05/P05-S008-configure-claude-code-local-and-cloud-profiles.md",
+      "gitBlob": "4d26819ae4b77131603d5ce076ef84446711b0b3",
+      "sha256": "2e1b20f0ee97e84049074629e8994c7b01a082ae3e13adab3d6000c89f4a2252"
+    },
+    {
+      "path": "docs/stories/P05/P05-S009-document-chatgpt-and-claude-desktop-compatibility.md",
+      "gitBlob": "863417dc9b587999ca2b4659a910511133f4fbb7",
+      "sha256": "28185028c7dbd29629804c409204706544b8ec5cf0b6a91836e2c95833b9700a"
+    },
+    {
+      "path": "docs/stories/P05/P05-S010-create-optional-lm-studio-evaluation-guide.md",
+      "gitBlob": "63d1a614573ca58d3758c8b542096ad4f617cf1b",
+      "sha256": "d7740173affd9b5bcb9726fd66e7d0cd157e3327a6966ec2e9596631b558ecfe"
+    },
+    {
+      "path": "docs/stories/P05/P05-S011-verify-cross-tool-workflows.md",
+      "gitBlob": "c9e4b08415ed3670e71845d91480f10eff282150",
+      "sha256": "bcd1811c903f880fd2c400c1352840483a5b3bfaa4f216dd34250059727a3545"
+    },
+    {
+      "path": "docs/stories/P05/P05-S012-perform-integration-owner-acceptance.md",
+      "gitBlob": "099fd44accca8c12467623262bff7842aab0bd6d",
+      "sha256": "491df135c44dfac6b7000737c6c022fdb997bab6f8eb39ba69d5870eb6afbbed"
+    },
+    {
+      "path": "docs/stories/P06/P06-S001-refresh-agent-framework-and-protocol-guidance.md",
+      "gitBlob": "aaf97b22757e6c4bba3dbe08ad5c63adf4a181b0",
+      "sha256": "5784167d7e1db204904beb34a1ef8a16355d5726998a7b0a38cb39b9f1abb059"
+    },
+    {
+      "path": "docs/stories/P06/P06-S002-learn-agent-fundamentals-and-tool-safety.md",
+      "gitBlob": "8059e03b66af72944361464cc56ab647c8436e36",
+      "sha256": "0a8d7df44c75ff7ae2314ba6f89fdca9d587c9a44f9f6af725f954ea3becffef"
+    },
+    {
+      "path": "docs/stories/P06/P06-S003-create-the-agent-development-workspace.md",
+      "gitBlob": "e1f87b7806392d3b2d29f0b894e604b4168ee797",
+      "sha256": "e6a45fd55acf0c87017452ffa534aa0192eeb4f70f80a5439b8d9c41ff4cff7d"
+    },
+    {
+      "path": "docs/stories/P06/P06-S004-learn-langchain-models-messages-tools-and-agents.md",
+      "gitBlob": "c1fc432c5bc1c2c0bb7870d20bcb5120bfe4bf87",
+      "sha256": "3c913ec36cb53d9bf331ee67930d606cec435e7a0217dabfd5b66779a369792d"
+    },
+    {
+      "path": "docs/stories/P06/P06-S005-build-the-first-bounded-langchain-tool-agent.md",
+      "gitBlob": "768fb5f11c9f687c0c7439ee55baac74ab5d1d91",
+      "sha256": "fa78c02c7d4ae69c731a2f78976fbd79ed7897e915c0441c4e98c58ae23d7b27"
+    },
+    {
+      "path": "docs/stories/P06/P06-S006-learn-langgraph-state-and-durable-execution.md",
+      "gitBlob": "d8745426d7792c01cd821dd48d89a31de58edb09",
+      "sha256": "a4b53e210ff6231690093fbe95bb50fcde948e3a125089ef43c4d8dec4423602"
+    },
+    {
+      "path": "docs/stories/P06/P06-S007-convert-the-agent-to-a-durable-langgraph-workflow.md",
+      "gitBlob": "e26e345987a62a9bc7eb3aeae586731a7fb9144e",
+      "sha256": "f740f0a8b91eafadbd2ef9c94cc4496322f0fe3750062f8c4895d949f07b52bc"
+    },
+    {
+      "path": "docs/stories/P06/P06-S008-learn-mcp-and-capability-boundaries.md",
+      "gitBlob": "98634bcb059344ec2a4a08bf7dc112ed0ca6f362",
+      "sha256": "161b45c0ed2a821b8f3a07371d12224d238c07f551e8ee6a6daa73f376cadf6e"
+    },
+    {
+      "path": "docs/stories/P06/P06-S009-build-and-integrate-one-local-mcp-server.md",
+      "gitBlob": "0f20b8cb7daf8e06da25214de46f7293cb2e1321",
+      "sha256": "aadfebe8927eadfe3ba3783239b4e5b25733ea5fa490b74f3f396aa62f3ec0b4"
+    },
+    {
+      "path": "docs/stories/P06/P06-S010-add-skills-assets-and-scripts-to-the-agent.md",
+      "gitBlob": "e794cbfc6edc933f4597c18ee991c4ff35781e4b",
+      "sha256": "8b9929016b8245ccef3d6d8f6a899b5b826e9ba347a868ecabfff20a75ba6899"
+    },
+    {
+      "path": "docs/stories/P06/P06-S011-learn-mlflow-tracing-and-evaluation.md",
+      "gitBlob": "774d374b737a64996f257850c4619b6a4a6629e2",
+      "sha256": "82e5dcfb383ae0b382e67107cbaf5d158c0225ad8c0f9705570550e1aa830d66"
+    },
+    {
+      "path": "docs/stories/P06/P06-S012-instrument-the-agent-with-mlflow.md",
+      "gitBlob": "6a6729ffb09c77f1122295bdfcc029eabdc1ab51",
+      "sha256": "1c576b570217dd496f0e8a8248fb6b24aeef2402e9c4bd7cd633f04c56fe016b"
+    },
+    {
+      "path": "docs/stories/P06/P06-S013-create-the-initial-agent-evaluation-harness.md",
+      "gitBlob": "c1e425b3d9c535273d21f175bf70b314467dc89a",
+      "sha256": "307c92eecf46aa7d8ebcec4159385c55034b4f6a7a7afd54a91f59ee4a2b6dac"
+    },
+    {
+      "path": "docs/stories/P06/P06-S014-perform-first-agent-owner-acceptance.md",
+      "gitBlob": "645d2c7f12e99e32316a2464b93a45773489acfe",
+      "sha256": "717d01d3f7a8f59f12b7090cc83806fa49cf87fe5f475df1c702502701a941a6"
+    },
+    {
+      "path": "docs/stories/P07/P07-S001-refresh-rag-and-ingestion-tool-guidance.md",
+      "gitBlob": "ba76be1cc8925b5f1f8199b5cf19d609dd6b7f67",
+      "sha256": "e6cd77a67629fba86d2a8540181bbbc828d5a4149c0e4b9813b3c50a3c9e95d5"
+    },
+    {
+      "path": "docs/stories/P07/P07-S002-learn-rag-concepts-and-failure-modes.md",
+      "gitBlob": "7bdcf16e6de78ba378a90aeadd67c09e5ca69698",
+      "sha256": "058223d98905594fb6720e514363f30dbd7f1164a478917b137851f50f3e5d9c"
+    },
+    {
+      "path": "docs/stories/P07/P07-S003-learn-langflow-for-visual-rag.md",
+      "gitBlob": "7f857aaa2301bf37656c915f51a69594b05a2538",
+      "sha256": "c9feff5f253d26996235736f685dd820416dd695af33455e75289d0b2b7647ea"
+    },
+    {
+      "path": "docs/stories/P07/P07-S004-define-multi-knowledge-base-registry-and-schemas.md",
+      "gitBlob": "12019c3ec443cf1c83eafc13d35a0c48dfc34732",
+      "sha256": "a95ca63da49e5884016a5dfed3b016f85a883928bb6aa15b281c05420e83dbff"
+    },
+    {
+      "path": "docs/stories/P07/P07-S005-implement-private-source-intake-and-immutable-snapshots.md",
+      "gitBlob": "715395a0118fcc9425a97dfa472dd05757f011dd",
+      "sha256": "f8c298a1f249ddded3319c9774eddc533994d1120fd500a01239541934a18a25"
+    },
+    {
+      "path": "docs/stories/P07/P07-S006-implement-docling-conversion-and-lossless-archive.md",
+      "gitBlob": "dd4efafe177e58a3a59b870ad16f3cfdb7c63d4e",
+      "sha256": "d971ce93cf1a4b45ccb774910f3e697b68a76a19aaebc9b3113a20a458bad1b9"
+    },
+    {
+      "path": "docs/stories/P07/P07-S007-implement-deterministic-yaml-frontmatter-and-filing.md",
+      "gitBlob": "6b73efc52f182c85008cf8b4b499fe99ad5259e3",
+      "sha256": "8e6a47ac4590ebca08f77e8c58abdf3a557d68423072df34377865d41f57d5d5"
+    },
+    {
+      "path": "docs/stories/P07/P07-S008-implement-crawl4ai-one-off-web-intake.md",
+      "gitBlob": "392add04530f4afa1514aabdb21086a1285831d5",
+      "sha256": "a8c737da90056f12fc342bf8bdf62649431a7d35fcedd2c3ffd3aa6578da7a3c"
+    },
+    {
+      "path": "docs/stories/P07/P07-S009-implement-guarded-authenticated-web-intake.md",
+      "gitBlob": "73748cc21d37de673fab4b8342e13022d7785d33",
+      "sha256": "5c4f45acb615ae4a91af802707d331c54d5b34c011e351c34b0e96d3d1dad4a5"
+    },
+    {
+      "path": "docs/stories/P07/P07-S010-implement-google-docs-sheets-and-slides-intake.md",
+      "gitBlob": "5832f79085f5c47fc22ff5d696a4810585d10a27",
+      "sha256": "9e58a47acaec25d9071d59a316c732f20c8ec72e56f4170f787b5858da203073"
+    },
+    {
+      "path": "docs/stories/P07/P07-S011-implement-visual-asset-preservation-and-enrichment.md",
+      "gitBlob": "388fce6dda9757c5b75df1d76dd1041e56d9966f",
+      "sha256": "1752bc1f2869b0adc4f0f659832352ace242bc99848a4697fd8b9c020e30fdcd"
+    },
+    {
+      "path": "docs/stories/P07/P07-S012-implement-version-missing-source-and-deletion-workflow.md",
+      "gitBlob": "350fb7a028489de844fc3ce4a4e7af7cf5929300",
+      "sha256": "a45b02e016ca1c3057d1886b550db81201fef742156c77df4e51bc48025f8fc6"
+    },
+    {
+      "path": "docs/stories/P07/P07-S013-implement-chunking-embeddings-and-transactional-indexing.md",
+      "gitBlob": "e37d4d536639b716a0737d3a520929c6a685d8a9",
+      "sha256": "575c9afb893e3e8354e5c71812d5c39a5175fdc44ddec6ca590d7a1ac1b825cc"
+    },
+    {
+      "path": "docs/stories/P07/P07-S014-build-the-langflow-personal-rag-capstone.md",
+      "gitBlob": "84c75bf064c6b39cc19569593f208cd091f47954",
+      "sha256": "95bc3221c72b1e609cc04e51947a62976314362de6766fa24aaa250fe5ec0567"
+    },
+    {
+      "path": "docs/stories/P07/P07-S015-run-synthetic-ingestion-acceptance-suite.md",
+      "gitBlob": "d93947d199f156fa7018c6d9f386a7ef216396de",
+      "sha256": "00b353b423413c2a518c0d742f668e6f5deb95be8ce28b9a0d394dbf2ae76a02"
+    },
+    {
+      "path": "docs/stories/P07/P07-S016-run-owner-provided-27-document-acceptance.md",
+      "gitBlob": "03852d5e571ae0d2a91196b904f676e0b5c08e0c",
+      "sha256": "cb867ed787e519101a0dbe38d280e696a1c59b09fae1e2782b8445e8a118154e"
+    },
+    {
+      "path": "docs/stories/P07/P07-S017-prove-knowledge-base-backup-and-isolated-restore.md",
+      "gitBlob": "25687fe1ad2085c0696019325d8ea99baf4b1393",
+      "sha256": "8876dd4e3c3f892d42a69bb1b31d192280ef5abc2b4ae99226f1ca91fff7f160"
+    },
+    {
+      "path": "docs/stories/P07/P07-S018-deploy-private-langflow-learning-service.md",
+      "gitBlob": "0bc3dc9cc4a4ca219804fb08ad23e29021b4481a",
+      "sha256": "9e817acef9e4877b2700137d5ee40e32d9bcd28dc1fe8bae8b5588c567b17b23"
+    },
+    {
+      "path": "docs/stories/P07/P07-S019-initialize-private-knowledge-base-roots-and-git-repository.md",
+      "gitBlob": "04be6d203311ad1468f4f347a30f210d08477c24",
+      "sha256": "1646f91ce44facdea3c9a35c14df4db871844bd6dfdd6309356c22b714c00ae5"
+    },
+    {
+      "path": "docs/stories/P08/P08-S001-research-current-personal-agent-patterns-and-safety.md",
+      "gitBlob": "230b339e7f90a99bb319432bf2c5b65666c2db68",
+      "sha256": "d0438ac81114bc48f9dea3279120a893ea016215f9899b5c0d15f37b9857d54c"
+    },
+    {
+      "path": "docs/stories/P08/P08-S002-learn-practical-agent-design-and-boundaries.md",
+      "gitBlob": "86a288a93a4444b003c421c6a77eccd65b5a5ed8",
+      "sha256": "f608a05016d0022cfc66eacb7e0daefbded28581642aa061ac383042d252afee"
+    },
+    {
+      "path": "docs/stories/P08/P08-S003-define-the-shared-personal-agent-contract.md",
+      "gitBlob": "04419f2b9e688fb0a6fcc55c5f0722f3d9b82641",
+      "sha256": "0632f52cbfaa2c27d93186ec87ce561ebcbf2d0782d13dc1d318cc3a1bb868c5"
+    },
+    {
+      "path": "docs/stories/P08/P08-S004-build-the-thought-partner-agent.md",
+      "gitBlob": "6bdb85018751363fe659f6dcbf3cf62e7790af27",
+      "sha256": "996fb2445d14efea7de8a6cff0eec296c3941ae947f3b1fc68fdcc34aed0bdc7"
+    },
+    {
+      "path": "docs/stories/P08/P08-S005-build-the-life-planning-agent.md",
+      "gitBlob": "d4818aa28a3c1ec5912f74c349485479e1e55f29",
+      "sha256": "2c66dacca7919597f3335c205855f335f6c41106e43a3a68bd77221cb6570560"
+    },
+    {
+      "path": "docs/stories/P08/P08-S006-build-the-fitness-coach-agent.md",
+      "gitBlob": "b116b744ffd50d5760dcf2f1595143f5b429ad6f",
+      "sha256": "5230fd4c7c92e796d0c2d4d4f190bf513b2d8c593059f88f685031b4a2828cbe"
+    },
+    {
+      "path": "docs/stories/P08/P08-S007-build-the-financial-education-agent.md",
+      "gitBlob": "bd061027e18f9d9709a7cb69236276d61c460b03",
+      "sha256": "7a4de5aea830b5fc77417b3bf1fcb1700d76b67ef0c279a81555db7e653fa8e4"
+    },
+    {
+      "path": "docs/stories/P08/P08-S008-integrate-approved-rag-sources-with-least-privilege.md",
+      "gitBlob": "fb57e27f82f582956f053138d0f43afb5b047a90",
+      "sha256": "56ed37d41221f2b1530be84f6914d40d412005c871114a6de0cf4e372ab4c26c"
+    },
+    {
+      "path": "docs/stories/P08/P08-S009-evaluate-agents-across-models-and-risks.md",
+      "gitBlob": "405bed7bfbcb3ce8e2e855b22e4e8ca58445f383",
+      "sha256": "109d31b514be5790ea3330871a018d1832a6996f53ec977c1822eae602fc5d62"
+    },
+    {
+      "path": "docs/stories/P08/P08-S010-perform-personal-agent-owner-acceptance.md",
+      "gitBlob": "9c19606162c8923eeab6597df0a1e92b1bdbba2d",
+      "sha256": "d4aa84219bec45f6dcfadc5dec738bfe9f37869d4db4e3bde83cc8d279aa112d"
+    },
+    {
+      "path": "docs/stories/P08/P08-S011-build-the-daily-check-in-agent.md",
+      "gitBlob": "78d8d7e97a9e0c338ce48c88e40e0915babacbc8",
+      "sha256": "0e853bf746589b888da5a0061efee52b4f36afe42429499a7c40a0b3ba9e57b0"
+    },
+    {
+      "path": "docs/stories/P08/P08-S012-deploy-the-shared-personal-agent-runtime.md",
+      "gitBlob": "ee9d489d2d494ab4ba199cc3432a4d6eea91f9e3",
+      "sha256": "7f552f2556eef5b3bfc76f804a9c400d6018f27fc18e74b3256fa77213a77850"
+    },
+    {
+      "path": "docs/stories/P09/P09-S001-research-and-score-current-oss-memory-frameworks.md",
+      "gitBlob": "5a594f05366a6defd6cf4cfe3978900fbe761382",
+      "sha256": "8424e1193e8d4860c2691760dc01e88104092b27078d5eb81f7aabcedc1e24f5"
+    },
+    {
+      "path": "docs/stories/P09/P09-S002-select-memory-architecture-through-an-adr.md",
+      "gitBlob": "cb1268cfcefa28d2f4459357d3b68d7226ee4f26",
+      "sha256": "0c7edca741a237ed25d885512bf597505cbbba02c6ac08bc5488b69ecc3954b2"
+    },
+    {
+      "path": "docs/stories/P09/P09-S003-learn-the-selected-memory-framework-and-concepts.md",
+      "gitBlob": "2ef9b9cfcb738ce9c0dcd184208b3f570ea98fcb",
+      "sha256": "9a531e53f856316686dad0d97988214d4706ca522f2d163466d95f105994fa81"
+    },
+    {
+      "path": "docs/stories/P09/P09-S004-implement-memory-storage-and-provenance-schema.md",
+      "gitBlob": "cc51728561c46811398173cfb4bf724e9edb431d",
+      "sha256": "9800d695d1182d5caa82698e04e68b6cbad1a066177b633774759cc396e5fc8d"
+    },
+    {
+      "path": "docs/stories/P09/P09-S005-implement-candidate-memory-capture.md",
+      "gitBlob": "9b31774bfee90979b462b37a24930d76e5ef0af8",
+      "sha256": "423758fdc65d9f6a1a69ed60256769309064cff2b2665e04eae51511587e3e95"
+    },
+    {
+      "path": "docs/stories/P09/P09-S006-implement-the-reviewed-inbox.md",
+      "gitBlob": "da0c72df608e2138187bf844acaf002594b2b624",
+      "sha256": "09bcdf18093372f7973eb8349fb52050c1f4a9968a8d802e92f79d5a29d49563"
+    },
+    {
+      "path": "docs/stories/P09/P09-S007-implement-durable-promotion-and-correction.md",
+      "gitBlob": "1c47d5aff52465da9ecf51d71d486c62c8f5d897",
+      "sha256": "1541c2940a83cd9fe1789d4b0b66b9d3613b778da55a5a468c3b9d8c56f0117b"
+    },
+    {
+      "path": "docs/stories/P09/P09-S008-implement-namespace-and-restricted-memory-enforcement.md",
+      "gitBlob": "06e3296ce88c56f3eb1ed1d6f88981feeb9d17c3",
+      "sha256": "44d1831b0988fe9d78b7772b8a0a839210eb9b850bf6d85a51b6ebec4eb20a75"
+    },
+    {
+      "path": "docs/stories/P09/P09-S009-integrate-memory-with-one-accepted-personal-agent.md",
+      "gitBlob": "272a36c5d52e1cb306f7b93b60c5788fbfd08744",
+      "sha256": "09118213439807a26aa55ae86ab43eb5da6ad0fbf4571c3d2116cac168c3d14c"
+    },
+    {
+      "path": "docs/stories/P09/P09-S010-evaluate-memory-quality-and-poisoning-resistance.md",
+      "gitBlob": "e794cedeb7806a0b264cef0c53939f8c6dd2f712",
+      "sha256": "187f9b47b1683725ad43b345df5777bc68c525a54c5bdd14370282b05d83b86a"
+    },
+    {
+      "path": "docs/stories/P09/P09-S011-prove-memory-backup-restore-export-and-deletion.md",
+      "gitBlob": "ae2704969d6efa3b77eaf8bd20e77b54c2723efe",
+      "sha256": "847e850f5d41f3c9c53b91bab51d67b0b9625427dc6fcd8d14ca132fc4ee88bb"
+    },
+    {
+      "path": "docs/stories/P09/P09-S012-perform-memory-owner-acceptance.md",
+      "gitBlob": "c809c6f7626453fa76792c2c7a8897b539280ffa",
+      "sha256": "373ac48c7512e1b3e56992ee8b5165d9aab7e4a129b16ec5dc03cba9a1dca0e1"
+    },
+    {
+      "path": "docs/stories/P09/P09-S013-deploy-the-selected-private-memory-foundation.md",
+      "gitBlob": "d419221c027c43268ca2e1f57dc2f8323548a4ed",
+      "sha256": "df1c1df54b1206ff40d12289fa7f464c33dc12cfdc6f6691e82fdb4edb46e178"
+    },
+    {
+      "path": "docs/stories/P10/P10-S001-refresh-operational-and-security-guidance.md",
+      "gitBlob": "b42a114f6525be7ed4ae7281436830253a1d86ec",
+      "sha256": "d5c8696b3b9db3a8062e856e7ea0815ce87b78324a96f12e1f620348cd4aa5bc"
+    },
+    {
+      "path": "docs/stories/P10/P10-S002-learn-routine-operation-and-incident-boundaries.md",
+      "gitBlob": "a8c518f0282abae1f09bfd7b6fa83b6df4b96d9c",
+      "sha256": "f0d2155139763873ae08a8680b4d51ef7038fa08f274b15546c1eaebabe4266e"
+    },
+    {
+      "path": "docs/stories/P10/P10-S003-finalize-security-and-privacy-controls.md",
+      "gitBlob": "7d0bb93aa8e63ff2bc1101217f8219d212e9446a",
+      "sha256": "bf925435ea91ad229813cc5a19ce23c9580f8b1f9394a15c8bb64b383be6107e"
+    },
+    {
+      "path": "docs/stories/P10/P10-S004-tune-rtx-4090-and-workstation-performance.md",
+      "gitBlob": "2b0fea6cee00523e8cb5f89513f68e82948b6ea1",
+      "sha256": "278f615afc513ea9f4b1fe2174163ebea879e38a0fd52c549488d4a35989d23f"
+    },
+    {
+      "path": "docs/stories/P10/P10-S005-implement-update-rollback-and-migration-workflow.md",
+      "gitBlob": "eb95dff21e11857e31a83a5a4f68e31ce29b8330",
+      "sha256": "22b96499fc03e3b5d06ca870252a7ff4011a2aaf919ea6767315d4b7c1ed26ab"
+    },
+    {
+      "path": "docs/stories/P10/P10-S006-implement-comprehensive-backup-and-restore.md",
+      "gitBlob": "bbff515056a161c9bf3569e4f9f28dc67059f098",
+      "sha256": "54779da8b9b18b702245d5d3ec214f613de03a71b2970665b832a7b937d88147"
+    },
+    {
+      "path": "docs/stories/P10/P10-S007-implement-safe-uninstall-and-retained-data-choices.md",
+      "gitBlob": "26b9aaafbc70b0d3f825999f1de54dfb46ea8ace",
+      "sha256": "f6879150d6c969d65ce97739f7c62db0389e8d718a3d61d136287cf5d175f935"
+    },
+    {
+      "path": "docs/stories/P10/P10-S008-validate-the-complete-deliverable-catalog.md",
+      "gitBlob": "38206ab0efa7a012cb5daebef4bffc1225aa3a78",
+      "sha256": "ea950a278d8564144bc4652f8bb2f8ebd896979ddcf0e319ed25c105374a943d"
+    },
+    {
+      "path": "docs/stories/P10/P10-S009-run-full-automated-end-to-end-verification.md",
+      "gitBlob": "37ee1ff9e07a81a544371418b79b36a99f3c10b7",
+      "sha256": "a2a5ed518a295cc6a45a9d5d8438386983472d15c4a7d8b53786c60dd2999318"
+    },
+    {
+      "path": "docs/stories/P10/P10-S010-perform-independent-final-architecture-review.md",
+      "gitBlob": "284a87d856a6605460df7baecd60ea1370abfef3",
+      "sha256": "8489f3a0e68db73a1f7a44ca4130a2464a56020f0041e7cf17005cff85efe141"
+    },
+    {
+      "path": "docs/stories/P10/P10-S011-complete-final-owner-acceptance-and-baseline.md",
+      "gitBlob": "6fa6dbd265be553ba7a89921400be4d4c491a863",
+      "sha256": "203df6175c56edacc1d2e5d4e579785083f50d181368d3ed81bcb62929776025"
+    },
+    {
+      "path": "docs/stories/P10/P10-S012-assemble-the-idempotent-powershell-installer.md",
+      "gitBlob": "62a3457dc0c03a18ec96b0117fbc9eca1994498f",
+      "sha256": "37299dcb2a360f9b97462d9a7eaa058b6a8c768767a3bf72295b61e02ca6a058"
+    },
+    {
+      "path": "docs/stories/P10/P10-S013-build-the-maintenance-command-suite.md",
+      "gitBlob": "5130442616b49033db10fa2ab5d47170085d0d94",
+      "sha256": "a499570fc4ab08274d864cc59370d0de47a097b9409dbde755d183cb481049d1"
+    },
+    {
+      "path": "docs/stories/P10/P10-S014-write-the-core-operator-and-usage-guides.md",
+      "gitBlob": "0c86f89dc0b8bb8fbc99531275ae19c6adaeb297",
+      "sha256": "97be41d9d6077f0b62f2fef8b7c621d2f64e50ec2251b47e03c9bd536a587255"
+    },
+    {
+      "path": "docs/stories/P10/P10-S015-write-the-operations-recovery-and-troubleshooting-guides.md",
+      "gitBlob": "d882440f74651fc661cd3acf556635ea843b5ebe",
+      "sha256": "071132ce6bc8dbe676edb2394e50b396408806aa992f52077c4aa45a0d0a6453"
+    },
+    {
+      "path": "docs/stories/STORY-BACKLOG.md",
+      "gitBlob": "5b397b57a302379d9c1740baef3551b0ce3654a7",
+      "sha256": "8f8c03c7b2e4f9cdb5ba688c15ac27e40c5611794d95e2199db6eca1dcd22fb0"
+    }
+  ]
+}

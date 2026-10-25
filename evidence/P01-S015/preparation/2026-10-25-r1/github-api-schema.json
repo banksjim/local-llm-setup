@@ -1,0 +1,604 @@
+{
+  "accessDate": "2026-10-25",
+  "types": {
+    "CreateProjectV2Input": {
+      "name": "CreateProjectV2Input",
+      "inputFields": [
+        {
+          "name": "clientMutationId",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "ownerId",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "title",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "repositoryId",
+          "type": {
+            "kind": "SCALAR",
+            "name": "ID",
+            "ofType": null
+          }
+        },
+        {
+          "name": "teamId",
+          "type": {
+            "kind": "SCALAR",
+            "name": "ID",
+            "ofType": null
+          }
+        }
+      ],
+      "fields": null,
+      "enumValues": null
+    },
+    "UpdateProjectV2Input": {
+      "name": "UpdateProjectV2Input",
+      "inputFields": [
+        {
+          "name": "clientMutationId",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "projectId",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "title",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "shortDescription",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "readme",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "closed",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Boolean",
+            "ofType": null
+          }
+        },
+        {
+          "name": "public",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Boolean",
+            "ofType": null
+          }
+        }
+      ],
+      "fields": null,
+      "enumValues": null
+    },
+    "CreateProjectV2FieldInput": {
+      "name": "CreateProjectV2FieldInput",
+      "inputFields": [
+        {
+          "name": "clientMutationId",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "projectId",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "dataType",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "ENUM",
+              "name": "ProjectV2CustomFieldType",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "singleSelectOptions",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectV2SingleSelectFieldOptionInput"
+              }
+            }
+          }
+        },
+        {
+          "name": "multiSelectOptions",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectV2MultiSelectFieldOptionInput"
+              }
+            }
+          }
+        },
+        {
+          "name": "iterationConfiguration",
+          "type": {
+            "kind": "INPUT_OBJECT",
+            "name": "ProjectV2IterationFieldConfigurationInput",
+            "ofType": null
+          }
+        }
+      ],
+      "fields": null,
+      "enumValues": null
+    },
+    "UpdateProjectV2FieldInput": {
+      "name": "UpdateProjectV2FieldInput",
+      "inputFields": [
+        {
+          "name": "clientMutationId",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "fieldId",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "singleSelectOptions",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectV2SingleSelectFieldOptionInput"
+              }
+            }
+          }
+        },
+        {
+          "name": "multiSelectOptions",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "ProjectV2MultiSelectFieldOptionInput"
+              }
+            }
+          }
+        },
+        {
+          "name": "iterationConfiguration",
+          "type": {
+            "kind": "INPUT_OBJECT",
+            "name": "ProjectV2IterationFieldConfigurationInput",
+            "ofType": null
+          }
+        }
+      ],
+      "fields": null,
+      "enumValues": null
+    },
+    "CreateProjectV2ViewInput": {
+      "name": "CreateProjectV2ViewInput",
+      "inputFields": [
+        {
+          "name": "clientMutationId",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "projectId",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "layout",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "ENUM",
+              "name": "ProjectV2ViewLayout",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "configuration",
+          "type": {
+            "kind": "INPUT_OBJECT",
+            "name": "ProjectV2ViewConfigurationInput",
+            "ofType": null
+          }
+        }
+      ],
+      "fields": null,
+      "enumValues": null
+    },
+    "UpdateProjectV2ViewInput": {
+      "name": "UpdateProjectV2ViewInput",
+      "inputFields": [
+        {
+          "name": "clientMutationId",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "viewId",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "layout",
+          "type": {
+            "kind": "ENUM",
+            "name": "ProjectV2ViewLayout",
+            "ofType": null
+          }
+        },
+        {
+          "name": "filter",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "configuration",
+          "type": {
+            "kind": "INPUT_OBJECT",
+            "name": "ProjectV2ViewConfigurationInput",
+            "ofType": null
+          }
+        }
+      ],
+      "fields": null,
+      "enumValues": null
+    },
+    "ProjectV2ViewConfigurationInput": {
+      "name": "ProjectV2ViewConfigurationInput",
+      "inputFields": [
+        {
+          "name": "visibleFieldIds",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "ID"
+              }
+            }
+          }
+        }
+      ],
+      "fields": null,
+      "enumValues": null
+    },
+    "ProjectV2ViewLayout": {
+      "name": "ProjectV2ViewLayout",
+      "inputFields": null,
+      "fields": null,
+      "enumValues": [
+        {
+          "name": "BOARD_LAYOUT"
+        },
+        {
+          "name": "TABLE_LAYOUT"
+        },
+        {
+          "name": "ROADMAP_LAYOUT"
+        }
+      ]
+    },
+    "ConvertProjectV2DraftIssueItemToIssueInput": {
+      "name": "ConvertProjectV2DraftIssueItemToIssueInput",
+      "inputFields": [
+        {
+          "name": "clientMutationId",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "itemId",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "repositoryId",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            }
+          }
+        }
+      ],
+      "fields": null,
+      "enumValues": null
+    },
+    "ProjectV2View": {
+      "name": "ProjectV2View",
+      "inputFields": null,
+      "fields": [
+        {
+          "name": "configuration"
+        },
+        {
+          "name": "createdAt"
+        },
+        {
+          "name": "fields"
+        },
+        {
+          "name": "filter"
+        },
+        {
+          "name": "fullDatabaseId"
+        },
+        {
+          "name": "groupByFields"
+        },
+        {
+          "name": "id"
+        },
+        {
+          "name": "layout"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "number"
+        },
+        {
+          "name": "project"
+        },
+        {
+          "name": "sortByFields"
+        },
+        {
+          "name": "updatedAt"
+        },
+        {
+          "name": "verticalGroupByFields"
+        }
+      ],
+      "enumValues": null
+    },
+    "ProjectV2Field": {
+      "name": "ProjectV2Field",
+      "inputFields": null,
+      "fields": [
+        {
+          "name": "createdAt"
+        },
+        {
+          "name": "dataType"
+        },
+        {
+          "name": "databaseId"
+        },
+        {
+          "name": "id"
+        },
+        {
+          "name": "isIssueField"
+        },
+        {
+          "name": "issueField"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "project"
+        },
+        {
+          "name": "updatedAt"
+        }
+      ],
+      "enumValues": null
+    },
+    "ProjectV2SingleSelectField": {
+      "name": "ProjectV2SingleSelectField",
+      "inputFields": null,
+      "fields": [
+        {
+          "name": "createdAt"
+        },
+        {
+          "name": "dataType"
+        },
+        {
+          "name": "databaseId"
+        },
+        {
+          "name": "id"
+        },
+        {
+          "name": "isIssueField"
+        },
+        {
+          "name": "issueField"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "options"
+        },
+        {
+          "name": "project"
+        },
+        {
+          "name": "updatedAt"
+        }
+      ],
+      "enumValues": null
+    }
+  }
+}

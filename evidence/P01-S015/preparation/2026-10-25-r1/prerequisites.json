@@ -1,0 +1,63 @@
+{
+  "accessDate": "2026-10-25",
+  "capturedAtUtc": "2026-10-25T21:40:08.405007+00:00",
+  "baselineCommit": "ef2833a8fce8bbb11262b7890883c07ea9e73b31",
+  "branch": "main",
+  "origin": "https://github.com/banksjim/local-llm-setup.git",
+  "remoteRefs": [
+    "ef2833a8fce8bbb11262b7890883c07ea9e73b31\tHEAD",
+    "ef2833a8fce8bbb11262b7890883c07ea9e73b31\trefs/heads/main"
+  ],
+  "initialWorktree": "Clean before preparation; only this authorized preparation directory added",
+  "unrelatedWorktreeChanges": [],
+  "workspaceIgnored": true,
+  "versions": {
+    "git": "git version 2.50.0.windows.1",
+    "gh": "gh version 2.92.0 (2026-04-28)",
+    "python": "Python 3.13.5",
+    "codex": "codex-cli 0.164.0-alpha.11.1",
+    "claude": "2.1.220 (Claude Code)"
+  },
+  "github": {
+    "identity": {
+      "id": 7800938,
+      "login": "banksjim",
+      "type": "User"
+    },
+    "viewerNodeId": "MDQ6VXNlcjc4MDA5Mzg=",
+    "authenticationPassed": true,
+    "scopes": [
+      "gist",
+      "project",
+      "read:org",
+      "repo",
+      "workflow"
+    ],
+    "credentialValueStored": false,
+    "repository": {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "id": "R_kgDOTu2BgQ",
+      "nameWithOwner": "banksjim/local-llm-setup",
+      "url": "https://github.com/banksjim/local-llm-setup",
+      "viewerPermission": "ADMIN",
+      "visibility": "PUBLIC"
+    },
+    "projectInventory": {
+      "totalCount": 0,
+      "pageInfo": {
+        "hasNextPage": false,
+        "endCursor": null
+      },
+      "nodes": []
+    },
+    "writeCapability": "Not exercised: read access and granted scopes verified, live writes require authorization"
+  },
+  "bootstrapRuntime": {
+    "name": "Windows PowerShell",
+    "version": "5.1.26100.8875",
+    "edition": "Desktop",
+    "externalTestFrameworkRequired": false
+  }
+}
